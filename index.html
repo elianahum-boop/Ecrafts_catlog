@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecrafts - קטלוג מוצרים</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- LZ-String Compression CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    
+    <!-- קובץ נתוני המוצרים מבוסס Git -->
+    <script src="products-data.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Rubik', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e', // Emerald
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #09090b; /* Slate-950 */
+            color: #f4f4f5; /* Zinc-100 */
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+        /* Glassmorphism utility */
+        .glass-card {
+            background: rgba(24, 24, 27, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(63, 63, 70, 0.4);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- רקע דקורטיבי עדין -->
+    <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+        <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-indigo-500/10 blur-[120px]"></div>
+    </div>
+
+    <!-- כותרת ראשית (Header) -->
+    <header class="glass-card sticky top-0 z-40 border-b border-zinc-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+                    <i data-lucide="shopping-bag" class="w-5 h-5 text-white"></i>
+                </div>
+                <div>
+                    <h1 id="header-title" class="text-xl font-bold tracking-tight text-white">Ecrafts</h1>
+                    <p id="header-desc" class="text-xs text-zinc-400">קטלוג מוצרים מעוצב</p>
+                </div>
+            </div>
+            
+            <!-- אזור כפתורי פעולה ומצבים -->
+            <div class="flex items-center gap-2">
+                <!-- כפתור העתקת קישור של מנהל -->
+                <button id="btn-share" onclick="openShareModal()" class="hidden flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium py-2 px-4 rounded-xl shadow-lg shadow-emerald-500/10 transition-all transform hover:-translate-y-0.5 active:translate-y-0 duration-200">
+                    <i data-lucide="share-2" class="w-4 h-4"></i>
+                    <span>שיתוף קטלוג</span>
+                </button>
+
+                <!-- חיווי מצב לקוח -->
+                <span id="badge-view-mode" class="hidden flex items-center gap-1.5 bg-zinc-800/80 text-zinc-400 py-1.5 px-3 rounded-full text-xs border border-zinc-700">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>קטלוג לקוחות (Git Pages)</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- גוף העמוד (Main Content) -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8">
+        
+        <!-- ================= פאנל ניהול (מוצג רק במצב עריכה) ================= -->
+        <section id="admin-panel" class="hidden mb-8 space-y-6 animate-fade-in">
+            <!-- כרטיסיית הגדרות מהירות -->
+            <div class="glass-card p-6 rounded-2xl space-y-6">
+                <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="sliders" class="text-brand-500 w-5 h-5"></i>
+                        <h2 class="text-lg font-bold text-white">הגדרות קטלוג (מנהל)</h2>
+                    </div>
+                    <span class="text-xs text-zinc-500">הגדרות אלו נשמרות מקומית בדפדפן ובקישור השיתוף</span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-400 mb-1.5">שם הקטלוג</label>
+                        <input type="text" id="cfg-title" oninput="updateCatalogMeta()" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 transition-colors" placeholder="לדוגמה: Ecrafts - מחזיקים וסימניות">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-400 mb-1.5">תיאור הקטלוג</label>
+                        <input type="text" id="cfg-desc" oninput="updateCatalogMeta()" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 transition-colors" placeholder="לדוגמה: פריטים ייחודיים בעבודת יד">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-400 mb-1.5">אימייל לקבלת הזמנות</label>
+                        <input type="email" id="cfg-email" oninput="updateCatalogMeta()" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 transition-colors" placeholder="לדוגמה: example@mail.com">
+                    </div>
+                </div>
+
+                <!-- פאנל פעולות קטלוג -->
+                <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="space-y-1 text-right w-full md:w-auto">
+                        <span class="text-sm font-medium text-zinc-300 flex items-center gap-1.5 justify-start">
+                            <i data-lucide="folder-open" class="w-4 h-4 text-indigo-400"></i>
+                            ייבוא וסנכרון תיקיית מוצרים מהמחשב
+                        </span>
+                        <p class="text-xs text-zinc-500">בחר את תיקיית המוצרים שלך (למשל `מוצרים`). הקטלוג יתעדכן ויסתנכרן אוטומטית.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 w-full md:w-auto justify-end">
+                        <label class="flex-grow md:flex-grow-0 flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-2 px-5 rounded-xl cursor-pointer transition-all duration-200">
+                            <i data-lucide="folder-plus" class="w-4 h-4"></i>
+                            <span>בחר תיקיית תמונות</span>
+                            <input type="file" id="admin-folder-input" webkitdirectory directory multiple class="hidden">
+                        </label>
+                        <button onclick="openAddProductModal()" class="flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium py-2 px-4 rounded-xl border border-zinc-700 transition-colors">
+                            <i data-lucide="plus" class="w-4 h-4 text-emerald-500"></i>
+                            <span>הוסף מוצר בודד</span>
+                        </button>
+                        <button onclick="exportCatalogData()" class="flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium py-2 px-4 rounded-xl shadow-lg shadow-brand-500/10 transition-colors" title="שמור את כל השינויים לקובץ products-data.js">
+                            <i data-lucide="download" class="w-4 h-4"></i>
+                            <span>ייצוא קובץ נתונים</span>
+                        </button>
+                        <button onclick="resetToJsData()" class="flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium py-2 px-4 rounded-xl border border-zinc-700 transition-colors" title="שחזר נתונים מקובץ products-data.js ומחק שינויים מקומיים">
+                            <i data-lucide="refresh-cw" class="w-4 h-4 text-indigo-400"></i>
+                            <span>שחזר מהקובץ</span>
+                        </button>
+                        <button onclick="clearAllProducts()" class="flex items-center justify-center gap-2 bg-red-950/40 hover:bg-red-900/60 text-red-200 text-sm font-medium py-2 px-4 rounded-xl border border-red-900/30 transition-colors">
+                            <i data-lucide="trash-2" class="w-4 h-4 text-red-500"></i>
+                            <span>מחק הכל</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- מדריך פריסה ל-GitHub Pages (קולפסבילי) -->
+                <details class="group p-4 rounded-xl bg-zinc-900/30 border border-zinc-800 text-xs text-zinc-400">
+                    <summary class="font-medium text-zinc-300 cursor-pointer focus:outline-none flex items-center justify-between">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="github" class="w-4 h-4 text-zinc-300"></i>
+                            כיצד להעלות ולעדכן את הקטלוג ב-GitHub Pages?
+                        </span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transform group-open:rotate-180 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="mt-4 space-y-3 pl-2 leading-relaxed">
+                        <p>הקטלוג מנוהל באמצעות מערכת <strong>Git</strong> ומאוחסן ישירות ב-GitHub Pages. כל המוצרים נשמרים בקובץ <code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200 text-[10px]">products-data.js</code> שטעון אוטומטית.</p>
+                        <ol class="list-decimal list-inside space-y-2 text-zinc-400">
+                            <li><strong>פעם ראשונה בלבד:</strong> פתח מאגר (Repository) חדש ב-GitHub וקרא לו <code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200 text-[10px]">Ecrafts</code>. הגדר אותו כציבורי (Public).</li>
+                            <li>קשר את התיקייה המקומית למאגר ה-GitHub שלך באמצעות שורת הפקודה (אנחנו כבר הכנו עבורך את התשתית בתיקייה המקומית).</li>
+                            <li><strong>הפעלה אונליין:</strong> ב-GitHub, גש ל-<strong>Settings</strong> -> <strong>Pages</strong>. תחת <strong>Build and deployment</strong>, בחר במקור <strong>Deploy from a branch</strong>, בחר בענף <strong>main</strong> ולחץ <strong>Save</strong>.</li>
+                            <li>האתר שלך יהיה זמין מיידית בכתובת נקייה: <code class="bg-zinc-950 px-1 py-0.5 rounded text-brand-500 text-[10px]">https://USERNAME.github.io/Ecrafts/</code></li>
+                            <li><strong>עדכון הקטלוג בעתיד:</strong> בצע שינויים, לחץ על <strong>ייצוא קובץ נתונים</strong> ושמור אותו בתיקייה. לאחר מכן, לחץ לחיצה כפולה על הקובץ <code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200 text-[10px]">עלה_לגיט.bat</code> והקטלוג אונליין יתעדכן מיד!</li>
+                        </ol>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ================= פאנל לקוח וצפייה ================= -->
+        
+        <!-- כותרת ראשית של הגלריה והחיפוש -->
+        <section class="mb-8 space-y-6">
+            <div class="text-center py-6">
+                <h2 id="catalog-title" class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400">הקטלוג שלי</h2>
+                <p id="catalog-desc" class="text-sm md:text-base text-zinc-400 mt-2 max-w-xl mx-auto">בחר קטגוריה ודפדף במוצרים</p>
+            </div>
+
+            <!-- סרגל חיפוש ופילטרים -->
+            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                <!-- פילטר קטגוריות -->
+                <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto pb-1 max-w-full no-scrollbar">
+                    <!-- נוצר דינמית -->
+                </div>
+
+                <!-- תיבת חיפוש -->
+                <div class="relative w-full md:w-80">
+                    <i data-lucide="search" class="absolute inset-y-0 right-3 flex items-center text-zinc-500 w-4 h-4 my-auto"></i>
+                    <input type="text" id="search-input" oninput="filterProducts()" class="w-full bg-zinc-900/80 border border-zinc-800 rounded-full py-2.5 pr-10 pl-4 text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition-all" placeholder="חיפוש מוצר...">
+                </div>
+            </div>
+        </section>
+
+        <!-- גריד מוצרים -->
+        <section>
+            <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+                <!-- המוצרים ייווצרו כאן באופן דינמי -->
+            </div>
+            
+            <!-- מצב גלריה ריקה -->
+            <div id="empty-catalog-state" class="hidden text-center py-16 space-y-4">
+                <div class="w-16 h-16 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center mx-auto text-zinc-600">
+                    <i data-lucide="package-open" class="w-8 h-8"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-bold text-zinc-300">אין עדיין מוצרים בקטלוג</h3>
+                    <p class="text-xs text-zinc-500 max-w-xs mx-auto">לחץ על 'בחר תיקיית תמונות' או 'הוסף מוצר בודד' בפאנל המנהל כדי להתחיל למלא את הקטלוג שלך.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- פוטר (Footer) -->
+    <footer class="border-t border-zinc-900 bg-zinc-950/60 py-6 mt-12 text-center text-zinc-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© <span id="current-year"></span> Ecrafts. כל הזכויות שמורות.</p>
+            <p class="flex items-center gap-1">
+                נבנה באהבה עבור 
+                <span class="text-zinc-400 font-medium">Ecrafts</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ================= מודלים ומסכים צפים (Modals) ================= -->
+
+    <!-- 1. מודל הוספת/עריכת מוצר בודד -->
+    <div id="product-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800">
+                <h3 id="product-modal-title" class="font-bold text-lg text-white">הוספת מוצר חדש</h3>
+                <button onclick="closeProductModal()" class="text-zinc-400 hover:text-zinc-200">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 space-y-4 flex-grow overflow-y-auto max-h-[80vh]">
+                <input type="hidden" id="modal-product-id">
+                
+                <!-- העלאת תמונה -->
+                <div>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">תמונת המוצר</label>
+                    <div id="modal-image-preview-container" class="relative group rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/50 aspect-square flex flex-col items-center justify-center cursor-pointer transition-all hover:border-zinc-700">
+                        <img id="modal-image-preview" class="absolute inset-0 w-full h-full object-cover hidden">
+                        <div id="modal-image-placeholder" class="text-center space-y-2 pointer-events-none p-4">
+                            <div class="w-10 h-10 rounded-full bg-zinc-950 flex items-center justify-center mx-auto text-zinc-500">
+                                <i data-lucide="image" class="w-5 h-5"></i>
+                            </div>
+                            <div class="text-xs text-zinc-400 font-medium">לחץ כאן לבחירת תמונה</div>
+                            <div class="text-[10px] text-zinc-600">קבצי PNG, JPG או GIF</div>
+                        </div>
+                    </div>
+                    <input type="file" id="modal-file-input" class="hidden" accept="image/*">
+                    <!-- שדה להזנת URL ישיר (אופציונלי) -->
+                    <div class="mt-2">
+                        <span class="text-[10px] text-zinc-500">או הזן נתיב יחסי של התמונה (למשל: מוצרים/מחזיקים/תמונה.png)</span>
+                        <input type="text" id="modal-image-url" oninput="onImageUrlInput()" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-2.5 py-1 text-xs text-zinc-300 focus:outline-none focus:border-brand-500" placeholder="מוצרים/מחזיקים/myimage.PNG">
+                    </div>
+                </div>
+
+                <!-- שם מוצר -->
+                <div>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">שם המוצר</label>
+                    <input type="text" id="modal-name" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500" placeholder="לדוגמה: מחזיק מפתחות Spotify מעוצב">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- מחיר -->
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-400 mb-1.5">מחיר (₪)</label>
+                        <input type="text" id="modal-price" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500" placeholder="15">
+                    </div>
+                    <!-- קטגוריה -->
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-400 mb-1.5">קטגוריה</label>
+                        <input type="text" id="modal-category" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500" placeholder="לדוגמה: מחזיקים">
+                    </div>
+                </div>
+
+                <!-- תיאור -->
+                <div>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">תיאור קצר</label>
+                    <textarea id="modal-desc" rows="3" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 resize-none text-sm" placeholder="לדוגמה: מיוצר מחומרים איכותיים עם הקדשה אישית..."></textarea>
+                </div>
+            </div>
+
+            <div class="px-6 py-4 border-t border-zinc-800 flex justify-end gap-2 bg-zinc-900/30">
+                <button onclick="closeProductModal()" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-medium py-2 px-4 rounded-xl text-sm transition-colors">
+                    ביטול
+                </button>
+                <button onclick="saveProduct()" class="bg-brand-600 hover:bg-brand-700 text-white font-medium py-2 px-4 rounded-xl text-sm shadow-lg shadow-brand-600/10 transition-colors">
+                    שמור מוצר
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. מודל הגדרות שיתוף וקישור קטגוריות -->
+    <div id="share-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800">
+                <h3 class="font-bold text-lg text-white">שיתוף הקטלוג שלך</h3>
+                <button onclick="closeShareModal()" class="text-zinc-400 hover:text-zinc-200">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 space-y-6">
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto">
+                        <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-white">הקישור לקריאה בלבד מוכן!</h4>
+                    <p class="text-xs text-zinc-400">הקישור הבא מכיל את כל פרטי הקטלוג (שמות, מחירים, תיאורים ונתיבי תמונות). לקוחות שיפתחו אותו יראו את הקטלוג בלבד ללא גישת עריכה.</p>
+                </div>
+
+                <!-- תיבת הקישור להעתקה -->
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-medium text-zinc-400">הקישור לשיתוף:</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="share-link-input" readonly class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-zinc-300 focus:outline-none focus:ring-1 focus:ring-brand-500 text-xs transition-all">
+                        <button onclick="copyShareLink()" class="bg-brand-600 hover:bg-brand-700 text-white font-medium px-4 rounded-xl text-xs flex items-center gap-1 transition-colors">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            <span>העתק</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- כרטיסיית סטטיסטיקת קישור -->
+                <div class="grid grid-cols-2 gap-3 py-3 border-y border-zinc-800 text-center">
+                    <div>
+                        <span class="block text-xs text-zinc-500">מספר מוצרים בקטלוג</span>
+                        <span id="share-stat-products" class="text-sm font-bold text-white">0</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-zinc-500">גודל נתונים מוערך</span>
+                        <span id="share-stat-size" class="text-sm font-bold text-white">0%</span>
+                    </div>
+                </div>
+
+                <!-- טיפ לאחסון הקישור בקטגוריה יפה -->
+                <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 flex items-start gap-2.5 text-xs text-zinc-400">
+                    <i data-lucide="info" class="w-4 h-4 text-brand-500 flex-shrink-0 mt-0.5"></i>
+                    <p>
+                        <strong>שים לב:</strong> הקישור מבוסס על כתובת הדף הנוכחי. 
+                        לאחר שתעלה את קובץ ה-<code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200">index.html</code> שלך ל-GitHub Pages, מומלץ ליצור את הקישור מתוך הכתובת החדשה (למשל: <code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200">https://username.github.io/ecrafts/</code>) כדי לקבל קישור אינטרנט אמיתי ללקוחות!
+                    </p>
+                </div>
+            </div>
+
+            <div class="px-6 py-4 border-t border-zinc-800 flex justify-end bg-zinc-900/30">
+                <button onclick="closeShareModal()" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-medium py-2 px-6 rounded-xl text-sm transition-colors">
+                    סגור
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. מודל לייטבוקס לתמונות (צפייה מוגדלת) -->
+    <div id="lightbox-modal" class="fixed inset-0 bg-black/95 z-50 hidden flex flex-col justify-between p-4" onclick="closeLightbox()">
+        <!-- כותרת הלייטבוקס / כפתור סגירה -->
+        <div class="flex items-center justify-between w-full max-w-5xl mx-auto py-2 z-10" onclick="event.stopPropagation()">
+            <div class="text-right">
+                <h3 id="lightbox-name" class="font-bold text-lg text-white">שם המוצר</h3>
+                <p id="lightbox-desc" class="text-xs text-zinc-400 mt-0.5">תיאור המוצר</p>
+            </div>
+            <button onclick="closeLightbox()" class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- תמונת הלייטבוקס במרכז -->
+        <div class="flex-grow flex items-center justify-center max-w-5xl mx-auto w-full max-h-[80vh] overflow-hidden" onclick="event.stopPropagation()">
+            <img id="lightbox-img" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl transition-all duration-300" src="" alt="">
+        </div>
+
+        <!-- תחתית הלייטבוקס / מחיר והזמנה באימייל -->
+        <div class="w-full max-w-5xl mx-auto flex items-center justify-between py-4 z-10 border-t border-zinc-800/50" onclick="event.stopPropagation()">
+            <span id="lightbox-price" class="text-2xl font-black text-brand-500">₪ 0</span>
+            <button id="lightbox-email-btn" class="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-6 rounded-xl shadow-lg transition-all duration-200">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                <span>הזמן עכשיו באימייל</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 4. מודל טעינת תיקייה (אינדיקטור התקדמות) -->
+    <div id="loading-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex flex-col items-center justify-center p-4">
+        <div class="glass-card p-8 rounded-2xl text-center space-y-6 max-w-sm w-full">
+            <div class="relative w-16 h-16 mx-auto">
+                <div class="absolute inset-0 rounded-full border-4 border-zinc-800"></div>
+                <div class="absolute inset-0 rounded-full border-4 border-brand-500 border-t-transparent animate-spin"></div>
+                <div class="absolute inset-0 flex items-center justify-center text-zinc-400">
+                    <i data-lucide="folder-archive" class="w-6 h-6"></i>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <h3 class="font-bold text-lg text-white">קורא קבצים מהתיקייה...</h3>
+                <p id="loading-progress" class="text-xs text-zinc-400">אנא המתן, מעבד תמונות (0 / 0)</p>
+            </div>
+            <div class="w-full bg-zinc-800 rounded-full h-1.5 overflow-hidden">
+                <div id="loading-bar" class="bg-brand-500 h-full w-0 transition-all duration-200"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= קוד לוגיקה (Javascript) ================= -->
+    <script>
+        // --- מצב התחלתי ומשתנים גלובליים ---
+        let catalog = {
+            title: "Ecrafts - קטלוג מוצרים",
+            description: "מחזיקי מפתחות, סימניות ועוד פריטים בעבודת יד",
+            email: "",
+            products: []
+        };
+        
+        let activeCategory = "הכל";
+        let isEditMode = true; // האם אנחנו במצב עריכה כרגע
+        
+        // מפה לשמירת ObjectURL זמניים לקבצים שנטענו בסשן הנוכחי לצורך תצוגה מקדימה מיידית
+        const sessionImageUrls = {}; 
+
+        // מוצרי דוגמה ראשוניים
+        const demoProducts = [
+            {
+                id: 1,
+                name: "מחזיק מפתחות ספוטיפיי אישי",
+                price: "45",
+                category: "מחזיקים",
+                desc: "מחזיק מפתחות שקוף ואקרילי בעיצוב שיר ספוטיפיי אישי עם התמונה וההקדשה שלכם.",
+                image: "מוצרים/מחזיקים/Slide1.PNG",
+                fileName: "Slide1.PNG"
+            },
+            {
+                id: 2,
+                name: "סימניית שרף יוקרתית עם פרחים מיובשים",
+                price: "35",
+                category: "סימניות",
+                desc: "סימנייה עשויה שרף (Resin) שקוף וקשיח, משולבת בפרחים מיובשים אמיתיים ועלי זהב.",
+                image: "מוצרים/סימניות/Slide10.PNG",
+                fileName: "Slide10.PNG"
+            }
+        ];
+
+        // --- אתחול האפליקציה בטעינה ---
+        window.addEventListener('DOMContentLoaded', () => {
+            initApp();
+        });
+
+        function initApp() {
+            // זיהוי סביבה - האם רצים מקומית או בשרת
+            const isLocal = window.location.protocol === 'file:' || 
+                            window.location.hostname === 'localhost' || 
+                            window.location.hostname === '127.0.0.1';
+
+            const hash = window.location.hash;
+            
+            if (hash.startsWith('#catalog=') || hash.startsWith('#data=')) {
+                // מצב צפייה של הלקוח עם קישור מקודד (ישן)
+                isEditMode = false;
+                loadCatalogFromUrl(hash);
+            } else if (hash === '#edit' || hash === '#admin') {
+                // כניסה למצב עריכה באופן יזום
+                isEditMode = true;
+                loadCatalogFromLocalOrJs();
+                setupFolderInput();
+            } else {
+                // ברירת מחדל ללא האש
+                if (isLocal) {
+                    // סביבה מקומית - מנהל עורך
+                    isEditMode = true;
+                    loadCatalogFromLocalOrJs();
+                    setupFolderInput();
+                } else {
+                    // סביבת שרת (GitHub Pages) - לקוח צופה
+                    isEditMode = false;
+                    loadCatalogFromJs();
+                }
+            }
+
+            // 2. הגדרת שנה נוכחית בפוטר
+            document.getElementById('current-year').innerText = new Date().getFullYear();
+
+            // 3. אתחול האזנה לקבצים במודל
+            initModalFileInput();
+
+            // 4. רינדור ה-UI בהתאם למצב
+            applyModeUI();
+            renderCatalog();
+        }
+
+        function setupFolderInput() {
+            // הוספת האזנה לבחירת תיקייה בבת אחת
+            const folderInput = document.getElementById('admin-folder-input');
+            if (folderInput) {
+                folderInput.addEventListener('change', handleFolderImport);
+            }
+        }
+
+        // --- ניהול מצבים (עריכה / צפייה) ---
+        function applyModeUI() {
+            const adminPanel = document.getElementById('admin-panel');
+            const btnShare = document.getElementById('btn-share');
+            const badgeViewMode = document.getElementById('badge-view-mode');
+
+            if (isEditMode) {
+                adminPanel.classList.remove('hidden');
+                btnShare.classList.remove('hidden');
+                badgeViewMode.classList.add('hidden');
+                
+                // עדכון שדות ההגדרות ב-UI
+                document.getElementById('cfg-title').value = catalog.title || "";
+                document.getElementById('cfg-desc').value = catalog.description || "";
+                document.getElementById('cfg-email').value = catalog.email || "";
+            } else {
+                adminPanel.classList.add('hidden');
+                btnShare.classList.add('hidden');
+                badgeViewMode.classList.remove('hidden');
+            }
+
+            // כותרות עליונות של העמוד
+            document.getElementById('header-title').innerText = catalog.title || "Ecrafts";
+            document.getElementById('header-desc').innerText = catalog.description || "קטלוג מוצרים";
+            
+            document.getElementById('catalog-title').innerText = catalog.title || "הקטלוג שלי";
+            document.getElementById('catalog-desc').innerText = catalog.description || "בחר קטגוריה ודפדף במוצרים";
+            
+            lucide.createIcons();
+        }
+
+        // --- טעינה ושמירה של הנתונים ---
+        
+        // טעינה מקומית או מקובץ הנתונים
+        function loadCatalogFromLocalOrJs() {
+            const saved = localStorage.getItem('ecrafts_catalog');
+            if (saved) {
+                try {
+                    catalog = JSON.parse(saved);
+                    // מיגרציה: אם יש מוצרים קיימים ללא מחיר (או ריק), נשלים ל-15 ש"ח כברירת מחדל
+                    if (catalog.products) {
+                        catalog.products.forEach(p => {
+                            if (p.price === undefined || p.price === null || String(p.price).trim() === "") {
+                                p.price = "15";
+                            }
+                        });
+                        saveCatalogToLocal();
+                    }
+                } catch(e) {
+                    console.error("שגיאה בטעינת קטלוג מקומי", e);
+                    fallbackToJsData();
+                }
+            } else {
+                fallbackToJsData();
+            }
+        }
+
+        // טעינה מקובץ הנתונים בלבד (ללקוחות)
+        function loadCatalogFromJs() {
+            if (window.catalogData) {
+                catalog = JSON.parse(JSON.stringify(window.catalogData));
+            } else {
+                catalog = {
+                    title: "Ecrafts - קטלוג מוצרים",
+                    description: "מחזיקי מפתחות, סימניות ועוד פריטים בעבודת יד",
+                    email: "",
+                    products: []
+                };
+            }
+        }
+
+        function fallbackToJsData() {
+            if (window.catalogData) {
+                catalog = JSON.parse(JSON.stringify(window.catalogData));
+            } else {
+                // קטלוג ראשוני עם מוצרי דוגמה אם אין קובץ נתונים
+                catalog.title = "Ecrafts - קטלוג מוצרים";
+                catalog.description = "מחזיקי מפתחות, סימניות ועוד פריטים בעבודת יד";
+                catalog.products = [...demoProducts];
+            }
+            saveCatalogToLocal();
+        }
+
+        // שמירה ל-LocalStorage (עבור המנהל)
+        function saveCatalogToLocal() {
+            try {
+                localStorage.setItem('ecrafts_catalog', JSON.stringify(catalog));
+            } catch (e) {
+                console.warn("שגיאה בשמירה מקומית:", e);
+            }
+        }
+
+        // ייצוא כל הנתונים לקובץ JS הנטען על ידי Git Pages
+        function exportCatalogData() {
+            const exportData = {
+                title: catalog.title,
+                description: catalog.description,
+                email: catalog.email,
+                products: catalog.products
+            };
+            const jsContent = `window.catalogData = ${JSON.stringify(exportData, null, 2)};`;
+            
+            const blob = new Blob([jsContent], { type: 'application/javascript;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'products-data.js';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            alert("קובץ הנתונים (products-data.js) יוצא בהצלחה!\nאנא שמור אותו בתיקיית Ecrafts במקום הקובץ הישן.");
+        }
+
+        // שחזור הנתונים לקדמותם מתוך קובץ הנתונים (ביטול שינויים מקומיים)
+        function resetToJsData() {
+            if (confirm("האם אתה בטוח שברצונך לשחזר את הנתונים מקובץ products-data.js?\nכל השינויים שביצעת במחשב זה מאז הייצוא האחרון יימחקו.")) {
+                localStorage.removeItem('ecrafts_catalog');
+                loadCatalogFromLocalOrJs();
+                applyModeUI();
+                renderCatalog();
+                alert("הנתונים שוחזרו בהצלחה מקובץ products-data.js!");
+            }
+        }
+
+        // טעינה מה-URL (עבור הלקוח או המנהל שצופה)
+        function loadCatalogFromUrl(hash) {
+            let encodedData = "";
+            if (hash.startsWith('#catalog=')) {
+                encodedData = hash.substring(9);
+            } else if (hash.startsWith('#data=')) {
+                encodedData = hash.substring(6);
+            }
+
+            if (!encodedData) return;
+
+            try {
+                const decompressed = LZString.decompressFromEncodedURIComponent(encodedData);
+                if (decompressed) {
+                    catalog = JSON.parse(decompressed);
+                    if (!catalog.products) catalog.products = [];
+                } else {
+                    const decoded = decodeURIComponent(escape(atob(encodedData)));
+                    catalog = JSON.parse(decoded);
+                }
+                
+                // מיגרציה בצפייה: השלמת מחירים ריקים ל-15 ש"ח
+                if (catalog.products) {
+                    catalog.products.forEach(p => {
+                        if (p.price === undefined || p.price === null || String(p.price).trim() === "") {
+                            p.price = "15";
+                        }
+                    });
+                }
+            } catch(e) {
+                console.error("שגיאה בפענוח נתוני הקישור:", e);
+                alert("לא ניתן היה לטעון את פרטי הקטלוג מהקישור המצורף.");
+                catalog.products = [];
+            }
+        }
+
+        // עדכון כותרות ותיאור בזמן אמת מהשדות
+        function updateCatalogMeta() {
+            catalog.title = document.getElementById('cfg-title').value.trim() || "Ecrafts";
+            catalog.description = document.getElementById('cfg-desc').value.trim() || "קטלוג מוצרים מעוצב";
+            catalog.email = document.getElementById('cfg-email').value.trim() || "";
+            
+            document.getElementById('header-title').innerText = catalog.title;
+            document.getElementById('header-desc').innerText = catalog.description;
+            document.getElementById('catalog-title').innerText = catalog.title;
+            document.getElementById('catalog-desc').innerText = catalog.description;
+            
+            saveCatalogToLocal();
+        }
+
+        // --- רינדור קטלוג (הצגת המוצרים והקטגוריות) ---
+        function renderCatalog() {
+            const grid = document.getElementById('product-grid');
+            const emptyState = document.getElementById('empty-catalog-state');
+            grid.innerHTML = '';
+
+            const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+            let filtered = catalog.products || [];
+
+            // סינון קטגוריה
+            if (activeCategory !== "הכל") {
+                filtered = filtered.filter(p => p.category === activeCategory);
+            }
+
+            // סינון חיפוש
+            if (searchQuery) {
+                filtered = filtered.filter(p => 
+                    (p.name && p.name.toLowerCase().includes(searchQuery)) || 
+                    (p.desc && p.desc.toLowerCase().includes(searchQuery)) ||
+                    (p.category && p.category.toLowerCase().includes(searchQuery))
+                );
+            }
+
+            // הצגת מצב ריק
+            if (filtered.length === 0) {
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+            } else {
+                grid.classList.remove('hidden');
+                emptyState.classList.add('hidden');
+            }
+
+            // רינדור הכרטיסיות
+            filtered.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = 'glass-card glow-hover rounded-2xl overflow-hidden flex flex-col group relative transition-all duration-300 transform hover:-translate-y-1';
+                card.style.animation = `fadeIn 0.3s ease-out ${index * 0.05}s both`;
+                
+                // רזולוציית התמונה (אם נטען באותו סשן - נשתמש ב-ObjectURL הזמני, אחרת בנתיב היחסי)
+                let imgUrl = product.image || 'https://via.placeholder.com/300?text=No+Image';
+                if (sessionImageUrls[product.fileName]) {
+                    imgUrl = sessionImageUrls[product.fileName];
+                }
+
+                // יצירת תוכן כפתורי ניהול (אם במצב עריכה)
+                let adminControls = '';
+                if (isEditMode) {
+                    adminControls = `
+                        <div class="absolute top-2 right-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                            <button onclick="event.stopPropagation(); editProduct(${product.id})" class="p-2 rounded-lg bg-zinc-900/90 border border-zinc-700 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all shadow-md" title="עריכת מוצר">
+                                <i data-lucide="edit-2" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button onclick="event.stopPropagation(); deleteProduct(${product.id})" class="p-2 rounded-lg bg-zinc-900/90 border border-zinc-700 hover:bg-red-950/90 hover:border-red-800 text-zinc-400 hover:text-red-400 transition-all shadow-md" title="מחיקת מוצר">
+                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- חיצים לסידור מחדש -->
+                        <div class="absolute bottom-2 right-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                            <button onclick="event.stopPropagation(); moveProduct(${product.id}, -1)" class="p-1.5 rounded-lg bg-zinc-900/90 border border-zinc-700 hover:bg-zinc-800 text-zinc-400 hover:text-white" title="הזז ימינה">
+                                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button onclick="event.stopPropagation(); moveProduct(${product.id}, 1)" class="p-1.5 rounded-lg bg-zinc-900/90 border border-zinc-700 hover:bg-zinc-800 text-zinc-400 hover:text-white" title="הזז שמאלה">
+                                <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    ${adminControls}
+                    
+                    <!-- תמונה -->
+                    <div class="relative overflow-hidden aspect-square bg-zinc-950 cursor-pointer" onclick="openLightboxById(${product.id})">
+                        <img src="${imgUrl}" onerror="handleBrokenImage(${product.id})" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60"></div>
+                        
+                        ${product.category ? `
+                            <span class="absolute bottom-2 left-2 text-[10px] bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 text-zinc-400 py-0.5 px-2 rounded-md font-medium">
+                                ${product.category}
+                            </span>
+                        ` : ''}
+                    </div>
+
+                    <!-- פרטים -->
+                    <div class="p-3.5 flex-grow flex flex-col justify-between gap-3">
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-sm text-zinc-200 line-clamp-1 group-hover:text-white transition-colors" title="${product.name}">${product.name}</h3>
+                            <p class="text-xs text-zinc-500 line-clamp-2 leading-relaxed" title="${product.desc || ''}">${product.desc || 'אין תיאור למוצר'}</p>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-2 border-t border-zinc-800/80 pt-2.5">
+                            <span class="text-base font-black text-brand-500">₪ ${product.price || '15'}</span>
+                            
+                            ${!isEditMode && catalog.email ? `
+                                <a href="mailto:${catalog.email}?subject=${encodeURIComponent('הזמנה מהקטלוג: ' + product.name)}&body=${encodeURIComponent('היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n- שם המוצר: ' + product.name + '\n- מחיר: ₪' + (product.price || '15') + '\n\nתודה!').replace(/\n/g, '%0D%0A')}" onclick="event.stopPropagation();" class="flex items-center gap-1 text-[11px] font-bold text-zinc-300 hover:text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 py-1.5 px-3 rounded-xl transition-all">
+                                    <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-500"></i>
+                                    <span>להזמנה</span>
+                                </a>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+
+            // עדכון רשימת קטגוריות
+            renderCategoryTabs();
+            lucide.createIcons();
+        }
+
+        // בניית כפתורי קטגוריה דינמיים
+        function renderCategoryTabs() {
+            const container = document.getElementById('category-tabs');
+            if (!container) return;
+
+            const categories = new Set();
+            categories.add("הכל");
+            
+            (catalog.products || []).forEach(p => {
+                if (p.category && p.category.trim()) {
+                    categories.add(p.category.trim());
+                }
+            });
+
+            container.innerHTML = '';
+            
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                const isActive = activeCategory === cat;
+                
+                btn.className = isActive 
+                    ? 'bg-brand-600/20 text-brand-500 border border-brand-500/30 px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all'
+                    : 'bg-zinc-900 hover:bg-zinc-800 text-zinc-400 border border-zinc-800 px-4 py-1.5 rounded-full text-xs whitespace-nowrap transition-all';
+                
+                btn.innerText = cat;
+                btn.onclick = () => {
+                    activeCategory = cat;
+                    renderCatalog();
+                };
+                
+                container.appendChild(btn);
+            });
+        }
+
+        function filterProducts() {
+            renderCatalog();
+        }
+
+        // --- פעולות הוספה, עריכה, מחיקה ומיקום מחדש של מוצרים ---
+        
+        function openAddProductModal() {
+            document.getElementById('product-modal-title').innerText = "הוספת מוצר חדש";
+            document.getElementById('modal-product-id').value = "";
+            document.getElementById('modal-name').value = "";
+            document.getElementById('modal-price').value = "15"; // ברירת מחדל
+            document.getElementById('modal-category').value = "";
+            document.getElementById('modal-desc').value = "";
+            document.getElementById('modal-image-url').value = "";
+            document.getElementById('modal-file-input').value = "";
+            
+            document.getElementById('modal-image-preview').classList.add('hidden');
+            document.getElementById('modal-image-placeholder').classList.remove('hidden');
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function editProduct(id) {
+            const product = catalog.products.find(p => p.id === id);
+            if (!product) return;
+
+            document.getElementById('product-modal-title').innerText = "עריכת מוצר";
+            document.getElementById('modal-product-id').value = product.id;
+            document.getElementById('modal-name').value = product.name || "";
+            document.getElementById('modal-price').value = product.price || "15";
+            document.getElementById('modal-category').value = product.category || "";
+            document.getElementById('modal-desc').value = product.desc || "";
+            
+            document.getElementById('modal-image-url').value = product.image || "";
+            
+            let imgUrl = product.image;
+            if (sessionImageUrls[product.fileName]) {
+                imgUrl = sessionImageUrls[product.fileName];
+            }
+
+            if (imgUrl) {
+                showModalImagePreview(imgUrl);
+            } else {
+                document.getElementById('modal-image-preview').classList.add('hidden');
+                document.getElementById('modal-image-placeholder').classList.remove('hidden');
+            }
+
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function deleteProduct(id) {
+            if (confirm("האם אתה בטוח שברצונך למחוק מוצר זה מהקטלוג?")) {
+                catalog.products = catalog.products.filter(p => p.id !== id);
+                saveCatalogToLocal();
+                renderCatalog();
+            }
+        }
+
+        function moveProduct(id, direction) {
+            const index = catalog.products.findIndex(p => p.id === id);
+            if (index === -1) return;
+
+            const targetIndex = index + direction;
+            if (targetIndex < 0 || targetIndex >= catalog.products.length) return;
+
+            const temp = catalog.products[index];
+            catalog.products[index] = catalog.products[targetIndex];
+            catalog.products[targetIndex] = temp;
+
+            saveCatalogToLocal();
+            renderCatalog();
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        // טעינת תמונה במודל
+        function initModalFileInput() {
+            const fileInput = document.getElementById('modal-file-input');
+            const previewContainer = document.getElementById('modal-image-preview-container');
+
+            previewContainer.addEventListener('click', () => {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const objectUrl = URL.createObjectURL(file);
+                sessionImageUrls[file.name] = objectUrl; // שומרים בסשן
+
+                showModalImagePreview(objectUrl);
+                document.getElementById('modal-image-url').value = ""; // מנקה ידני
+            });
+        }
+
+        function showModalImagePreview(src) {
+            const img = document.getElementById('modal-image-preview');
+            const placeholder = document.getElementById('modal-image-placeholder');
+            
+            img.src = src;
+            img.classList.remove('hidden');
+            placeholder.classList.add('hidden');
+        }
+
+        function onImageUrlInput() {
+            const url = document.getElementById('modal-image-url').value.trim();
+            if (url) {
+                showModalImagePreview(url);
+                document.getElementById('modal-file-input').value = "";
+            } else {
+                document.getElementById('modal-image-preview').classList.add('hidden');
+                document.getElementById('modal-image-placeholder').classList.remove('hidden');
+            }
+        }
+
+        // שמירת מוצר בודד מהמודל
+        function saveProduct() {
+            const idVal = document.getElementById('modal-product-id').value;
+            const name = document.getElementById('modal-name').value.trim();
+            const price = document.getElementById('modal-price').value.trim() || "15";
+            const category = document.getElementById('modal-category').value.trim() || "כללי";
+            const desc = document.getElementById('modal-desc').value.trim();
+            const imageUrlInput = document.getElementById('modal-image-url').value.trim();
+            const fileInput = document.getElementById('modal-file-input');
+
+            if (!name) {
+                alert("חובה להזין שם מוצר!");
+                return;
+            }
+
+            let finalImage = imageUrlInput || "";
+            let finalFileName = "";
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                // בניית נתיב יחסי אוטומטי מבוסס על קטגוריה ושם הקובץ
+                finalImage = `מוצרים/${category}/${file.name}`;
+                finalFileName = file.name;
+            } else if (idVal) {
+                // שומרים את הערכים הקודמים של התמונה
+                const oldProduct = catalog.products.find(p => p.id === parseInt(idVal));
+                if (oldProduct) {
+                    finalImage = imageUrlInput || oldProduct.image;
+                    finalFileName = oldProduct.fileName;
+                }
+            }
+
+            if (idVal) {
+                const id = parseInt(idVal);
+                const index = catalog.products.findIndex(p => p.id === id);
+                if (index !== -1) {
+                    catalog.products[index].name = name;
+                    catalog.products[index].price = price;
+                    catalog.products[index].category = category;
+                    catalog.products[index].desc = desc;
+                    catalog.products[index].image = finalImage;
+                    if (finalFileName) catalog.products[index].fileName = finalFileName;
+                }
+            } else {
+                const newProduct = {
+                    id: Date.now(),
+                    name: name,
+                    fileName: finalFileName,
+                    price: price,
+                    category: category,
+                    desc: desc,
+                    image: finalImage
+                };
+                catalog.products.push(newProduct);
+            }
+
+            saveCatalogToLocal();
+            closeProductModal();
+            renderCatalog();
+        }
+
+        // --- מחיקת כל המוצרים מהרשימה ---
+        function clearAllProducts() {
+            if (confirm("האם אתה בטוח שברצונך למחוק את כל המוצרים מהקטלוג?\nפעולה זו תנקה את כל המוצרים לצמיתות!")) {
+                catalog.products = [];
+                saveCatalogToLocal();
+                renderCatalog();
+                alert("כל המוצרים נמחקו בהצלחה!");
+            }
+        }
+
+        // --- ייבוא תיקייה שלמה של תמונות מקומיות ---
+        function handleFolderImport(event) {
+            const files = event.target.files;
+            if (files.length === 0) return;
+
+            // סינון קבצים באמצעות mime-type וגם סיומות קבצים ליתר ביטחון
+            const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'bmp', 'svg'];
+            const imageFiles = Array.from(files).filter(file => {
+                const isImgMime = file.type && file.type.startsWith('image/');
+                const extension = file.name.split('.').pop().toLowerCase();
+                const isImgExt = imageExtensions.includes(extension);
+                return isImgMime || isImgExt;
+            });
+
+            if (imageFiles.length === 0) {
+                alert("לא נמצאו קבצי תמונה בתיקייה שנבחרה.");
+                return;
+            }
+
+            // מיון הקבצים
+            imageFiles.sort((a, b) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
+
+            // מזהים את שם התיקייה שנבחרה (הסגמנט הראשון בנתיב היחסי)
+            const firstFile = imageFiles[0];
+            let folderName = "כללי";
+            let pathPrefix = ""; // נתיב יחסי כללי
+
+            if (firstFile.webkitRelativePath) {
+                const parts = firstFile.webkitRelativePath.split('/');
+                folderName = parts[0] || "כללי";
+                
+                // תיקון נתיבים יחסיים אוטומטי במידה ובחרו ישירות את תת-התיקיות ב-Desktop/Ecrafts
+                if (folderName === "מחזיקים" || folderName === "סימניות") {
+                    pathPrefix = "מוצרים/";
+                }
+            }
+
+            // 1. הסרת מוצרים מהקטלוג שהיו קשורים לקבצים שכבר לא קיימים בתיקייה הנוכחית
+            const currentFileNames = new Set(imageFiles.map(f => f.name));
+            let deletedCount = 0;
+            
+            if (catalog.products && catalog.products.length > 0) {
+                catalog.products = catalog.products.filter(p => {
+                    // מוחקים מוצר רק אם הוא שייך לאותה קטגוריה (תיקייה) של היבוא הנוכחי, והקובץ שלו כבר לא קיים בתיקייה הנוכחית
+                    if (p.category === folderName && p.fileName && !currentFileNames.has(p.fileName)) {
+                        deletedCount++;
+                        return false;
+                    }
+                    return true;
+                });
+            }
+
+            // הצגת מודל הטעינה
+            const loadingModal = document.getElementById('loading-modal');
+            const loadingProgress = document.getElementById('loading-progress');
+            const loadingBar = document.getElementById('loading-bar');
+            
+            loadingModal.classList.remove('hidden');
+            loadingProgress.innerText = `אנא המתן, מעבד תמונות (0 / ${imageFiles.length})`;
+            loadingBar.style.width = '0%';
+            lucide.createIcons();
+
+            let processedCount = 0;
+            let addedCount = 0;
+            let updatedCount = 0;
+            const baseId = Date.now();
+
+            // טעינת תמונות אחת-אחת כדי לא לתקוע את הדפדפן
+            function readNextFile(index) {
+                if (index >= imageFiles.length) {
+                    saveCatalogToLocal();
+                    renderCatalog();
+                    setTimeout(() => {
+                        loadingModal.classList.add('hidden');
+                        let msg = `הסינכרון הושלם!\n`;
+                        if (addedCount > 0) msg += `- נוספו: ${addedCount} מוצרים חדשים לתיקיית ${folderName}\n`;
+                        if (updatedCount > 0) msg += `- עודכנו: ${updatedCount} מוצרים קיימים (תמונות עודכנו)\n`;
+                        if (deletedCount > 0) msg += `- נמחקו: ${deletedCount} מוצרים שהוסרו מהתיקייה הזו\n`;
+                        if (addedCount === 0 && updatedCount === 0 && deletedCount === 0) {
+                            msg += `לא נמצאו שינויים בתיקיית ${folderName}.`;
+                        }
+                        alert(msg);
+                    }, 500);
+                    return;
+                }
+
+                const file = imageFiles[index];
+                
+                // שמירת ObjectURL זמני בזיכרון של הסשן הנוכחי לצורך תצוגה מקדימה מהירה
+                const objectUrl = URL.createObjectURL(file);
+                sessionImageUrls[file.name] = objectUrl;
+
+                // בדיקה האם המוצר כבר קיים לפי שם הקובץ ומזהה הקטגוריה/תיקייה (מניעת כפילויות)
+                const existingProduct = catalog.products.find(p => p.fileName === file.name && p.category === folderName);
+                
+                // נתיב הקובץ היחסי שיישמר ב-JSON
+                const relativePath = pathPrefix + (file.webkitRelativePath || file.name);
+
+                if (existingProduct) {
+                    existingProduct.image = relativePath;
+                    updatedCount++;
+                } else {
+                    const productName = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
+                    const newProduct = {
+                        id: baseId + index,
+                        name: productName,
+                        fileName: file.name,
+                        price: "15", // ברירת מחדל
+                        category: folderName,
+                        desc: "",
+                        image: relativePath
+                    };
+                    catalog.products.push(newProduct);
+                    addedCount++;
+                }
+
+                processedCount++;
+
+                // עדכון התקדמות
+                const percent = Math.round((processedCount / imageFiles.length) * 100);
+                loadingProgress.innerText = `אנא המתן, מעבד תמונות (${processedCount} / ${imageFiles.length})`;
+                loadingBar.style.width = `${percent}%`;
+
+                // טעינת הקובץ הבא
+                setTimeout(() => {
+                    readNextFile(index + 1);
+                }, 10);
+            }
+
+            // הפעלת הטעינה
+            readNextFile(0);
+        }
+
+        // --- טיפול בתמונות שבורות/מחוקות מהענן ---
+        function handleBrokenImage(id) {
+            const product = catalog.products.find(p => p.id === id);
+            if (!product) return;
+            
+            // מוחקים את המוצר רק אם הקישור שלו שבור לחלוטין (למשל כתובת אינטרנט שגויה)
+            // נמנע ממחיקת קבצים יחסיים מקומיים לפני שהועלו ל-Git Pages
+            if (product.image && (product.image.startsWith('http') || product.image.startsWith('data:'))) {
+                catalog.products = catalog.products.filter(p => p.id !== id);
+                if (isEditMode) {
+                    saveCatalogToLocal();
+                }
+                renderCatalog();
+                console.warn(`המוצר "${product.name}" נמחק אוטומטית כי תמונתו לא נמצאה בענן.`);
+            }
+        }
+
+        // --- לייטבוקס תמונה מוגדלת ---
+        function openLightboxById(id) {
+            const product = catalog.products.find(p => p.id === id);
+            if (product) {
+                openLightbox(product);
+            }
+        }
+
+        function openLightbox(product) {
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            const name = document.getElementById('lightbox-name');
+            const desc = document.getElementById('lightbox-desc');
+            const price = document.getElementById('lightbox-price');
+
+            let imgUrl = product.image || 'https://via.placeholder.com/600?text=No+Image';
+            if (sessionImageUrls[product.fileName]) {
+                imgUrl = sessionImageUrls[product.fileName];
+            }
+
+            img.src = imgUrl;
+            name.innerText = product.name || "";
+            desc.innerText = product.desc || "";
+            price.innerText = `₪ ${product.price || '15'}`;
+
+            // הגדרת כפתור הזמנה באימייל בלייטבוקס (יוצג רק במצב צפייה ואם יש מייל)
+            const emailBtn = document.getElementById('lightbox-email-btn');
+            const targetEmail = catalog.email;
+            if (!isEditMode && targetEmail) {
+                emailBtn.classList.remove('hidden');
+                const subject = `הזמנה מהקטלוג: ${product.name}`;
+                const body = `היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n- שם המוצר: ${product.name}\n- מחיר: ₪${product.price || '15'}\n\nתודה!`;
+                emailBtn.onclick = () => {
+                    window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
+                };
+            } else {
+                emailBtn.classList.add('hidden');
+            }
+
+            modal.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+        }
+
+        // --- שיתוף קטלוג (יצירת קישור) ---
+        function openShareModal() {
+            const shareData = {
+                title: catalog.title,
+                description: catalog.description,
+                email: catalog.email,
+                products: catalog.products.map(p => {
+                    return {
+                        id: p.id,
+                        name: p.name,
+                        fileName: p.fileName,
+                        price: p.price,
+                        category: p.category,
+                        desc: p.desc,
+                        image: p.image // נשלח את הנתיב היחסי בקישור!
+                    };
+                })
+            };
+
+            const jsonStr = JSON.stringify(shareData);
+            const compressed = LZString.compressToEncodedURIComponent(jsonStr);
+            
+            const baseUrl = window.location.origin + window.location.pathname;
+            const fullShareUrl = `${baseUrl}#catalog=${compressed}`;
+            
+            document.getElementById('share-link-input').value = fullShareUrl;
+
+            document.getElementById('share-stat-products').innerText = shareData.products.length;
+            const sizePercent = Math.min(100, Math.round((fullShareUrl.length / 8000) * 100));
+            document.getElementById('share-stat-size').innerText = `${sizePercent}% מתוך המגבלה`;
+            
+            const sizeTextSpan = document.getElementById('share-stat-size');
+            if (sizePercent > 85) {
+                sizeTextSpan.className = "text-sm font-bold text-red-500";
+            } else if (sizePercent > 60) {
+                sizeTextSpan.className = "text-sm font-bold text-amber-400";
+            } else {
+                sizeTextSpan.className = "text-sm font-bold text-emerald-400";
+            }
+
+            document.getElementById('share-modal').classList.remove('hidden');
+        }
+
+        function copyShareLink() {
+            const input = document.getElementById('share-link-input');
+            input.select();
+            input.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(input.value)
+                .then(() => {
+                    alert("הקישור לקטלוג הועתק ללוח!");
+                })
+                .catch(err => {
+                    console.error("שגיאה בהעתקה", err);
+                    alert("ההעתקה האוטומטית נכשלה, אנא העתק את הקישור ידנית.");
+                });
+        }
+
+        function closeShareModal() {
+            document.getElementById('share-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
