@@ -22,6 +22,9 @@
     <!-- קובץ נתוני המוצרים מבוסס Git -->
     <script src="products-data.js"></script>
     
+    <!-- Supabase JS Client CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -140,6 +143,47 @@
                     <div>
                         <label class="block text-sm font-medium text-zinc-400 mb-1.5">אימייל לקבלת הזמנות</label>
                         <input type="email" id="cfg-email" oninput="updateCatalogMeta()" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 transition-colors" placeholder="לדוגמה: example@mail.com">
+                    </div>
+                </div>
+
+                <!-- הגדרות חיבור ל-Supabase -->
+                <div class="p-4 rounded-xl bg-zinc-900/40 border border-zinc-800/80 space-y-4">
+                    <div class="flex items-center justify-between border-b border-zinc-800 pb-2">
+                        <span class="text-xs md:text-sm font-bold text-zinc-300 flex items-center gap-1.5">
+                            <i data-lucide="database" class="w-4 h-4 text-indigo-400"></i>
+                            חיבור לבסיס נתונים בענן (Supabase) - אופציונלי
+                        </span>
+                        <div id="supabase-status" class="text-xs text-zinc-500 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-zinc-600"></span>
+                            <span>לא מחובר</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[10px] font-medium text-zinc-400 mb-1">Supabase Project URL</label>
+                            <input type="text" id="cfg-sb-url" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-white text-xs focus:outline-none focus:border-indigo-500 transition-colors" placeholder="https://your-project.supabase.co">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-medium text-zinc-400 mb-1">Supabase Anon API Key</label>
+                            <div class="relative">
+                                <input type="password" id="cfg-sb-key" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 pr-10 text-white text-xs focus:outline-none focus:border-indigo-500 transition-colors" placeholder="הדבק כאן את מפתח ה-Anon API">
+                                <button type="button" onclick="togglePasswordVisibility('cfg-sb-key')" class="absolute inset-y-0 left-0 pl-3 flex items-center text-zinc-500 hover:text-zinc-300">
+                                    <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 justify-end">
+                        <button onclick="saveSupabaseSettings()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium py-2 px-4 rounded-xl transition-colors">
+                            שמור חיבור לענן
+                        </button>
+                        <button onclick="disconnectSupabase()" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-400 text-xs font-medium py-2 px-4 rounded-xl transition-colors">
+                            נתק חיבור לענן
+                        </button>
+                        <button id="btn-sync-to-sb" onclick="syncCatalogToSupabase()" class="hidden bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-medium py-2 px-4 rounded-xl transition-colors" title="העלה את כל 119 המוצרים שיש כרגע בקטלוג ישירות לבסיס הנתונים בענן">
+                            <i data-lucide="upload-cloud" class="inline w-3.5 h-3.5 mr-1"></i>
+                            <span>סנכרן את כל המוצרים לענן (Supabase)</span>
+                        </button>
                     </div>
                 </div>
 
@@ -448,6 +492,7 @@
         
         let activeCategory = "הכל";
         let isEditMode = true; // האם אנחנו במצב עריכה כרגע
+        let supabaseClient = null; // לקוח Supabase
         
         // מפה לשמירת ObjectURL זמניים לקבצים שנטענו בסשן הנוכחי לצורך תצוגה מקדימה מיידית
         const sessionImageUrls = {}; 
@@ -479,13 +524,250 @@
             initApp();
         });
 
-        function initApp() {
+        // אתחול לקוח Supabase
+        function initSupabaseClient() {
+            const url = localStorage.getItem('ecrafts_supabase_url');
+            const key = localStorage.getItem('ecrafts_supabase_key');
+            const statusDiv = document.getElementById('supabase-status');
+            const syncBtn = document.getElementById('btn-sync-to-sb');
+            
+            if (url && key) {
+                try {
+                    // ניקוי URL למניעת תקלות רווחים
+                    const cleanUrl = url.trim().replace(/\/$/, "");
+                    supabaseClient = supabase.createClient(cleanUrl, key.trim());
+                    
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="text-emerald-400 font-bold">מחובר לענן</span>
+                        `;
+                    }
+                    if (syncBtn) syncBtn.classList.remove('hidden');
+                    return true;
+                } catch (e) {
+                    console.error("שגיאה באתחול Supabase:", e);
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `
+                            <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                            <span class="text-red-400 font-bold">שגיאת חיבור</span>
+                        `;
+                    }
+                    supabaseClient = null;
+                    if (syncBtn) syncBtn.classList.add('hidden');
+                    return false;
+                }
+            } else {
+                if (statusDiv) {
+                    statusDiv.innerHTML = `
+                        <span class="w-2 h-2 rounded-full bg-zinc-600"></span>
+                        <span>לא מחובר</span>
+                    `;
+                }
+                supabaseClient = null;
+                if (syncBtn) syncBtn.classList.add('hidden');
+                return false;
+            }
+        }
+
+        async function saveSupabaseSettings() {
+            const url = document.getElementById('cfg-sb-url').value.trim();
+            const key = document.getElementById('cfg-sb-key').value.trim();
+            
+            if (!url || !key) {
+                alert("חובה להזין את הכתובת (URL) ואת מפתח ה-Anon API של פרויקט ה-Supabase החדש!");
+                return;
+            }
+            
+            localStorage.setItem('ecrafts_supabase_url', url);
+            localStorage.setItem('ecrafts_supabase_key', key);
+            
+            if (initSupabaseClient()) {
+                alert("החיבור ל-Supabase הוגדר בהצלחה! מנסה לטעון נתונים מהענן...");
+                await loadCatalogFromLocalOrJs();
+                applyModeUI();
+                renderCatalog();
+            }
+        }
+
+        function disconnectSupabase() {
+            if (confirm("האם אתה בטוח שברצונך לנתק את החיבור ל-Supabase?\nהקטלוג יחזור לעבוד מקומית על בסיס קבצים.")) {
+                localStorage.removeItem('ecrafts_supabase_url');
+                localStorage.removeItem('ecrafts_supabase_key');
+                document.getElementById('cfg-sb-url').value = "";
+                document.getElementById('cfg-sb-key').value = "";
+                initSupabaseClient();
+                loadCatalogFromLocalOrJs().then(() => {
+                    applyModeUI();
+                    renderCatalog();
+                });
+            }
+        }
+
+        // טעינת מוצרים מ-Supabase
+        async function loadCatalogFromSupabase() {
+            if (!supabaseClient) return false;
+            try {
+                const { data, error } = await supabaseClient
+                    .from('ecrafts_products')
+                    .select('*')
+                    .order('order_index', { ascending: true });
+                    
+                if (error) {
+                    if (error.code === 'P0001' || error.message.includes('relation') || error.message.includes('does not exist')) {
+                        console.warn("טבלת ecrafts_products לא קיימת ב-Supabase.");
+                    } else {
+                        throw error;
+                    }
+                    return false;
+                }
+                
+                if (data) {
+                    catalog.products = data.map(item => ({
+                        id: parseInt(item.id),
+                        name: item.name,
+                        fileName: item.file_name || "",
+                        price: item.price || "15",
+                        category: item.category || "כללי",
+                        desc: item.description || "",
+                        image: item.image || ""
+                    }));
+                    return true;
+                }
+            } catch (e) {
+                console.error("שגיאה בטעינת נתונים מ-Supabase:", e);
+            }
+            return false;
+        }
+
+        // סנכרון ראשוני של כל המוצרים המקומיים ל-Supabase
+        async function syncCatalogToSupabase() {
+            if (!supabaseClient) {
+                alert("אנא התחבר ל-Supabase תחילה!");
+                return;
+            }
+            
+            if (catalog.products.length === 0) {
+                alert("אין מוצרים בקטלוג המקומי להעלאה.");
+                return;
+            }
+            
+            if (confirm(`האם אתה בטוח שברצונך להעלות את כל ${catalog.products.length} המוצרים ל-Supabase?\nפעולה זו תדרוס מוצרים עם מזהים זהים בבסיס הנתונים.`)) {
+                const btn = document.getElementById('btn-sync-to-sb');
+                const originalText = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = `מעלה... (0 / ${catalog.products.length})`;
+                
+                let successCount = 0;
+                try {
+                    for (let i = 0; i < catalog.products.length; i++) {
+                        const p = catalog.products[i];
+                        const { error } = await supabaseClient
+                            .from('ecrafts_products')
+                            .upsert({
+                                id: p.id,
+                                name: p.name,
+                                file_name: p.fileName,
+                                price: p.price,
+                                category: p.category,
+                                description: p.desc,
+                                image: p.image,
+                                order_index: i
+                            });
+                        if (error) throw error;
+                        successCount++;
+                        btn.innerHTML = `מעלה... (${successCount} / ${catalog.products.length})`;
+                    }
+                    alert(`כל ${successCount} המוצרים הועלו בהצלחה לענן (Supabase)!`);
+                } catch (e) {
+                    console.error("שגיאה בסנכרון לענן:", e);
+                    alert("הסנכרון נכשל לאחר העלאת " + successCount + " מוצרים. שגיאה: " + e.message + "\n\nודא שיצרת את הטבלה ecrafts_products ב-Supabase (הוראות בתוכנית העבודה).");
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+                }
+            }
+        }
+
+        // פונקציות שמירה ועדכון בסיס נתונים ב-Supabase
+        async function dbUpsertProduct(product, orderIndex) {
+            if (!supabaseClient) return;
+            try {
+                const { error } = await supabaseClient
+                    .from('ecrafts_products')
+                    .upsert({
+                        id: product.id,
+                        name: product.name,
+                        file_name: product.fileName,
+                        price: product.price,
+                        category: product.category,
+                        description: product.desc,
+                        image: product.image,
+                        order_index: orderIndex
+                    });
+                if (error) throw error;
+            } catch (e) {
+                console.error("שגיאה בעדכון בסיס הנתונים בענן:", e);
+                alert("שגיאה בעדכון בסיס הנתונים בענן: " + e.message);
+            }
+        }
+
+        async function dbDeleteProduct(id) {
+            if (!supabaseClient) return;
+            try {
+                const { error } = await supabaseClient
+                    .from('ecrafts_products')
+                    .delete()
+                    .eq('id', id);
+                if (error) throw error;
+            } catch (e) {
+                console.error("שגיאה במחיקה מבסיס הנתונים בענן:", e);
+                alert("שגיאה במחיקה מבסיס הנתונים בענן: " + e.message);
+            }
+        }
+
+        async function dbClearAll() {
+            if (!supabaseClient) return;
+            try {
+                const { error } = await supabaseClient
+                    .from('ecrafts_products')
+                    .delete()
+                    .neq('id', 0); // מוחק הכל
+                if (error) throw error;
+            } catch (e) {
+                console.error("שגיאה בניקוי בסיס הנתונים בענן:", e);
+                alert("שגיאה בניקוי בסיס הנתונים בענן: " + e.message);
+            }
+        }
+
+        // עזר להצגת/הסתרת סיסמה
+        function togglePasswordVisibility(inputId) {
+            const input = document.getElementById(inputId);
+            if (input) {
+                input.type = input.type === "password" ? "text" : "password";
+            }
+        }
+
+        async function initApp() {
             // זיהוי סביבה - האם רצים מקומית או בשרת
             const isLocal = window.location.protocol === 'file:' || 
                             window.location.hostname === 'localhost' || 
                             window.location.hostname === '127.0.0.1';
 
             const hash = window.location.hash;
+            
+            // מילוי שדות Supabase מ-localStorage במידה וישנם
+            const savedUrl = localStorage.getItem('ecrafts_supabase_url');
+            const savedKey = localStorage.getItem('ecrafts_supabase_key');
+            if (savedUrl && document.getElementById('cfg-sb-url')) {
+                document.getElementById('cfg-sb-url').value = savedUrl;
+            }
+            if (savedKey && document.getElementById('cfg-sb-key')) {
+                document.getElementById('cfg-sb-key').value = savedKey;
+            }
+            
+            // אתחול החיבור ל-Supabase
+            initSupabaseClient();
             
             if (hash.startsWith('#catalog=') || hash.startsWith('#data=')) {
                 // מצב צפייה של הלקוח עם קישור מקודד (ישן)
@@ -494,19 +776,19 @@
             } else if (hash === '#edit' || hash === '#admin') {
                 // כניסה למצב עריכה באופן יזום
                 isEditMode = true;
-                loadCatalogFromLocalOrJs();
+                await loadCatalogFromLocalOrJs();
                 setupFolderInput();
             } else {
                 // ברירת מחדל ללא האש
                 if (isLocal) {
                     // סביבה מקומית - מנהל עורך
                     isEditMode = true;
-                    loadCatalogFromLocalOrJs();
+                    await loadCatalogFromLocalOrJs();
                     setupFolderInput();
                 } else {
                     // סביבת שרת (GitHub Pages) - לקוח צופה
                     isEditMode = false;
-                    loadCatalogFromJs();
+                    await loadCatalogFromJs();
                 }
             }
 
@@ -562,8 +844,13 @@
 
         // --- טעינה ושמירה של הנתונים ---
         
-        // טעינה מקומית או מקובץ הנתונים
-        function loadCatalogFromLocalOrJs() {
+        // טעינה מקומית או מקובץ הנתונים או מ-Supabase
+        async function loadCatalogFromLocalOrJs() {
+            if (supabaseClient) {
+                const loaded = await loadCatalogFromSupabase();
+                if (loaded) return;
+            }
+            
             const saved = localStorage.getItem('ecrafts_catalog');
             if (saved) {
                 try {
@@ -586,8 +873,13 @@
             }
         }
 
-        // טעינה מקובץ הנתונים בלבד (ללקוחות)
-        function loadCatalogFromJs() {
+        // טעינה מקובץ הנתונים או מ-Supabase (ללקוחות)
+        async function loadCatalogFromJs() {
+            if (supabaseClient) {
+                const loaded = await loadCatalogFromSupabase();
+                if (loaded) return;
+            }
+            
             if (window.catalogData) {
                 catalog = JSON.parse(JSON.stringify(window.catalogData));
             } else {
@@ -640,17 +932,18 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            alert("קובץ הנתונים (products-data.js) יוצא בהצלחה!\nאנא שמור אותו בתיקיית Ecrafts במקום הקובץ הישן.");
+            alert("קובץ הנתונים (products-data.js) יוצא בהצלחה!\nאנא שמור אותו בתיקיית Ecrafts\\קטלוג במקום הקובץ הישן.");
         }
 
         // שחזור הנתונים לקדמותם מתוך קובץ הנתונים (ביטול שינויים מקומיים)
         function resetToJsData() {
             if (confirm("האם אתה בטוח שברצונך לשחזר את הנתונים מקובץ products-data.js?\nכל השינויים שביצעת במחשב זה מאז הייצוא האחרון יימחקו.")) {
                 localStorage.removeItem('ecrafts_catalog');
-                loadCatalogFromLocalOrJs();
-                applyModeUI();
-                renderCatalog();
-                alert("הנתונים שוחזרו בהצלחה מקובץ products-data.js!");
+                loadCatalogFromLocalOrJs().then(() => {
+                    applyModeUI();
+                    renderCatalog();
+                    alert("הנתונים שוחזרו בהצלחה מקובץ products-data.js!");
+                });
             }
         }
 
@@ -899,15 +1192,19 @@
             document.getElementById('product-modal').classList.remove('hidden');
         }
 
-        function deleteProduct(id) {
+        async function deleteProduct(id) {
             if (confirm("האם אתה בטוח שברצונך למחוק מוצר זה מהקטלוג?")) {
                 catalog.products = catalog.products.filter(p => p.id !== id);
                 saveCatalogToLocal();
                 renderCatalog();
+                
+                if (supabaseClient) {
+                    await dbDeleteProduct(id);
+                }
             }
         }
 
-        function moveProduct(id, direction) {
+        async function moveProduct(id, direction) {
             const index = catalog.products.findIndex(p => p.id === id);
             if (index === -1) return;
 
@@ -920,6 +1217,11 @@
 
             saveCatalogToLocal();
             renderCatalog();
+            
+            if (supabaseClient) {
+                await dbUpsertProduct(catalog.products[index], index);
+                await dbUpsertProduct(catalog.products[targetIndex], targetIndex);
+            }
         }
 
         function closeProductModal() {
@@ -968,7 +1270,7 @@
         }
 
         // שמירת מוצר בודד מהמודל
-        function saveProduct() {
+        async function saveProduct() {
             const idVal = document.getElementById('modal-product-id').value;
             const name = document.getElementById('modal-name').value.trim();
             const price = document.getElementById('modal-price').value.trim() || "15";
@@ -1009,6 +1311,10 @@
                     catalog.products[index].desc = desc;
                     catalog.products[index].image = finalImage;
                     if (finalFileName) catalog.products[index].fileName = finalFileName;
+                    
+                    if (supabaseClient) {
+                        await dbUpsertProduct(catalog.products[index], index);
+                    }
                 }
             } else {
                 const newProduct = {
@@ -1021,6 +1327,10 @@
                     image: finalImage
                 };
                 catalog.products.push(newProduct);
+                
+                if (supabaseClient) {
+                    await dbUpsertProduct(newProduct, catalog.products.length - 1);
+                }
             }
 
             saveCatalogToLocal();
@@ -1029,11 +1339,15 @@
         }
 
         // --- מחיקת כל המוצרים מהרשימה ---
-        function clearAllProducts() {
+        async function clearAllProducts() {
             if (confirm("האם אתה בטוח שברצונך למחוק את כל המוצרים מהקטלוג?\nפעולה זו תנקה את כל המוצרים לצמיתות!")) {
                 catalog.products = [];
                 saveCatalogToLocal();
                 renderCatalog();
+                
+                if (supabaseClient) {
+                    await dbClearAll();
+                }
                 alert("כל המוצרים נמחקו בהצלחה!");
             }
         }
@@ -1106,7 +1420,7 @@
             const baseId = Date.now();
 
             // טעינת תמונות אחת-אחת כדי לא לתקוע את הדפדפן
-            function readNextFile(index) {
+            async function readNextFile(index) {
                 if (index >= imageFiles.length) {
                     saveCatalogToLocal();
                     renderCatalog();
@@ -1139,6 +1453,10 @@
                 if (existingProduct) {
                     existingProduct.image = relativePath;
                     updatedCount++;
+                    if (supabaseClient) {
+                        const idx = catalog.products.findIndex(p => p.id === existingProduct.id);
+                        await dbUpsertProduct(existingProduct, idx);
+                    }
                 } else {
                     const productName = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
                     const newProduct = {
@@ -1152,6 +1470,9 @@
                     };
                     catalog.products.push(newProduct);
                     addedCount++;
+                    if (supabaseClient) {
+                        await dbUpsertProduct(newProduct, catalog.products.length - 1);
+                    }
                 }
 
                 processedCount++;
