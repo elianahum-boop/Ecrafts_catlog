@@ -430,7 +430,7 @@ window.catalogData = {
       "id": 48,
       "name": "ג'ינשי - יומני הרוקחת",
       "fileName": "Slide1.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה פרחים",
       "image": "מוצרים/סימניות/Slide1.PNG"
@@ -439,7 +439,7 @@ window.catalogData = {
       "id": 49,
       "name": "מאומאו - יומני הרוקחת",
       "fileName": "Slide2.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה פרחים",
       "image": "מוצרים/סימניות/Slide2.PNG"
@@ -448,7 +448,7 @@ window.catalogData = {
       "id": 50,
       "name": "פרירן",
       "fileName": "Slide3.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי מוס אגט",
       "image": "מוצרים/סימניות/Slide3.PNG"
@@ -457,7 +457,7 @@ window.catalogData = {
       "id": 51,
       "name": "פרירן - עבה",
       "fileName": "Slide4.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי מוס אגט",
       "image": "מוצרים/סימניות/Slide4.PNG"
@@ -466,7 +466,7 @@ window.catalogData = {
       "id": 52,
       "name": "יוג'י - ג'וג'וטסו קאיזן",
       "fileName": "Slide5.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סמניית אקריל המכילה שבבי ג'ספר אדומה וקוורץ אדום",
       "image": "מוצרים/סימניות/Slide5.PNG"
@@ -475,7 +475,7 @@ window.catalogData = {
       "id": 53,
       "name": "גוג'ו - ג'וג'וטסו קאיזן - עבה",
       "fileName": "Slide6.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי לאפיס וקוורץ כחול",
       "image": "מוצרים/סימניות/Slide6.PNG"
@@ -484,7 +484,7 @@ window.catalogData = {
       "id": 54,
       "name": "גוג'ו - ג'וג'וטסו קאיזן",
       "fileName": "Slide7.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide7.PNG"
@@ -493,7 +493,7 @@ window.catalogData = {
       "id": 55,
       "name": "יוג'י - ג'וג'וטסו קאיזן",
       "fileName": "Slide8.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי ג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide8.PNG"
@@ -502,7 +502,7 @@ window.catalogData = {
       "id": 56,
       "name": "בום - איש המסור",
       "fileName": "Slide9.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ וורד ועין הנמר ירוקה",
       "image": "מוצרים/סימניות/Slide9.PNG"
@@ -511,7 +511,7 @@ window.catalogData = {
       "id": 57,
       "name": "אנג'ל - איש המסור",
       "fileName": "Slide10.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ וורוד ולבן",
       "image": "מוצרים/סימניות/Slide10.PNG"
@@ -520,7 +520,7 @@ window.catalogData = {
       "id": 58,
       "name": "אקי - איש המסור",
       "fileName": "Slide11.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכיל שבבי לפיס וקוורץ כחול",
       "image": "מוצרים/סימניות/Slide11.PNG"
@@ -529,7 +529,7 @@ window.catalogData = {
       "id": 59,
       "name": "מאקימה - איש המסור - עבה",
       "fileName": "Slide12.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ אדום וחום",
       "image": "מוצרים/סימניות/Slide12.PNG"
@@ -538,7 +538,7 @@ window.catalogData = {
       "id": 60,
       "name": "מאקימה - איש המסור",
       "fileName": "Slide13.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ וורוד וחום",
       "image": "מוצרים/סימניות/Slide13.PNG"
@@ -547,7 +547,7 @@ window.catalogData = {
       "id": 61,
       "name": "דנג'י - איש המסור",
       "fileName": "Slide14.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ חום",
       "image": "מוצרים/סימניות/Slide14.PNG"
@@ -556,7 +556,7 @@ window.catalogData = {
       "id": 62,
       "name": "דנג'י - איס המסור - עבה",
       "fileName": "Slide15.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל המכילה שבבי שרף עצים וקוורץ חום",
       "image": "מוצרים/סימניות/Slide15.PNG"
@@ -565,7 +565,7 @@ window.catalogData = {
       "id": 63,
       "name": "דנג'י ופאואר - איש המסור",
       "fileName": "Slide16.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל",
       "image": "מוצרים/סימניות/Slide16.PNG"
@@ -574,7 +574,7 @@ window.catalogData = {
       "id": 64,
       "name": "פאואר - איש המסור - עבה",
       "fileName": "Slide17.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי ג'ספר אדום, לאפיס וקוורץ חום",
       "image": "מוצרים/סימניות/Slide17.PNG"
@@ -583,7 +583,7 @@ window.catalogData = {
       "id": 65,
       "name": "פוצ'יטה - איש המסור - עבה",
       "fileName": "Slide18.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי עין החתול וקוורץ חום",
       "image": "מוצרים/סימניות/Slide18.PNG"
@@ -592,7 +592,7 @@ window.catalogData = {
       "id": 66,
       "name": "טנג'ירו - קוטל השדים",
       "fileName": "Slide19.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ ירוק",
       "image": "מוצרים/סימניות/Slide19.PNG"
@@ -601,7 +601,7 @@ window.catalogData = {
       "id": 67,
       "name": "נזוקו - קוטל השדים",
       "fileName": "Slide20.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ וורוד",
       "image": "מוצרים/סימניות/Slide20.PNG"
@@ -610,7 +610,7 @@ window.catalogData = {
       "id": 68,
       "name": "אובנאי ומיצורי - קוטל השדים",
       "fileName": "Slide21.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ",
       "image": "מוצרים/סימניות/Slide21.PNG"
@@ -619,7 +619,7 @@ window.catalogData = {
       "id": 69,
       "name": "שינובו וקנאו - קוטל השדים",
       "fileName": "Slide22.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה פרחים",
       "image": "מוצרים/סימניות/Slide22.PNG"
@@ -628,7 +628,7 @@ window.catalogData = {
       "id": 70,
       "name": "דזאי - כלבי הספרות הנודדים - עבה",
       "fileName": "Slide23.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי עין החתול וקוורץ חום",
       "image": "מוצרים/סימניות/Slide23.PNG"
@@ -637,7 +637,7 @@ window.catalogData = {
       "id": 71,
       "name": "סימנייה 24",
       "fileName": "Slide24.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "",
       "image": "מוצרים/סימניות/Slide24.PNG"
@@ -646,7 +646,7 @@ window.catalogData = {
       "id": 72,
       "name": "דאזי - כלבי הספרות הנודדים",
       "fileName": "Slide25.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ חום",
       "image": "מוצרים/סימניות/Slide25.PNG"
@@ -655,7 +655,7 @@ window.catalogData = {
       "id": 73,
       "name": "משפחה חשאית - עבה",
       "fileName": "Slide26.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי קוורץ ירוק וג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide26.PNG"
@@ -664,7 +664,7 @@ window.catalogData = {
       "id": 74,
       "name": "בונד - משפחה חשאית",
       "fileName": "Slide27.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה קוורץ לבן",
       "image": "מוצרים/סימניות/Slide27.PNG"
@@ -673,7 +673,7 @@ window.catalogData = {
       "id": 75,
       "name": "אמיליה - רי זירו",
       "fileName": "Slide28.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקרילה המכילה שבבי קוורץ לבן",
       "image": "מוצרים/סימניות/Slide28.PNG"
@@ -682,7 +682,7 @@ window.catalogData = {
       "id": 76,
       "name": "רם - רי זירו",
       "fileName": "Slide29.PNG",
-      "price": "10",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל",
       "image": "מוצרים/סימניות/Slide29.PNG"
@@ -691,7 +691,7 @@ window.catalogData = {
       "id": 77,
       "name": "רם - רי זירו",
       "fileName": "Slide30.PNG",
-      "price": "10",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל",
       "image": "מוצרים/סימניות/Slide30.PNG"
@@ -700,7 +700,7 @@ window.catalogData = {
       "id": 78,
       "name": "רם - רי זירו",
       "fileName": "Slide31.PNG",
-      "price": "10",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל",
       "image": "מוצרים/סימניות/Slide31.PNG"
@@ -709,7 +709,7 @@ window.catalogData = {
       "id": 79,
       "name": "איינז - שליט עליון - עבה",
       "fileName": "Slide32.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי עין החתול",
       "image": "מוצרים/סימניות/Slide32.PNG"
@@ -718,7 +718,7 @@ window.catalogData = {
       "id": 80,
       "name": "איינז - שליט עליון",
       "fileName": "Slide33.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי עין הנמר אדומה וקוורץ ירוק",
       "image": "מוצרים/סימניות/Slide33.PNG"
@@ -727,7 +727,7 @@ window.catalogData = {
       "id": 81,
       "name": "אלבדו - שליט עליון",
       "fileName": "Slide34.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה קוורץ אדום וירוק ופרחים סגולים",
       "image": "מוצרים/סימניות/Slide34.PNG"
@@ -736,7 +736,7 @@ window.catalogData = {
       "id": 82,
       "name": "אלבדו - שליט עליון - עבה",
       "fileName": "Slide35.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי קוורץ חום, עין החתול ופרחים סגולים",
       "image": "מוצרים/סימניות/Slide35.PNG"
@@ -745,7 +745,7 @@ window.catalogData = {
       "id": 83,
       "name": "דמיורגוס - שליט עליון - עבה",
       "fileName": "Slide36.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי ג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide36.PNG"
@@ -754,7 +754,7 @@ window.catalogData = {
       "id": 84,
       "name": "דמיורגוס - שליט עליון",
       "fileName": "Slide37.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה  שבבי עין הנמר אדומה וג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide37.PNG"
@@ -763,7 +763,7 @@ window.catalogData = {
       "id": 85,
       "name": "אאורה ומארה - שליט עליון - עבה",
       "fileName": "Slide38.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה פרחים",
       "image": "מוצרים/סימניות/Slide38.PNG"
@@ -772,7 +772,7 @@ window.catalogData = {
       "id": 86,
       "name": "קוקיטוס - שליט עליון - עבה",
       "fileName": "Slide39.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי קוורץ ירוק",
       "image": "מוצרים/סימניות/Slide39.PNG"
@@ -781,7 +781,7 @@ window.catalogData = {
       "id": 87,
       "name": "קוקיטוס - שליט עליון",
       "fileName": "Slide40.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide40.PNG"
@@ -790,7 +790,7 @@ window.catalogData = {
       "id": 88,
       "name": "מיי-רין, בארדרוי ופיניאן - המשרת השחור - עבה",
       "fileName": "Slide41.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה פרחים ושבבי מוס אגט",
       "image": "מוצרים/סימניות/Slide41.PNG"
@@ -799,7 +799,7 @@ window.catalogData = {
       "id": 89,
       "name": "עולה רמות לבד - עבה",
       "fileName": "Slide42.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide42.PNG"
@@ -808,7 +808,7 @@ window.catalogData = {
       "id": 90,
       "name": "סיאל - המשרת השחור",
       "fileName": "Slide43.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide43.PNG"
@@ -817,7 +817,7 @@ window.catalogData = {
       "id": 91,
       "name": "סיאל - המשרת השחור - עבה",
       "fileName": "Slide44.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי קוורץ כחול",
       "image": "מוצרים/סימניות/Slide44.PNG"
@@ -826,7 +826,7 @@ window.catalogData = {
       "id": 92,
       "name": "סומה - המשרת השחור",
       "fileName": "Slide45.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ ירוק",
       "image": "מוצרים/סימניות/Slide45.PNG"
@@ -835,7 +835,7 @@ window.catalogData = {
       "id": 93,
       "name": "סבסטיאן - המשרת השחור",
       "fileName": "Slide46.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי עין החתול",
       "image": "מוצרים/סימניות/Slide46.PNG"
@@ -844,7 +844,7 @@ window.catalogData = {
       "id": 94,
       "name": "סבסטיאן - המשרת השחור - עבה",
       "fileName": "Slide47.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי עין הנמר חום וירוק",
       "image": "מוצרים/סימניות/Slide47.PNG"
@@ -853,7 +853,7 @@ window.catalogData = {
       "id": 95,
       "name": "סבסטיאן - המשרת השחור",
       "fileName": "Slide48.PNG",
-      "price": "10",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל",
       "image": "מוצרים/סימניות/Slide48.PNG"
@@ -862,7 +862,7 @@ window.catalogData = {
       "id": 96,
       "name": "סבסטיאן - המשרת השחור",
       "fileName": "Slide49.PNG",
-      "price": "10",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל",
       "image": "מוצרים/סימניות/Slide49.PNG"
@@ -871,7 +871,7 @@ window.catalogData = {
       "id": 97,
       "name": "אנדרטייקר -השמרת השחור",
       "fileName": "Slide50.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ ירוק, מוס אקט וג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide50.PNG"
@@ -880,7 +880,7 @@ window.catalogData = {
       "id": 98,
       "name": "אנדרטייקר - המשרת השחור - עבה",
       "fileName": "Slide51.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי עין הנמר ירוקה, עין החתול וקוורץ אדום",
       "image": "מוצרים/סימניות/Slide51.PNG"
@@ -889,7 +889,7 @@ window.catalogData = {
       "id": 99,
       "name": "גרל - המשרת השחור - עבה",
       "fileName": "Slide52.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל המכילה שבבי ג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide52.PNG"
@@ -898,7 +898,7 @@ window.catalogData = {
       "id": 100,
       "name": "גרל - המשרת השחור",
       "fileName": "Slide53.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי ג'ספר אדומה ועין הנמר אדומה",
       "image": "מוצרים/סימניות/Slide53.PNG"
@@ -907,7 +907,7 @@ window.catalogData = {
       "id": 101,
       "name": "יאטו - נוראגאמי - עבה",
       "fileName": "Slide54.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי עין הנמר ירוקה וחומה",
       "image": "מוצרים/סימניות/Slide54.PNG"
@@ -916,7 +916,7 @@ window.catalogData = {
       "id": 102,
       "name": "יאטו - נוראגאמי",
       "fileName": "Slide55.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide55.PNG"
@@ -925,7 +925,7 @@ window.catalogData = {
       "id": 103,
       "name": "נאזונה - קריאת הלילה",
       "fileName": "Slide56.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל",
       "image": "מוצרים/סימניות/Slide56.PNG"
@@ -934,7 +934,7 @@ window.catalogData = {
       "id": 104,
       "name": "נאזונה - קריאת הלילה",
       "fileName": "Slide57.PNG",
-      "price": "10",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל",
       "image": "מוצרים/סימניות/Slide57.PNG"
@@ -943,7 +943,7 @@ window.catalogData = {
       "id": 105,
       "name": "בן האלמוות וחסרת המזל - עבה",
       "fileName": "Slide58.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי ג'ספר אדום ועין הנמר אדומה",
       "image": "מוצרים/סימניות/Slide58.PNG"
@@ -952,7 +952,7 @@ window.catalogData = {
       "id": 106,
       "name": "ריו - גאצ'יאקוטה",
       "fileName": "Slide59.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי עין הנמר אדומה וקוורץ אדום",
       "image": "מוצרים/סימניות/Slide59.PNG"
@@ -961,7 +961,7 @@ window.catalogData = {
       "id": 107,
       "name": "- וניטאס - מחקר המקרה של וניטאס - עבה",
       "fileName": "Slide60.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית אקריל עבה המכילה שבבי קוורץ ירוק",
       "image": "מוצרים/סימניות/Slide60.PNG"
@@ -970,7 +970,7 @@ window.catalogData = {
       "id": 108,
       "name": "וניטאס - מחקר המקרה של וניטאס",
       "fileName": "Slide61.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide61.PNG"
@@ -979,7 +979,7 @@ window.catalogData = {
       "id": 109,
       "name": "זירו טו - יקירי בפרנקס",
       "fileName": "Slide62.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי עין הנמר אדומה",
       "image": "מוצרים/סימניות/Slide62.PNG"
@@ -988,7 +988,7 @@ window.catalogData = {
       "id": 110,
       "name": "מאקה - סול איטר",
       "fileName": "Slide63.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ אדום וחום",
       "image": "מוצרים/סימניות/Slide63.PNG"
@@ -997,7 +997,7 @@ window.catalogData = {
       "id": 111,
       "name": "קיוטאקה - כיתה עלית",
       "fileName": "Slide64.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ אדום",
       "image": "מוצרים/סימניות/Slide64.PNG"
@@ -1006,7 +1006,7 @@ window.catalogData = {
       "id": 112,
       "name": "באדי דאדיז",
       "fileName": "Slide65.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי מוס אקט וקוורץ ירוק",
       "image": "מוצרים/סימניות/Slide65.PNG"
@@ -1015,7 +1015,7 @@ window.catalogData = {
       "id": 113,
       "name": "קורו - סרבאמפ",
       "fileName": "Slide66.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי עין הנמר אדומה ולאפסי",
       "image": "מוצרים/סימניות/Slide66.PNG"
@@ -1024,7 +1024,7 @@ window.catalogData = {
       "id": 114,
       "name": "כלתו של הקוסם הקדום",
       "fileName": "Slide67.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה פרחים",
       "image": "מוצרים/סימניות/Slide67.PNG"
@@ -1033,7 +1033,7 @@ window.catalogData = {
       "id": 115,
       "name": "גאבימארו - גן העדן שבגיהנום",
       "fileName": "Slide68.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה פרחים ושבבי עין החתול",
       "image": "מוצרים/סימניות/Slide68.PNG"
@@ -1042,7 +1042,7 @@ window.catalogData = {
       "id": 116,
       "name": "מאשל",
       "fileName": "Slide69.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ חום",
       "image": "מוצרים/סימניות/Slide69.PNG"
@@ -1051,7 +1051,7 @@ window.catalogData = {
       "id": 117,
       "name": "סלמי הסלמנדרה",
       "fileName": "Slide70.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סמניית אקריל",
       "image": "מוצרים/סימניות/Slide70.PNG"
@@ -1060,7 +1060,7 @@ window.catalogData = {
       "id": 118,
       "name": "סלמי הסלמנדרה",
       "fileName": "Slide71.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל",
       "image": "מוצרים/סימניות/Slide71.PNG"
@@ -1069,7 +1069,7 @@ window.catalogData = {
       "id": 119,
       "name": "שם טוב האבי",
       "fileName": "Slide72.PNG",
-      "price": "15",
+      "price": "25",
       "category": "סימניות",
       "desc": "סימניית אקריל המכילה שבבי קוורץ חום ולבן",
       "image": "מוצרים/סימניות/Slide72.PNG"
