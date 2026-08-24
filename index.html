@@ -449,6 +449,10 @@
                         <input type="text" id="order-client-name" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="הקש את שמך המלא">
                     </div>
                     <div>
+                        <label class="block text-xs font-medium text-zinc-400 mb-1">טלפון או אימייל לחזרה:</label>
+                        <input type="text" id="order-client-contact" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="איך נוכל לחזור אלייך?">
+                    </div>
+                    <div>
                         <label class="block text-xs font-medium text-zinc-400 mb-1">כמות להזמנה:</label>
                         <input type="number" id="order-quantity" min="1" value="1" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm">
                     </div>
@@ -461,13 +465,13 @@
 
             <!-- כפתורי שליחה -->
             <div class="px-6 py-4 border-t border-zinc-800 flex flex-col gap-2 bg-zinc-900/30">
-                <button onclick="sendOrderEmail()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition-all">
+                <button id="order-send-btn" onclick="sendOrderEmail()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition-all">
                     <i data-lucide="mail" class="w-4 h-4"></i>
-                    <span>שלח הזמנה במייל (כולל קישור לתמונה)</span>
+                    <span>שלח הזמנה במייל</span>
                 </button>
                 <button onclick="copyOrderDetails()" class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all">
                     <i data-lucide="copy" class="w-4 h-4 text-brand-500"></i>
-                    <span>העתק פרטי הזמנה (אם המייל לא נשלח)</span>
+                    <span>העתק פרטי הזמנה (לגיבוי)</span>
                 </button>
             </div>
         </div>
@@ -1419,8 +1423,8 @@
             const product = catalog.products.find(p => p.id === activeOrderProductId);
             if (!product) return;
 
-            const targetEmail = catalog.email || "ecraftsil@gmail.com";
             const clientName = document.getElementById('order-client-name').value.trim();
+            const clientContact = document.getElementById('order-client-contact').value.trim();
             const quantity = document.getElementById('order-quantity').value || "1";
             const notes = document.getElementById('order-notes').value.trim();
 
@@ -1428,23 +1432,61 @@
                 alert("אנא מלאי את שמך להזמנה!");
                 return;
             }
+            if (!clientContact) {
+                alert("אנא מלאי אימייל או טלפון ליצירת קשר!");
+                return;
+            }
 
-            const subject = `הזמנה חדשה מהקטלוג: ${product.name}`;
+            const targetEmail = catalog.email || "ecraftsil@gmail.com";
             const fullImgUrl = getFullImageUrl(product.image);
 
-            const body = `היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n\n` +
-                         `- שם המוצר: ${product.name}\n` +
-                         `- כמות: ${quantity}\n` +
-                         `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
-                         `פרטי המזמין:\n` +
-                         `- שם הלקוח: ${clientName}\n` +
-                         `- הערות/בקשות: ${notes || 'אין'}\n\n` +
-                         `קישור ישיר לתמונת המוצר:\n` +
-                         `${fullImgUrl}\n\n` +
-                         `תודה!`;
+            // שינוי כפתור השליחה למצב טעינה
+            const sendBtn = document.getElementById('order-send-btn');
+            const originalBtnHtml = sendBtn.innerHTML;
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = `
+                <span class="inline-block animate-spin border-2 border-white border-t-transparent rounded-full w-4 h-4 mr-2 align-middle"></span>
+                <span>שולח הזמנה...</span>
+            `;
 
-            window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
-            closeOrderModal();
+            // שליחת הנתונים ל-FormSubmit דרך AJAX
+            fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    "שם המוצר": product.name,
+                    "מחיר": `₪${product.price || '15'}`,
+                    "כמות": quantity,
+                    "שם הלקוח": clientName,
+                    "פרטי קשר": clientContact,
+                    "הערות/בקשות": notes || "אין הערות",
+                    "קישור לתמונה": fullImgUrl,
+                    "_subject": `הזמנה חדשה מהקטלוג: ${product.name} (מאת ${clientName})`,
+                    "_template": "box"
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('שגיאה בשליחת הטופס');
+                }
+            })
+            .then(data => {
+                alert("ההזמנה נשלחה בהצלחה!\n\nשימי לב: אם זו הפעם הראשונה שמבוצעת הזמנה, תקבלי מייל מ-FormSubmit המבקש ממך לאשר את הפעלת הטופס בלחיצה אחת. לאחר שתאשרי אותו, כל ההזמנות הבאות יגיעו אלייך ישירות לתיבת המייל.");
+                closeOrderModal();
+            })
+            .catch(error => {
+                console.error("שגיאה:", error);
+                alert("חלה שגיאה בשליחה. אנא ודאי חיבור לאינטרנט או נסי שוב מאוחר יותר.");
+            })
+            .finally(() => {
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = originalBtnHtml;
+            });
         }
 
         function copyOrderDetails() {
@@ -1452,6 +1494,7 @@
             if (!product) return;
 
             const clientName = document.getElementById('order-client-name').value.trim();
+            const clientContact = document.getElementById('order-client-contact').value.trim();
             const quantity = document.getElementById('order-quantity').value || "1";
             const notes = document.getElementById('order-notes').value.trim();
 
@@ -1471,13 +1514,14 @@
                                `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
                                `פרטי המזמין:\n` +
                                `- שם הלקוח: ${clientName}\n` +
+                               `- פרטי קשר לחזרה: ${clientContact || 'לא הוכנס'}\n` +
                                `- הערות/בקשות: ${notes || 'אין'}\n\n` +
                                `קישור לתמונת המוצר:\n` +
                                `${fullImgUrl}`;
 
             navigator.clipboard.writeText(textToCopy)
                 .then(() => {
-                    alert(`פרטי ההזמנה הועתקו ללוח בהצלחה!\n\nתוכלי לפתוח כעת את אפליקציית המייל שלך (כמו Gmail), להדביק את הטקסט ולשלח לכתובת:\n${targetEmail}`);
+                    alert(`פרטי ההזמנה הועתקו ללוח בהצלחה!\n\nתוכלי לפתוח כעת את אפליקציית המייל שלך (כמו Gmail), להדביק את הטקסט ולשלוח לכתובת:\n${targetEmail}`);
                 })
                 .catch(err => {
                     console.error("שגיאה בהעתקה", err);
