@@ -1,11 +1,11 @@
 window.catalogData = {
   "title": "Ecrafts - קטלוג מוצרים",
-  "description": "סימניות, מחזיקים ופריטים בעבודת יד — כל פריט נוצר ומצויר ביד, ואין שניים זהים.",
-  "email": "ecraftsil@gmail.com",
+  "description": "מחזיקי מפתחות, סימניות ועוד פריטים בעבודת יד",
+  "email": "ecarftsil@gmail.com",
   "products": [
     {
       "id": 1,
-      "name": "קלסיפר - הטירה הנעה של הול",
+      "name": "קלסיפר - הטירה הנעה",
       "fileName": "Slide1.PNG",
       "price": "15",
       "category": "מחזיקים",
