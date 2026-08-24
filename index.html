@@ -104,11 +104,7 @@
                     <span>שיתוף קטלוג</span>
                 </button>
 
-                <!-- חיווי מצב לקוח -->
-                <span id="badge-view-mode" class="hidden flex items-center gap-1.5 bg-zinc-800/80 text-zinc-400 py-1.5 px-3 rounded-full text-xs border border-zinc-700">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>קטלוג לקוחות (Git Pages)</span>
-                </span>
+
             </div>
         </div>
     </header>
@@ -205,9 +201,13 @@
         
         <!-- כותרת ראשית של הגלריה והחיפוש -->
         <section class="mb-8 space-y-6">
-            <div class="text-center py-6">
+            <div class="text-center py-6 space-y-4">
                 <h2 id="catalog-title" class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400">הקטלוג שלי</h2>
-                <p id="catalog-desc" class="text-sm md:text-base text-zinc-400 mt-2 max-w-xl mx-auto">בחר קטגוריה ודפדף במוצרים</p>
+                <p id="catalog-desc" class="text-sm md:text-base text-zinc-400 max-w-xl mx-auto">בחר קטגוריה ודפדף במוצרים</p>
+                <div class="max-w-xl mx-auto p-4 rounded-xl bg-zinc-900/40 border border-zinc-800/60 text-zinc-300 text-xs md:text-sm leading-relaxed text-center">
+                    <p class="font-medium text-brand-400 mb-1">ברוכים הבאים ל-Ecrafts!</p>
+                    <p>סימניות, מחזיקים ופריטים בעבודת יד — כל פריט נוצר ומצויר ביד, ואין שניים זהים.</p>
+                </div>
             </div>
 
             <!-- סרגל חיפוש ופילטרים -->
@@ -503,8 +503,8 @@
         // --- מצב התחלתי ומשתנים גלובליים ---
         let catalog = {
             title: "Ecrafts - קטלוג מוצרים",
-            description: "מחזיקי מפתחות, סימניות ועוד פריטים בעבודת יד",
-            email: "",
+            description: "סימניות, מחזיקים ופריטים בעבודת יד — כל פריט נוצר ומצויר ביד, ואין שניים זהים.",
+            email: "ecraftsil@gmail.com",
             products: []
         };
         
@@ -673,8 +673,8 @@
             } else {
                 catalog = {
                     title: "Ecrafts - קטלוג מוצרים",
-                    description: "מחזיקי מפתחות, סימניות ועוד פריטים בעבודת יד",
-                    email: "",
+                    description: "סימניות, מחזיקים ופריטים בעבודת יד — כל פריט נוצר ומצויר ביד, ואין שניים זהים.",
+                    email: "ecraftsil@gmail.com",
                     products: []
                 };
             }
@@ -686,7 +686,7 @@
             } else {
                 // קטלוג ראשוני עם מוצרי דוגמה אם אין קובץ נתונים
                 catalog.title = "Ecrafts - קטלוג מוצרים";
-                catalog.description = "מחזיקי מפתחות, סימניות ועוד פריטים בעבודת יד";
+                catalog.description = "סימניות, מחזיקים ופריטים בעבודת יד — כל פריט נוצר ומצויר ביד, ואין שניים זהים.";
                 catalog.products = [...demoProducts];
             }
             saveCatalogToLocal();

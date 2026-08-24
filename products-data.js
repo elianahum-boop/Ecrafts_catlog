@@ -1,6 +1,6 @@
 window.catalogData = {
   "title": "Ecrafts - קטלוג מוצרים",
-  "description": "מחזיקי מפתחות, סימניות ועוד פריטים בעבודת יד",
+  "description": "סימניות, מחזיקים ופריטים בעבודת יד — כל פריט נוצר ומצויר ביד, ואין שניים זהים.",
   "email": "ecraftsil@gmail.com",
   "products": [
     {
