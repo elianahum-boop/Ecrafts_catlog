@@ -562,52 +562,60 @@
 
         // --- אתחול האפליקציה בטעינה ---
         window.addEventListener('DOMContentLoaded', async () => {
-            await loadProductsDataScript();
-            initApp();
+            try {
+                await loadProductsDataScript();
+                initApp();
+            } catch (err) {
+                alert("שגיאה בטעינת האפליקציה: " + err.message);
+            }
         });
 
 
 
         function initApp() {
-            // זיהוי סביבה - האם רצים מקומית או בשרת
-            const isLocal = window.location.protocol === 'file:' || 
-                            window.location.hostname === 'localhost' || 
-                            window.location.hostname === '127.0.0.1';
+            try {
+                // זיהוי סביבה - האם רצים מקומית או בשרת
+                const isLocal = window.location.protocol === 'file:' || 
+                                window.location.hostname === 'localhost' || 
+                                window.location.hostname === '127.0.0.1';
 
-            const hash = window.location.hash;
-            
-            if (hash.startsWith('#catalog=') || hash.startsWith('#data=')) {
-                // מצב צפייה של הלקוח עם קישור מקודד (ישן)
-                isEditMode = false;
-                loadCatalogFromUrl(hash);
-            } else if (hash === '#edit' || hash === '#admin') {
-                // כניסה למצב עריכה באופן יזום
-                isEditMode = true;
-                loadCatalogFromLocalOrJs();
-                setupFolderInput();
-            } else {
-                // ברירת מחדל ללא האש
-                if (isLocal) {
-                    // סביבה מקומית - מנהל עורך
+                const hash = window.location.hash;
+                
+                if (hash.startsWith('#catalog=') || hash.startsWith('#data=')) {
+                    // מצב צפייה של הלקוח עם קישור מקודד (ישן)
+                    isEditMode = false;
+                    loadCatalogFromUrl(hash);
+                } else if (hash === '#edit' || hash === '#admin') {
+                    // כניסה למצב עריכה באופן יזום
                     isEditMode = true;
                     loadCatalogFromLocalOrJs();
                     setupFolderInput();
                 } else {
-                    // סביבת שרת (GitHub Pages) - לקוח צופה
-                    isEditMode = false;
-                    loadCatalogFromJs();
+                    // ברירת מחדל ללא האש
+                    if (isLocal) {
+                        // סביבה מקומית - מנהל עורך
+                        isEditMode = true;
+                        loadCatalogFromLocalOrJs();
+                        setupFolderInput();
+                    } else {
+                        // סביבת שרת (GitHub Pages) - לקוח צופה
+                        isEditMode = false;
+                        loadCatalogFromJs();
+                    }
                 }
+
+                // 2. הגדרת שנה נוכחית בפוטר
+                document.getElementById('current-year').innerText = new Date().getFullYear();
+
+                // 3. אתחול האזנה לקבצים במודל
+                initModalFileInput();
+
+                // 4. רינדור ה-UI בהתאם למצב
+                applyModeUI();
+                renderCatalog();
+            } catch (err) {
+                alert("שגיאה באתחול הרנדר: " + err.message + "\n" + err.stack);
             }
-
-            // 2. הגדרת שנה נוכחית בפוטר
-            document.getElementById('current-year').innerText = new Date().getFullYear();
-
-            // 3. אתחול האזנה לקבצים במודל
-            initModalFileInput();
-
-            // 4. רינדור ה-UI בהתאם למצב
-            applyModeUI();
-            renderCatalog();
         }
 
         function setupFolderInput() {
