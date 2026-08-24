@@ -198,18 +198,6 @@
             
             <!-- אזור כפתורי פעולה ומצבים -->
             <div class="flex items-center gap-4">
-                <!-- קישורים חברתיים מהכרטיס ביקור -->
-                <div class="flex items-center gap-3 text-[#ee5253]">
-                    <a href="https://www.instagram.com/ecraftsil" target="_blank" class="hover:text-[#733238] hover:scale-105 transition-all p-1.5" title="Instagram">
-                        <i data-lucide="instagram" class="w-5 h-5"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@ecraftsil" target="_blank" class="hover:text-[#733238] hover:scale-105 transition-all p-1.5" title="TikTok">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.74-3.94-1.74-.22-.21-.42-.45-.61-.7v5.13c.03 2.87-1.35 5.76-4.04 6.88-2.61 1.09-5.92.74-8.15-1.12-2.3-1.92-3.15-5.32-2.12-8.14 1-2.72 3.97-4.65 6.89-4.39.01 1.5-.01 3 .01 4.5-1.29-.37-2.78-.06-3.71.93-.97 1.03-1.07 2.81-.22 3.92.83 1.1 2.39 1.45 3.65.86.88-.41 1.43-1.3 1.43-2.27.02-3.07.01-6.14.01-9.21z"/>
-                        </svg>
-                    </a>
-                </div>
-
                 <!-- כפתור העתקת קישור של מנהל -->
                 <button id="btn-share" onclick="openShareModal()" class="hidden flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium py-2 px-4 rounded-xl shadow-lg shadow-emerald-500/10 transition-all transform hover:-translate-y-0.5 active:translate-y-0 duration-200">
                     <i data-lucide="share-2" class="w-4 h-4"></i>
@@ -316,7 +304,7 @@
                 <p id="catalog-desc" class="text-sm md:text-base text-zinc-400 max-w-xl mx-auto">בחר קטגוריה ודפדף במוצרים</p>
                 <div class="max-w-xl mx-auto p-4 rounded-xl bg-[#dfb1ba]/15 border border-[#dfb1ba]/30 text-[#4c3a3d] text-xs md:text-sm leading-relaxed text-center shadow-sm">
                     <p class="font-bold text-[#8a374a] mb-1.5 text-sm md:text-base">ברוכים הבאים ל-Ecrafts! ✨</p>
-                    <p>כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו — פשוט אין שניים זהים.</p>
+                    <p id="welcome-card-text">כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו — פשוט אין שניים זהים.</p>
                 </div>
             </div>
 
@@ -770,10 +758,16 @@
 
             // כותרות עליונות של העמוד
             if (document.getElementById('header-title')) document.getElementById('header-title').innerText = catalog.title || "Ecrafts";
-            if (document.getElementById('header-desc')) document.getElementById('header-desc').innerText = catalog.description || "קטלוג מוצרים";
+            if (document.getElementById('header-desc')) document.getElementById('header-desc').innerText = "Digital Art & Creations";
             
             if (document.getElementById('catalog-title')) document.getElementById('catalog-title').innerText = catalog.title || "הקטלוג שלי";
-            if (document.getElementById('catalog-desc')) document.getElementById('catalog-desc').innerText = catalog.description || "בחר קטגוריה ודפדף במוצרים";
+            if (document.getElementById('catalog-desc')) document.getElementById('catalog-desc').innerText = "בחר קטגוריה ודפדף במוצרים";
+            
+            // עדכון הפסקה הדינמית בתוך כרטיסיית הברכה למנוע כפילויות
+            const welcomeCardText = document.getElementById('welcome-card-text');
+            if (welcomeCardText) {
+                welcomeCardText.innerText = catalog.description || "סימניות, מחזיקים ופריטים בעבודת יד — כל פריט נוצר ומצויר ביד, ואין שניים זהים.";
+            }
             
             lucide.createIcons();
         }
