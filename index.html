@@ -417,6 +417,63 @@
         </div>
     </div>
 
+    <!-- 5. מודל הזמנה חדש ומורחב -->
+    <div id="order-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col" onclick="event.stopPropagation()">
+            <!-- כותרת המודל -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800">
+                <h3 class="font-bold text-lg text-white flex items-center gap-2">
+                    <i data-lucide="shopping-cart" class="w-5 h-5 text-brand-500"></i>
+                    <span>פרטי הזמנה</span>
+                </h3>
+                <button onclick="closeOrderModal()" class="text-zinc-400 hover:text-zinc-200">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <!-- גוף המודל / פרטים -->
+            <div class="p-6 space-y-4 max-h-[60vh] overflow-y-auto">
+                <!-- תצוגה מקדימה של המוצר -->
+                <div class="flex gap-4 p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/80">
+                    <img id="order-product-img" class="w-16 h-16 object-cover rounded-lg bg-zinc-950 border border-zinc-800" src="" alt="">
+                    <div class="flex flex-col justify-center">
+                        <h4 id="order-product-name" class="font-bold text-sm text-white">שם המוצר</h4>
+                        <span id="order-product-price" class="text-xs font-bold text-brand-500 mt-1">₪ 0</span>
+                    </div>
+                </div>
+
+                <!-- טופס מילוי -->
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-medium text-zinc-400 mb-1">שם מלא:</label>
+                        <input type="text" id="order-client-name" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="הקש את שמך המלא">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-zinc-400 mb-1">כמות להזמנה:</label>
+                        <input type="number" id="order-quantity" min="1" value="1" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-zinc-400 mb-1">הערות או בקשות מיוחדות (כמו כיתוב אישי):</label>
+                        <textarea id="order-notes" rows="3" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm resize-none" placeholder="רשום כאן הערות, בקשות לעיצוב או הקדשה אישית..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כפתורי שליחה -->
+            <div class="px-6 py-4 border-t border-zinc-800 flex flex-col gap-2 bg-zinc-900/30">
+                <button onclick="sendOrderEmail()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition-all">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>שלח הזמנה במייל (כולל קישור לתמונה)</span>
+                </button>
+                <button onclick="sendOrderWhatsApp()" class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all">
+                    <i data-lucide="message-square" class="w-4 h-4 text-emerald-500"></i>
+                    <span>שליחה מהירה בוואטסאפ (מומלץ)</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
     <!-- 4. מודל טעינת תיקייה (אינדיקטור התקדמות) -->
     <div id="loading-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex flex-col items-center justify-center p-4">
         <div class="glass-card p-8 rounded-2xl text-center space-y-6 max-w-sm w-full">
@@ -818,10 +875,10 @@
                             <span class="text-base font-black text-brand-500">₪ ${product.price || '15'}</span>
                             
                             ${!isEditMode && catalog.email ? `
-                                <a href="mailto:${catalog.email}?subject=${encodeURIComponent('הזמנה מהקטלוג: ' + product.name)}&body=${encodeURIComponent('היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n- שם המוצר: ' + product.name + '\n- מחיר: ₪' + (product.price || '15') + '\n\nתודה!').replace(/\n/g, '%0D%0A')}" onclick="event.stopPropagation();" class="flex items-center gap-1 text-[11px] font-bold text-zinc-300 hover:text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 py-1.5 px-3 rounded-xl transition-all">
+                                <button onclick="event.stopPropagation(); openOrderModal(${product.id})" class="flex items-center gap-1 text-[11px] font-bold text-zinc-300 hover:text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 py-1.5 px-3 rounded-xl transition-all">
                                     <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-500"></i>
                                     <span>להזמנה</span>
-                                </a>
+                                </button>
                             ` : ''}
                         </div>
                     </div>
@@ -1237,10 +1294,9 @@
             const targetEmail = catalog.email;
             if (!isEditMode && targetEmail) {
                 emailBtn.classList.remove('hidden');
-                const subject = `הזמנה מהקטלוג: ${product.name}`;
-                const body = `היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n- שם המוצר: ${product.name}\n- מחיר: ₪${product.price || '15'}\n\nתודה!`;
                 emailBtn.onclick = () => {
-                    window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
+                    closeLightbox();
+                    openOrderModal(product.id);
                 };
             } else {
                 emailBtn.classList.add('hidden');
@@ -1314,6 +1370,108 @@
 
         function closeShareModal() {
             document.getElementById('share-modal').classList.add('hidden');
+        }
+
+        // --- מודל הזמנה חדש ---
+        let activeOrderProductId = null;
+
+        function openOrderModal(productId) {
+            const product = catalog.products.find(p => p.id === productId);
+            if (!product) return;
+
+            activeOrderProductId = productId;
+            
+            // מילוי פרטים
+            document.getElementById('order-product-name').innerText = product.name;
+            document.getElementById('order-product-price').innerText = `₪ ${product.price || '15'}`;
+            
+            let imgUrl = product.image || 'https://via.placeholder.com/300?text=No+Image';
+            if (sessionImageUrls[product.fileName]) {
+                imgUrl = sessionImageUrls[product.fileName];
+            }
+            document.getElementById('order-product-img').src = imgUrl;
+
+            // איפוס שדות
+            document.getElementById('order-client-name').value = "";
+            document.getElementById('order-quantity').value = "1";
+            document.getElementById('order-notes').value = "";
+
+            document.getElementById('order-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeOrderModal() {
+            document.getElementById('order-modal').classList.add('hidden');
+        }
+
+        function getFullImageUrl(imagePath) {
+            if (!imagePath) return 'https://via.placeholder.com/300?text=No+Image';
+            // אם זו כתובת אינטרנט מלאה, נחזיר אותה
+            if (imagePath.startsWith('http') || imagePath.startsWith('data:')) {
+                return imagePath;
+            }
+            // אחרת, נחבר אותה לכתובת של GitHub Pages הציבורית
+            const baseUrl = 'https://elianahum-boop.github.io/Ecrafts_catlog/';
+            return baseUrl + imagePath;
+        }
+
+        function sendOrderEmail() {
+            const product = catalog.products.find(p => p.id === activeOrderProductId);
+            if (!product) return;
+
+            const targetEmail = catalog.email || "ecarftsil@gmail.com";
+            const clientName = document.getElementById('order-client-name').value.trim();
+            const quantity = document.getElementById('order-quantity').value || "1";
+            const notes = document.getElementById('order-notes').value.trim();
+
+            if (!clientName) {
+                alert("אנא מלאי את שמך להזמנה!");
+                return;
+            }
+
+            const subject = `הזמנה חדשה מהקטלוג: ${product.name}`;
+            const fullImgUrl = getFullImageUrl(product.image);
+
+            const body = `היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n\n` +
+                         `- שם המוצר: ${product.name}\n` +
+                         `- כמות: ${quantity}\n` +
+                         `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
+                         `פרטי המזמין:\n` +
+                         `- שם הלקוח: ${clientName}\n` +
+                         `- הערות/בקשות: ${notes || 'אין'}\n\n` +
+                         `קישור ישיר לתמונת המוצר:\n` +
+                         `${fullImgUrl}\n\n` +
+                         `תודה!`;
+
+            window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
+            closeOrderModal();
+        }
+
+        function sendOrderWhatsApp() {
+            const product = catalog.products.find(p => p.id === activeOrderProductId);
+            if (!product) return;
+
+            const clientName = document.getElementById('order-client-name').value.trim();
+            const quantity = document.getElementById('order-quantity').value || "1";
+            const notes = document.getElementById('order-notes').value.trim();
+
+            if (!clientName) {
+                alert("אנא מלאי את שמך להזמנה!");
+                return;
+            }
+
+            const fullImgUrl = getFullImageUrl(product.image);
+
+            const message = `היי! אני רוצה להזמין את המוצר:\n*${product.name}*\n` +
+                            `- כמות: ${quantity}\n` +
+                            `- מחיר יחידה: ₪${product.price || '15'}\n` +
+                            `- שם הלקוח: ${clientName}\n` +
+                            `- הערות: ${notes || 'אין'}\n` +
+                            `- קישור לתמונה: ${fullImgUrl}`;
+
+            const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+            closeOrderModal();
         }
     </script>
 </body>
