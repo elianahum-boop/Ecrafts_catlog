@@ -460,14 +460,10 @@
             </div>
 
             <!-- כפתורי שליחה -->
-            <div class="px-6 py-4 border-t border-zinc-800 flex flex-col gap-2 bg-zinc-900/30">
+            <div class="px-6 py-4 border-t border-zinc-800 bg-zinc-900/30">
                 <button onclick="sendOrderEmail()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition-all">
                     <i data-lucide="mail" class="w-4 h-4"></i>
                     <span>שלח הזמנה במייל (כולל קישור לתמונה)</span>
-                </button>
-                <button onclick="sendOrderWhatsApp()" class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all">
-                    <i data-lucide="message-square" class="w-4 h-4 text-emerald-500"></i>
-                    <span>שליחה מהירה בוואטסאפ (מומלץ)</span>
                 </button>
             </div>
         </div>
@@ -1447,32 +1443,7 @@
             closeOrderModal();
         }
 
-        function sendOrderWhatsApp() {
-            const product = catalog.products.find(p => p.id === activeOrderProductId);
-            if (!product) return;
 
-            const clientName = document.getElementById('order-client-name').value.trim();
-            const quantity = document.getElementById('order-quantity').value || "1";
-            const notes = document.getElementById('order-notes').value.trim();
-
-            if (!clientName) {
-                alert("אנא מלאי את שמך להזמנה!");
-                return;
-            }
-
-            const fullImgUrl = getFullImageUrl(product.image);
-
-            const message = `היי! אני רוצה להזמין את המוצר:\n*${product.name}*\n` +
-                            `- כמות: ${quantity}\n` +
-                            `- מחיר יחידה: ₪${product.price || '15'}\n` +
-                            `- שם הלקוח: ${clientName}\n` +
-                            `- הערות: ${notes || 'אין'}\n` +
-                            `- קישור לתמונה: ${fullImgUrl}`;
-
-            const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
-            window.open(waUrl, '_blank');
-            closeOrderModal();
-        }
     </script>
 </body>
 </html>
