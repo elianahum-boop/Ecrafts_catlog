@@ -1586,14 +1586,13 @@
                 const subject = `הזמנה חדשה מהקטלוג: ${product.name}`;
                 const body = `היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n\n` +
                              `- שם המוצר: ${product.name}\n` +
+                             `- קטגוריה: ${product.category || 'כללי'}\n` +
                              `- כמות: ${quantity}\n` +
                              `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
                              `פרטי המזמין:\n` +
                              `- שם הלקוח: ${clientName}\n` +
                              `- פרטי קשר לחזרה: ${clientContact}\n` +
                              `- הערות/בקשות: ${notes || 'אין'}\n\n` +
-                             `קישור ישיר לתמונת המוצר:\n` +
-                             `${fullImgUrl}\n\n` +
                              `תודה!`;
 
                 window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
@@ -1619,12 +1618,12 @@
                 },
                 body: JSON.stringify({
                     "שם המוצר": product.name,
+                    "קטגוריה": product.category || "כללי",
                     "מחיר": `₪${product.price || '15'}`,
                     "כמות": quantity,
                     "שם הלקוח": clientName,
                     "פרטי קשר": clientContact,
                     "הערות/בקשות": notes || "אין הערות",
-                    "קישור לתמונה": fullImgUrl,
                     "_subject": `הזמנה חדשה מהקטלוג: ${product.name} (מאת ${clientName})`,
                     "_template": "box"
                 })
