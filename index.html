@@ -1005,7 +1005,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60"></div>
                         
                         ${product.category ? `
-                            <span class="absolute bottom-2 left-2 text-[10px] bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 text-zinc-400 py-0.5 px-2 rounded-md font-medium">
+                            <span class="absolute bottom-2 left-2 text-[10px] bg-white/90 backdrop-blur-sm border border-[#f2a1a2]/30 text-[#733238] py-0.5 px-2 rounded-md font-bold shadow-sm">
                                 ${product.category}
                             </span>
                         ` : ''}
@@ -1022,8 +1022,8 @@
                             <span class="text-base font-black text-brand-500">₪ ${product.price || '15'}</span>
                             
                             ${!isEditMode && catalog.email ? `
-                                <button onclick="event.stopPropagation(); openOrderModal(${product.id})" class="flex items-center gap-1 text-[11px] font-bold text-zinc-300 hover:text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 py-1.5 px-3 rounded-xl transition-all">
-                                    <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-500"></i>
+                                <button onclick="event.stopPropagation(); openOrderModal(${product.id})" class="flex items-center gap-1.5 text-[11px] font-bold text-[#733238] bg-[#f3dedf] hover:bg-[#ecd0d2] border border-[#f2a1a2]/30 py-1.5 px-3.5 rounded-xl transition-all shadow-sm">
+                                    <i data-lucide="mail" class="w-3.5 h-3.5 text-[#ee5253]"></i>
                                     <span>להזמנה</span>
                                 </button>
                             ` : ''}
@@ -1060,8 +1060,8 @@
                 const isActive = activeCategory === cat;
                 
                 btn.className = isActive 
-                    ? 'bg-brand-600/20 text-brand-500 border border-brand-500/30 px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all'
-                    : 'bg-zinc-900 hover:bg-zinc-800 text-zinc-400 border border-zinc-800 px-4 py-1.5 rounded-full text-xs whitespace-nowrap transition-all';
+                    ? 'bg-[#ee5253] text-white px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all shadow-sm'
+                    : 'bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] border border-[#f2a1a2]/30 px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all';
                 
                 btn.innerText = cat;
                 btn.onclick = () => {
