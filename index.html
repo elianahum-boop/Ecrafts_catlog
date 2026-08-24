@@ -19,8 +19,7 @@
     <!-- LZ-String Compression CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
     
-    <!-- קובץ נתוני המוצרים מבוסס Git -->
-    <script src="products-data.js"></script>
+
 
     
     <script>
@@ -476,8 +475,24 @@
             }
         ];
 
+        // טעינה דינמית של קובץ הנתונים עם מנגנון מניעת מטמון (Cache Busting)
+        function loadProductsDataScript() {
+            return new Promise((resolve) => {
+                const script = document.createElement('script');
+                // הוספת מזהה ייחודי למניעת שמירה במטמון
+                script.src = `products-data.js?v=${Date.now()}`;
+                script.onload = () => resolve(true);
+                script.onerror = () => {
+                    console.warn("לא ניתן היה לטעון את קובץ products-data.js, ייתכן והוא חסר.");
+                    resolve(false);
+                };
+                document.head.appendChild(script);
+            });
+        }
+
         // --- אתחול האפליקציה בטעינה ---
-        window.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('DOMContentLoaded', async () => {
+            await loadProductsDataScript();
             initApp();
         });
 
