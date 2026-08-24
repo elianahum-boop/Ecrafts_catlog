@@ -633,26 +633,26 @@
             const badgeViewMode = document.getElementById('badge-view-mode');
 
             if (isEditMode) {
-                adminPanel.classList.remove('hidden');
-                btnShare.classList.remove('hidden');
-                badgeViewMode.classList.add('hidden');
+                if (adminPanel) adminPanel.classList.remove('hidden');
+                if (btnShare) btnShare.classList.remove('hidden');
+                if (badgeViewMode) badgeViewMode.classList.add('hidden');
                 
                 // עדכון שדות ההגדרות ב-UI
-                document.getElementById('cfg-title').value = catalog.title || "";
-                document.getElementById('cfg-desc').value = catalog.description || "";
-                document.getElementById('cfg-email').value = catalog.email || "";
+                if (document.getElementById('cfg-title')) document.getElementById('cfg-title').value = catalog.title || "";
+                if (document.getElementById('cfg-desc')) document.getElementById('cfg-desc').value = catalog.description || "";
+                if (document.getElementById('cfg-email')) document.getElementById('cfg-email').value = catalog.email || "";
             } else {
-                adminPanel.classList.add('hidden');
-                btnShare.classList.add('hidden');
-                badgeViewMode.classList.remove('hidden');
+                if (adminPanel) adminPanel.classList.add('hidden');
+                if (btnShare) btnShare.classList.add('hidden');
+                if (badgeViewMode) badgeViewMode.classList.remove('hidden');
             }
 
             // כותרות עליונות של העמוד
-            document.getElementById('header-title').innerText = catalog.title || "Ecrafts";
-            document.getElementById('header-desc').innerText = catalog.description || "קטלוג מוצרים";
+            if (document.getElementById('header-title')) document.getElementById('header-title').innerText = catalog.title || "Ecrafts";
+            if (document.getElementById('header-desc')) document.getElementById('header-desc').innerText = catalog.description || "קטלוג מוצרים";
             
-            document.getElementById('catalog-title').innerText = catalog.title || "הקטלוג שלי";
-            document.getElementById('catalog-desc').innerText = catalog.description || "בחר קטגוריה ודפדף במוצרים";
+            if (document.getElementById('catalog-title')) document.getElementById('catalog-title').innerText = catalog.title || "הקטלוג שלי";
+            if (document.getElementById('catalog-desc')) document.getElementById('catalog-desc').innerText = catalog.description || "בחר קטגוריה ודפדף במוצרים";
             
             lucide.createIcons();
         }
