@@ -665,6 +665,11 @@
             if (saved) {
                 try {
                     catalog = JSON.parse(saved);
+                    // פתרון חירום: אם רשימת המוצרים בזיכרון המקומי ריקה, אך בקובץ המוצרים המקורי יש נתונים - נטען מהקובץ
+                    if ((!catalog.products || catalog.products.length === 0) && window.catalogData && window.catalogData.products && window.catalogData.products.length > 0) {
+                        fallbackToJsData();
+                        return;
+                    }
                     // מיגרציה: אם יש מוצרים קיימים ללא מחיר (או ריק), נשלים ל-15 ש"ח כברירת מחדל
                     if (catalog.products) {
                         catalog.products.forEach(p => {
