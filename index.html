@@ -212,6 +212,20 @@
         body.show-products #products-grid-section {
             display: block !important;
         }
+        body:not(.admin-mode) #admin-nav {
+            display: none !important;
+        }
+        body.admin-mode #public-nav {
+            display: none !important;
+        }
+        body.admin-mode .public-section {
+            display: none !important;
+        }
+        @media (min-width: 1024px) {
+            body.admin-mode #admin-nav {
+                display: flex !important;
+            }
+        }
     </style>
 </head>
 <body class="font-sans min-h-screen flex flex-col antialiased">
@@ -233,13 +247,18 @@
                 </div>
             </div>
 
-            <nav class="hidden lg:flex items-center gap-5">
+            <nav id="public-nav" class="hidden lg:flex items-center gap-5">
                 <a class="site-nav-link" href="#home">בית</a>
                 <a class="site-nav-link" href="#products">מוצרים</a>
                 <a class="site-nav-link" href="#updates">עדכונים</a>
                 <a class="site-nav-link" href="#about">על Ecrafts</a>
                 <a class="site-nav-link" href="#info">שאלות ומידע</a>
                 <a class="site-nav-link" href="#contact">יצירת קשר</a>
+            </nav>
+            <nav id="admin-nav" class="hidden lg:flex items-center gap-5">
+                <a class="site-nav-link" href="#admin-products">מוצרים</a>
+                <a class="site-nav-link" href="#admin-updates">עדכונים בעמוד</a>
+                <a class="site-nav-link" href="#admin-orders">הזמנות</a>
             </nav>
             
             <!-- אזור כפתורי פעולה ומצבים -->
@@ -255,12 +274,15 @@
             </div>
 
             <nav id="mobile-nav" class="hidden basis-full lg:hidden grid grid-cols-2 gap-2 pt-3 border-t border-[#f2a1a2]/25">
-                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#home" onclick="toggleMobileNav(false)">בית</a>
-                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#products" onclick="toggleMobileNav(false)">מוצרים</a>
-                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#updates" onclick="toggleMobileNav(false)">עדכונים</a>
-                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#about" onclick="toggleMobileNav(false)">על Ecrafts</a>
-                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#info" onclick="toggleMobileNav(false)">שאלות ומידע</a>
-                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#contact" onclick="toggleMobileNav(false)">יצירת קשר</a>
+                <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#home" onclick="toggleMobileNav(false)">בית</a>
+                <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#products" onclick="toggleMobileNav(false)">מוצרים</a>
+                <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#updates" onclick="toggleMobileNav(false)">עדכונים</a>
+                <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#about" onclick="toggleMobileNav(false)">על Ecrafts</a>
+                <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#info" onclick="toggleMobileNav(false)">שאלות ומידע</a>
+                <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#contact" onclick="toggleMobileNav(false)">יצירת קשר</a>
+                <a class="admin-mobile-link hidden site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#admin-products" onclick="toggleMobileNav(false)">מוצרים</a>
+                <a class="admin-mobile-link hidden site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#admin-updates" onclick="toggleMobileNav(false)">עדכונים בעמוד</a>
+                <a class="admin-mobile-link hidden site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#admin-orders" onclick="toggleMobileNav(false)">הזמנות</a>
             </nav>
         </div>
     </header>
@@ -346,15 +368,14 @@
                         <p class="text-xs text-[#836b6d] mt-1">ניהול מוצרים, עדכונים והזמנות במקום אחד.</p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <a href="#admin-products" class="px-4 py-2 rounded-xl bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">מוצרים</a>
-                        <a href="#admin-orders" class="px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">הזמנות</a>
-                        <a href="#admin-updates" class="px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">עדכונים</a>
-                        <a href="#admin-settings" class="px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">הגדרות אתר</a>
+                        <a href="#admin-products" class="admin-page-link px-4 py-2 rounded-xl bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">מוצרים</a>
+                        <a href="#admin-updates" class="admin-page-link px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">עדכונים בעמוד</a>
+                        <a href="#admin-orders" class="admin-page-link px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">הזמנות</a>
                     </div>
                 </div>
             </div>
             <!-- כרטיסיית הגדרות מהירות -->
-            <div id="admin-products" class="section-shell glass-card p-6 rounded-2xl space-y-6">
+            <div id="admin-products" class="admin-section section-shell glass-card p-6 rounded-2xl space-y-6">
                 <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
                     <div class="flex items-center gap-2">
                         <i data-lucide="sliders" class="text-brand-500 w-5 h-5"></i>
@@ -435,7 +456,7 @@
                 </details>
             </div>
 
-            <div id="admin-orders" class="section-shell glass-card p-6 rounded-2xl space-y-5">
+            <div id="admin-orders" class="admin-section section-shell glass-card p-6 rounded-2xl space-y-5">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-zinc-800 pb-4">
                     <div class="flex items-center gap-2">
                         <i data-lucide="clipboard-list" class="text-brand-500 w-5 h-5"></i>
@@ -449,7 +470,7 @@
                 <div id="admin-orders-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
             </div>
 
-            <div id="admin-updates" class="section-shell glass-card p-6 rounded-2xl space-y-5">
+            <div id="admin-updates" class="admin-section section-shell glass-card p-6 rounded-2xl space-y-5">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-zinc-800 pb-4">
                     <div class="flex items-center gap-2">
                         <i data-lucide="newspaper" class="text-brand-500 w-5 h-5"></i>
@@ -463,7 +484,7 @@
                 <div id="admin-updates-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
             </div>
 
-            <div id="admin-settings" class="section-shell glass-card p-6 rounded-2xl space-y-3">
+            <div id="admin-settings" class="admin-section section-shell glass-card p-6 rounded-2xl space-y-3 hidden">
                 <div class="flex items-center gap-2 border-b border-zinc-800 pb-4">
                     <i data-lucide="settings" class="text-brand-500 w-5 h-5"></i>
                     <h2 class="text-lg font-bold text-white">הגדרות אתר</h2>
@@ -1331,6 +1352,10 @@
             document.querySelectorAll('a[href^="#"]').forEach(link => {
                 link.addEventListener('click', (event) => {
                     const targetId = link.getAttribute('href').slice(1);
+                    if (targetId.startsWith('admin-')) {
+                        showAdminSection(targetId);
+                        return;
+                    }
                     if (targetId === 'products') {
                         event.preventDefault();
                         setPublicSectionsVisible(false);
@@ -1348,9 +1373,31 @@
             setPublicSectionsVisible(!isProductsPage);
             setProductsSectionVisible(isProductsPage);
             window.addEventListener('hashchange', () => {
+                if (isEditMode) {
+                    showAdminSection();
+                    return;
+                }
                 const isProductsPage = window.location.hash === '#products';
                 setPublicSectionsVisible(!isProductsPage);
                 setProductsSectionVisible(isProductsPage);
+            });
+        }
+
+        function getActiveAdminSectionId() {
+            const adminSections = ['admin-products', 'admin-updates', 'admin-orders'];
+            return adminSections.includes(window.location.hash.slice(1)) ? window.location.hash.slice(1) : 'admin-products';
+        }
+
+        function showAdminSection(sectionId = getActiveAdminSectionId()) {
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.classList.toggle('hidden', section.id !== sectionId);
+            });
+            setProductsSectionVisible(sectionId === 'admin-products');
+
+            document.querySelectorAll('.admin-page-link, #admin-nav .site-nav-link, .admin-mobile-link').forEach(link => {
+                const isActive = link.getAttribute('href') === `#${sectionId}`;
+                link.classList.toggle('bg-[#f3dedf]', isActive);
+                link.classList.toggle('bg-white', !isActive);
             });
         }
 
@@ -1359,23 +1406,37 @@
             const adminPanel = document.getElementById('admin-panel');
             const btnShare = document.getElementById('btn-share');
             const badgeViewMode = document.getElementById('badge-view-mode');
-            const publicSections = document.querySelectorAll('.public-section');
+            const publicNav = document.getElementById('public-nav');
+            const adminNav = document.getElementById('admin-nav');
+            const publicMobileLinks = document.querySelectorAll('.public-mobile-link');
+            const adminMobileLinks = document.querySelectorAll('.admin-mobile-link');
 
             if (isEditMode) {
+                document.body.classList.add('admin-mode');
                 if (adminPanel) adminPanel.classList.remove('hidden');
                 if (btnShare) btnShare.classList.remove('hidden');
                 if (badgeViewMode) badgeViewMode.classList.add('hidden');
+                if (publicNav) publicNav.classList.add('hidden');
+                if (adminNav) adminNav.classList.remove('hidden');
+                publicMobileLinks.forEach(link => link.classList.add('hidden'));
+                adminMobileLinks.forEach(link => link.classList.remove('hidden'));
                 setPublicSectionsVisible(false);
                 setProductsSectionVisible(false);
+                showAdminSection();
                 
                 // עדכון שדות ההגדרות ב-UI
                 if (document.getElementById('cfg-title')) document.getElementById('cfg-title').value = catalog.title || "";
                 if (document.getElementById('cfg-desc')) document.getElementById('cfg-desc').value = catalog.description || "";
                 if (document.getElementById('cfg-email')) document.getElementById('cfg-email').value = catalog.email || "";
             } else {
+                document.body.classList.remove('admin-mode');
                 if (adminPanel) adminPanel.classList.add('hidden');
                 if (btnShare) btnShare.classList.add('hidden');
                 if (badgeViewMode) badgeViewMode.classList.remove('hidden');
+                if (publicNav) publicNav.classList.remove('hidden');
+                if (adminNav) adminNav.classList.add('hidden');
+                publicMobileLinks.forEach(link => link.classList.remove('hidden'));
+                adminMobileLinks.forEach(link => link.classList.add('hidden'));
                 setPublicSectionsVisible(window.location.hash !== '#products');
             }
 
