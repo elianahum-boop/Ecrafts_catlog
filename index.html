@@ -204,6 +204,14 @@
         .section-shell {
             scroll-margin-top: 96px;
         }
+        body:not(.show-products) #products,
+        body:not(.show-products) #products-grid-section {
+            display: none !important;
+        }
+        body.show-products #products,
+        body.show-products #products-grid-section {
+            display: block !important;
+        }
     </style>
 </head>
 <body class="font-sans min-h-screen flex flex-col antialiased">
@@ -261,7 +269,7 @@
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8">
 
         <!-- ================= בית ================= -->
-        <section id="home" class="section-shell mb-10 md:mb-14">
+        <section id="home" class="public-section section-shell mb-10 md:mb-14">
             <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(280px,0.95fr)] gap-6 items-stretch">
                 <div class="py-8 md:py-12 flex flex-col justify-center gap-5">
                     <div class="space-y-3">
@@ -296,18 +304,18 @@
         </section>
 
         <!-- ================= חדש בבית ================= -->
-        <section id="home-featured" class="section-shell mb-10 md:mb-14">
+        <section id="home-featured" class="public-section section-shell mb-10 md:mb-14">
             <div class="flex items-end justify-between gap-4 mb-4">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-black text-[#733238]">חדש ב-Ecrafts</h2>
-                    <p class="text-sm text-[#836b6d] mt-1">כמה פריטים זמינים או חדשים מהקטלוג.</p>
+                    <p class="text-sm text-[#836b6d] mt-1">טעימה קטנה מהקטלוג. לכל הפריטים עברו לאזור מוצרים.</p>
                 </div>
                 <a href="#products" class="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-[#ee5253] hover:text-[#733238]">
                     <span>לכל המוצרים</span>
                     <i data-lucide="arrow-left" class="w-4 h-4"></i>
                 </a>
             </div>
-            <div id="featured-products" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4"></div>
+            <div id="featured-products" class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"></div>
             <a href="#products" class="sm:hidden mt-4 inline-flex items-center justify-center w-full gap-2 bg-[#f3dedf] text-[#733238] font-bold py-2.5 px-5 rounded-xl border border-[#f2a1a2]/35">
                 <span>לכל המוצרים</span>
                 <i data-lucide="arrow-left" class="w-4 h-4"></i>
@@ -315,7 +323,7 @@
         </section>
 
         <!-- ================= עדכונים אחרונים בבית ================= -->
-        <section id="home-updates" class="section-shell mb-10 md:mb-14">
+        <section id="home-updates" class="public-section section-shell mb-10 md:mb-14">
             <div class="flex items-end justify-between gap-4 mb-4">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-black text-[#733238]">עדכונים אחרונים</h2>
@@ -516,7 +524,7 @@
         </section>
 
         <!-- גריד מוצרים -->
-        <section>
+        <section id="products-grid-section">
             <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
                 <!-- המוצרים ייווצרו כאן באופן דינמי -->
             </div>
@@ -536,47 +544,8 @@
             </div>
         </section>
 
-        <!-- אזור מידע על הזמנה, משלוח ואיסוף (ללקוחות) -->
-        <section class="mt-12 max-w-3xl mx-auto">
-            <details class="group p-5 rounded-2xl bg-white border border-[#f2a1a2]/30 shadow-sm transition-all duration-300">
-                <summary class="font-bold text-sm md:text-base text-[#733238] cursor-pointer focus:outline-none flex items-center justify-between">
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="truck" class="w-5 h-5 text-[#ee5253]"></i>
-                        מדריך הזמנות, משלוחים ואיסוף עצמי 📦
-                    </span>
-                    <i data-lucide="chevron-down" class="w-4 h-4 transform group-open:rotate-180 transition-transform duration-200 text-[#ee5253]"></i>
-                </summary>
-                <div class="mt-4 pt-4 border-t border-[#f2a1a2]/20 grid grid-cols-1 md:grid-cols-3 gap-6 text-right leading-relaxed text-xs md:text-sm text-[#513e40]">
-                    <!-- הזמנות -->
-                    <div class="space-y-2">
-                        <h4 class="font-bold text-[#ee5253] flex items-center gap-1.5 text-sm">
-                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-                            איך מזמינים?
-                        </h4>
-                        <p>בוחרים פריט מהגלריה, לוחצים על <strong>"להזמנה במייל"</strong> וממלאים את הפרטים. ניתן להוסיף הערות כגון בקשה לעיצוב מיוחד, הקדשה אישית או כיתוב מותאם.</p>
-                    </div>
-                    <!-- משלוחים -->
-                    <div class="space-y-2">
-                        <h4 class="font-bold text-[#ee5253] flex items-center gap-1.5 text-sm">
-                            <i data-lucide="package" class="w-4 h-4"></i>
-                            משלוחים לכל הארץ
-                        </h4>
-                        <p>אנו מציעים משלוחים לכל חלקי הארץ (בדואר רשום או עם שליח עד הבית) בתוספת תשלום. תמחור המשלוח ופרטי המשלוח יתואמו מולכם לאחר קבלת בקשת ההזמנה.</p>
-                    </div>
-                    <!-- איסוף עצמי -->
-                    <div class="space-y-2">
-                        <h4 class="font-bold text-[#ee5253] flex items-center gap-1.5 text-sm">
-                            <i data-lucide="map-pin" class="w-4 h-4"></i>
-                            איסוף עצמי
-                        </h4>
-                        <p>ניתן לבצע איסוף עצמי ללא עלות נוספת בתיאום מראש. מיקום האיסוף וזמנים יימסרו לכם באופן אישי בעת יצירת הקשר לחזרה.</p>
-                    </div>
-                </div>
-            </details>
-        </section>
-
         <!-- ================= עדכונים ================= -->
-        <section id="updates" class="section-shell mt-14 md:mt-20">
+        <section id="updates" class="public-section section-shell mt-14 md:mt-20">
             <div class="mb-5">
                 <h2 class="text-2xl md:text-3xl font-black text-[#733238]">עדכונים</h2>
                 <p class="text-sm text-[#836b6d] mt-1">הודעות קצרות על מוצרים, קולקציות וזמינות.</p>
@@ -585,7 +554,7 @@
         </section>
 
         <!-- ================= על Ecrafts ================= -->
-        <section id="about" class="section-shell mt-14 md:mt-20">
+        <section id="about" class="public-section section-shell mt-14 md:mt-20">
             <div class="grid grid-cols-1 md:grid-cols-[220px_minmax(0,1fr)] gap-6 items-center bg-white/85 border border-[#f2a1a2]/30 rounded-2xl p-5 md:p-7 shadow-sm">
                 <img src="logo.jpg" class="w-36 h-36 md:w-44 md:h-44 object-cover rounded-full border-4 border-white shadow-md mx-auto" alt="Ecrafts">
                 <div class="space-y-3 text-right">
@@ -598,7 +567,7 @@
         </section>
 
         <!-- ================= שאלות ומידע ================= -->
-        <section id="info" class="section-shell mt-14 md:mt-20 max-w-4xl mx-auto">
+        <section id="info" class="public-section section-shell mt-14 md:mt-20 max-w-4xl mx-auto">
             <div class="mb-5 text-center">
                 <h2 class="text-2xl md:text-3xl font-black text-[#733238]">שאלות ומידע</h2>
                 <p class="text-sm text-[#836b6d] mt-1">כל מה שצריך לדעת לפני הזמנה.</p>
@@ -665,7 +634,7 @@
         </section>
 
         <!-- ================= יצירת קשר ================= -->
-        <section id="contact" class="section-shell mt-14 md:mt-20">
+        <section id="contact" class="public-section section-shell mt-14 md:mt-20">
             <div class="bg-[#dfb1ba]/15 border border-[#dfb1ba]/30 rounded-2xl p-5 md:p-7 text-center space-y-5">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-black text-[#733238]">יצירת קשר</h2>
@@ -1296,19 +1265,11 @@
 
                 const hash = window.location.hash;
                 
-                if (isLocal) {
-                    // פתיחה ישירה מהמחשב היא תמיד מצב מנהל, גם אם נשאר hash מקישור שיתוף ישן בדפדפן.
-                    isEditMode = true;
-                    if (hash.startsWith('#catalog=') || hash.startsWith('#data=')) {
-                        history.replaceState(null, '', window.location.pathname);
-                    }
-                    loadCatalogFromLocalOrJs();
-                    setupFolderInput();
-                } else if (hash.startsWith('#catalog=') || hash.startsWith('#data=')) {
-                    // מצב צפייה של הלקוח עם קישור מקודד (ישן)
+                if (hash.startsWith('#catalog=') || hash.startsWith('#data=')) {
+                    // קישור שיתוף תמיד נפתח במצב לקוח, גם כאשר בודקים אותו מהמחשב.
                     isEditMode = false;
                     loadCatalogFromUrl(hash);
-                } else if (hash === '#edit' || hash === '#admin') {
+                } else if (isLocal || hash === '#edit' || hash === '#admin') {
                     // כניסה למצב עריכה באופן יזום
                     isEditMode = true;
                     loadCatalogFromLocalOrJs();
@@ -1355,7 +1316,14 @@
         function setProductsSectionVisible(isVisible) {
             const productsSection = document.getElementById('products');
             if (!productsSection) return;
+            document.body.classList.toggle('show-products', isVisible);
             productsSection.classList.toggle('hidden', !isVisible);
+        }
+
+        function setPublicSectionsVisible(isVisible) {
+            document.querySelectorAll('.public-section').forEach(section => {
+                section.classList.toggle('hidden', !isVisible);
+            });
         }
 
         function setupSiteNavigation() {
@@ -1365,18 +1333,24 @@
                     const targetId = link.getAttribute('href').slice(1);
                     if (targetId === 'products') {
                         event.preventDefault();
+                        setPublicSectionsVisible(false);
                         setProductsSectionVisible(true);
                         history.pushState(null, '', '#products');
                         document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     } else if (publicSections.has(targetId)) {
+                        setPublicSectionsVisible(true);
                         setProductsSectionVisible(false);
                     }
                 });
             });
 
-            setProductsSectionVisible(window.location.hash === '#products');
+            const isProductsPage = window.location.hash === '#products';
+            setPublicSectionsVisible(!isProductsPage);
+            setProductsSectionVisible(isProductsPage);
             window.addEventListener('hashchange', () => {
-                setProductsSectionVisible(window.location.hash === '#products');
+                const isProductsPage = window.location.hash === '#products';
+                setPublicSectionsVisible(!isProductsPage);
+                setProductsSectionVisible(isProductsPage);
             });
         }
 
@@ -1385,11 +1359,14 @@
             const adminPanel = document.getElementById('admin-panel');
             const btnShare = document.getElementById('btn-share');
             const badgeViewMode = document.getElementById('badge-view-mode');
+            const publicSections = document.querySelectorAll('.public-section');
 
             if (isEditMode) {
                 if (adminPanel) adminPanel.classList.remove('hidden');
                 if (btnShare) btnShare.classList.remove('hidden');
                 if (badgeViewMode) badgeViewMode.classList.add('hidden');
+                setPublicSectionsVisible(false);
+                setProductsSectionVisible(false);
                 
                 // עדכון שדות ההגדרות ב-UI
                 if (document.getElementById('cfg-title')) document.getElementById('cfg-title').value = catalog.title || "";
@@ -1399,6 +1376,7 @@
                 if (adminPanel) adminPanel.classList.add('hidden');
                 if (btnShare) btnShare.classList.add('hidden');
                 if (badgeViewMode) badgeViewMode.classList.remove('hidden');
+                setPublicSectionsVisible(window.location.hash !== '#products');
             }
 
             // כותרות עליונות של העמוד
@@ -1515,7 +1493,7 @@
 
             const products = (catalog.products || [])
                 .filter(p => normalizeStatus(p.status) === 'available')
-                .slice(0, 6);
+                .slice(0, 4);
 
             container.innerHTML = products.map(product => {
                 const imgUrl = getDisplayImage(product, 300);
@@ -1571,16 +1549,23 @@
             const container = document.getElementById('admin-updates-list');
             if (!container) return;
             const sorted = getSortedUpdates();
-            container.innerHTML = sorted.map(update => `
+            if (!sorted.length) {
+                container.innerHTML = `<div class="md:col-span-2 xl:col-span-3 bg-white border border-[#f2a1a2]/30 rounded-xl p-5 text-center text-sm text-[#836b6d]">אין כרגע עדכונים שמורים.</div>`;
+                return;
+            }
+            container.innerHTML = sorted.map(update => {
+                const updateId = encodeURIComponent(String(update.id ?? ''));
+                return `
                 <article class="bg-white border border-[#f2a1a2]/30 rounded-xl p-4 space-y-2 text-right">
                     <time class="text-[11px] font-bold text-[#ee5253]">${update.date || ''}</time>
                     <h3 class="text-sm font-black text-[#733238]">${update.title || ''}</h3>
                     <p class="text-xs text-[#513e40] leading-relaxed">${update.text || ''}</p>
                     <div class="flex gap-2 pt-2">
-                        <button onclick="deleteUpdate(${update.id})" class="text-xs font-bold text-[#733238] bg-[#f3dedf] hover:bg-[#ecd0d2] px-3 py-1.5 rounded-lg border border-[#f2a1a2]/30">מחיקה</button>
+                        <button onclick="deleteUpdate(decodeURIComponent('${updateId}'))" class="text-xs font-bold text-[#733238] bg-[#f3dedf] hover:bg-[#ecd0d2] px-3 py-1.5 rounded-lg border border-[#f2a1a2]/30">מחיקה</button>
                     </div>
                 </article>
-            `).join('');
+                `;
+            }).join('');
         }
 
         function renderAdminOrders() {
@@ -1638,7 +1623,7 @@
 
         function deleteUpdate(id) {
             if (!confirm("למחוק את העדכון הזה?")) return;
-            siteUpdates = siteUpdates.filter(update => update.id !== id);
+            siteUpdates = siteUpdates.filter(update => String(update.id) !== String(id));
             saveSiteContent();
             renderSiteSections();
             renderAdminDashboard();
