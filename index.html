@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecrafts - קטלוג מוצרים</title>
+    <title>Ecrafts</title>
+    <meta name="description" content="Ecrafts - יצירות בעבודת יד, סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרים ומצוירים ביד.">
+    <meta property="og:title" content="Ecrafts">
+    <meta property="og:description" content="יצירות בעבודת יד. כל פריט נוצר ומצויר בנפרד, ואין שניים זהים לחלוטין.">
+    <meta property="og:image" content="logo.jpg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png?v=2">
@@ -183,6 +187,23 @@
             color: #733238 !important;
             font-weight: 500;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .site-nav-link {
+            color: #733238;
+            font-size: 0.875rem;
+            font-weight: 700;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+        .site-nav-link:hover {
+            color: #ee5253;
+        }
+        .section-shell {
+            scroll-margin-top: 96px;
+        }
     </style>
 </head>
 <body class="font-sans min-h-screen flex flex-col antialiased">
@@ -203,29 +224,133 @@
                     <p id="header-desc" class="text-xs text-zinc-600 font-bold">Digital Art & Creations</p>
                 </div>
             </div>
+
+            <nav class="hidden lg:flex items-center gap-5">
+                <a class="site-nav-link" href="#home">בית</a>
+                <a class="site-nav-link" href="#products">מוצרים</a>
+                <a class="site-nav-link" href="#updates">עדכונים</a>
+                <a class="site-nav-link" href="#about">על Ecrafts</a>
+                <a class="site-nav-link" href="#info">שאלות ומידע</a>
+                <a class="site-nav-link" href="#contact">יצירת קשר</a>
+            </nav>
             
             <!-- אזור כפתורי פעולה ומצבים -->
             <div class="flex items-center gap-4">
+                <button onclick="toggleMobileNav()" class="lg:hidden w-10 h-10 rounded-xl bg-[#f3dedf] border border-[#f2a1a2]/30 text-[#733238] flex items-center justify-center" title="תפריט">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
                 <!-- כפתור העתקת קישור של מנהל -->
                 <button id="btn-share" onclick="openShareModal()" class="hidden flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium py-2 px-4 rounded-xl shadow-lg shadow-emerald-500/10 transition-all transform hover:-translate-y-0.5 active:translate-y-0 duration-200">
                     <i data-lucide="share-2" class="w-4 h-4"></i>
                     <span>שיתוף קטלוג</span>
                 </button>
             </div>
+
+            <nav id="mobile-nav" class="hidden basis-full lg:hidden grid grid-cols-2 gap-2 pt-3 border-t border-[#f2a1a2]/25">
+                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#home" onclick="toggleMobileNav(false)">בית</a>
+                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#products" onclick="toggleMobileNav(false)">מוצרים</a>
+                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#updates" onclick="toggleMobileNav(false)">עדכונים</a>
+                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#about" onclick="toggleMobileNav(false)">על Ecrafts</a>
+                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#info" onclick="toggleMobileNav(false)">שאלות ומידע</a>
+                <a class="site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#contact" onclick="toggleMobileNav(false)">יצירת קשר</a>
+            </nav>
         </div>
     </header>
 
     <!-- גוף העמוד (Main Content) -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8">
+
+        <!-- ================= בית ================= -->
+        <section id="home" class="section-shell mb-10 md:mb-14">
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(280px,0.95fr)] gap-6 items-stretch">
+                <div class="py-8 md:py-12 flex flex-col justify-center gap-5">
+                    <div class="space-y-3">
+                        <p class="text-sm font-bold text-[#ee5253]">האתר הרשמי</p>
+                        <h2 class="text-4xl md:text-6xl font-black text-[#733238] leading-tight">Ecrafts</h2>
+                        <p class="text-xl md:text-2xl font-black text-[#8a374a]">יצירות בעבודת יד</p>
+                        <p class="text-sm md:text-base text-[#513e40] leading-relaxed max-w-2xl">
+                            סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרים ומצוירים ביד. כל פריט מקבל אופי משלו, ואין שני פריטים זהים לחלוטין. גם עיצוב שכבר הוזמן יכול לשמש השראה ליצירה חדשה.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#products" class="inline-flex items-center gap-2 bg-[#ee5253] hover:bg-[#733238] text-white font-bold py-2.5 px-5 rounded-xl shadow-sm transition-colors">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                            <span>למוצרים</span>
+                        </a>
+                        <a href="#updates" class="inline-flex items-center gap-2 bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] font-bold py-2.5 px-5 rounded-xl border border-[#f2a1a2]/35 transition-colors">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>מה חדש</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="rounded-2xl bg-white/85 border border-[#f2a1a2]/35 shadow-sm overflow-hidden min-h-[280px] flex items-center justify-center p-6">
+                    <div class="text-center space-y-4 max-w-sm">
+                        <img src="logo.jpg" class="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-4 border-white shadow-lg mx-auto" alt="Ecrafts">
+                        <div class="space-y-1">
+                            <p class="text-lg font-black text-[#733238]">Salami coming soon</p>
+                            <p class="text-sm text-[#836b6d] leading-relaxed">כאן יתווסף בהמשך סלמי כמסקוט של Ecrafts, בלי להעמיס על ה-Hero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= חדש בבית ================= -->
+        <section id="home-featured" class="section-shell mb-10 md:mb-14">
+            <div class="flex items-end justify-between gap-4 mb-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-black text-[#733238]">חדש ב-Ecrafts</h2>
+                    <p class="text-sm text-[#836b6d] mt-1">כמה פריטים זמינים או חדשים מהקטלוג.</p>
+                </div>
+                <a href="#products" class="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-[#ee5253] hover:text-[#733238]">
+                    <span>לכל המוצרים</span>
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                </a>
+            </div>
+            <div id="featured-products" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4"></div>
+            <a href="#products" class="sm:hidden mt-4 inline-flex items-center justify-center w-full gap-2 bg-[#f3dedf] text-[#733238] font-bold py-2.5 px-5 rounded-xl border border-[#f2a1a2]/35">
+                <span>לכל המוצרים</span>
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            </a>
+        </section>
+
+        <!-- ================= עדכונים אחרונים בבית ================= -->
+        <section id="home-updates" class="section-shell mb-10 md:mb-14">
+            <div class="flex items-end justify-between gap-4 mb-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-black text-[#733238]">עדכונים אחרונים</h2>
+                    <p class="text-sm text-[#836b6d] mt-1">חדשות קצרות מהסטודיו והקטלוג.</p>
+                </div>
+                <a href="#updates" class="inline-flex items-center gap-2 text-sm font-bold text-[#ee5253] hover:text-[#733238]">
+                    <span>לכל העדכונים</span>
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                </a>
+            </div>
+            <div id="home-updates-list" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+        </section>
         
         <!-- ================= פאנל ניהול (מוצג רק במצב עריכה) ================= -->
         <section id="admin-panel" class="hidden mb-8 space-y-6 animate-fade-in">
+            <div class="glass-card p-4 rounded-2xl">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <h2 class="text-xl font-black text-[#733238]">Dashboard Ecrafts</h2>
+                        <p class="text-xs text-[#836b6d] mt-1">ניהול מוצרים, עדכונים והזמנות במקום אחד.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#admin-products" class="px-4 py-2 rounded-xl bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">מוצרים</a>
+                        <a href="#admin-orders" class="px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">הזמנות</a>
+                        <a href="#admin-updates" class="px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">עדכונים</a>
+                        <a href="#admin-settings" class="px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">הגדרות אתר</a>
+                    </div>
+                </div>
+            </div>
             <!-- כרטיסיית הגדרות מהירות -->
-            <div class="glass-card p-6 rounded-2xl space-y-6">
+            <div id="admin-products" class="section-shell glass-card p-6 rounded-2xl space-y-6">
                 <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
                     <div class="flex items-center gap-2">
                         <i data-lucide="sliders" class="text-brand-500 w-5 h-5"></i>
-                        <h2 class="text-lg font-bold text-white">הגדרות קטלוג (מנהל)</h2>
+                        <h2 class="text-lg font-bold text-white">מוצרים</h2>
                     </div>
                     <span class="text-xs text-zinc-500">הגדרות אלו נשמרות מקומית בדפדפן ובקישור השיתוף</span>
                 </div>
@@ -301,12 +426,48 @@
                     </div>
                 </details>
             </div>
+
+            <div id="admin-orders" class="section-shell glass-card p-6 rounded-2xl space-y-5">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-zinc-800 pb-4">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clipboard-list" class="text-brand-500 w-5 h-5"></i>
+                        <h2 class="text-lg font-bold text-white">הזמנות</h2>
+                    </div>
+                    <button onclick="openAddOrderPrompt()" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium py-2 px-4 rounded-xl shadow-sm transition-colors">
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                        <span>הוסף הזמנה</span>
+                    </button>
+                </div>
+                <div id="admin-orders-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+            </div>
+
+            <div id="admin-updates" class="section-shell glass-card p-6 rounded-2xl space-y-5">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-zinc-800 pb-4">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="newspaper" class="text-brand-500 w-5 h-5"></i>
+                        <h2 class="text-lg font-bold text-white">עדכונים</h2>
+                    </div>
+                    <button onclick="openAddUpdatePrompt()" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium py-2 px-4 rounded-xl shadow-sm transition-colors">
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                        <span>הוסף עדכון</span>
+                    </button>
+                </div>
+                <div id="admin-updates-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+            </div>
+
+            <div id="admin-settings" class="section-shell glass-card p-6 rounded-2xl space-y-3">
+                <div class="flex items-center gap-2 border-b border-zinc-800 pb-4">
+                    <i data-lucide="settings" class="text-brand-500 w-5 h-5"></i>
+                    <h2 class="text-lg font-bold text-white">הגדרות אתר</h2>
+                </div>
+                <p class="text-sm text-[#513e40] leading-relaxed">בשלב הזה ההגדרות המרכזיות הן שם האתר, טקסט התיאור ואימייל ההזמנות שמופיעים באזור המוצרים. בהמשך אפשר לרכז כאן גם טקסטים כלליים וקישורים חברתיים.</p>
+            </div>
         </section>
 
         <!-- ================= פאנל לקוח וצפייה ================= -->
         
         <!-- כותרת ראשית של הגלריה והחיפוש -->
-        <section class="mb-4 md:mb-8 space-y-4 md:space-y-6">
+        <section id="products" class="section-shell hidden mb-4 md:mb-8 space-y-4 md:space-y-6">
             <div class="text-center py-2 md:py-6 space-y-2 md:space-y-4">
                 <h2 id="catalog-title" class="text-2xl md:text-4xl font-black text-[#733238]">יצירות בעבודת יד</h2>
                 <p id="catalog-desc" class="text-sm md:text-base text-[#513e40] font-medium opacity-90 max-w-xl mx-auto">בחרו קטגוריה ודפדפו במוצרים</p>
@@ -413,15 +574,143 @@
                 </div>
             </details>
         </section>
+
+        <!-- ================= עדכונים ================= -->
+        <section id="updates" class="section-shell mt-14 md:mt-20">
+            <div class="mb-5">
+                <h2 class="text-2xl md:text-3xl font-black text-[#733238]">עדכונים</h2>
+                <p class="text-sm text-[#836b6d] mt-1">הודעות קצרות על מוצרים, קולקציות וזמינות.</p>
+            </div>
+            <div id="updates-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </section>
+
+        <!-- ================= על Ecrafts ================= -->
+        <section id="about" class="section-shell mt-14 md:mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-[220px_minmax(0,1fr)] gap-6 items-center bg-white/85 border border-[#f2a1a2]/30 rounded-2xl p-5 md:p-7 shadow-sm">
+                <img src="logo.jpg" class="w-36 h-36 md:w-44 md:h-44 object-cover rounded-full border-4 border-white shadow-md mx-auto" alt="Ecrafts">
+                <div class="space-y-3 text-right">
+                    <h2 class="text-2xl md:text-3xl font-black text-[#733238]">על Ecrafts</h2>
+                    <p class="text-sm md:text-base text-[#513e40] leading-relaxed">
+                        Ecrafts היא חנות ליצירות קטנות בעבודת יד: סימניות, מחזיקי מפתחות ופריטים מאוירים שמשלבים ציור ידני, פרחים, אבנים וחומרים משתנים. כל פריט נוצר בנפרד, ולכן גם כשמזמינים יצירה בהשראת עיצוב קיים, התוצאה נשארת ייחודית.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= שאלות ומידע ================= -->
+        <section id="info" class="section-shell mt-14 md:mt-20 max-w-4xl mx-auto">
+            <div class="mb-5 text-center">
+                <h2 class="text-2xl md:text-3xl font-black text-[#733238]">שאלות ומידע</h2>
+                <p class="text-sm text-[#836b6d] mt-1">כל מה שצריך לדעת לפני הזמנה.</p>
+            </div>
+            <div class="space-y-3">
+                <details class="group bg-white border border-[#f2a1a2]/30 rounded-2xl p-4 shadow-sm">
+                    <summary class="cursor-pointer font-bold text-[#733238] flex items-center justify-between">
+                        <span>איך מזמינים?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-3 text-sm text-[#513e40] leading-relaxed">בוחרים מוצר, פותחים את פרטי המוצר ולוחצים על כפתור ההזמנה במייל. שם המוצר ייכנס אוטומטית להודעה.</p>
+                </details>
+                <details class="group bg-white border border-[#f2a1a2]/30 rounded-2xl p-4 shadow-sm">
+                    <summary class="cursor-pointer font-bold text-[#733238] flex items-center justify-between">
+                        <span>איך מתבצע התשלום?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-3 text-sm text-[#513e40] leading-relaxed">התשלום מתואם לאחר יצירת קשר ואישור ההזמנה. אפשרויות כמו Bit, מזומן או אמצעי אחר יתואמו באופן אישי.</p>
+                </details>
+                <details class="group bg-white border border-[#f2a1a2]/30 rounded-2xl p-4 shadow-sm">
+                    <summary class="cursor-pointer font-bold text-[#733238] flex items-center justify-between">
+                        <span>משלוח ואיסוף</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="mt-3 text-sm text-[#513e40] leading-relaxed space-y-2">
+                        <p>המשלוח מתבצע באמצעות דואר ישראל, בהתאם למחירון העדכני שלהם בזמן ההזמנה.</p>
+                        <p>ניתן לשדרג את המשלוח למשלוח מהיר, משלוח עד הבית או אפשרות אחרת הזמינה בדואר ישראל.</p>
+                        <p>סוג המשלוח הסופי והעלות יסוכמו יחד בשיחת המייל לפני אישור ההזמנה.</p>
+                    </div>
+                </details>
+                <details class="group bg-white border border-[#f2a1a2]/30 rounded-2xl p-4 shadow-sm">
+                    <summary class="cursor-pointer font-bold text-[#733238] flex items-center justify-between">
+                        <span>כמה זמן לוקחת יצירה לפי הזמנה?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-3 text-sm text-[#513e40] leading-relaxed">זמן ההכנה ליצירה לפי הזמנה הוא עד 7 ימי עסקים, כל עוד אין צורך בשינויים במהלך יצירת המוצר. אם יידרשו התאמות או שינויי עיצוב, זמן ההכנה יתואם במייל.</p>
+                </details>
+                <details class="group bg-white border border-[#f2a1a2]/30 rounded-2xl p-4 shadow-sm">
+                    <summary class="cursor-pointer font-bold text-[#733238] flex items-center justify-between">
+                        <span>אפשר להזמין מחדש עיצוב שכבר הוזמן?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-3 text-sm text-[#513e40] leading-relaxed">כן. ניתן להזמין יצירה חדשה בהשראת עיצוב קיים. בגלל שמדובר בעבודת יד, היצירה תהיה דומה אך לא זהה לחלוטין לתמונה.</p>
+                </details>
+                <details class="group bg-white border border-[#f2a1a2]/30 rounded-2xl p-4 shadow-sm">
+                    <summary class="cursor-pointer font-bold text-[#733238] flex items-center justify-between">
+                        <span>איך שומרים על המוצר?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="mt-3 text-sm text-[#513e40] leading-relaxed space-y-2">
+                        <p>המוצר עמיד במים, ובמקרה הצורך ניתן לנקות אותו בעדינות עם מטלית לחה.</p>
+                        <p>אין לנקות עם חומרי ניקוי חזקים, מכיוון שהם עלולים להמיס או לפגוע בשכבת המגן של המוצר.</p>
+                        <p>אין לשפשף בחוזקה. שפשוף חזק עלול ליצור שריטות ולפגוע בשכבת המגן של הציור.</p>
+                    </div>
+                </details>
+                <details class="group bg-white border border-[#f2a1a2]/30 rounded-2xl p-4 shadow-sm">
+                    <summary class="cursor-pointer font-bold text-[#733238] flex items-center justify-between">
+                        <span>מה עושים אם מוצר הגיע פגום?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-3 text-sm text-[#513e40] leading-relaxed">פונים במייל עם תיאור הבעיה ותמונה של המוצר, ונחזור אלייך עם פתרון מתאים.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- ================= יצירת קשר ================= -->
+        <section id="contact" class="section-shell mt-14 md:mt-20">
+            <div class="bg-[#dfb1ba]/15 border border-[#dfb1ba]/30 rounded-2xl p-5 md:p-7 text-center space-y-5">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-black text-[#733238]">יצירת קשר</h2>
+                    <p class="text-sm text-[#513e40] mt-1">לשאלות, הזמנות ובקשות ליצירה חדשה.</p>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <a href="mailto:ecraftsil@gmail.com" class="inline-flex items-center gap-2 bg-white hover:bg-[#fdfaf7] text-[#733238] font-bold py-2.5 px-4 rounded-xl border border-[#f2a1a2]/35 transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4 text-[#ee5253]"></i>
+                        <span>ecraftsil@gmail.com</span>
+                    </a>
+                    <a href="https://www.instagram.com/ecraftsil" target="_blank" class="inline-flex items-center gap-2 bg-white hover:bg-[#fdfaf7] text-[#733238] font-bold py-2.5 px-4 rounded-xl border border-[#f2a1a2]/35 transition-colors">
+                        <i data-lucide="instagram" class="w-4 h-4 text-[#ee5253]"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@ecraftsil" target="_blank" class="inline-flex items-center gap-2 bg-white hover:bg-[#fdfaf7] text-[#733238] font-bold py-2.5 px-4 rounded-xl border border-[#f2a1a2]/35 transition-colors">
+                        <span class="font-black text-[#ee5253]">♪</span>
+                        <span>TikTok</span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- פוטר (Footer) -->
     <footer class="border-t border-[#f2a1a2]/30 bg-white/80 py-8 mt-16 text-center text-[#513e40] text-xs">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="text-right space-y-1">
-                <p class="font-bold text-sm text-[#733238]">Ecrafts</p>
+        <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div class="text-center lg:text-right space-y-2">
+                <div class="flex items-center justify-center lg:justify-start gap-2">
+                    <img src="logo.jpg" class="w-9 h-9 object-cover rounded-full border border-[#f2a1a2]/40" alt="Ecrafts">
+                    <p class="font-black text-base text-[#733238]">Ecrafts</p>
+                </div>
                 <p class="text-[#836b6d]">כל פריט נוצר ומצויר בעבודת יד ✨</p>
             </div>
+
+            <nav class="flex flex-wrap items-center justify-center gap-3 text-[#733238] font-bold">
+                <a href="#home" class="hover:text-[#ee5253]">בית</a>
+                <span class="text-[#f2a1a2]/40">|</span>
+                <a href="#products" class="hover:text-[#ee5253]">מוצרים</a>
+                <span class="text-[#f2a1a2]/40">|</span>
+                <a href="#updates" class="hover:text-[#ee5253]">עדכונים</a>
+                <span class="text-[#f2a1a2]/40">|</span>
+                <a href="#about" class="hover:text-[#ee5253]">על Ecrafts</a>
+                <span class="text-[#f2a1a2]/40">|</span>
+                <a href="#info" class="hover:text-[#ee5253]">שאלות ומידע</a>
+            </nav>
             
             <div class="flex flex-wrap items-center gap-6 text-[#ee5253] justify-center">
                 <a href="https://www.instagram.com/ecraftsil" target="_blank" class="hover:text-[#733238] flex items-center gap-1.5 transition-colors font-semibold" title="Instagram">
@@ -772,7 +1061,7 @@
     <script>
         // --- מצב התחלתי ומשתנים גלובליים ---
         let catalog = {
-            title: "Ecrafts - קטלוג מוצרים",
+            title: "Ecrafts",
             description: "כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו — פשוט אין שניים זהים.",
             email: "ecraftsil@gmail.com",
             products: []
@@ -780,9 +1069,35 @@
         
         let activeCategory = "הכל";
         let isEditMode = true; // האם אנחנו במצב עריכה כרגע
+        let siteUpdates = [];
+        let orders = [];
         
         // מפה לשמירת ObjectURL זמניים לקבצים שנטענו בסשן הנוכחי לצורך תצוגה מקדימה מיידית
         const sessionImageUrls = {}; 
+
+        const defaultUpdates = [
+            {
+                id: 1,
+                title: "האתר של Ecrafts מתרחב",
+                date: "2026-08-24",
+                text: "הקטלוג הופך לאתר מלא עם מוצרים, עדכונים, מידע שימושי ויצירת קשר מסודרת.",
+                image: ""
+            },
+            {
+                id: 2,
+                title: "אפשר להזמין יצירה בהשראת עיצוב קיים",
+                date: "2026-08-24",
+                text: "גם אם הפריט שבתמונה שמור או לא קיים כרגע, ניתן לבקש יצירה חדשה בהשראתו.",
+                image: ""
+            },
+            {
+                id: 3,
+                title: "פרטי מוצר ברורים יותר",
+                date: "2026-08-24",
+                text: "בחלון המוצר אפשר לראות פרטים, מידות, סטטוס וכפתור הזמנה מתאים.",
+                image: ""
+            }
+        ];
 
         function normalizeResinText(value) {
             if (typeof value !== 'string') return value;
@@ -981,7 +1296,15 @@
 
                 const hash = window.location.hash;
                 
-                if (hash.startsWith('#catalog=') || hash.startsWith('#data=')) {
+                if (isLocal) {
+                    // פתיחה ישירה מהמחשב היא תמיד מצב מנהל, גם אם נשאר hash מקישור שיתוף ישן בדפדפן.
+                    isEditMode = true;
+                    if (hash.startsWith('#catalog=') || hash.startsWith('#data=')) {
+                        history.replaceState(null, '', window.location.pathname);
+                    }
+                    loadCatalogFromLocalOrJs();
+                    setupFolderInput();
+                } else if (hash.startsWith('#catalog=') || hash.startsWith('#data=')) {
                     // מצב צפייה של הלקוח עם קישור מקודד (ישן)
                     isEditMode = false;
                     loadCatalogFromUrl(hash);
@@ -991,17 +1314,9 @@
                     loadCatalogFromLocalOrJs();
                     setupFolderInput();
                 } else {
-                    // ברירת מחדל ללא האש
-                    if (isLocal) {
-                        // סביבה מקומית - מנהל עורך
-                        isEditMode = true;
-                        loadCatalogFromLocalOrJs();
-                        setupFolderInput();
-                    } else {
-                        // סביבת שרת (GitHub Pages) - לקוח צופה
-                        isEditMode = false;
-                        loadCatalogFromJs();
-                    }
+                    // סביבת שרת (GitHub Pages) - לקוח צופה
+                    isEditMode = false;
+                    loadCatalogFromJs();
                 }
 
                 // 2. הגדרת שנה נוכחית בפוטר
@@ -1009,10 +1324,14 @@
 
                 // 3. אתחול האזנה לקבצים במודל
                 initModalFileInput();
+                setupSiteNavigation();
 
                 // 4. רינדור ה-UI בהתאם למצב
+                loadSiteContent();
                 applyModeUI();
                 renderCatalog();
+                renderSiteSections();
+                renderAdminDashboard();
             } catch (err) {
                 alert("שגיאה באתחול הרנדר: " + err.message + "\n" + err.stack);
             }
@@ -1024,6 +1343,41 @@
             if (folderInput) {
                 folderInput.addEventListener('change', handleFolderImport);
             }
+        }
+
+        function toggleMobileNav(forceOpen) {
+            const nav = document.getElementById('mobile-nav');
+            if (!nav) return;
+            const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : nav.classList.contains('hidden');
+            nav.classList.toggle('hidden', !shouldOpen);
+        }
+
+        function setProductsSectionVisible(isVisible) {
+            const productsSection = document.getElementById('products');
+            if (!productsSection) return;
+            productsSection.classList.toggle('hidden', !isVisible);
+        }
+
+        function setupSiteNavigation() {
+            const publicSections = new Set(['home', 'updates', 'about', 'info', 'contact']);
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (event) => {
+                    const targetId = link.getAttribute('href').slice(1);
+                    if (targetId === 'products') {
+                        event.preventDefault();
+                        setProductsSectionVisible(true);
+                        history.pushState(null, '', '#products');
+                        document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else if (publicSections.has(targetId)) {
+                        setProductsSectionVisible(false);
+                    }
+                });
+            });
+
+            setProductsSectionVisible(window.location.hash === '#products');
+            window.addEventListener('hashchange', () => {
+                setProductsSectionVisible(window.location.hash === '#products');
+            });
         }
 
         // --- ניהול מצבים (עריכה / צפייה) ---
@@ -1048,11 +1402,11 @@
             }
 
             // כותרות עליונות של העמוד
-            if (document.getElementById('header-title')) document.getElementById('header-title').innerText = catalog.title || "Ecrafts";
+            if (document.getElementById('header-title')) document.getElementById('header-title').innerText = "Ecrafts";
             if (document.getElementById('header-desc')) document.getElementById('header-desc').innerText = "Digital Art & Creations";
             
-            if (document.getElementById('catalog-title')) document.getElementById('catalog-title').innerText = "יצירות בעבודת יד";
-            if (document.getElementById('catalog-desc')) document.getElementById('catalog-desc').innerText = "בחרו קטגוריה ודפדפו במוצרים";
+            if (document.getElementById('catalog-title')) document.getElementById('catalog-title').innerText = "מוצרים";
+            if (document.getElementById('catalog-desc')) document.getElementById('catalog-desc').innerText = "חפשו לפי שם, קטגוריה או פרטי מוצר";
             
             // עדכון הפסקה הדינמית בתוך כרטיסיית הברכה למנוע כפילויות
             const welcomeCardText = document.getElementById('welcome-card-text');
@@ -1093,7 +1447,7 @@
                 catalog = JSON.parse(JSON.stringify(window.catalogData));
             } else {
                 catalog = {
-                    title: "Ecrafts - קטלוג מוצרים",
+                    title: "Ecrafts",
                     description: "כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו — פשוט אין שניים זהים.",
                     email: "ecraftsil@gmail.com",
                     products: []
@@ -1107,7 +1461,7 @@
                 catalog = JSON.parse(JSON.stringify(window.catalogData));
             } else {
                 // קטלוג ראשוני עם מוצרי דוגמה אם אין קובץ נתונים
-                catalog.title = "Ecrafts - קטלוג מוצרים";
+                catalog.title = "Ecrafts";
                 catalog.description = "כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו — פשוט אין שניים זהים.";
                 catalog.products = [...demoProducts];
             }
@@ -1122,6 +1476,224 @@
             } catch (e) {
                 console.warn("שגיאה בשמירה מקומית:", e);
             }
+        }
+
+        function loadSiteContent() {
+            try {
+                const savedUpdates = localStorage.getItem('ecrafts_updates');
+                siteUpdates = savedUpdates ? JSON.parse(savedUpdates) : [...defaultUpdates];
+            } catch (e) {
+                siteUpdates = [...defaultUpdates];
+            }
+
+            try {
+                const savedOrders = localStorage.getItem('ecrafts_orders');
+                orders = savedOrders ? JSON.parse(savedOrders) : [];
+            } catch (e) {
+                orders = [];
+            }
+        }
+
+        function saveSiteContent() {
+            try {
+                localStorage.setItem('ecrafts_updates', JSON.stringify(siteUpdates));
+                localStorage.setItem('ecrafts_orders', JSON.stringify(orders));
+            } catch (e) {
+                console.warn("שגיאה בשמירת נתוני אתר:", e);
+            }
+        }
+
+        function renderSiteSections() {
+            renderFeaturedProducts();
+            renderUpdates();
+            lucide.createIcons();
+        }
+
+        function renderFeaturedProducts() {
+            const container = document.getElementById('featured-products');
+            if (!container) return;
+
+            const products = (catalog.products || [])
+                .filter(p => normalizeStatus(p.status) === 'available')
+                .slice(0, 6);
+
+            container.innerHTML = products.map(product => {
+                const imgUrl = getDisplayImage(product, 300);
+                return `
+                    <button type="button" onclick="openLightboxById(${product.id})" class="text-right bg-white border border-[#f2a1a2]/30 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                        <div class="aspect-square bg-[#fdfaf7] overflow-hidden">
+                            <img src="${imgUrl}" alt="${product.name || ''}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-3 space-y-1">
+                            <h3 class="text-xs font-bold text-[#733238] line-clamp-2">${product.name || ''}</h3>
+                            <p class="text-sm font-black text-[#ee5253]">₪ ${product.price || '15'}</p>
+                        </div>
+                    </button>
+                `;
+            }).join('');
+
+            if (!products.length) {
+                container.innerHTML = `<div class="col-span-full bg-white border border-[#f2a1a2]/30 rounded-xl p-5 text-center text-sm text-[#836b6d]">בקרוב יופיעו כאן מוצרים זמינים.</div>`;
+            }
+        }
+
+        function getSortedUpdates() {
+            return [...siteUpdates].sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+        }
+
+        function renderUpdateCards(container, updates) {
+            if (!container) return;
+            container.innerHTML = updates.map(update => `
+                <article class="bg-white border border-[#f2a1a2]/30 rounded-2xl overflow-hidden shadow-sm">
+                    ${update.image ? `<img src="${update.image}" alt="" class="w-full aspect-video object-cover bg-[#fdfaf7]">` : ''}
+                    <div class="p-4 space-y-2 text-right">
+                        <time class="text-[11px] font-bold text-[#ee5253]">${update.date || ''}</time>
+                        <h3 class="text-base font-black text-[#733238]">${update.title || ''}</h3>
+                        <p class="text-sm text-[#513e40] leading-relaxed">${update.text || ''}</p>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function renderUpdates() {
+            const sorted = getSortedUpdates();
+            renderUpdateCards(document.getElementById('home-updates-list'), sorted.slice(0, 3));
+            renderUpdateCards(document.getElementById('updates-list'), sorted);
+        }
+
+        function renderAdminDashboard() {
+            renderAdminUpdates();
+            renderAdminOrders();
+            lucide.createIcons();
+        }
+
+        function renderAdminUpdates() {
+            const container = document.getElementById('admin-updates-list');
+            if (!container) return;
+            const sorted = getSortedUpdates();
+            container.innerHTML = sorted.map(update => `
+                <article class="bg-white border border-[#f2a1a2]/30 rounded-xl p-4 space-y-2 text-right">
+                    <time class="text-[11px] font-bold text-[#ee5253]">${update.date || ''}</time>
+                    <h3 class="text-sm font-black text-[#733238]">${update.title || ''}</h3>
+                    <p class="text-xs text-[#513e40] leading-relaxed">${update.text || ''}</p>
+                    <div class="flex gap-2 pt-2">
+                        <button onclick="deleteUpdate(${update.id})" class="text-xs font-bold text-[#733238] bg-[#f3dedf] hover:bg-[#ecd0d2] px-3 py-1.5 rounded-lg border border-[#f2a1a2]/30">מחיקה</button>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function renderAdminOrders() {
+            const container = document.getElementById('admin-orders-list');
+            if (!container) return;
+            if (!orders.length) {
+                container.innerHTML = `<div class="md:col-span-2 xl:col-span-3 bg-white border border-[#f2a1a2]/30 rounded-xl p-5 text-center text-sm text-[#836b6d]">אין עדיין הזמנות שמורות בדשבורד.</div>`;
+                return;
+            }
+
+            container.innerHTML = [...orders].reverse().map(order => `
+                <article class="bg-white border border-[#f2a1a2]/30 rounded-xl p-4 space-y-3 text-right">
+                    <div class="flex items-start justify-between gap-3">
+                        <div>
+                            <h3 class="text-sm font-black text-[#733238]">${order.clientName || 'לקוח'}</h3>
+                            <p class="text-xs text-[#836b6d]">${order.date || ''}</p>
+                        </div>
+                        <span class="text-[11px] font-bold rounded-full px-2 py-1 bg-[#86d7df]/15 text-[#2b7277] border border-[#86d7df]/30">${order.orderStatus || 'חדשה'}</span>
+                    </div>
+                    <div class="text-xs text-[#513e40] leading-relaxed space-y-1">
+                        <p><strong>מוצר:</strong> ${order.productName || ''}</p>
+                        <p><strong>סוג הזמנה:</strong> ${order.type || ''}</p>
+                        <p><strong>קשר:</strong> ${order.clientContact || ''}</p>
+                        <p><strong>תשלום:</strong> ${order.paymentStatus || 'ממתין לתשלום'} · ${order.paymentMethod || 'Bit'}</p>
+                        ${order.notes ? `<p><strong>הערות:</strong> ${order.notes}</p>` : ''}
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <select onchange="updateOrderStatus(${order.id}, this.value)" class="text-xs rounded-lg px-2 py-1.5">
+                            ${['חדשה','אושרה','בהכנה','מוכנה','נשלחה / נאספה','הושלמה','בוטלה'].map(status => `<option ${order.orderStatus === status ? 'selected' : ''}>${status}</option>`).join('')}
+                        </select>
+                        <select onchange="updatePaymentStatus(${order.id}, this.value)" class="text-xs rounded-lg px-2 py-1.5">
+                            ${['ממתין לתשלום','שולם','הוחזר'].map(status => `<option ${order.paymentStatus === status ? 'selected' : ''}>${status}</option>`).join('')}
+                        </select>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function openAddUpdatePrompt() {
+            const title = prompt("כותרת העדכון:");
+            if (!title) return;
+            const text = prompt("טקסט קצר לעדכון:") || "";
+            const image = prompt("תמונה אופציונלית - נתיב או קישור:") || "";
+            siteUpdates.push({
+                id: Date.now(),
+                title: title.trim(),
+                date: new Date().toISOString().slice(0, 10),
+                text: text.trim(),
+                image: image.trim()
+            });
+            saveSiteContent();
+            renderSiteSections();
+            renderAdminDashboard();
+        }
+
+        function deleteUpdate(id) {
+            if (!confirm("למחוק את העדכון הזה?")) return;
+            siteUpdates = siteUpdates.filter(update => update.id !== id);
+            saveSiteContent();
+            renderSiteSections();
+            renderAdminDashboard();
+        }
+
+        function addOrderRecord(order) {
+            orders.push({
+                id: Date.now(),
+                date: new Date().toISOString().slice(0, 10),
+                orderStatus: "חדשה",
+                paymentStatus: "ממתין לתשלום",
+                paymentMethod: "Bit",
+                ...order
+            });
+            saveSiteContent();
+            renderAdminDashboard();
+        }
+
+        function openAddOrderPrompt() {
+            const clientName = prompt("שם לקוח:");
+            if (!clientName) return;
+            const clientContact = prompt("אימייל או טלפון לחזרה:") || "";
+            const productName = prompt("שם מוצר:") || "";
+            const type = prompt("סוג הזמנה: מוצר זמין / יצירה מחדש") || "מוצר זמין";
+            const notes = prompt("הערות:") || "";
+            addOrderRecord({
+                clientName: clientName.trim(),
+                clientContact: clientContact.trim(),
+                productName: productName.trim(),
+                type: type.trim(),
+                notes: notes.trim()
+            });
+        }
+
+        function updateOrderStatus(id, status) {
+            const order = orders.find(item => item.id === id);
+            if (!order) return;
+            order.orderStatus = status;
+            const product = (catalog.products || []).find(p => p.id === order.productId);
+            if (product && order.initialProductStatus === 'available') {
+                if (status === 'אושרה' || status === 'בהכנה' || status === 'מוכנה') product.status = 'reserved';
+                if (status === 'בוטלה') product.status = 'available';
+                if (status === 'הושלמה') product.status = 'made_to_order';
+                saveCatalogToLocal();
+                renderCatalog();
+            }
+            saveSiteContent();
+            renderAdminDashboard();
+        }
+
+        function updatePaymentStatus(id, status) {
+            const order = orders.find(item => item.id === id);
+            if (!order) return;
+            order.paymentStatus = status;
+            saveSiteContent();
         }
 
         // ייצוא כל הנתונים לקובץ JS הנטען על ידי Git Pages
@@ -1192,10 +1764,10 @@
             catalog.description = document.getElementById('cfg-desc').value.trim() || "קטלוג מוצרים מעוצב";
             catalog.email = document.getElementById('cfg-email').value.trim() || "";
             
-            document.getElementById('header-title').innerText = catalog.title;
-            document.getElementById('header-desc').innerText = catalog.description;
-            document.getElementById('catalog-title').innerText = catalog.title;
-            document.getElementById('catalog-desc').innerText = catalog.description;
+            document.getElementById('header-title').innerText = "Ecrafts";
+            document.getElementById('header-desc').innerText = "Digital Art & Creations";
+            document.getElementById('catalog-title').innerText = "מוצרים";
+            document.getElementById('catalog-desc').innerText = "חפשו לפי שם, קטגוריה או פרטי מוצר";
             
             saveCatalogToLocal();
         }
@@ -1317,6 +1889,7 @@
 
             // עדכון רשימת קטגוריות
             renderCategoryTabs();
+            renderFeaturedProducts();
             lucide.createIcons();
         }
 
@@ -1982,6 +2555,16 @@
             const isMadeToOrder = statusMeta.key === 'made_to_order';
             const isReserved = statusMeta.key === 'reserved';
             const requestType = statusMeta.requestType;
+            addOrderRecord({
+                productId: product.id,
+                productName: product.name,
+                initialProductStatus: statusMeta.key,
+                type: statusMeta.key === 'available' ? 'מוצר זמין' : 'יצירה מחדש',
+                clientName,
+                clientContact,
+                quantity,
+                notes
+            });
 
             let subject = "";
             let body = "";
