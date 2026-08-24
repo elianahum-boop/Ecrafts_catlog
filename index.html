@@ -1577,6 +1577,30 @@
             const targetEmail = catalog.email || "ecraftsil@gmail.com";
             const fullImgUrl = getFullImageUrl(product.image);
 
+            const isLocal = window.location.protocol === 'file:' || 
+                            window.location.hostname === 'localhost' || 
+                            window.location.hostname === '127.0.0.1';
+
+            if (isLocal) {
+                // בסביבה מקומית FormSubmit חסום, לכן נשתמש ב-mailto הרגיל
+                const subject = `הזמנה חדשה מהקטלוג: ${product.name}`;
+                const body = `היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n\n` +
+                             `- שם המוצר: ${product.name}\n` +
+                             `- כמות: ${quantity}\n` +
+                             `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
+                             `פרטי המזמין:\n` +
+                             `- שם הלקוח: ${clientName}\n` +
+                             `- פרטי קשר לחזרה: ${clientContact}\n` +
+                             `- הערות/בקשות: ${notes || 'אין'}\n\n` +
+                             `קישור ישיר לתמונת המוצר:\n` +
+                             `${fullImgUrl}\n\n` +
+                             `תודה!`;
+
+                window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
+                closeOrderModal();
+                return;
+            }
+
             // שינוי כפתור השליחה למצב טעינה
             const sendBtn = document.getElementById('order-send-btn');
             const originalBtnHtml = sendBtn.innerHTML;
