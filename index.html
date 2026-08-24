@@ -74,6 +74,12 @@
             box-shadow: 0 0 20px rgba(242, 161, 162, 0.3);
             border-color: rgba(238, 82, 83, 0.5) !important;
         }
+        
+        /* Keyboard Accessibility Focus */
+        :focus-visible {
+            outline: 2px solid #ee5253 !important;
+            outline-offset: 2px !important;
+        }
 
         /* LOGO CHARACTER THEME OVERRIDES */
         h1, h2, h3, h4, h5, h6 {
@@ -324,17 +330,20 @@
                     <!-- נוצר דינמית -->
                 </div>
 
-                <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
-                    <!-- פילטר זמינים בלבד -->
-                    <label class="flex items-center gap-2 text-xs md:text-sm text-[#733238] font-bold cursor-pointer select-none whitespace-nowrap bg-[#dfb1ba]/10 hover:bg-[#dfb1ba]/20 px-3 py-2 rounded-full border border-[#dfb1ba]/25 transition-colors">
-                        <input type="checkbox" id="filter-available-only" onchange="filterProducts()" class="w-3.5 h-3.5 rounded accent-[#ee5253] cursor-pointer">
-                        <span>זמינים בלבד 🟢</span>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
+                    <!-- פילטר זמינים בלבד מותאם עיצובית -->
+                    <label class="group relative flex items-center justify-center sm:justify-start gap-2.5 text-xs md:text-sm text-[#2b7277] font-bold cursor-pointer select-none whitespace-nowrap bg-[#86d7df]/10 hover:bg-[#86d7df]/20 px-5 py-2.5 rounded-full border border-[#86d7df]/30 transition-all shrink-0">
+                        <div class="relative flex items-center justify-center">
+                            <input type="checkbox" id="filter-available-only" onchange="filterProducts()" class="peer appearance-none w-4 h-4 border-2 border-[#2b7277]/40 rounded bg-white/50 checked:bg-[#2b7277] checked:border-[#2b7277] transition-all cursor-pointer outline-none">
+                            <i data-lucide="check" class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span>זמינים בלבד</span>
                     </label>
 
                     <!-- תיבת חיפוש -->
-                    <div class="relative w-full md:w-64">
-                        <i data-lucide="search" class="absolute inset-y-0 right-3 flex items-center text-zinc-500 w-4 h-4 my-auto"></i>
-                        <input type="text" id="search-input" oninput="filterProducts()" class="w-full bg-zinc-900/80 border border-zinc-800 rounded-full py-2.5 pr-10 pl-4 text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition-all" placeholder="חיפוש מוצר...">
+                    <div class="relative w-full sm:w-64 grow sm:grow-0">
+                        <i data-lucide="search" class="absolute inset-y-0 right-4 flex items-center text-[#836b6d] w-4 h-4 my-auto"></i>
+                        <input type="text" id="search-input" oninput="filterProducts()" class="w-full bg-white/80 border border-[#f2a1a2] rounded-full py-2.5 pr-11 pl-4 text-[#3f2f31] placeholder-[#988082] focus:outline-none focus:border-[#ee5253] focus:ring-1 focus:ring-[#ee5253] text-sm transition-all" placeholder="חיפוש מוצר...">
                     </div>
                 </div>
             </div>
@@ -347,14 +356,17 @@
             </div>
             
             <!-- מצב גלריה ריקה -->
-            <div id="empty-catalog-state" class="hidden text-center py-16 space-y-4">
-                <div class="w-16 h-16 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center mx-auto text-zinc-600">
-                    <i data-lucide="package-open" class="w-8 h-8"></i>
+            <div id="empty-catalog-state" class="hidden flex flex-col items-center justify-center text-center py-16 space-y-4">
+                <div class="w-16 h-16 rounded-full bg-[#dfb1ba]/10 border border-[#dfb1ba]/30 flex items-center justify-center mx-auto text-[#ee5253]">
+                    <i data-lucide="search-x" class="w-8 h-8"></i>
                 </div>
                 <div class="space-y-1">
-                    <h3 class="font-bold text-zinc-300">אין עדיין מוצרים בקטלוג</h3>
-                    <p class="text-xs text-zinc-500 max-w-xs mx-auto">לחץ על 'בחר תיקיית תמונות' או 'הוסף מוצר בודד' בפאנל המנהל כדי להתחיל למלא את הקטלוג שלך.</p>
+                    <h3 class="font-bold text-[#733238] text-lg">לא מצאנו מוצרים שמתאימים לחיפוש הזה ✨</h3>
+                    <p class="text-sm text-[#836b6d] max-w-sm mx-auto">נסו קטגוריה, חיפוש אחר או הסירו פילטרים.</p>
                 </div>
+                <button onclick="resetFilters()" class="mt-2 px-6 py-2 bg-[#dfb1ba]/15 hover:bg-[#dfb1ba]/30 text-[#733238] text-sm font-bold rounded-full transition-colors border border-[#dfb1ba]/40 shadow-sm">
+                    איפוס סינונים
+                </button>
             </div>
         </section>
 
@@ -1104,7 +1116,7 @@
                     ${adminControls}
                     
                     <!-- תמונה -->
-                    <div class="relative overflow-hidden aspect-square bg-zinc-950 cursor-pointer" onclick="openLightboxById(${product.id})">
+                    <div class="relative overflow-hidden aspect-square bg-zinc-950 cursor-zoom-in" onclick="openLightboxById(${product.id})" tabindex="0" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); openLightboxById(${product.id}); }">
                         <img src="${imgUrl}" onerror="handleBrokenImage(${product.id})" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 md:group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60"></div>
                         
@@ -1193,6 +1205,16 @@
         }
 
         function filterProducts() {
+            renderCatalog();
+        }
+
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            
+            const filterAvail = document.getElementById('filter-available-only');
+            if (filterAvail) filterAvail.checked = false;
+            
+            activeCategory = 'הכל';
             renderCatalog();
         }
 
