@@ -309,7 +309,7 @@
         <section class="mb-4 md:mb-8 space-y-4 md:space-y-6">
             <div class="text-center py-2 md:py-6 space-y-2 md:space-y-4">
                 <h2 id="catalog-title" class="text-2xl md:text-4xl font-black text-[#733238]">יצירות בעבודת יד</h2>
-                <p id="catalog-desc" class="text-xs md:text-sm text-zinc-500 max-w-xl mx-auto">בחרו קטגוריה ודפדפו במוצרים</p>
+                <p id="catalog-desc" class="text-sm md:text-base text-[#513e40] font-medium opacity-90 max-w-xl mx-auto">בחרו קטגוריה ודפדפו במוצרים</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mt-4">
                     <!-- כרטיס 1: ברוכים הבאים -->
@@ -317,24 +317,24 @@
                         <p class="font-bold text-[#8a374a] mb-1 md:mb-1.5 text-sm md:text-base">ברוכים הבאים ל-Ecrafts! ✨</p>
                         <p id="welcome-card-text">כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו. אני יוצרת כל פריט בנפרד, ולכן לכל אחד יש אופי משלו ואין שניים זהים לחלוטין 💕</p>
                     </div>
-                    <!-- כרטיס 2: פריט שאהבת כבר נמכר -->
+                    <!-- כרטיס 2: יצירה מחדש -->
                     <div class="p-2.5 md:p-3.5 rounded-xl bg-[#86d7df]/8 border border-[#86d7df]/20 text-[#2c3d40]/90 text-xs md:text-sm leading-relaxed flex flex-col justify-center text-center">
-                        <p class="font-bold text-[#2b7277]/90 mb-1 md:mb-1.5 text-xs md:text-sm">✨ פריט שאהבת כבר נמכר?</p>
-                        <p>אפשר לבקש יצירה חדשה בהשראתו. מכיוון שכל פריט נעשה בעבודת יד, היצירה החדשה תהיה ייחודית ולא זהה לחלוטין למקור.</p>
+                        <p class="font-bold text-[#2b7277]/90 mb-1 md:mb-1.5 text-xs md:text-sm">✨ יצירה מחדש בהשראת פריט שאהבת</p>
+                        <p>כל פריט נוצר ומצויר בעבודת יד. אם הפריט שבתמונה כבר אינו זמין, ניתן להזמין יצירה חדשה בהשראתו. מכיוון שמדובר בעבודת יד, ייתכנו הבדלים קטנים וכל יצירה תהיה ייחודית.</p>
                     </div>
                 </div>
             </div>
 
             <!-- סרגל חיפוש ופילטרים -->
-            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div class="flex flex-col xl:flex-row gap-4 items-center justify-between mt-2">
                 <!-- פילטר קטגוריות -->
-                <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto pb-1 max-w-full no-scrollbar">
+                <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto max-w-full no-scrollbar">
                     <!-- נוצר דינמית -->
                 </div>
 
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full xl:w-auto">
                     <!-- פילטר זמינים בלבד מותאם עיצובית -->
-                    <label class="group relative flex items-center justify-center sm:justify-start gap-2.5 text-xs md:text-sm text-[#2b7277] font-bold cursor-pointer select-none whitespace-nowrap bg-[#86d7df]/10 hover:bg-[#86d7df]/20 px-5 py-2.5 rounded-full border border-[#86d7df]/30 transition-all shrink-0">
+                    <label id="filter-available-label" class="group relative flex items-center justify-center sm:justify-start gap-2.5 text-xs md:text-sm text-[#2b7277] font-bold cursor-pointer select-none whitespace-nowrap bg-[#86d7df]/10 hover:bg-[#86d7df]/20 px-5 py-2.5 rounded-full border border-[#86d7df]/30 transition-all shrink-0">
                         <div class="relative flex items-center justify-center">
                             <input type="checkbox" id="filter-available-only" onchange="filterProducts()" class="peer appearance-none w-4 h-4 border-2 border-[#2b7277]/40 rounded bg-white/50 checked:bg-[#2b7277] checked:border-[#2b7277] transition-all cursor-pointer outline-none">
                             <i data-lucide="check" class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity"></i>
@@ -343,9 +343,12 @@
                     </label>
 
                     <!-- תיבת חיפוש -->
-                    <div class="relative w-full sm:w-64 grow sm:grow-0">
+                    <div class="relative w-full sm:w-64 grow sm:grow-0 group">
                         <i data-lucide="search" class="absolute inset-y-0 right-4 flex items-center text-[#836b6d] w-4 h-4 my-auto"></i>
-                        <input type="text" id="search-input" oninput="filterProducts()" class="w-full bg-white/80 border border-[#f2a1a2] rounded-full py-2.5 pr-11 pl-4 text-[#3f2f31] placeholder-[#988082] focus:outline-none focus:border-[#ee5253] focus:ring-1 focus:ring-[#ee5253] text-sm transition-all" placeholder="חיפוש מוצר...">
+                        <input type="text" id="search-input" oninput="filterProducts()" class="w-full bg-white/80 border border-[#f2a1a2] rounded-full py-2.5 pr-11 pl-10 text-[#3f2f31] placeholder-[#988082] focus:outline-none focus:border-[#ee5253] focus:ring-1 focus:ring-[#ee5253] text-sm transition-all" placeholder="חיפוש מוצר...">
+                        <button onclick="clearSearch()" id="clear-search-btn" class="absolute inset-y-0 left-3 flex items-center justify-center text-[#836b6d] hover:text-[#ee5253] transition-colors hidden" title="נקה חיפוש">
+                            <i data-lucide="x" class="w-4 h-4 my-auto"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -460,7 +463,7 @@
                 
                 <!-- העלאת תמונה -->
                 <div>
-                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">תמונת המוצר</label>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">תמונה ראשית</label>
                     <div id="modal-image-preview-container" class="relative group rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/50 aspect-square flex flex-col items-center justify-center cursor-pointer transition-all hover:border-zinc-700">
                         <img id="modal-image-preview" class="absolute inset-0 w-full h-full object-cover hidden">
                         <div id="modal-image-placeholder" class="text-center space-y-2 pointer-events-none p-4">
@@ -498,20 +501,53 @@
                     </div>
                 </div>
 
-                <!-- תיאור -->
+                <!-- פרטי המוצר -->
                 <div>
-                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">תיאור קצר</label>
-                    <textarea id="modal-desc" rows="3" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 resize-none text-sm" placeholder="לדוגמה: מיוצר מחומרים איכותיים עם הקדשה אישית..."></textarea>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">פרטי המוצר</label>
+                    <textarea id="modal-desc" rows="3" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 resize-none text-sm" placeholder="לדוגמה: מחזיק UV RESIN עם שבבי עין הנמר וציור ידני"></textarea>
+                </div>
+
+                <!-- מידות -->
+                <div class="space-y-3 rounded-xl border border-zinc-800 bg-zinc-950/35 p-3">
+                    <div>
+                        <h4 class="text-sm font-bold text-zinc-300">מידות</h4>
+                        <p class="text-[10px] text-zinc-500 mt-0.5">כל השדות אופציונליים. שדות ריקים לא יוצגו ללקוח.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-zinc-400 mb-1">אורך בס״מ</label>
+                            <input type="text" id="modal-dim-length" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="לדוגמה: 12">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-zinc-400 mb-1">רוחב בס״מ</label>
+                            <input type="text" id="modal-dim-width" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="לדוגמה: 4">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-zinc-400 mb-1">עובי במ״מ</label>
+                            <input type="text" id="modal-dim-thickness" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="לדוגמה: 3">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-zinc-400 mb-1">קוטר בס״מ</label>
+                            <input type="text" id="modal-dim-diameter" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="אופציונלי">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- סטטוס מוצר -->
                 <div>
                     <label class="block text-sm font-medium text-zinc-400 mb-1.5">סטטוס זמינות</label>
                     <select id="modal-status" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm">
-                        <option value="available" selected>זמין (Available)</option>
-                        <option value="reserved">שמור (Reserved)</option>
-                        <option value="sold">נמכר (Sold)</option>
+                        <option value="available" selected>זמין</option>
+                        <option value="reserved">שמור</option>
+                        <option value="made_to_order">בהכנה לפי הזמנה</option>
                     </select>
+                </div>
+
+                <!-- תמונות נוספות -->
+                <div>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">תמונות נוספות</label>
+                    <textarea id="modal-extra-images" rows="3" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 resize-none text-xs" placeholder="נתיב או קישור לכל תמונה בשורה נפרדת"></textarea>
+                    <p class="text-[10px] text-zinc-500 mt-1">אופציונלי: צילום מקרוב, צד, עובי או שימוש במוצר.</p>
                 </div>
             </div>
 
@@ -588,30 +624,47 @@
     </div>
 
     <!-- 3. מודל לייטבוקס לתמונות (צפייה מוגדלת) -->
-    <div id="lightbox-modal" class="fixed inset-0 bg-black/95 z-50 hidden flex flex-col justify-between p-4" onclick="closeLightbox()">
+    <div id="lightbox-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex flex-col justify-between p-4" onclick="closeLightbox()">
         <!-- כותרת הלייטבוקס / כפתור סגירה -->
-        <div class="flex items-center justify-between w-full max-w-5xl mx-auto py-2 z-10" onclick="event.stopPropagation()">
-            <div class="text-right">
-                <h3 id="lightbox-name" class="font-bold text-lg text-white">שם המוצר</h3>
-                <p id="lightbox-desc" class="text-xs text-zinc-400 mt-0.5">תיאור המוצר</p>
-            </div>
-            <button onclick="closeLightbox()" class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors">
+        <div class="flex items-center justify-end w-full max-w-5xl mx-auto py-2 z-10" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="w-10 h-10 rounded-full bg-white border border-[#f2a1a2]/30 flex items-center justify-center text-[#836b6d] hover:text-[#733238] hover:bg-[#fdfaf7] transition-colors shadow-sm">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
         </div>
 
-        <!-- תמונת הלייטבוקס במרכז -->
-        <div class="flex-grow flex items-center justify-center max-w-5xl mx-auto w-full max-h-[80vh] overflow-hidden" onclick="event.stopPropagation()">
-            <img id="lightbox-img" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl transition-all duration-300" src="" alt="">
-        </div>
-
-        <!-- תחתית הלייטבוקס / מחיר והזמנה באימייל -->
-        <div class="w-full max-w-5xl mx-auto flex items-center justify-between py-4 z-10 border-t border-zinc-800/50" onclick="event.stopPropagation()">
-            <span id="lightbox-price" class="text-2xl font-black text-brand-500">₪ 0</span>
-            <button id="lightbox-email-btn" class="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-6 rounded-xl shadow-lg transition-all duration-200">
-                <i data-lucide="mail" class="w-5 h-5"></i>
-                <span>הזמן עכשיו באימייל</span>
-            </button>
+        <!-- פרטי מוצר במרכז -->
+        <div class="flex-grow grid grid-cols-1 md:grid-cols-[minmax(0,1.2fr)_minmax(280px,0.8fr)] gap-4 max-w-5xl mx-auto w-full min-h-0" onclick="event.stopPropagation()">
+            <div class="flex flex-col min-h-0 gap-3">
+                <div class="flex-grow flex items-center justify-center overflow-hidden min-h-[260px]">
+                    <img id="lightbox-img" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl transition-all duration-300 bg-white" src="" alt="">
+                </div>
+                <div id="lightbox-gallery" class="hidden flex items-center gap-2 overflow-x-auto pb-1"></div>
+            </div>
+            <div class="bg-white/95 border border-[#f2a1a2]/35 rounded-2xl p-4 text-right overflow-y-auto max-h-[70vh] space-y-4 shadow-2xl flex flex-col">
+                <div class="border-b border-[#f2a1a2]/25 pb-3 space-y-2">
+                    <div class="flex flex-wrap items-start justify-between gap-3">
+                        <div class="space-y-1">
+                            <h3 id="lightbox-name" class="font-black text-xl md:text-2xl text-[#733238] leading-tight">שם המוצר</h3>
+                            <p id="lightbox-status" class="inline-flex text-xs font-bold rounded-full px-2.5 py-1 bg-emerald-50 border border-emerald-200 text-emerald-700">סטטוס</p>
+                        </div>
+                        <span id="lightbox-price" class="text-2xl font-black text-[#ee5253] shrink-0">₪ 0</span>
+                    </div>
+                </div>
+                <div id="lightbox-product-info" class="rounded-xl border border-[#f2a1a2]/30 bg-[#fdfaf7] p-3">
+                    <h4 class="text-xs font-bold text-[#8a374a] mb-2">פרטי המוצר</h4>
+                    <p id="lightbox-desc" class="text-sm text-[#513e40] leading-relaxed"></p>
+                </div>
+                <div id="lightbox-details" class="space-y-3 text-sm"></div>
+                <div id="lightbox-action-area" class="mt-auto pt-4 space-y-2">
+                    <button id="lightbox-email-btn" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-6 rounded-xl shadow-lg transition-all duration-200">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span>להזמנה במייל</span>
+                    </button>
+                    <p id="lightbox-remake-note" class="hidden text-xs text-[#836b6d] leading-relaxed text-center">
+                        כל יצירה נעשית בעבודת יד, ולכן היצירה החדשה תהיה דומה לעיצוב שבתמונה אך לא זהה לו לחלוטין.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -731,6 +784,126 @@
         // מפה לשמירת ObjectURL זמניים לקבצים שנטענו בסשן הנוכחי לצורך תצוגה מקדימה מיידית
         const sessionImageUrls = {}; 
 
+        function normalizeResinText(value) {
+            if (typeof value !== 'string') return value;
+            return value
+                .replace(/ואקרילית/g, 'ו-UV RESIN')
+                .replace(/ואקרילי/g, 'ו-UV RESIN')
+                .replace(/אקרילית/g, 'UV RESIN')
+                .replace(/אקרילי/g, 'UV RESIN')
+                .replace(/אקרילה/g, 'UV RESIN')
+                .replace(/אקריל/g, 'UV RESIN')
+                .replace(/ארקיל/g, 'UV RESIN');
+        }
+
+        function normalizeStatus(status) {
+            if (status === 'sold' || status === 'unavailable' || status === 'out_of_stock') return 'made_to_order';
+            if (status === 'made_to_order') return 'made_to_order';
+            if (status === 'reserved') return 'reserved';
+            return 'available';
+        }
+
+        function getStatusMeta(status) {
+            const normalized = normalizeStatus(status);
+            if (normalized === 'reserved') {
+                return {
+                    key: 'reserved',
+                    label: 'שמור',
+                    action: 'לבקשת יצירה דומה',
+                    orderTitle: 'בקשת יצירה דומה',
+                    sendText: 'שלח בקשת יצירה דומה',
+                    requestType: 'בקשת יצירה דומה',
+                    icon: 'help-circle',
+                    badgeClass: 'bg-amber-50/90 border border-amber-200 text-amber-700'
+                };
+            }
+            if (normalized === 'made_to_order') {
+                return {
+                    key: 'made_to_order',
+                    label: 'בהכנה לפי הזמנה',
+                    action: 'להזמנת יצירה חדשה',
+                    orderTitle: 'הזמנת יצירה חדשה',
+                    sendText: 'שלח הזמנת יצירה חדשה',
+                    requestType: 'הזמנת יצירה חדשה',
+                    icon: 'sparkles',
+                    badgeClass: 'bg-violet-50/90 border border-violet-200 text-violet-700'
+                };
+            }
+            return {
+                key: 'available',
+                label: 'זמין',
+                action: 'להזמנה במייל',
+                orderTitle: 'פרטי הזמנה',
+                sendText: 'שלח הזמנה במייל',
+                requestType: 'הזמנה חדשה',
+                icon: 'mail',
+                badgeClass: 'bg-emerald-50/90 border border-emerald-200 text-emerald-700'
+            };
+        }
+
+        function getProductImages(product) {
+            const images = [];
+            const mainImage = product.image || '';
+            if (mainImage.trim()) images.push(mainImage.trim());
+            const extraImages = Array.isArray(product.images) ? product.images : [];
+            extraImages.forEach(src => {
+                const cleanSrc = String(src || '').trim();
+                if (cleanSrc && !images.includes(cleanSrc)) images.push(cleanSrc);
+            });
+            return images;
+        }
+
+        function getDisplayImage(product, size = 300) {
+            if (sessionImageUrls[product.fileName]) return sessionImageUrls[product.fileName];
+            const images = getProductImages(product);
+            return images[0] || `https://via.placeholder.com/${size}?text=No+Image`;
+        }
+
+        function getProductDimensions(product) {
+            const dimensions = product.dimensions || {};
+            const clean = value => {
+                if (value === undefined || value === null) return '';
+                const text = String(value).trim();
+                return text && text !== '0' ? text : '';
+            };
+            const length = clean(dimensions.length);
+            const width = clean(dimensions.width);
+            const thickness = clean(dimensions.thickness);
+            const diameter = clean(dimensions.diameter);
+            const blocks = [];
+
+            if (length && width) {
+                blocks.push({ label: '', value: `${length} × ${width} ס״מ` });
+            } else if (length) {
+                blocks.push({ label: 'אורך', value: `${length} ס״מ` });
+            } else if (width) {
+                blocks.push({ label: 'רוחב', value: `${width} ס״מ` });
+            }
+
+            if (diameter) blocks.push({ label: 'קוטר', value: `כ־${diameter} ס״מ` });
+            if (thickness) blocks.push({ label: 'עובי', value: `כ־${thickness} מ״מ` });
+
+            return blocks;
+        }
+
+        function migrateProductData(product) {
+            product.status = normalizeStatus(product.status);
+            product.name = normalizeResinText(product.name);
+            product.category = normalizeResinText(product.category);
+            product.desc = normalizeResinText(product.desc);
+            if (product.price === undefined || product.price === null || String(product.price).trim() === "") {
+                product.price = "15";
+            }
+            if (!product.dimensions) product.dimensions = {};
+            if (!Array.isArray(product.images)) product.images = [];
+            return product;
+        }
+
+        function migrateCatalogProducts() {
+            if (!catalog.products) catalog.products = [];
+            catalog.products.forEach(migrateProductData);
+        }
+
         // מוצרי דוגמה ראשוניים
         const demoProducts = [
             {
@@ -738,7 +911,7 @@
                 name: "מחזיק מפתחות ספוטיפיי אישי",
                 price: "45",
                 category: "מחזיקים",
-                desc: "מחזיק מפתחות שקוף ואקרילי בעיצוב שיר ספוטיפיי אישי עם התמונה וההקדשה שלכם.",
+                desc: "מחזיק מפתחות שקוף ו-UV RESIN בעיצוב שיר ספוטיפיי אישי עם התמונה וההקדשה שלכם.",
                 image: "מוצרים/מחזיקים/Slide1.PNG",
                 fileName: "Slide1.PNG"
             },
@@ -903,15 +1076,8 @@
                         fallbackToJsData();
                         return;
                     }
-                    // מיגרציה: אם יש מוצרים קיימים ללא מחיר (או ריק), נשלים ל-15 ש"ח כברירת מחדל
-                    if (catalog.products) {
-                        catalog.products.forEach(p => {
-                            if (p.price === undefined || p.price === null || String(p.price).trim() === "") {
-                                p.price = "15";
-                            }
-                        });
-                        saveCatalogToLocal();
-                    }
+                    migrateCatalogProducts();
+                    saveCatalogToLocal();
                 } catch(e) {
                     console.error("שגיאה בטעינת קטלוג מקומי", e);
                     fallbackToJsData();
@@ -933,6 +1099,7 @@
                     products: []
                 };
             }
+            migrateCatalogProducts();
         }
 
         function fallbackToJsData() {
@@ -944,6 +1111,7 @@
                 catalog.description = "כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו — פשוט אין שניים זהים.";
                 catalog.products = [...demoProducts];
             }
+            migrateCatalogProducts();
             saveCatalogToLocal();
         }
 
@@ -1010,14 +1178,7 @@
                     catalog = JSON.parse(decoded);
                 }
                 
-                // מיגרציה בצפייה: השלמת מחירים ריקים ל-15 ש"ח
-                if (catalog.products) {
-                    catalog.products.forEach(p => {
-                        if (p.price === undefined || p.price === null || String(p.price).trim() === "") {
-                            p.price = "15";
-                        }
-                    });
-                }
+                migrateCatalogProducts();
             } catch(e) {
                 console.error("שגיאה בפענוח נתוני הקישור:", e);
                 alert("לא ניתן היה לטעון את פרטי הקטלוג מהקישור המצורף.");
@@ -1065,7 +1226,7 @@
             // סינון זמינים בלבד
             const filterAvailableOnly = document.getElementById('filter-available-only');
             if (filterAvailableOnly && filterAvailableOnly.checked) {
-                filtered = filtered.filter(p => p.status === 'available' || !p.status);
+                filtered = filtered.filter(p => normalizeStatus(p.status) === 'available');
             }
 
             // הצגת מצב ריק
@@ -1084,10 +1245,8 @@
                 card.style.animation = `fadeIn 0.3s ease-out ${index * 0.05}s both`;
                 
                 // רזולוציית התמונה (אם נטען באותו סשן - נשתמש ב-ObjectURL הזמני, אחרת בנתיב היחסי)
-                let imgUrl = product.image || 'https://via.placeholder.com/300?text=No+Image';
-                if (sessionImageUrls[product.fileName]) {
-                    imgUrl = sessionImageUrls[product.fileName];
-                }
+                const statusMeta = getStatusMeta(product.status);
+                let imgUrl = getDisplayImage(product, 300);
 
                 // יצירת תוכן כפתורי ניהול (אם במצב עריכה)
                 let adminControls = '';
@@ -1123,14 +1282,8 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60"></div>
                         
                         <!-- סטטוס מוצר -->
-                        <span class="absolute top-2 left-2 text-[10px] py-0.5 px-2 rounded-full font-bold shadow-sm backdrop-blur-sm ${
-                            product.status === 'sold' 
-                                ? 'bg-zinc-100/90 border border-zinc-200 text-zinc-600' 
-                                : product.status === 'reserved'
-                                    ? 'bg-amber-50/90 border border-amber-200 text-amber-600'
-                                    : 'bg-emerald-50/90 border border-emerald-200 text-emerald-600'
-                        }">
-                            ${product.status === 'sold' ? 'נמכר' : product.status === 'reserved' ? 'שמור' : 'זמין'}
+                        <span class="absolute top-2 left-2 text-[10px] py-0.5 px-2 rounded-full font-bold shadow-sm backdrop-blur-sm ${statusMeta.badgeClass}">
+                            ${statusMeta.label}
                         </span>
 
                         ${product.category ? `
@@ -1152,12 +1305,7 @@
                             
                             ${!isEditMode && catalog.email ? `
                                 <button onclick="event.stopPropagation(); openOrderModal(${product.id})" class="flex items-center gap-1.5 text-[10px] md:text-[11px] font-bold text-[#733238] bg-[#f3dedf] hover:bg-[#ecd0d2] border border-[#f2a1a2]/30 py-1.5 px-2.5 rounded-xl transition-all shadow-sm">
-                                    ${product.status === 'sold' 
-                                        ? `<i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#ee5253]"></i><span>בקשה להכנה מחדש</span>`
-                                        : product.status === 'reserved'
-                                            ? `<i data-lucide="help-circle" class="w-3.5 h-3.5 text-[#ee5253]"></i><span>לפרטים במייל</span>`
-                                            : `<i data-lucide="mail" class="w-3.5 h-3.5 text-[#ee5253]"></i><span>להזמנה במייל</span>`
-                                    }
+                                    <i data-lucide="${statusMeta.icon}" class="w-3.5 h-3.5 text-[#ee5253]"></i><span>${statusMeta.action}</span>
                                 </button>
                             ` : ''}
                         </div>
@@ -1232,6 +1380,11 @@
             document.getElementById('modal-image-url').value = "";
             document.getElementById('modal-file-input').value = "";
             document.getElementById('modal-status').value = "available";
+            document.getElementById('modal-dim-length').value = "";
+            document.getElementById('modal-dim-width').value = "";
+            document.getElementById('modal-dim-thickness').value = "";
+            document.getElementById('modal-dim-diameter').value = "";
+            document.getElementById('modal-extra-images').value = "";
             
             document.getElementById('modal-image-preview').classList.add('hidden');
             document.getElementById('modal-image-placeholder').classList.remove('hidden');
@@ -1248,7 +1401,13 @@
             document.getElementById('modal-price').value = product.price || "15";
             document.getElementById('modal-category').value = product.category || "";
             document.getElementById('modal-desc').value = product.desc || "";
-            document.getElementById('modal-status').value = product.status || "available";
+            document.getElementById('modal-status').value = normalizeStatus(product.status);
+            const dimensions = product.dimensions || {};
+            document.getElementById('modal-dim-length').value = dimensions.length || "";
+            document.getElementById('modal-dim-width').value = dimensions.width || "";
+            document.getElementById('modal-dim-thickness').value = dimensions.thickness || "";
+            document.getElementById('modal-dim-diameter').value = dimensions.diameter || "";
+            document.getElementById('modal-extra-images').value = Array.isArray(product.images) ? product.images.join('\n') : "";
             
             document.getElementById('modal-image-url').value = product.image || "";
             
@@ -1344,7 +1503,17 @@
             const desc = document.getElementById('modal-desc').value.trim();
             const imageUrlInput = document.getElementById('modal-image-url').value.trim();
             const fileInput = document.getElementById('modal-file-input');
-            const status = document.getElementById('modal-status').value || "available";
+            const status = normalizeStatus(document.getElementById('modal-status').value);
+            const dimensions = {
+                length: document.getElementById('modal-dim-length').value.trim(),
+                width: document.getElementById('modal-dim-width').value.trim(),
+                thickness: document.getElementById('modal-dim-thickness').value.trim(),
+                diameter: document.getElementById('modal-dim-diameter').value.trim()
+            };
+            const extraImages = document.getElementById('modal-extra-images').value
+                .split('\n')
+                .map(src => src.trim())
+                .filter(Boolean);
 
             if (!name) {
                 alert("חובה להזין שם מוצר!");
@@ -1378,6 +1547,8 @@
                     catalog.products[index].desc = desc;
                     catalog.products[index].image = finalImage;
                     catalog.products[index].status = status;
+                    catalog.products[index].dimensions = dimensions;
+                    catalog.products[index].images = extraImages;
                     if (finalFileName) catalog.products[index].fileName = finalFileName;
                 }
             } else {
@@ -1389,7 +1560,9 @@
                     category: category,
                     desc: desc,
                     image: finalImage,
-                    status: status
+                    status: status,
+                    dimensions: dimensions,
+                    images: extraImages
                 };
                 catalog.products.push(newProduct);
             }
@@ -1572,38 +1745,75 @@
             const img = document.getElementById('lightbox-img');
             const name = document.getElementById('lightbox-name');
             const desc = document.getElementById('lightbox-desc');
+            const productInfo = document.getElementById('lightbox-product-info');
+            const status = document.getElementById('lightbox-status');
             const price = document.getElementById('lightbox-price');
+            const details = document.getElementById('lightbox-details');
+            const gallery = document.getElementById('lightbox-gallery');
+            const remakeNote = document.getElementById('lightbox-remake-note');
+            const actionArea = document.getElementById('lightbox-action-area');
+            const statusMeta = getStatusMeta(product.status);
 
-            let imgUrl = product.image || 'https://via.placeholder.com/600?text=No+Image';
-            if (sessionImageUrls[product.fileName]) {
-                imgUrl = sessionImageUrls[product.fileName];
-            }
+            const images = getProductImages(product);
+            activeLightboxImages = images;
+            let imgUrl = getDisplayImage(product, 600);
 
             img.src = imgUrl;
             name.innerText = product.name || "";
             desc.innerText = product.desc || "";
+            productInfo.classList.toggle('hidden', !product.desc);
+            status.innerText = statusMeta.label;
+            status.className = `inline-flex text-xs font-bold rounded-full px-2.5 py-1 ${statusMeta.badgeClass}`;
             price.innerText = `₪ ${product.price || '15'}`;
+
+            const detailBlocks = [];
+            const dimensions = getProductDimensions(product);
+            if (dimensions.length) {
+                detailBlocks.push(`
+                    <div class="rounded-xl border border-[#f2a1a2]/30 bg-[#fdfaf7] p-3">
+                        <h4 class="text-xs font-bold text-[#8a374a] mb-2">מידות</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[#3f2f31]">
+                            ${dimensions.map(row => `
+                                <div>
+                                    ${row.label ? `<p class="text-[11px] font-bold text-[#8a374a]">${row.label}</p>` : ''}
+                                    <p class="text-sm">${row.value}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `);
+            }
+            details.innerHTML = detailBlocks.join('');
+
+            if (images.length > 1) {
+                gallery.innerHTML = images.map((src, index) => `
+                    <button type="button" data-lightbox-thumb="${index}" onclick="event.stopPropagation(); setLightboxImage(${index})" class="w-16 h-16 rounded-lg overflow-hidden border ${index === 0 ? 'border-[#ee5253] ring-2 ring-[#ee5253]/25' : 'border-white/70'} bg-white shrink-0 shadow-sm transition-all">
+                        <img src="${src}" alt="" class="w-full h-full object-cover">
+                    </button>
+                `).join('');
+                gallery.classList.remove('hidden');
+            } else {
+                gallery.innerHTML = '';
+                gallery.classList.add('hidden');
+            }
 
             // הגדרת כפתור הזמנה באימייל בלייטבוקס (יוצג רק במצב צפייה ואם יש מייל)
             const emailBtn = document.getElementById('lightbox-email-btn');
             const targetEmail = catalog.email;
             if (!isEditMode && targetEmail) {
+                actionArea.classList.remove('hidden');
                 emailBtn.classList.remove('hidden');
-                
-                if (product.status === 'sold') {
-                    emailBtn.innerHTML = `<i data-lucide="sparkles" class="w-5 h-5"></i><span>בקשה להכנה מחדש</span>`;
-                } else if (product.status === 'reserved') {
-                    emailBtn.innerHTML = `<i data-lucide="help-circle" class="w-5 h-5"></i><span>לפרטים במייל</span>`;
-                } else {
-                    emailBtn.innerHTML = `<i data-lucide="mail" class="w-5 h-5"></i><span>להזמנה במייל</span>`;
-                }
+                emailBtn.innerHTML = `<i data-lucide="${statusMeta.icon}" class="w-5 h-5"></i><span>${statusMeta.action}</span>`;
+                remakeNote.classList.toggle('hidden', statusMeta.key === 'available');
 
                 emailBtn.onclick = () => {
                     closeLightbox();
                     openOrderModal(product.id);
                 };
             } else {
+                actionArea.classList.add('hidden');
                 emailBtn.classList.add('hidden');
+                remakeNote.classList.add('hidden');
             }
 
             modal.classList.remove('hidden');
@@ -1629,7 +1839,9 @@
                         category: p.category,
                         desc: p.desc,
                         image: p.image, // נשלח את הנתיב היחסי בקישור!
-                        status: p.status || "available"
+                        status: normalizeStatus(p.status),
+                        dimensions: p.dimensions || {},
+                        images: Array.isArray(p.images) ? p.images : []
                     };
                 })
             };
@@ -1679,6 +1891,21 @@
 
         // --- מודל הזמנה חדש ---
         let activeOrderProductId = null;
+        let activeLightboxImages = [];
+
+        function setLightboxImage(index) {
+            const src = activeLightboxImages[index];
+            if (src) {
+                document.getElementById('lightbox-img').src = src;
+                document.querySelectorAll('[data-lightbox-thumb]').forEach(btn => {
+                    const isActive = btn.dataset.lightboxThumb === String(index);
+                    btn.classList.toggle('border-[#ee5253]', isActive);
+                    btn.classList.toggle('ring-2', isActive);
+                    btn.classList.toggle('ring-[#ee5253]/25', isActive);
+                    btn.classList.toggle('border-white/70', !isActive);
+                });
+            }
+        }
 
         function openOrderModal(productId) {
             const product = catalog.products.find(p => p.id === productId);
@@ -1691,24 +1918,11 @@
             document.getElementById('order-product-price').innerText = `₪ ${product.price || '15'}`;
             
             // עדכון כותרות וכפתור לפי סטטוס המוצר
-            const isSold = product.status === 'sold';
-            const isReserved = product.status === 'reserved';
+            const statusMeta = getStatusMeta(product.status);
+            document.getElementById('order-modal-title').innerText = statusMeta.orderTitle;
+            document.getElementById('order-send-btn-text').innerText = statusMeta.sendText;
             
-            if (isSold) {
-                document.getElementById('order-modal-title').innerText = "בקשת הכנה מחדש";
-                document.getElementById('order-send-btn-text').innerText = "שלח בקשת הכנה מחדש";
-            } else if (isReserved) {
-                document.getElementById('order-modal-title').innerText = "בירור לגבי מוצר שמור";
-                document.getElementById('order-send-btn-text').innerText = "שלח בירור במייל";
-            } else {
-                document.getElementById('order-modal-title').innerText = "פרטי הזמנה";
-                document.getElementById('order-send-btn-text').innerText = "שלח הזמנה במייל";
-            }
-            
-            let imgUrl = product.image || 'https://via.placeholder.com/300?text=No+Image';
-            if (sessionImageUrls[product.fileName]) {
-                imgUrl = sessionImageUrls[product.fileName];
-            }
+            let imgUrl = getDisplayImage(product, 300);
             document.getElementById('order-product-img').src = imgUrl;
 
             // איפוס שדות
@@ -1764,16 +1978,17 @@
                             window.location.hostname === 'localhost' || 
                             window.location.hostname === '127.0.0.1';
 
-            const isSold = product.status === 'sold';
-            const isReserved = product.status === 'reserved';
-            const requestType = isSold ? "בקשה להכנה מחדש" : isReserved ? "בירור מוצר שמור" : "הזמנה חדשה";
+            const statusMeta = getStatusMeta(product.status);
+            const isMadeToOrder = statusMeta.key === 'made_to_order';
+            const isReserved = statusMeta.key === 'reserved';
+            const requestType = statusMeta.requestType;
 
             let subject = "";
             let body = "";
 
-            if (isSold) {
-                subject = `בקשה להכנה מחדש: ${product.name}`;
-                body = `היי!\n\nאני מעוניין/ת לבקש הכנה מחדש של המוצר הבא מהקטלוג (עבודת יד):\n\n` +
+            if (isMadeToOrder) {
+                subject = `הזמנת יצירה חדשה: ${product.name}`;
+                body = `היי!\n\nאני מעוניין/ת להזמין יצירה חדשה בהשראת המוצר הבא מהקטלוג:\n\n` +
                        `- שם המוצר: ${product.name}\n` +
                        `- קטגוריה: ${product.category || 'כללי'}\n` +
                        `- כמות מבוקשת: ${quantity}\n` +
@@ -1786,8 +2001,8 @@
                        `- הערות/בקשות עיצוב: ${notes || 'אין'}\n\n` +
                        `תודה!`;
             } else if (isReserved) {
-                subject = `בירור לגבי מוצר שמור: ${product.name}`;
-                body = `היי!\n\nאני מעוניין/ת לברר לגבי מוצר שמור מהקטלוג:\n\n` +
+                subject = `בקשת יצירה דומה: ${product.name}`;
+                body = `היי!\n\nאני מעוניין/ת לבקש יצירה דומה למוצר השמור הבא מהקטלוג:\n\n` +
                        `- שם המוצר: ${product.name}\n` +
                        `- קטגוריה: ${product.category || 'כללי'}\n` +
                        `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
@@ -1815,11 +2030,11 @@
                 window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
                 
                 // הצגת הודעת ההצלחה במקום הטופס במצב מקומי
-                const successTitle = isSold ? "בקשתך נשלחה בהצלחה!" : isReserved ? "פנייתך נשלחה בהצלחה!" : "ההזמנה נשלחה בהצלחה!";
-                const successDesc = isSold 
-                    ? "בקשת ההכנה מחדש הועברה ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום." 
+                const successTitle = isMadeToOrder ? "בקשתך נשלחה בהצלחה!" : isReserved ? "פנייתך נשלחה בהצלחה!" : "ההזמנה נשלחה בהצלחה!";
+                const successDesc = isMadeToOrder 
+                    ? "הבקשה ליצירה חדשה הועברה ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום." 
                     : isReserved 
-                        ? "בירור הפרטים לגבי המוצר השמור הועבר ליוצרת. ניצור איתך קשר בהקדם לחזרה." 
+                        ? "הבקשה ליצירה דומה הועברה ליוצרת. ניצור איתך קשר בהקדם לחזרה." 
                         : "פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.";
                 document.getElementById('order-modal-success-title').innerText = successTitle;
                 document.getElementById('order-modal-success-desc').innerText = successDesc;
@@ -1839,12 +2054,12 @@
             `;
 
             // שליחת הנתונים ל-FormSubmit דרך AJAX
-            const ajaxSubject = isSold 
-                ? `בקשה להכנה מחדש: ${product.name} (מאת ${clientName})`
+            const ajaxSubject = isMadeToOrder 
+                ? `הזמנת יצירה חדשה: ${product.name} (מאת ${clientName})`
                 : isReserved 
-                    ? `בירור לגבי מוצר שמור: ${product.name} (מאת ${clientName})`
+                    ? `בקשת יצירה דומה: ${product.name} (מאת ${clientName})`
                     : `הזמנה חדשה מהקטלוג: ${product.name} (מאת ${clientName})`;
-            const ajaxNotes = isSold 
+            const ajaxNotes = isMadeToOrder 
                 ? `${notes || 'אין'}\n*(הלקוח מודע לכך שעבודת היד לא תהיה זהה ב-100% למקור)*`
                 : notes || "אין הערות";
 
@@ -1876,11 +2091,11 @@
             })
             .then(data => {
                 // הצגת הודעת ההצלחה במקום הטופס
-                const successTitle = isSold ? "בקשתך נשלחה בהצלחה!" : isReserved ? "פנייתך נשלחה בהצלחה!" : "ההזמנה נשלחה בהצלחה!";
-                const successDesc = isSold 
-                    ? "בקשת ההכנה מחדש הועברה ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום." 
+                const successTitle = isMadeToOrder ? "בקשתך נשלחה בהצלחה!" : isReserved ? "פנייתך נשלחה בהצלחה!" : "ההזמנה נשלחה בהצלחה!";
+                const successDesc = isMadeToOrder 
+                    ? "הבקשה ליצירה חדשה הועברה ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום." 
                     : isReserved 
-                        ? "בירור הפרטים לגבי המוצר השמור הועבר ליוצרת. ניצור איתך קשר בהקדם לחזרה." 
+                        ? "הבקשה ליצירה דומה הועברה ליוצרת. ניצור איתך קשר בהקדם לחזרה." 
                         : "פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.";
                 document.getElementById('order-modal-success-title').innerText = successTitle;
                 document.getElementById('order-modal-success-desc').innerText = successDesc;
@@ -1921,13 +2136,16 @@
             }
 
             const targetEmail = catalog.email || "ecraftsil@gmail.com";
-            const isSold = product.status === 'sold';
+            const statusMeta = getStatusMeta(product.status);
+            const introText = statusMeta.key === 'made_to_order'
+                ? 'אני מעוניין/ת להזמין יצירה חדשה בהשראת המוצר הבא מהקטלוג:'
+                : statusMeta.key === 'reserved'
+                    ? 'אני מעוניין/ת לבקש יצירה דומה למוצר השמור הבא מהקטלוג:'
+                    : 'אני מעוניין/ת להזמין את המוצר הבא מהקטלוג:';
 
-            const textToCopy = (isSold ? `בקשה להכנה מחדש עבור: ${targetEmail}\n\n` : `הזמנה עבור: ${targetEmail}\n\n`) +
+            const textToCopy = `${statusMeta.requestType} עבור: ${targetEmail}\n\n` +
                                `היי!\n` +
-                               (isSold 
-                                  ? `אני מעוניין/ת לבקש הכנה מחדש של המוצר הבא מהקטלוג (עבודת יד):\n`
-                                  : `אני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n`) +
+                               `${introText}\n` +
                                `- שם המוצר: ${product.name}\n` +
                                `- קטגוריה: ${product.category || 'כללי'}\n` +
                                `- כמות: ${quantity}\n` +
@@ -1940,9 +2158,7 @@
 
             navigator.clipboard.writeText(textToCopy)
                 .then(() => {
-                    const alertMsg = isSold 
-                        ? `פרטי הבקשה הועתקו ללוח בהצלחה!\n\nתוכלי לפתוח כעת את אפליקציית המייל שלך (כמו Gmail), להדביק את הטקסט ולשלוח לכתובת:\n${targetEmail}`
-                        : `פרטי ההזמנה הועתקו ללוח בהצלחה!\n\nתוכלי לפתוח כעת את אפליקציית המייל שלך (כמו Gmail), להדביק את הטקסט ולשלוח לכתובת:\n${targetEmail}`;
+                    const alertMsg = `פרטי הפנייה הועתקו ללוח בהצלחה!\n\nתוכלי לפתוח כעת את אפליקציית המייל שלך (כמו Gmail), להדביק את הטקסט ולשלוח לכתובת:\n${targetEmail}`;
                     alert(alertMsg);
                 })
                 .catch(err => {
