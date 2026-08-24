@@ -460,10 +460,14 @@
             </div>
 
             <!-- כפתורי שליחה -->
-            <div class="px-6 py-4 border-t border-zinc-800 bg-zinc-900/30">
+            <div class="px-6 py-4 border-t border-zinc-800 flex flex-col gap-2 bg-zinc-900/30">
                 <button onclick="sendOrderEmail()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition-all">
                     <i data-lucide="mail" class="w-4 h-4"></i>
                     <span>שלח הזמנה במייל (כולל קישור לתמונה)</span>
+                </button>
+                <button onclick="copyOrderDetails()" class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all">
+                    <i data-lucide="copy" class="w-4 h-4 text-brand-500"></i>
+                    <span>העתק פרטי הזמנה (אם המייל לא נשלח)</span>
                 </button>
             </div>
         </div>
@@ -1440,6 +1444,45 @@
                          `תודה!`;
 
             window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
+            closeOrderModal();
+        }
+
+        function copyOrderDetails() {
+            const product = catalog.products.find(p => p.id === activeOrderProductId);
+            if (!product) return;
+
+            const clientName = document.getElementById('order-client-name').value.trim();
+            const quantity = document.getElementById('order-quantity').value || "1";
+            const notes = document.getElementById('order-notes').value.trim();
+
+            if (!clientName) {
+                alert("אנא מלאי את שמך להזמנה!");
+                return;
+            }
+
+            const fullImgUrl = getFullImageUrl(product.image);
+            const targetEmail = catalog.email || "ecraftsil@gmail.com";
+
+            const textToCopy = `הזמנה עבור: ${targetEmail}\n\n` +
+                               `היי!\n` +
+                               `אני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n` +
+                               `- שם המוצר: ${product.name}\n` +
+                               `- כמות: ${quantity}\n` +
+                               `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
+                               `פרטי המזמין:\n` +
+                               `- שם הלקוח: ${clientName}\n` +
+                               `- הערות/בקשות: ${notes || 'אין'}\n\n` +
+                               `קישור לתמונת המוצר:\n` +
+                               `${fullImgUrl}`;
+
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    alert(`פרטי ההזמנה הועתקו ללוח בהצלחה!\n\nתוכלי לפתוח כעת את אפליקציית המייל שלך (כמו Gmail), להדביק את הטקסט ולשלח לכתובת:\n${targetEmail}`);
+                })
+                .catch(err => {
+                    console.error("שגיאה בהעתקה", err);
+                    alert("ההעתקה האוטומטית נכשלה, אנא העתק ידנית.");
+                });
             closeOrderModal();
         }
 
