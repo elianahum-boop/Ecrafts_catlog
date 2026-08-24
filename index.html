@@ -45,15 +45,15 @@
     
     <style>
         body {
-            background-color: #f7ebed; /* Soft light rose cream */
-            color: #2e2123; /* Dark warm berry text */
+            background-color: #faf5f6; /* Incredibly soft cream-rose off-white */
+            color: #3d3032; /* Soft warm charcoal text */
         }
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f7ebed;
+            background: #faf5f6;
         }
         ::-webkit-scrollbar-thumb {
             background: #dfb1ba;
@@ -64,44 +64,44 @@
         }
         /* Glassmorphism utility */
         .glass-card {
-            background: rgba(255, 255, 255, 0.85) !important;
+            background: rgba(255, 255, 255, 0.9) !important;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(223, 177, 186, 0.5) !important;
-            box-shadow: 0 8px 32px 0 rgba(138, 55, 74, 0.04) !important;
+            border: 1px solid rgba(223, 177, 186, 0.4) !important;
+            box-shadow: 0 8px 32px 0 rgba(138, 55, 74, 0.03) !important;
         }
         .glow-hover:hover {
-            box-shadow: 0 0 20px rgba(223, 177, 186, 0.4);
-            border-color: rgba(179, 100, 115, 0.6) !important;
+            box-shadow: 0 0 20px rgba(223, 177, 186, 0.3);
+            border-color: rgba(179, 100, 115, 0.5) !important;
         }
 
         /* LIGHT ROSE THEME OVERRIDES */
         h1, h2, h3, h4, h5, h6 {
-            color: #4c1d24 !important; /* Deep burgundy */
+            color: #5c2d35 !important; /* Elegant warm burgundy */
         }
         
         .text-white:not(button *, .bg-gradient-to-r *, .bg-indigo-600 *, .bg-brand-600 *, .bg-emerald-500 *, #loading-modal *, .bg-red-600 *, .bg-teal-600 *, .bg-indigo-600 *, .bg-rose-600 *) {
-            color: #2e2123 !important;
+            color: #3d3032 !important;
         }
 
         .text-zinc-400 {
-            color: #6e5659 !important; /* Dusty rose-gray */
+            color: #7c6266 !important; /* Soft dusty gray-rose */
         }
 
         .text-zinc-500 {
-            color: #8c7175 !important;
+            color: #93787c !important;
         }
 
         .text-zinc-300 {
-            color: #3f2e30 !important;
+            color: #4a3a3d !important;
         }
 
         .text-zinc-200 {
-            color: #2e2123 !important;
+            color: #3d3032 !important;
         }
 
         .bg-zinc-950, .bg-black {
-            background-color: #f7ebed !important;
+            background-color: #faf5f6 !important;
         }
 
         .bg-zinc-900 {
@@ -112,7 +112,7 @@
         input[type="text"], input[type="number"], input[type="email"], textarea, select {
             background-color: #ffffff !important;
             border-color: #dfb1ba !important;
-            color: #2e2123 !important;
+            color: #3d3032 !important;
         }
         input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
             border-color: #b36473 !important;
@@ -120,7 +120,7 @@
         }
 
         .border-zinc-800, .border-zinc-700 {
-            border-color: rgba(223, 177, 186, 0.4) !important;
+            border-color: rgba(223, 177, 186, 0.3) !important;
         }
 
         /* Brand palette colors overrides */
@@ -149,7 +149,7 @@
 
         /* Modal fixes */
         #product-modal, #loading-modal, #order-modal {
-            color: #2e2123;
+            color: #3d3032;
         }
     </style>
 </head>
@@ -290,8 +290,8 @@
             <div class="text-center py-6 space-y-4">
                 <h2 id="catalog-title" class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400">הקטלוג שלי</h2>
                 <p id="catalog-desc" class="text-sm md:text-base text-zinc-400 max-w-xl mx-auto">בחר קטגוריה ודפדף במוצרים</p>
-                <div class="max-w-xl mx-auto p-4 rounded-xl bg-zinc-900/40 border border-zinc-800/60 text-zinc-300 text-xs md:text-sm leading-relaxed text-center shadow-inner">
-                    <p class="font-bold text-brand-400 mb-1.5 text-sm md:text-base">ברוכים הבאים ל-Ecrafts! ✨</p>
+                <div class="max-w-xl mx-auto p-4 rounded-xl bg-[#dfb1ba]/15 border border-[#dfb1ba]/30 text-[#4c3a3d] text-xs md:text-sm leading-relaxed text-center shadow-sm">
+                    <p class="font-bold text-[#8a374a] mb-1.5 text-sm md:text-base">ברוכים הבאים ל-Ecrafts! ✨</p>
                     <p>כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו — פשוט אין שניים זהים.</p>
                 </div>
             </div>
