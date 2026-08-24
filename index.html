@@ -189,7 +189,7 @@
     <header class="glass-card sticky top-0 z-40 border-b border-zinc-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center gap-3.5">
-                <img src="logo.jpg" class="w-12 h-12 object-cover object-center rounded-full border-2 border-[#ee5253] bg-white shadow-md shadow-rose-950/5" alt="Ecrafts Logo">
+                <img src="logo.jpg" class="w-[58px] h-[58px] object-cover object-center rounded-full border-2 border-[#ee5253] bg-white shadow-md shadow-rose-950/5" alt="Ecrafts Logo">
                 <div>
                     <h1 id="header-title" class="text-xl font-black tracking-tight text-[#733238]">Ecrafts</h1>
                     <p id="header-desc" class="text-xs text-zinc-600 font-bold">Digital Art & Creations</p>
@@ -304,8 +304,16 @@
                 <p id="catalog-desc" class="text-xs md:text-sm text-zinc-500 max-w-xl mx-auto">בחרו קטגוריה ודפדפו במוצרים</p>
                 <div class="max-w-xl mx-auto p-3.5 md:p-4 rounded-xl bg-[#dfb1ba]/15 border border-[#dfb1ba]/30 text-[#4c3a3d] text-xs md:text-sm leading-relaxed text-center shadow-sm">
                     <p class="font-bold text-[#8a374a] mb-1 md:mb-1.5 text-sm md:text-base">ברוכים הבאים ל-Ecrafts! ✨</p>
-                    <p id="welcome-card-text">כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו — פשוט אין שניים זהים.</p>
+                    <p id="welcome-card-text">כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו. אני יוצרת כל פריט בנפרד, ולכן לכל אחד יש אופי משלו ואין שניים זהים לחלוטין 💕</p>
                 </div>
+            </div>
+
+            <!-- הסבר קצר על עבודת יד ויחידות בודדות -->
+            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-[#86d7df]/5 border border-[#86d7df]/20 text-[#3f2f31] text-xs md:text-sm max-w-xl mx-auto leading-relaxed shadow-sm">
+                <i data-lucide="sparkles" class="w-4 h-4 text-[#ee5253] flex-shrink-0 mt-0.5 animate-pulse"></i>
+                <p>
+                    <strong>שימו לב:</strong> כל פריט מיוצר ומצויר בעבודת יד, ובדרך כלל קיים כיחידה אחת בלבד. עם זאת, ניתן לבקש הכנה מחדש של פריט שנמכר – בכפוף לכך שעבודת יד אינה זהה ב-100% למקור ותעניק למוצר אופי ייחודי משלו.
+                </p>
             </div>
 
             <!-- סרגל חיפוש ופילטרים -->
@@ -340,27 +348,75 @@
                 </div>
             </div>
         </section>
+
+        <!-- אזור מידע על הזמנה, משלוח ואיסוף (ללקוחות) -->
+        <section class="mt-12 max-w-3xl mx-auto">
+            <details class="group p-5 rounded-2xl bg-white border border-[#f2a1a2]/30 shadow-sm transition-all duration-300">
+                <summary class="font-bold text-sm md:text-base text-[#733238] cursor-pointer focus:outline-none flex items-center justify-between">
+                    <span class="flex items-center gap-2">
+                        <i data-lucide="truck" class="w-5 h-5 text-[#ee5253]"></i>
+                        מדריך הזמנות, משלוחים ואיסוף עצמי 📦
+                    </span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transform group-open:rotate-180 transition-transform duration-200 text-[#ee5253]"></i>
+                </summary>
+                <div class="mt-4 pt-4 border-t border-[#f2a1a2]/20 grid grid-cols-1 md:grid-cols-3 gap-6 text-right leading-relaxed text-xs md:text-sm text-[#513e40]">
+                    <!-- הזמנות -->
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-[#ee5253] flex items-center gap-1.5 text-sm">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                            איך מזמינים?
+                        </h4>
+                        <p>בוחרים פריט מהגלריה, לוחצים על <strong>"להזמנה במייל"</strong> וממלאים את הפרטים. ניתן להוסיף הערות כגון בקשה לעיצוב מיוחד, הקדשה אישית או כיתוב מותאם.</p>
+                    </div>
+                    <!-- משלוחים -->
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-[#ee5253] flex items-center gap-1.5 text-sm">
+                            <i data-lucide="package" class="w-4 h-4"></i>
+                            משלוחים לכל הארץ
+                        </h4>
+                        <p>אנו מציעים משלוחים לכל חלקי הארץ (בדואר רשום או עם שליח עד הבית) בתוספת תשלום. תמחור המשלוח ופרטי המשלוח יתואמו מולכם לאחר קבלת בקשת ההזמנה.</p>
+                    </div>
+                    <!-- איסוף עצמי -->
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-[#ee5253] flex items-center gap-1.5 text-sm">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            איסוף עצמי
+                        </h4>
+                        <p>ניתן לבצע איסוף עצמי ללא עלות נוספת בתיאום מראש. מיקום האיסוף וזמנים יימסרו לכם באופן אישי בעת יצירת הקשר לחזרה.</p>
+                    </div>
+                </div>
+            </details>
+        </section>
     </main>
 
     <!-- פוטר (Footer) -->
-    <footer class="border-t border-zinc-200 bg-white/60 py-6 mt-12 text-center text-zinc-600 text-xs">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>© <span id="current-year"></span> Ecrafts. כל הזכויות שמורות.</p>
-            <div class="flex items-center gap-4 text-zinc-500 justify-center">
-                <a href="https://www.instagram.com/ecraftsil" target="_blank" class="hover:text-[#b36473] flex items-center gap-1 transition-colors">
+    <footer class="border-t border-[#f2a1a2]/30 bg-white/80 py-8 mt-16 text-center text-[#513e40] text-xs">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="text-right space-y-1">
+                <p class="font-bold text-sm text-[#733238]">Ecrafts</p>
+                <p class="text-[#836b6d]">כל הפריטים מיוצרים ומצוירים באהבה בעבודת יד. ✨</p>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-6 text-[#ee5253] justify-center">
+                <a href="https://www.instagram.com/ecraftsil" target="_blank" class="hover:text-[#733238] flex items-center gap-1.5 transition-colors font-semibold" title="Instagram">
                     <i data-lucide="instagram" class="w-4 h-4"></i>
                     <span>Instagram</span>
                 </a>
-                <span class="text-zinc-300">|</span>
-                <a href="https://www.tiktok.com/@ecraftsil" target="_blank" class="hover:text-[#b36473] flex items-center gap-1 transition-colors">
-                    <i data-lucide="music-2" class="w-4 h-4"></i>
+                <span class="text-[#f2a1a2]/30">|</span>
+                <a href="https://www.tiktok.com/@ecraftsil" target="_blank" class="hover:text-[#733238] flex items-center gap-1.5 transition-colors font-semibold" title="TikTok">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.74-3.94-1.74-.22-.21-.42-.45-.61-.7v5.13c.03 2.87-1.35 5.76-4.04 6.88-2.61 1.09-5.92.74-8.15-1.12-2.3-1.92-3.15-5.32-2.12-8.14 1-2.72 3.97-4.65 6.89-4.39.01 1.5-.01 3 .01 4.5-1.29-.37-2.78-.06-3.71.93-.97 1.03-1.07 2.81-.22 3.92.83 1.1 2.39 1.45 3.65.86.88-.41 1.43-1.3 1.43-2.27.02-3.07.01-6.14.01-9.21z"/>
+                    </svg>
                     <span>TikTok</span>
                 </a>
+                <span class="text-[#f2a1a2]/30">|</span>
+                <a href="mailto:ecraftsil@gmail.com" class="hover:text-[#733238] flex items-center gap-1.5 transition-colors font-semibold" title="Email">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>ecraftsil@gmail.com</span>
+                </a>
             </div>
-            <p class="flex items-center gap-1">
-                נבנה עבור 
-                <span class="text-zinc-800 font-medium">Ecrafts</span>
-            </p>
+            
+            <p>© <span id="current-year"></span> Ecrafts. כל הזכויות שמורות 💕</p>
         </div>
     </footer>
 
@@ -423,6 +479,16 @@
                 <div>
                     <label class="block text-sm font-medium text-zinc-400 mb-1.5">תיאור קצר</label>
                     <textarea id="modal-desc" rows="3" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 resize-none text-sm" placeholder="לדוגמה: מיוצר מחומרים איכותיים עם הקדשה אישית..."></textarea>
+                </div>
+
+                <!-- סטטוס מוצר -->
+                <div>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">סטטוס זמינות</label>
+                    <select id="modal-status" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm">
+                        <option value="available" selected>זמין (Available)</option>
+                        <option value="reserved">שמור (Reserved)</option>
+                        <option value="sold">נמכר (Sold)</option>
+                    </select>
                 </div>
             </div>
 
@@ -536,7 +602,7 @@
                 <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800">
                     <h3 class="font-bold text-lg text-white flex items-center gap-2">
                         <i data-lucide="shopping-cart" class="w-5 h-5 text-brand-500"></i>
-                        <span>פרטי הזמנה</span>
+                        <span id="order-modal-title">פרטי הזמנה</span>
                     </h3>
                     <button onclick="closeOrderModal()" class="text-zinc-400 hover:text-zinc-200">
                         <i data-lucide="x" class="w-5 h-5"></i>
@@ -579,7 +645,7 @@
                 <div class="px-6 py-4 border-t border-zinc-800 flex flex-col gap-2 bg-zinc-900/30">
                     <button id="order-send-btn" onclick="sendOrderEmail()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition-all">
                         <i data-lucide="mail" class="w-4 h-4"></i>
-                        <span>שלח הזמנה במייל</span>
+                        <span id="order-send-btn-text">שלח הזמנה במייל</span>
                     </button>
                     <button onclick="copyOrderDetails()" class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all">
                         <i data-lucide="copy" class="w-4 h-4 text-brand-500"></i>
@@ -594,8 +660,8 @@
                     <i data-lucide="check" class="w-8 h-8 stroke-[3]"></i>
                 </div>
                 <div class="space-y-2">
-                    <h3 class="text-xl font-black text-[#733238]">ההזמנה נשלחה בהצלחה!</h3>
-                    <p class="text-sm text-[#836b6d] max-w-xs mx-auto leading-relaxed">פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.</p>
+                    <h3 id="order-modal-success-title" class="text-xl font-black text-[#733238]">ההזמנה נשלחה בהצלחה!</h3>
+                    <p id="order-modal-success-desc" class="text-sm text-[#836b6d] max-w-xs mx-auto leading-relaxed">פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.</p>
                 </div>
                 <button onclick="closeOrderModal()" class="w-full bg-[#ee5253] hover:bg-[#733238] text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-colors shadow-md">
                     סגור
@@ -785,7 +851,7 @@
             // עדכון הפסקה הדינמית בתוך כרטיסיית הברכה למנוע כפילויות
             const welcomeCardText = document.getElementById('welcome-card-text');
             if (welcomeCardText) {
-                welcomeCardText.innerText = catalog.description || "סימניות, מחזיקים ופריטים בעבודת יד — כל פריט נוצר ומצויר ביד, ואין שניים זהים.";
+                welcomeCardText.innerText = catalog.description || "כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו. אני יוצרת כל פריט בנפרד, ולכן לכל אחד יש אופי משלו ואין שניים זהים לחלוטין 💕";
             }
             
             lucide.createIcons();
@@ -1017,6 +1083,17 @@
                         <img src="${imgUrl}" onerror="handleBrokenImage(${product.id})" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60"></div>
                         
+                        <!-- סטטוס מוצר -->
+                        <span class="absolute top-2 left-2 text-[10px] py-0.5 px-2 rounded-full font-bold shadow-sm backdrop-blur-sm ${
+                            product.status === 'sold' 
+                                ? 'bg-red-50/90 border border-red-200 text-red-600' 
+                                : product.status === 'reserved'
+                                    ? 'bg-amber-50/90 border border-amber-200 text-amber-600'
+                                    : 'bg-emerald-50/90 border border-emerald-200 text-emerald-600'
+                        }">
+                            ${product.status === 'sold' ? 'נמכר' : product.status === 'reserved' ? 'שמור' : 'זמין'}
+                        </span>
+
                         ${product.category ? `
                             <span class="absolute bottom-2 left-2 text-[10px] bg-white/90 backdrop-blur-sm border border-[#f2a1a2]/30 text-[#733238] py-0.5 px-2 rounded-md font-bold shadow-sm">
                                 ${product.category}
@@ -1035,9 +1112,11 @@
                             <span class="text-base font-black text-brand-500">₪ ${product.price || '15'}</span>
                             
                             ${!isEditMode && catalog.email ? `
-                                <button onclick="event.stopPropagation(); openOrderModal(${product.id})" class="flex items-center gap-1.5 text-[11px] font-bold text-[#733238] bg-[#f3dedf] hover:bg-[#ecd0d2] border border-[#f2a1a2]/30 py-1.5 px-3.5 rounded-xl transition-all shadow-sm">
-                                    <i data-lucide="mail" class="w-3.5 h-3.5 text-[#ee5253]"></i>
-                                    <span>להזמנה</span>
+                                <button onclick="event.stopPropagation(); openOrderModal(${product.id})" class="flex items-center gap-1.5 text-[10px] md:text-[11px] font-bold text-[#733238] bg-[#f3dedf] hover:bg-[#ecd0d2] border border-[#f2a1a2]/30 py-1.5 px-2.5 rounded-xl transition-all shadow-sm">
+                                    ${product.status === 'sold' 
+                                        ? `<i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#ee5253]"></i><span>בקשה להכנה מחדש</span>`
+                                        : `<i data-lucide="mail" class="w-3.5 h-3.5 text-[#ee5253]"></i><span>להזמנה במייל</span>`
+                                    }
                                 </button>
                             ` : ''}
                         </div>
@@ -1101,6 +1180,7 @@
             document.getElementById('modal-desc').value = "";
             document.getElementById('modal-image-url').value = "";
             document.getElementById('modal-file-input').value = "";
+            document.getElementById('modal-status').value = "available";
             
             document.getElementById('modal-image-preview').classList.add('hidden');
             document.getElementById('modal-image-placeholder').classList.remove('hidden');
@@ -1117,6 +1197,7 @@
             document.getElementById('modal-price').value = product.price || "15";
             document.getElementById('modal-category').value = product.category || "";
             document.getElementById('modal-desc').value = product.desc || "";
+            document.getElementById('modal-status').value = product.status || "available";
             
             document.getElementById('modal-image-url').value = product.image || "";
             
@@ -1212,6 +1293,7 @@
             const desc = document.getElementById('modal-desc').value.trim();
             const imageUrlInput = document.getElementById('modal-image-url').value.trim();
             const fileInput = document.getElementById('modal-file-input');
+            const status = document.getElementById('modal-status').value || "available";
 
             if (!name) {
                 alert("חובה להזין שם מוצר!");
@@ -1244,6 +1326,7 @@
                     catalog.products[index].category = category;
                     catalog.products[index].desc = desc;
                     catalog.products[index].image = finalImage;
+                    catalog.products[index].status = status;
                     if (finalFileName) catalog.products[index].fileName = finalFileName;
                 }
             } else {
@@ -1254,7 +1337,8 @@
                     price: price,
                     category: category,
                     desc: desc,
-                    image: finalImage
+                    image: finalImage,
+                    status: status
                 };
                 catalog.products.push(newProduct);
             }
@@ -1484,7 +1568,8 @@
                         price: p.price,
                         category: p.category,
                         desc: p.desc,
-                        image: p.image // נשלח את הנתיב היחסי בקישור!
+                        image: p.image, // נשלח את הנתיב היחסי בקישור!
+                        status: p.status || "available"
                     };
                 })
             };
@@ -1544,6 +1629,11 @@
             // מילוי פרטים
             document.getElementById('order-product-name').innerText = product.name;
             document.getElementById('order-product-price').innerText = `₪ ${product.price || '15'}`;
+            
+            // עדכון כותרות וכפתור לפי סטטוס המוצר (זמין/נמכר)
+            const isSold = product.status === 'sold';
+            document.getElementById('order-modal-title').innerText = isSold ? "בקשת הכנה מחדש" : "פרטי הזמנה";
+            document.getElementById('order-send-btn-text').innerText = isSold ? "שלח בקשת הכנה מחדש" : "שלח הזמנה במייל";
             
             let imgUrl = product.image || 'https://via.placeholder.com/300?text=No+Image';
             if (sessionImageUrls[product.fileName]) {
@@ -1606,12 +1696,16 @@
 
             if (isLocal) {
                 // בסביבה מקומית FormSubmit חסום, לכן נשתמש ב-mailto הרגיל
-                const subject = `הזמנה חדשה מהקטלוג: ${product.name}`;
-                const body = `היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n\n` +
+                const isSold = product.status === 'sold';
+                const subject = isSold ? `בקשה להכנה מחדש: ${product.name}` : `הזמנה חדשה מהקטלוג: ${product.name}`;
+                const body = `היי!\n\n` +
+                             (isSold 
+                                ? `אני מעוניין/ת לבקש הכנה מחדש של המוצר הבא מהקטלוג (עבודת יד):\n\n`
+                                : `אני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n\n`) +
                              `- שם המוצר: ${product.name}\n` +
                              `- קטגוריה: ${product.category || 'כללי'}\n` +
                              `- כמות: ${quantity}\n` +
-                             `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
+                             `- מחיר יחידה מוערך: ₪${product.price || '15'}\n\n` +
                              `פרטי המזמין:\n` +
                              `- שם הלקוח: ${clientName}\n` +
                              `- פרטי קשר לחזרה: ${clientContact}\n` +
@@ -1621,6 +1715,10 @@
                 window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
                 
                 // הצגת הודעת ההצלחה במקום הטופס במצב מקומי
+                document.getElementById('order-modal-success-title').innerText = isSold ? "בקשתך נשלחה בהצלחה!" : "ההזמנה נשלחה בהצלחה!";
+                document.getElementById('order-modal-success-desc').innerText = isSold 
+                    ? "בקשת ההכנה מחדש הועברה ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום." 
+                    : "פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.";
                 document.getElementById('order-modal-form-container').classList.add('hidden');
                 document.getElementById('order-modal-success-container').classList.remove('hidden');
                 lucide.createIcons();
@@ -1637,6 +1735,7 @@
             `;
 
             // שליחת הנתונים ל-FormSubmit דרך AJAX
+            const isSold = product.status === 'sold';
             fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
                 method: "POST",
                 headers: { 
@@ -1644,6 +1743,7 @@
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
+                    "סוג פנייה": isSold ? "בקשה להכנה מחדש" : "הזמנה חדשה",
                     "שם המוצר": product.name,
                     "קטגוריה": product.category || "כללי",
                     "מחיר": `₪${product.price || '15'}`,
@@ -1651,7 +1751,9 @@
                     "שם הלקוח": clientName,
                     "פרטי קשר": clientContact,
                     "הערות/בקשות": notes || "אין הערות",
-                    "_subject": `הזמנה חדשה מהקטלוג: ${product.name} (מאת ${clientName})`,
+                    "_subject": isSold 
+                        ? `בקשה להכנה מחדש: ${product.name} (מאת ${clientName})`
+                        : `הזמנה חדשה מהקטלוג: ${product.name} (מאת ${clientName})`,
                     "_template": "box"
                 })
             })
@@ -1664,6 +1766,10 @@
             })
             .then(data => {
                 // הצגת הודעת ההצלחה במקום הטופס
+                document.getElementById('order-modal-success-title').innerText = isSold ? "בקשתך נשלחה בהצלחה!" : "ההזמנה נשלחה בהצלחה!";
+                document.getElementById('order-modal-success-desc').innerText = isSold 
+                    ? "בקשת ההכנה מחדש הועברה ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום." 
+                    : "פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.";
                 document.getElementById('order-modal-form-container').classList.add('hidden');
                 document.getElementById('order-modal-success-container').classList.remove('hidden');
                 lucide.createIcons();
@@ -1700,25 +1806,30 @@
                 return;
             }
 
-            const fullImgUrl = getFullImageUrl(product.image);
             const targetEmail = catalog.email || "ecraftsil@gmail.com";
+            const isSold = product.status === 'sold';
 
-            const textToCopy = `הזמנה עבור: ${targetEmail}\n\n` +
+            const textToCopy = (isSold ? `בקשה להכנה מחדש עבור: ${targetEmail}\n\n` : `הזמנה עבור: ${targetEmail}\n\n`) +
                                `היי!\n` +
-                               `אני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n` +
+                               (isSold 
+                                  ? `אני מעוניין/ת לבקש הכנה מחדש של המוצר הבא מהקטלוג (עבודת יד):\n`
+                                  : `אני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n`) +
                                `- שם המוצר: ${product.name}\n` +
+                               `- קטגוריה: ${product.category || 'כללי'}\n` +
                                `- כמות: ${quantity}\n` +
-                               `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
+                               `- מחיר יחידה מוערך: ₪${product.price || '15'}\n\n` +
                                `פרטי המזמין:\n` +
                                `- שם הלקוח: ${clientName}\n` +
                                `- פרטי קשר לחזרה: ${clientContact || 'לא הוכנס'}\n` +
-                               `- הערות/בקשות: ${notes || 'אין'}\n\n` +
-                               `קישור לתמונת המוצר:\n` +
-                               `${fullImgUrl}`;
+                               `- הערות/בקשות עיצוב: ${notes || 'אין'}\n\n` +
+                               `תודה!`;
 
             navigator.clipboard.writeText(textToCopy)
                 .then(() => {
-                    alert(`פרטי ההזמנה הועתקו ללוח בהצלחה!\n\nתוכלי לפתוח כעת את אפליקציית המייל שלך (כמו Gmail), להדביק את הטקסט ולשלוח לכתובת:\n${targetEmail}`);
+                    const alertMsg = isSold 
+                        ? `פרטי הבקשה הועתקו ללוח בהצלחה!\n\nתוכלי לפתוח כעת את אפליקציית המייל שלך (כמו Gmail), להדביק את הטקסט ולשלוח לכתובת:\n${targetEmail}`
+                        : `פרטי ההזמנה הועתקו ללוח בהצלחה!\n\nתוכלי לפתוח כעת את אפליקציית המייל שלך (כמו Gmail), להדביק את הטקסט ולשלוח לכתובת:\n${targetEmail}`;
+                    alert(alertMsg);
                 })
                 .catch(err => {
                     console.error("שגיאה בהעתקה", err);
