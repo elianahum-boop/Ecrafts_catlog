@@ -529,60 +529,79 @@
     <!-- 5. מודל הזמנה חדש ומורחב -->
     <div id="order-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="glass-card w-full max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col" onclick="event.stopPropagation()">
-            <!-- כותרת המודל -->
-            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800">
-                <h3 class="font-bold text-lg text-white flex items-center gap-2">
-                    <i data-lucide="shopping-cart" class="w-5 h-5 text-brand-500"></i>
-                    <span>פרטי הזמנה</span>
-                </h3>
-                <button onclick="closeOrderModal()" class="text-zinc-400 hover:text-zinc-200">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
             
-            <!-- גוף המודל / פרטים -->
-            <div class="p-6 space-y-4 max-h-[60vh] overflow-y-auto">
-                <!-- תצוגה מקדימה של המוצר -->
-                <div class="flex gap-4 p-3 rounded-xl bg-[#dfb1ba]/15 border border-[#dfb1ba]/30 shadow-sm">
-                    <img id="order-product-img" class="w-16 h-16 object-cover rounded-lg bg-white border border-[#dfb1ba]/20" src="" alt="">
-                    <div class="flex flex-col justify-center">
-                        <h4 id="order-product-name" class="font-bold text-sm text-[#4c1d24]">שם המוצר</h4>
-                        <span id="order-product-price" class="text-xs font-bold text-[#b36473] mt-1">₪ 0</span>
+            <!-- מיכל הטופס הראשי -->
+            <div id="order-modal-form-container" class="flex flex-col w-full">
+                <!-- כותרת המודל -->
+                <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800">
+                    <h3 class="font-bold text-lg text-white flex items-center gap-2">
+                        <i data-lucide="shopping-cart" class="w-5 h-5 text-brand-500"></i>
+                        <span>פרטי הזמנה</span>
+                    </h3>
+                    <button onclick="closeOrderModal()" class="text-zinc-400 hover:text-zinc-200">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                
+                <!-- גוף המודל / פרטים -->
+                <div class="p-6 space-y-4 max-h-[60vh] overflow-y-auto">
+                    <!-- תצוגה מקדימה של המוצר -->
+                    <div class="flex gap-4 p-3 rounded-xl bg-[#dfb1ba]/15 border border-[#dfb1ba]/30 shadow-sm">
+                        <img id="order-product-img" class="w-16 h-16 object-cover rounded-lg bg-white border border-[#dfb1ba]/20" src="" alt="">
+                        <div class="flex flex-col justify-center">
+                            <h4 id="order-product-name" class="font-bold text-sm text-[#4c1d24]">שם המוצר</h4>
+                            <span id="order-product-price" class="text-xs font-bold text-[#b36473] mt-1">₪ 0</span>
+                        </div>
+                    </div>
+
+                    <!-- טופס מילוי -->
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-medium text-zinc-400 mb-1">שם מלא:</label>
+                            <input type="text" id="order-client-name" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="הקש את שמך המלא">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-zinc-400 mb-1">טלפון או אימייל לחזרה:</label>
+                            <input type="text" id="order-client-contact" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="איך נוכל לחזור אלייך?">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-zinc-400 mb-1">כמות להזמנה:</label>
+                            <input type="number" id="order-quantity" min="1" value="1" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-zinc-400 mb-1">הערות או בקשות מיוחדות (כמו כיתוב אישי):</label>
+                            <textarea id="order-notes" rows="3" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm resize-none" placeholder="רשום כאן הערות, בקשות לעיצוב או הקדשה אישית..."></textarea>
+                        </div>
                     </div>
                 </div>
 
-                <!-- טופס מילוי -->
-                <div class="space-y-3">
-                    <div>
-                        <label class="block text-xs font-medium text-zinc-400 mb-1">שם מלא:</label>
-                        <input type="text" id="order-client-name" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="הקש את שמך המלא">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-zinc-400 mb-1">טלפון או אימייל לחזרה:</label>
-                        <input type="text" id="order-client-contact" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm" placeholder="איך נוכל לחזור אלייך?">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-zinc-400 mb-1">כמות להזמנה:</label>
-                        <input type="number" id="order-quantity" min="1" value="1" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-zinc-400 mb-1">הערות או בקשות מיוחדות (כמו כיתוב אישי):</label>
-                        <textarea id="order-notes" rows="3" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm resize-none" placeholder="רשום כאן הערות, בקשות לעיצוב או הקדשה אישית..."></textarea>
-                    </div>
+                <!-- כפתורי שליחה -->
+                <div class="px-6 py-4 border-t border-zinc-800 flex flex-col gap-2 bg-zinc-900/30">
+                    <button id="order-send-btn" onclick="sendOrderEmail()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition-all">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        <span>שלח הזמנה במייל</span>
+                    </button>
+                    <button onclick="copyOrderDetails()" class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all">
+                        <i data-lucide="copy" class="w-4 h-4 text-brand-500"></i>
+                        <span>העתק פרטי הזמנה (לגיבוי)</span>
+                    </button>
                 </div>
             </div>
 
-            <!-- כפתורי שליחה -->
-            <div class="px-6 py-4 border-t border-zinc-800 flex flex-col gap-2 bg-zinc-900/30">
-                <button id="order-send-btn" onclick="sendOrderEmail()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition-all">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                    <span>שלח הזמנה במייל</span>
-                </button>
-                <button onclick="copyOrderDetails()" class="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all">
-                    <i data-lucide="copy" class="w-4 h-4 text-brand-500"></i>
-                    <span>העתק פרטי הזמנה (לגיבוי)</span>
+            <!-- הודעת הצלחה (מוסתרת כברירת מחדל) -->
+            <div id="order-modal-success-container" class="hidden p-8 text-center space-y-6 flex flex-col items-center justify-center">
+                <div class="w-16 h-16 rounded-full bg-emerald-50/80 border border-emerald-200 text-emerald-500 flex items-center justify-center shadow-sm">
+                    <i data-lucide="check" class="w-8 h-8 stroke-[3]"></i>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-black text-[#733238]">ההזמנה נשלחה בהצלחה!</h3>
+                    <p class="text-sm text-[#836b6d] max-w-xs mx-auto leading-relaxed">פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.</p>
+                </div>
+                <button onclick="closeOrderModal()" class="w-full bg-[#ee5253] hover:bg-[#733238] text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-colors shadow-md">
+                    סגור
                 </button>
             </div>
+
         </div>
     </div>
 
@@ -1537,6 +1556,10 @@
             document.getElementById('order-quantity').value = "1";
             document.getElementById('order-notes').value = "";
 
+            // הצגת הטופס והסתרת הודעת ההצלחה
+            document.getElementById('order-modal-form-container').classList.remove('hidden');
+            document.getElementById('order-modal-success-container').classList.add('hidden');
+
             document.getElementById('order-modal').classList.remove('hidden');
             lucide.createIcons();
         }
@@ -1596,7 +1619,11 @@
                              `תודה!`;
 
                 window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
-                closeOrderModal();
+                
+                // הצגת הודעת ההצלחה במקום הטופס במצב מקומי
+                document.getElementById('order-modal-form-container').classList.add('hidden');
+                document.getElementById('order-modal-success-container').classList.remove('hidden');
+                lucide.createIcons();
                 return;
             }
 
@@ -1636,8 +1663,18 @@
                 }
             })
             .then(data => {
-                alert("ההזמנה נשלחה בהצלחה! ניצור איתך קשר בהקדם. ✨");
-                closeOrderModal();
+                // הצגת הודעת ההצלחה במקום הטופס
+                document.getElementById('order-modal-form-container').classList.add('hidden');
+                document.getElementById('order-modal-success-container').classList.remove('hidden');
+                lucide.createIcons();
+
+                // סגירה אוטומטית אחרי 4 שניות
+                setTimeout(() => {
+                    const orderModal = document.getElementById('order-modal');
+                    if (orderModal && !orderModal.classList.contains('hidden') && !document.getElementById('order-modal-success-container').classList.contains('hidden')) {
+                        closeOrderModal();
+                    }
+                }, 4000);
             })
             .catch(error => {
                 console.error("שגיאה:", error);
