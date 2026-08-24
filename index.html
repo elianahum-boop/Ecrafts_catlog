@@ -310,8 +310,8 @@
                         <p id="welcome-card-text">כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו. אני יוצרת כל פריט בנפרד, ולכן לכל אחד יש אופי משלו ואין שניים זהים לחלוטין 💕</p>
                     </div>
                     <!-- כרטיס 2: פריט שאהבת כבר נמכר -->
-                    <div class="p-3.5 md:p-4 rounded-xl bg-[#86d7df]/15 border border-[#86d7df]/30 text-[#2c3d40] text-xs md:text-sm leading-relaxed shadow-sm flex flex-col justify-center text-center">
-                        <p class="font-bold text-[#2b7277] mb-1 md:mb-1.5 text-sm md:text-base">✨ פריט שאהבת כבר נמכר?</p>
+                    <div class="p-2.5 md:p-3.5 rounded-xl bg-[#86d7df]/8 border border-[#86d7df]/20 text-[#2c3d40]/90 text-xs md:text-sm leading-relaxed flex flex-col justify-center text-center">
+                        <p class="font-bold text-[#2b7277]/90 mb-1 md:mb-1.5 text-xs md:text-sm">✨ פריט שאהבת כבר נמכר?</p>
                         <p>אפשר לבקש יצירה חדשה בהשראתו. מכיוון שכל פריט נעשה בעבודת יד, היצירה החדשה תהיה ייחודית ולא זהה לחלוטין למקור.</p>
                     </div>
                 </div>
@@ -324,10 +324,18 @@
                     <!-- נוצר דינמית -->
                 </div>
 
-                <!-- תיבת חיפוש -->
-                <div class="relative w-full md:w-80">
-                    <i data-lucide="search" class="absolute inset-y-0 right-3 flex items-center text-zinc-500 w-4 h-4 my-auto"></i>
-                    <input type="text" id="search-input" oninput="filterProducts()" class="w-full bg-zinc-900/80 border border-zinc-800 rounded-full py-2.5 pr-10 pl-4 text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition-all" placeholder="חיפוש מוצר...">
+                <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+                    <!-- פילטר זמינים בלבד -->
+                    <label class="flex items-center gap-2 text-xs md:text-sm text-[#733238] font-bold cursor-pointer select-none whitespace-nowrap bg-[#dfb1ba]/10 hover:bg-[#dfb1ba]/20 px-3 py-2 rounded-full border border-[#dfb1ba]/25 transition-colors">
+                        <input type="checkbox" id="filter-available-only" onchange="filterProducts()" class="w-3.5 h-3.5 rounded accent-[#ee5253] cursor-pointer">
+                        <span>זמינים בלבד 🟢</span>
+                    </label>
+
+                    <!-- תיבת חיפוש -->
+                    <div class="relative w-full md:w-64">
+                        <i data-lucide="search" class="absolute inset-y-0 right-3 flex items-center text-zinc-500 w-4 h-4 my-auto"></i>
+                        <input type="text" id="search-input" oninput="filterProducts()" class="w-full bg-zinc-900/80 border border-zinc-800 rounded-full py-2.5 pr-10 pl-4 text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm transition-all" placeholder="חיפוש מוצר...">
+                    </div>
                 </div>
             </div>
         </section>
@@ -395,7 +403,7 @@
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div class="text-right space-y-1">
                 <p class="font-bold text-sm text-[#733238]">Ecrafts</p>
-                <p class="text-[#836b6d]">כל הפריטים מיוצרים ומצוירים באהבה בעבודת יד. ✨</p>
+                <p class="text-[#836b6d]">כל פריט נוצר ומצויר בעבודת יד ✨</p>
             </div>
             
             <div class="flex flex-wrap items-center gap-6 text-[#ee5253] justify-center">
@@ -760,6 +768,16 @@
             try {
                 await loadProductsDataScript();
                 initApp();
+
+                // מאזין למקש Escape לסגירת כלל המודלים והלייטבוקס
+                window.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                        closeOrderModal();
+                        closeProductModal();
+                        closeShareModal();
+                    }
+                });
             } catch (err) {
                 alert("שגיאה בטעינת האפליקציה: " + err.message);
             }
@@ -1030,6 +1048,12 @@
                 );
             }
 
+            // סינון זמינים בלבד
+            const filterAvailableOnly = document.getElementById('filter-available-only');
+            if (filterAvailableOnly && filterAvailableOnly.checked) {
+                filtered = filtered.filter(p => p.status === 'available' || !p.status);
+            }
+
             // הצגת מצב ריק
             if (filtered.length === 0) {
                 grid.classList.add('hidden');
@@ -1042,7 +1066,7 @@
             // רינדור הכרטיסיות
             filtered.forEach((product, index) => {
                 const card = document.createElement('div');
-                card.className = 'glass-card glow-hover rounded-2xl overflow-hidden flex flex-col group relative transition-all duration-300 transform hover:-translate-y-1';
+                card.className = 'glass-card glow-hover rounded-2xl overflow-hidden flex flex-col group relative transition-all duration-300 transform md:hover:-translate-y-1';
                 card.style.animation = `fadeIn 0.3s ease-out ${index * 0.05}s both`;
                 
                 // רזולוציית התמונה (אם נטען באותו סשן - נשתמש ב-ObjectURL הזמני, אחרת בנתיב היחסי)
@@ -1081,7 +1105,7 @@
                     
                     <!-- תמונה -->
                     <div class="relative overflow-hidden aspect-square bg-zinc-950 cursor-pointer" onclick="openLightboxById(${product.id})">
-                        <img src="${imgUrl}" onerror="handleBrokenImage(${product.id})" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <img src="${imgUrl}" onerror="handleBrokenImage(${product.id})" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 md:group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60"></div>
                         
                         <!-- סטטוס מוצר -->
@@ -1541,6 +1565,15 @@
             const targetEmail = catalog.email;
             if (!isEditMode && targetEmail) {
                 emailBtn.classList.remove('hidden');
+                
+                if (product.status === 'sold') {
+                    emailBtn.innerHTML = `<i data-lucide="sparkles" class="w-5 h-5"></i><span>בקשה להכנה מחדש</span>`;
+                } else if (product.status === 'reserved') {
+                    emailBtn.innerHTML = `<i data-lucide="help-circle" class="w-5 h-5"></i><span>לפרטים במייל</span>`;
+                } else {
+                    emailBtn.innerHTML = `<i data-lucide="mail" class="w-5 h-5"></i><span>להזמנה במייל</span>`;
+                }
+
                 emailBtn.onclick = () => {
                     closeLightbox();
                     openOrderModal(product.id);
