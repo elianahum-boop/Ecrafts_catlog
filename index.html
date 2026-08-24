@@ -45,63 +45,63 @@
     
     <style>
         body {
-            background-color: #faf5f6; /* Incredibly soft cream-rose off-white */
-            color: #3d3032; /* Soft warm charcoal text */
+            background-color: #fdfaf7; /* Cozy warm linen off-white (from character's details) */
+            color: #3f2f31; /* Soft warm dark charcoal text */
         }
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #faf5f6;
+            background: #fdfaf7;
         }
         ::-webkit-scrollbar-thumb {
-            background: #dfb1ba;
+            background: #f2a1a2; /* Coral-pink from character body */
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #c46d81;
+            background: #ee5253; /* Wizard hat red */
         }
         /* Glassmorphism utility */
         .glass-card {
-            background: rgba(255, 255, 255, 0.9) !important;
+            background: rgba(255, 255, 255, 0.92) !important;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(223, 177, 186, 0.4) !important;
-            box-shadow: 0 8px 32px 0 rgba(138, 55, 74, 0.03) !important;
+            border: 1px solid rgba(242, 161, 162, 0.3) !important;
+            box-shadow: 0 8px 32px 0 rgba(238, 82, 83, 0.03) !important;
         }
         .glow-hover:hover {
-            box-shadow: 0 0 20px rgba(223, 177, 186, 0.3);
-            border-color: rgba(179, 100, 115, 0.5) !important;
+            box-shadow: 0 0 20px rgba(242, 161, 162, 0.3);
+            border-color: rgba(238, 82, 83, 0.5) !important;
         }
 
-        /* LIGHT ROSE THEME OVERRIDES */
+        /* LOGO CHARACTER THEME OVERRIDES */
         h1, h2, h3, h4, h5, h6 {
-            color: #5c2d35 !important; /* Elegant warm burgundy */
+            color: #733238 !important; /* Deep warm maroon/red */
         }
         
-        .text-white:not(button *, .bg-gradient-to-r *, .bg-indigo-600 *, .bg-brand-600 *, .bg-emerald-500 *, #loading-modal *, .bg-red-600 *, .bg-teal-600 *, .bg-indigo-600 *, .bg-rose-600 *) {
-            color: #3d3032 !important;
+        .text-white:not(button *, .bg-gradient-to-r *, .bg-indigo-600 *, .bg-brand-600 *, .bg-emerald-500 *, #loading-modal *, .bg-red-600 *, .bg-teal-600 *, .bg-indigo-600 *, .bg-rose-600 *, #btn-share *) {
+            color: #3f2f31 !important;
         }
 
         .text-zinc-400 {
-            color: #7c6266 !important; /* Soft dusty gray-rose */
+            color: #836b6d !important; /* Soft warm dusty rose-gray */
         }
 
         .text-zinc-500 {
-            color: #93787c !important;
+            color: #988082 !important;
         }
 
         .text-zinc-300 {
-            color: #4a3a3d !important;
+            color: #513e40 !important;
         }
 
         .text-zinc-200 {
-            color: #3d3032 !important;
+            color: #3f2f31 !important;
         }
 
         .bg-zinc-950, .bg-black {
-            background-color: #faf5f6 !important;
+            background-color: #fdfaf7 !important;
         }
 
         .bg-zinc-900 {
@@ -111,45 +111,45 @@
         /* Inputs */
         input[type="text"], input[type="number"], input[type="email"], textarea, select {
             background-color: #ffffff !important;
-            border-color: #dfb1ba !important;
-            color: #3d3032 !important;
+            border-color: #f2a1a2 !important;
+            color: #3f2f31 !important;
         }
         input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
-            border-color: #b36473 !important;
-            box-shadow: 0 0 0 1px #b36473 !important;
+            border-color: #ee5253 !important;
+            box-shadow: 0 0 0 1px #ee5253 !important;
         }
 
         .border-zinc-800, .border-zinc-700 {
-            border-color: rgba(223, 177, 186, 0.3) !important;
+            border-color: rgba(242, 161, 162, 0.3) !important;
         }
 
         /* Brand palette colors overrides */
         .from-brand-600, .from-emerald-500 {
-            --tw-gradient-from: #d28b99 !important;
-            --tw-gradient-stops: var(--tw-gradient-from), #b36473 !important;
+            --tw-gradient-from: #ee5253 !important; /* Hat red */
+            --tw-gradient-stops: var(--tw-gradient-from), #f2a1a2 !important; /* To coral-pink */
         }
         .to-indigo-600, .to-teal-600 {
-            --tw-gradient-to: #b36473 !important;
+            --tw-gradient-to: #f2a1a2 !important;
         }
         .text-brand-500 {
-            color: #b36473 !important;
+            color: #ee5253 !important; /* Hat red for prices */
         }
         .text-brand-400 {
-            color: #8a374a !important;
+            color: #733238 !important;
         }
         .bg-brand-600 {
-            background-color: #b36473 !important;
+            background-color: #ee5253 !important;
         }
         .hover\:bg-brand-700:hover {
-            background-color: #8a374a !important;
+            background-color: #733238 !important;
         }
         .focus\:border-brand-500:focus {
-            border-color: #b36473 !important;
+            border-color: #ee5253 !important;
         }
 
         /* Modal fixes */
         #product-modal, #loading-modal, #order-modal {
-            color: #3d3032;
+            color: #3f2f31;
         }
     </style>
 </head>
@@ -157,17 +157,17 @@
 
     <!-- רקע דקורטיבי עדין -->
     <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
-        <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#dfb1ba]/30 blur-[120px]"></div>
-        <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#b36473]/15 blur-[120px]"></div>
+        <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#ee5253]/10 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#86d7df]/20 blur-[120px]"></div>
     </div>
 
     <!-- כותרת ראשית (Header) -->
     <header class="glass-card sticky top-0 z-40 border-b border-zinc-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center gap-3.5">
-                <img src="logo.jpg" class="w-12 h-12 object-cover object-center rounded-full border-2 border-[#b36473] bg-white shadow-md shadow-rose-950/5" alt="Ecrafts Logo">
+                <img src="logo.jpg" class="w-12 h-12 object-cover object-center rounded-full border-2 border-[#ee5253] bg-white shadow-md shadow-rose-950/5" alt="Ecrafts Logo">
                 <div>
-                    <h1 id="header-title" class="text-xl font-black tracking-tight text-[#4c1d24]">Ecrafts</h1>
+                    <h1 id="header-title" class="text-xl font-black tracking-tight text-[#733238]">Ecrafts</h1>
                     <p id="header-desc" class="text-xs text-zinc-600 font-bold">Digital Art & Creations</p>
                 </div>
             </div>
@@ -175,11 +175,11 @@
             <!-- אזור כפתורי פעולה ומצבים -->
             <div class="flex items-center gap-4">
                 <!-- קישורים חברתיים מהכרטיס ביקור -->
-                <div class="flex items-center gap-3 text-[#b36473]">
-                    <a href="https://www.instagram.com/ecraftsil" target="_blank" class="hover:text-[#8a374a] hover:scale-105 transition-all p-1.5" title="Instagram">
+                <div class="flex items-center gap-3 text-[#ee5253]">
+                    <a href="https://www.instagram.com/ecraftsil" target="_blank" class="hover:text-[#733238] hover:scale-105 transition-all p-1.5" title="Instagram">
                         <i data-lucide="instagram" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@ecraftsil" target="_blank" class="hover:text-[#8a374a] hover:scale-105 transition-all p-1.5" title="TikTok">
+                    <a href="https://www.tiktok.com/@ecraftsil" target="_blank" class="hover:text-[#733238] hover:scale-105 transition-all p-1.5" title="TikTok">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.74-3.94-1.74-.22-.21-.42-.45-.61-.7v5.13c.03 2.87-1.35 5.76-4.04 6.88-2.61 1.09-5.92.74-8.15-1.12-2.3-1.92-3.15-5.32-2.12-8.14 1-2.72 3.97-4.65 6.89-4.39.01 1.5-.01 3 .01 4.5-1.29-.37-2.78-.06-3.71.93-.97 1.03-1.07 2.81-.22 3.92.83 1.1 2.39 1.45 3.65.86.88-.41 1.43-1.3 1.43-2.27.02-3.07.01-6.14.01-9.21z"/>
                         </svg>
