@@ -1,7 +1,7 @@
 window.catalogData = {
   "title": "Ecrafts - קטלוג מוצרים",
   "description": "כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו — פשוט אין שניים זהים.",
-  "email": "ecarftsil@gmail.com",
+  "email": "ecraftsil@gmail.com",
   "products": [
     {
       "id": 1,
