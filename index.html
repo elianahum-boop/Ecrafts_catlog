@@ -302,18 +302,19 @@
             <div class="text-center py-2 md:py-6 space-y-2 md:space-y-4">
                 <h2 id="catalog-title" class="text-2xl md:text-4xl font-black text-[#733238]">יצירות בעבודת יד</h2>
                 <p id="catalog-desc" class="text-xs md:text-sm text-zinc-500 max-w-xl mx-auto">בחרו קטגוריה ודפדפו במוצרים</p>
-                <div class="max-w-xl mx-auto p-3.5 md:p-4 rounded-xl bg-[#dfb1ba]/15 border border-[#dfb1ba]/30 text-[#4c3a3d] text-xs md:text-sm leading-relaxed text-center shadow-sm">
-                    <p class="font-bold text-[#8a374a] mb-1 md:mb-1.5 text-sm md:text-base">ברוכים הבאים ל-Ecrafts! ✨</p>
-                    <p id="welcome-card-text">כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו. אני יוצרת כל פריט בנפרד, ולכן לכל אחד יש אופי משלו ואין שניים זהים לחלוטין 💕</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mt-4">
+                    <!-- כרטיס 1: ברוכים הבאים -->
+                    <div class="p-3.5 md:p-4 rounded-xl bg-[#dfb1ba]/15 border border-[#dfb1ba]/30 text-[#4c3a3d] text-xs md:text-sm leading-relaxed shadow-sm flex flex-col justify-center text-center">
+                        <p class="font-bold text-[#8a374a] mb-1 md:mb-1.5 text-sm md:text-base">ברוכים הבאים ל-Ecrafts! ✨</p>
+                        <p id="welcome-card-text">כאן תמצאו סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרו ועוצבו באהבה בעבודת יד. כל מוצר מיוצר ומצויר בנפרד, מה שהופך אותו ליחיד במינו. אני יוצרת כל פריט בנפרד, ולכן לכל אחד יש אופי משלו ואין שניים זהים לחלוטין 💕</p>
+                    </div>
+                    <!-- כרטיס 2: פריט שאהבת כבר נמכר -->
+                    <div class="p-3.5 md:p-4 rounded-xl bg-[#86d7df]/15 border border-[#86d7df]/30 text-[#2c3d40] text-xs md:text-sm leading-relaxed shadow-sm flex flex-col justify-center text-center">
+                        <p class="font-bold text-[#2b7277] mb-1 md:mb-1.5 text-sm md:text-base">✨ פריט שאהבת כבר נמכר?</p>
+                        <p>אפשר לבקש יצירה חדשה בהשראתו. מכיוון שכל פריט נעשה בעבודת יד, היצירה החדשה תהיה ייחודית ולא זהה לחלוטין למקור.</p>
+                    </div>
                 </div>
-            </div>
-
-            <!-- הסבר קצר על עבודת יד ויחידות בודדות -->
-            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-[#86d7df]/5 border border-[#86d7df]/20 text-[#3f2f31] text-xs md:text-sm max-w-xl mx-auto leading-relaxed shadow-sm">
-                <i data-lucide="sparkles" class="w-4 h-4 text-[#ee5253] flex-shrink-0 mt-0.5 animate-pulse"></i>
-                <p>
-                    <strong>שימו לב:</strong> כל פריט מיוצר ומצויר בעבודת יד, ובדרך כלל קיים כיחידה אחת בלבד. עם זאת, ניתן לבקש הכנה מחדש של פריט שנמכר – בכפוף לכך שעבודת יד אינה זהה ב-100% למקור ותעניק למוצר אופי ייחודי משלו.
-                </p>
             </div>
 
             <!-- סרגל חיפוש ופילטרים -->
@@ -1086,7 +1087,7 @@
                         <!-- סטטוס מוצר -->
                         <span class="absolute top-2 left-2 text-[10px] py-0.5 px-2 rounded-full font-bold shadow-sm backdrop-blur-sm ${
                             product.status === 'sold' 
-                                ? 'bg-red-50/90 border border-red-200 text-red-600' 
+                                ? 'bg-zinc-100/90 border border-zinc-200 text-zinc-600' 
                                 : product.status === 'reserved'
                                     ? 'bg-amber-50/90 border border-amber-200 text-amber-600'
                                     : 'bg-emerald-50/90 border border-emerald-200 text-emerald-600'
@@ -1115,7 +1116,9 @@
                                 <button onclick="event.stopPropagation(); openOrderModal(${product.id})" class="flex items-center gap-1.5 text-[10px] md:text-[11px] font-bold text-[#733238] bg-[#f3dedf] hover:bg-[#ecd0d2] border border-[#f2a1a2]/30 py-1.5 px-2.5 rounded-xl transition-all shadow-sm">
                                     ${product.status === 'sold' 
                                         ? `<i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#ee5253]"></i><span>בקשה להכנה מחדש</span>`
-                                        : `<i data-lucide="mail" class="w-3.5 h-3.5 text-[#ee5253]"></i><span>להזמנה במייל</span>`
+                                        : product.status === 'reserved'
+                                            ? `<i data-lucide="help-circle" class="w-3.5 h-3.5 text-[#ee5253]"></i><span>לפרטים במייל</span>`
+                                            : `<i data-lucide="mail" class="w-3.5 h-3.5 text-[#ee5253]"></i><span>להזמנה במייל</span>`
                                     }
                                 </button>
                             ` : ''}
@@ -1630,10 +1633,20 @@
             document.getElementById('order-product-name').innerText = product.name;
             document.getElementById('order-product-price').innerText = `₪ ${product.price || '15'}`;
             
-            // עדכון כותרות וכפתור לפי סטטוס המוצר (זמין/נמכר)
+            // עדכון כותרות וכפתור לפי סטטוס המוצר
             const isSold = product.status === 'sold';
-            document.getElementById('order-modal-title').innerText = isSold ? "בקשת הכנה מחדש" : "פרטי הזמנה";
-            document.getElementById('order-send-btn-text').innerText = isSold ? "שלח בקשת הכנה מחדש" : "שלח הזמנה במייל";
+            const isReserved = product.status === 'reserved';
+            
+            if (isSold) {
+                document.getElementById('order-modal-title').innerText = "בקשת הכנה מחדש";
+                document.getElementById('order-send-btn-text').innerText = "שלח בקשת הכנה מחדש";
+            } else if (isReserved) {
+                document.getElementById('order-modal-title').innerText = "בירור לגבי מוצר שמור";
+                document.getElementById('order-send-btn-text').innerText = "שלח בירור במייל";
+            } else {
+                document.getElementById('order-modal-title').innerText = "פרטי הזמנה";
+                document.getElementById('order-send-btn-text').innerText = "שלח הזמנה במייל";
+            }
             
             let imgUrl = product.image || 'https://via.placeholder.com/300?text=No+Image';
             if (sessionImageUrls[product.fileName]) {
@@ -1694,31 +1707,65 @@
                             window.location.hostname === 'localhost' || 
                             window.location.hostname === '127.0.0.1';
 
+            const isSold = product.status === 'sold';
+            const isReserved = product.status === 'reserved';
+            const requestType = isSold ? "בקשה להכנה מחדש" : isReserved ? "בירור מוצר שמור" : "הזמנה חדשה";
+
+            let subject = "";
+            let body = "";
+
+            if (isSold) {
+                subject = `בקשה להכנה מחדש: ${product.name}`;
+                body = `היי!\n\nאני מעוניין/ת לבקש הכנה מחדש של המוצר הבא מהקטלוג (עבודת יד):\n\n` +
+                       `- שם המוצר: ${product.name}\n` +
+                       `- קטגוריה: ${product.category || 'כללי'}\n` +
+                       `- כמות מבוקשת: ${quantity}\n` +
+                       `- מחיר יחידה מוערך: ₪${product.price || '15'}\n\n` +
+                       `הערה חשובה:\n` +
+                       `ידוע לי שעבודת יד אינה זהה ב-100% למקור, אך תהיה בהשראת העיצוב המקורי 💕\n\n` +
+                       `פרטי המזמין:\n` +
+                       `- שם הלקוח: ${clientName}\n` +
+                       `- פרטי קשר לחזרה: ${clientContact}\n` +
+                       `- הערות/בקשות עיצוב: ${notes || 'אין'}\n\n` +
+                       `תודה!`;
+            } else if (isReserved) {
+                subject = `בירור לגבי מוצר שמור: ${product.name}`;
+                body = `היי!\n\nאני מעוניין/ת לברר לגבי מוצר שמור מהקטלוג:\n\n` +
+                       `- שם המוצר: ${product.name}\n` +
+                       `- קטגוריה: ${product.category || 'כללי'}\n` +
+                       `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
+                       `פרטי המזמין:\n` +
+                       `- שם הלקוח: ${clientName}\n` +
+                       `- פרטי קשר לחזרה: ${clientContact}\n` +
+                       `- שאלות או בירורים נוספים: ${notes || 'אין'}\n\n` +
+                       `תודה!`;
+            } else {
+                subject = `הזמנה חדשה מהקטלוג: ${product.name}`;
+                body = `היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n\n` +
+                       `- שם המוצר: ${product.name}\n` +
+                       `- קטגוריה: ${product.category || 'כללי'}\n` +
+                       `- כמות: ${quantity}\n` +
+                       `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
+                       `פרטי המזמין:\n` +
+                       `- שם הלקוח: ${clientName}\n` +
+                       `- פרטי קשר לחזרה: ${clientContact}\n` +
+                       `- הערות/בקשות: ${notes || 'אין'}\n\n` +
+                       `תודה!`;
+            }
+
             if (isLocal) {
                 // בסביבה מקומית FormSubmit חסום, לכן נשתמש ב-mailto הרגיל
-                const isSold = product.status === 'sold';
-                const subject = isSold ? `בקשה להכנה מחדש: ${product.name}` : `הזמנה חדשה מהקטלוג: ${product.name}`;
-                const body = `היי!\n\n` +
-                             (isSold 
-                                ? `אני מעוניין/ת לבקש הכנה מחדש של המוצר הבא מהקטלוג (עבודת יד):\n\n`
-                                : `אני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n\n`) +
-                             `- שם המוצר: ${product.name}\n` +
-                             `- קטגוריה: ${product.category || 'כללי'}\n` +
-                             `- כמות: ${quantity}\n` +
-                             `- מחיר יחידה מוערך: ₪${product.price || '15'}\n\n` +
-                             `פרטי המזמין:\n` +
-                             `- שם הלקוח: ${clientName}\n` +
-                             `- פרטי קשר לחזרה: ${clientContact}\n` +
-                             `- הערות/בקשות: ${notes || 'אין'}\n\n` +
-                             `תודה!`;
-
                 window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body).replace(/\n/g, '%0D%0A')}`;
                 
                 // הצגת הודעת ההצלחה במקום הטופס במצב מקומי
-                document.getElementById('order-modal-success-title').innerText = isSold ? "בקשתך נשלחה בהצלחה!" : "ההזמנה נשלחה בהצלחה!";
-                document.getElementById('order-modal-success-desc').innerText = isSold 
+                const successTitle = isSold ? "בקשתך נשלחה בהצלחה!" : isReserved ? "פנייתך נשלחה בהצלחה!" : "ההזמנה נשלחה בהצלחה!";
+                const successDesc = isSold 
                     ? "בקשת ההכנה מחדש הועברה ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום." 
-                    : "פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.";
+                    : isReserved 
+                        ? "בירור הפרטים לגבי המוצר השמור הועבר ליוצרת. ניצור איתך קשר בהקדם לחזרה." 
+                        : "פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.";
+                document.getElementById('order-modal-success-title').innerText = successTitle;
+                document.getElementById('order-modal-success-desc').innerText = successDesc;
                 document.getElementById('order-modal-form-container').classList.add('hidden');
                 document.getElementById('order-modal-success-container').classList.remove('hidden');
                 lucide.createIcons();
@@ -1731,11 +1778,19 @@
             sendBtn.disabled = true;
             sendBtn.innerHTML = `
                 <span class="inline-block animate-spin border-2 border-white border-t-transparent rounded-full w-4 h-4 mr-2 align-middle"></span>
-                <span>שולח הזמנה...</span>
+                <span>שולח...</span>
             `;
 
             // שליחת הנתונים ל-FormSubmit דרך AJAX
-            const isSold = product.status === 'sold';
+            const ajaxSubject = isSold 
+                ? `בקשה להכנה מחדש: ${product.name} (מאת ${clientName})`
+                : isReserved 
+                    ? `בירור לגבי מוצר שמור: ${product.name} (מאת ${clientName})`
+                    : `הזמנה חדשה מהקטלוג: ${product.name} (מאת ${clientName})`;
+            const ajaxNotes = isSold 
+                ? `${notes || 'אין'}\n*(הלקוח מודע לכך שעבודת היד לא תהיה זהה ב-100% למקור)*`
+                : notes || "אין הערות";
+
             fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
                 method: "POST",
                 headers: { 
@@ -1743,17 +1798,15 @@
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    "סוג פנייה": isSold ? "בקשה להכנה מחדש" : "הזמנה חדשה",
+                    "סוג פנייה": requestType,
                     "שם המוצר": product.name,
                     "קטגוריה": product.category || "כללי",
                     "מחיר": `₪${product.price || '15'}`,
                     "כמות": quantity,
                     "שם הלקוח": clientName,
                     "פרטי קשר": clientContact,
-                    "הערות/בקשות": notes || "אין הערות",
-                    "_subject": isSold 
-                        ? `בקשה להכנה מחדש: ${product.name} (מאת ${clientName})`
-                        : `הזמנה חדשה מהקטלוג: ${product.name} (מאת ${clientName})`,
+                    "הערות/בקשות": ajaxNotes,
+                    "_subject": ajaxSubject,
                     "_template": "box"
                 })
             })
@@ -1766,10 +1819,14 @@
             })
             .then(data => {
                 // הצגת הודעת ההצלחה במקום הטופס
-                document.getElementById('order-modal-success-title').innerText = isSold ? "בקשתך נשלחה בהצלחה!" : "ההזמנה נשלחה בהצלחה!";
-                document.getElementById('order-modal-success-desc').innerText = isSold 
+                const successTitle = isSold ? "בקשתך נשלחה בהצלחה!" : isReserved ? "פנייתך נשלחה בהצלחה!" : "ההזמנה נשלחה בהצלחה!";
+                const successDesc = isSold 
                     ? "בקשת ההכנה מחדש הועברה ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום." 
-                    : "פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.";
+                    : isReserved 
+                        ? "בירור הפרטים לגבי המוצר השמור הועבר ליוצרת. ניצור איתך קשר בהקדם לחזרה." 
+                        : "פרטי ההזמנה הועברו ליוצרת. ניצור איתך קשר בהקדם לחזרה ותיאום תשלום.";
+                document.getElementById('order-modal-success-title').innerText = successTitle;
+                document.getElementById('order-modal-success-desc').innerText = successDesc;
                 document.getElementById('order-modal-form-container').classList.add('hidden');
                 document.getElementById('order-modal-success-container').classList.remove('hidden');
                 lucide.createIcons();
