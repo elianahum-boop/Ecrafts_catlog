@@ -1726,6 +1726,20 @@
         }
 
         function loadSiteContent() {
+            if (!isEditMode) {
+                siteUpdates = (window.catalogData && Array.isArray(window.catalogData.updates))
+                    ? JSON.parse(JSON.stringify(window.catalogData.updates))
+                    : [];
+                orders = (window.catalogData && Array.isArray(window.catalogData.orders))
+                    ? JSON.parse(JSON.stringify(window.catalogData.orders))
+                    : [];
+                siteUpdates.forEach(update => {
+                    if (!update.status) update.status = 'published';
+                    if (update.showOnHome === undefined) update.showOnHome = true;
+                });
+                return;
+            }
+
             try {
                 const savedUpdates = localStorage.getItem('ecrafts_updates');
                 if (savedUpdates) {
