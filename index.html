@@ -1745,7 +1745,13 @@
 
             try {
                 const savedOrders = localStorage.getItem('ecrafts_orders');
-                orders = savedOrders ? JSON.parse(savedOrders) : [];
+                if (savedOrders) {
+                    orders = JSON.parse(savedOrders);
+                } else if (window.catalogData && Array.isArray(window.catalogData.orders)) {
+                    orders = JSON.parse(JSON.stringify(window.catalogData.orders));
+                } else {
+                    orders = [];
+                }
             } catch (e) {
                 orders = [];
             }
@@ -2232,7 +2238,8 @@
                 description: catalog.description,
                 email: catalog.email,
                 products: catalog.products,
-                updates: siteUpdates
+                updates: siteUpdates,
+                orders: orders
             };
             const jsContent = `window.catalogData = ${JSON.stringify(exportData, null, 2)};`;
             
@@ -2245,16 +2252,21 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            alert("קובץ הנתונים (products-data.js) יוצא בהצלחה!\nאנא שמור אותו בתיקיית Ecrafts\\קטלוג במקום הקובץ הישן.");
+            alert("קובץ הנתונים המלא (products-data.js) יוצא בהצלחה!\nהקובץ כולל מוצרים, עדכונים והזמנות.\nאנא שמרי אותו בתיקיית Ecrafts\\קטלוג במקום הקובץ הישן.");
         }
 
         // שחזור הנתונים לקדמותם מתוך קובץ הנתונים (ביטול שינויים מקומיים)
         function resetToJsData() {
             if (confirm("האם אתה בטוח שברצונך לשחזר את הנתונים מקובץ products-data.js?\nכל השינויים שביצעת במחשב זה מאז הייצוא האחרון יימחקו.")) {
                 localStorage.removeItem('ecrafts_catalog');
+                localStorage.removeItem('ecrafts_updates');
+                localStorage.removeItem('ecrafts_orders');
                 loadCatalogFromLocalOrJs();
+                loadSiteContent();
                 applyModeUI();
                 renderCatalog();
+                renderSiteSections();
+                renderAdminDashboard();
                 alert("הנתונים שוחזרו בהצלחה מקובץ products-data.js!");
             }
         }
