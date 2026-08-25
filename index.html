@@ -572,12 +572,10 @@
             </div>
             
             <!-- מצב גלריה ריקה -->
-            <div id="empty-catalog-state" class="hidden flex flex-col items-center justify-center text-center py-16 space-y-4">
-                <div class="w-16 h-16 rounded-full bg-[#dfb1ba]/10 border border-[#dfb1ba]/30 flex items-center justify-center mx-auto text-[#ee5253]">
-                    <i data-lucide="search-x" class="w-8 h-8"></i>
-                </div>
+            <div id="empty-catalog-state" class="hidden flex flex-col items-center justify-center text-center py-10 md:py-14 space-y-3 md:space-y-4">
+                <img src="S2.png" alt="סלמי מחפש מוצרים" class="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 object-contain mx-auto">
                 <div class="space-y-1">
-                    <h3 class="font-bold text-[#733238] text-lg">לא מצאנו מוצרים שמתאימים לחיפוש הזה ✨</h3>
+                    <h3 class="font-bold text-[#733238] text-lg">סלמי לא מצא מוצרים שמתאימים לחיפוש הזה</h3>
                     <p class="text-sm text-[#836b6d] max-w-sm mx-auto">נסו קטגוריה, חיפוש אחר או הסירו פילטרים.</p>
                 </div>
                 <button onclick="resetFilters()" class="mt-2 px-6 py-2 bg-[#dfb1ba]/15 hover:bg-[#dfb1ba]/30 text-[#733238] text-sm font-bold rounded-full transition-colors border border-[#dfb1ba]/40 shadow-sm">
@@ -1825,6 +1823,16 @@
         function renderUpdateCards(container, updates) {
             if (!container) return;
             const visibleUpdates = updates.filter(update => (update.status || 'published') === 'published');
+            if (!visibleUpdates.length) {
+                container.innerHTML = `
+                    <div class="col-span-full bg-white border border-[#f2a1a2]/30 rounded-2xl p-6 text-center text-sm text-[#836b6d] shadow-sm">
+                        <img src="S1.png" alt="סלמי מציץ" class="w-44 h-28 sm:w-52 sm:h-32 md:w-64 md:h-40 object-contain mx-auto mb-3">
+                        <h3 class="font-black text-[#733238] text-base">אין עדכונים חדשים כרגע</h3>
+                        <p class="mt-1">סלמי יחזור להציץ כאן כשיהיה משהו חדש.</p>
+                    </div>
+                `;
+                return;
+            }
             container.innerHTML = visibleUpdates.map(update => `
                 <article class="bg-white border border-[#f2a1a2]/30 rounded-2xl overflow-hidden shadow-sm">
                     ${update.image ? `<img src="${update.image}" alt="" class="w-full aspect-video object-cover bg-[#fdfaf7]">` : ''}
@@ -1854,7 +1862,9 @@
             if (!container) return;
             const sorted = getSortedUpdates();
             if (!sorted.length) {
-                container.innerHTML = `<div class="md:col-span-2 xl:col-span-3 bg-white border border-[#f2a1a2]/30 rounded-xl p-5 text-center text-sm text-[#836b6d]">אין כרגע עדכונים שמורים.</div>`;
+                container.innerHTML = `
+                    <div class="md:col-span-2 xl:col-span-3 bg-white border border-[#f2a1a2]/30 rounded-xl p-5 text-center text-sm text-[#836b6d]">אין כרגע עדכונים שמורים.</div>
+                `;
                 return;
             }
             container.innerHTML = sorted.map(update => {
