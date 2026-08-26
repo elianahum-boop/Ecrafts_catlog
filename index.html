@@ -226,6 +226,21 @@
                 display: flex !important;
             }
         }
+        @media (max-width: 767px) {
+            .netlify-badge,
+            [class*="netlify"],
+            a[href*="netlify"],
+            iframe[src*="netlify"] {
+                display: none !important;
+            }
+        }
+        @media (max-width: 1023px) {
+            #public-nav,
+            #admin-nav,
+            #btn-share {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body class="font-sans min-h-screen flex flex-col antialiased">
@@ -238,12 +253,12 @@
 
     <!-- כותרת ראשית (Header) -->
     <header class="glass-card sticky top-0 z-40 border-b border-zinc-800 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-4">
-            <div class="flex items-center gap-3.5">
-                <img src="logo.jpg" class="w-[58px] h-[58px] object-cover object-center rounded-full border-2 border-[#ee5253] bg-white shadow-md shadow-rose-950/5" alt="Ecrafts Logo">
+        <div class="max-w-7xl mx-auto px-4 py-2.5 md:py-3.5 flex flex-wrap items-center justify-between gap-3 md:gap-4">
+            <div class="flex items-center gap-2.5 md:gap-3.5">
+                <img src="logo.jpg" class="w-11 h-11 md:w-[58px] md:h-[58px] object-cover object-center rounded-full border-2 border-[#ee5253] bg-white shadow-md shadow-rose-950/5" alt="Ecrafts Logo">
                 <div>
-                    <h1 id="header-title" class="text-xl font-black tracking-tight text-[#733238]">Ecrafts</h1>
-                    <p id="header-desc" class="text-xs text-zinc-600 font-bold">Digital Art & Creations</p>
+                    <h1 id="header-title" class="text-lg md:text-xl font-black tracking-tight text-[#733238]">Ecrafts</h1>
+                    <p id="header-desc" class="text-[10px] md:text-xs text-zinc-600 font-bold">Digital Art & Creations</p>
                 </div>
             </div>
 
@@ -267,7 +282,7 @@
                     <i data-lucide="menu" class="w-5 h-5"></i>
                 </button>
                 <!-- כפתור העתקת קישור של מנהל -->
-                <button id="btn-share" onclick="openShareModal()" class="hidden flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium py-2 px-4 rounded-xl shadow-lg shadow-emerald-500/10 transition-all transform hover:-translate-y-0.5 active:translate-y-0 duration-200">
+                <button id="btn-share" onclick="openShareModal()" class="hidden lg:flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium py-2 px-4 rounded-xl shadow-lg shadow-emerald-500/10 transition-all transform hover:-translate-y-0.5 active:translate-y-0 duration-200">
                     <i data-lucide="share-2" class="w-4 h-4"></i>
                     <span>שיתוף קטלוג</span>
                 </button>
@@ -293,27 +308,28 @@
         <!-- ================= בית ================= -->
         <section id="home" class="public-section section-shell mb-10 md:mb-14">
             <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.95fr)] gap-6 items-center">
-                <div class="py-8 md:py-12 flex flex-col justify-center gap-5">
+                <div class="py-5 md:py-12 flex flex-col justify-center gap-4 md:gap-5">
                     <div class="space-y-3">
                         <p class="text-sm font-bold text-[#ee5253]">האתר הרשמי</p>
                         <h2 class="text-4xl md:text-6xl font-black text-[#733238] leading-tight">Ecrafts</h2>
                         <p class="text-xl md:text-2xl font-black text-[#8a374a]">יצירות בעבודת יד</p>
+                        <img src="S3.png" class="lg:hidden w-[52vw] max-w-[210px] max-h-[180px] h-auto object-contain mx-auto my-4 drop-shadow-lg" alt="סלמי, המסקוט של Ecrafts">
                         <p class="text-sm md:text-base text-[#513e40] leading-relaxed max-w-2xl">
                             סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרים ומצוירים ביד. כל פריט מקבל אופי משלו, ואין שני פריטים זהים לחלוטין. גם עיצוב שכבר הוזמן יכול לשמש השראה ליצירה חדשה.
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <a href="#products" class="inline-flex items-center gap-2 bg-[#ee5253] hover:bg-[#733238] text-white font-bold py-2.5 px-5 rounded-xl shadow-sm transition-colors">
+                        <a href="#products" class="inline-flex flex-1 sm:flex-none min-w-[130px] items-center justify-center gap-2 bg-[#ee5253] hover:bg-[#733238] text-white font-bold py-2.5 px-5 rounded-xl shadow-sm transition-colors">
                             <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                             <span>למוצרים</span>
                         </a>
-                        <a href="#updates" class="inline-flex items-center gap-2 bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] font-bold py-2.5 px-5 rounded-xl border border-[#f2a1a2]/35 transition-colors">
+                        <a href="#updates" class="inline-flex flex-1 sm:flex-none min-w-[130px] items-center justify-center gap-2 bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] font-bold py-2.5 px-5 rounded-xl border border-[#f2a1a2]/35 transition-colors">
                             <i data-lucide="sparkles" class="w-4 h-4"></i>
                             <span>מה חדש</span>
                         </a>
                     </div>
                 </div>
-                <div id="hero-salami-container" class="flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                <div id="hero-salami-container" class="hidden lg:flex items-center justify-center min-h-[300px]">
                     <img src="S3.png" class="w-56 sm:w-72 md:w-96 lg:w-full max-w-[400px] object-contain mx-auto drop-shadow-xl" alt="סלמי, המסקוט של Ecrafts">
                 </div>
             </div>
