@@ -235,10 +235,52 @@
             }
         }
         @media (max-width: 1023px) {
+            html,
+            body {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
             #public-nav,
             #admin-nav,
             #btn-share {
                 display: none !important;
+            }
+            .hero-copy-mobile {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+                box-sizing: border-box;
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+                margin-left: 0;
+                margin-right: 0;
+                position: static;
+                transform: none;
+                overflow-wrap: anywhere;
+            }
+            .hero-copy-mobile h2,
+            .hero-copy-mobile p {
+                max-width: 100%;
+                white-space: normal;
+            }
+            .hero-actions-mobile {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+                box-sizing: border-box;
+                gap: 0.5rem;
+            }
+            .hero-actions-mobile a {
+                min-width: 0;
+                white-space: normal;
+            }
+        }
+        @media (max-width: 359px) {
+            .hero-actions-mobile {
+                flex-direction: column;
+            }
+            .hero-actions-mobile a {
+                width: 100%;
             }
         }
     </style>
@@ -308,7 +350,7 @@
         <!-- ================= בית ================= -->
         <section id="home" class="public-section section-shell mb-10 md:mb-14">
             <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.95fr)] gap-6 items-center">
-                <div class="py-5 md:py-12 flex flex-col justify-center gap-4 md:gap-5">
+                <div class="hero-copy-mobile py-5 md:py-12 flex flex-col justify-center gap-4 md:gap-5">
                     <div class="space-y-3">
                         <p class="text-sm font-bold text-[#ee5253]">האתר הרשמי</p>
                         <h2 class="text-4xl md:text-6xl font-black text-[#733238] leading-tight">Ecrafts</h2>
@@ -318,7 +360,7 @@
                             סימניות, מחזיקי מפתחות ופריטים ייחודיים שנוצרים ומצוירים ביד. כל פריט מקבל אופי משלו, ואין שני פריטים זהים לחלוטין. גם עיצוב שכבר הוזמן יכול לשמש השראה ליצירה חדשה.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-3">
+                    <div class="hero-actions-mobile flex flex-wrap gap-3">
                         <a href="#products" class="inline-flex flex-1 sm:flex-none min-w-[130px] items-center justify-center gap-2 bg-[#ee5253] hover:bg-[#733238] text-white font-bold py-2.5 px-5 rounded-xl shadow-sm transition-colors">
                             <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                             <span>למוצרים</span>
