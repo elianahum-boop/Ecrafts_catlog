@@ -13,7 +13,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide1.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 2,
@@ -25,7 +26,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide2.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 3,
@@ -37,7 +39,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide3.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 4,
@@ -49,7 +52,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide4.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 5,
@@ -61,7 +65,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide5.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 6,
@@ -73,7 +78,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide6.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 7,
@@ -85,7 +91,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide7.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 8,
@@ -97,7 +104,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide8.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 9,
@@ -109,7 +117,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide9.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 10,
@@ -121,7 +130,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide10.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 11,
@@ -133,7 +143,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide11.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 12,
@@ -145,7 +156,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide12.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 13,
@@ -157,7 +169,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide13.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 14,
@@ -169,7 +182,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide14.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 15,
@@ -181,7 +195,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide15.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 16,
@@ -193,7 +208,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide16.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 17,
@@ -205,7 +221,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide17.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 18,
@@ -217,7 +234,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide18.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 19,
@@ -229,7 +247,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide19.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 20,
@@ -241,7 +260,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide20.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 21,
@@ -253,7 +273,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide21.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 22,
@@ -265,7 +286,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide22.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 23,
@@ -277,7 +299,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide23.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 24,
@@ -289,7 +312,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide24.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 25,
@@ -301,7 +325,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide25.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 26,
@@ -313,7 +338,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide26.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 27,
@@ -325,7 +351,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide27.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 28,
@@ -337,7 +364,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide28.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 29,
@@ -349,7 +377,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide29.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 30,
@@ -361,7 +390,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide30.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 31,
@@ -373,7 +403,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide31.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 32,
@@ -385,7 +416,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide32.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 33,
@@ -397,7 +429,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide33.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 34,
@@ -409,7 +442,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide34.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 35,
@@ -421,7 +455,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide35.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 36,
@@ -433,7 +468,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide36.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 37,
@@ -445,7 +481,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide37.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 38,
@@ -457,7 +494,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide38.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 39,
@@ -469,7 +507,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide39.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 40,
@@ -481,7 +520,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide40.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 41,
@@ -493,7 +533,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide41.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 42,
@@ -505,7 +546,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide42.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 43,
@@ -517,7 +559,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide43.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 44,
@@ -529,7 +572,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide44.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 45,
@@ -541,7 +585,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide45.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 46,
@@ -553,7 +598,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide46.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 47,
@@ -565,7 +611,8 @@ window.catalogData = {
       "image": "מוצרים/מחזיקים/Slide47.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 48,
@@ -577,7 +624,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide1.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 49,
@@ -589,7 +637,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide2.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 50,
@@ -601,7 +650,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide3.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 51,
@@ -613,7 +663,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide4.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 52,
@@ -625,7 +676,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide5.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 53,
@@ -637,7 +689,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide6.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 54,
@@ -649,7 +702,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide7.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 55,
@@ -661,7 +715,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide8.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 56,
@@ -673,7 +728,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide9.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 57,
@@ -685,7 +741,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide10.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 58,
@@ -697,7 +754,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide11.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 59,
@@ -709,7 +767,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide12.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 60,
@@ -721,7 +780,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide13.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 61,
@@ -733,7 +793,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide14.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 62,
@@ -745,7 +806,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide15.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 63,
@@ -757,7 +819,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide16.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 64,
@@ -769,7 +832,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide17.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 65,
@@ -781,7 +845,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide18.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 66,
@@ -793,7 +858,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide19.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 67,
@@ -805,7 +871,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide20.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 68,
@@ -817,7 +884,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide21.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 69,
@@ -829,7 +897,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide22.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 70,
@@ -841,7 +910,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide23.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 71,
@@ -853,7 +923,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide24.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 72,
@@ -865,7 +936,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide25.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 73,
@@ -877,7 +949,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide26.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 74,
@@ -889,7 +962,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide27.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 75,
@@ -901,7 +975,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide28.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 76,
@@ -913,7 +988,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide29.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 77,
@@ -925,7 +1001,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide30.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 78,
@@ -937,7 +1014,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide31.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 79,
@@ -949,7 +1027,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide32.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 80,
@@ -961,7 +1040,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide33.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 81,
@@ -973,7 +1053,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide34.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 82,
@@ -985,7 +1066,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide35.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 83,
@@ -997,7 +1079,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide36.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 84,
@@ -1009,7 +1092,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide37.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 85,
@@ -1021,7 +1105,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide38.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 86,
@@ -1033,7 +1118,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide39.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 87,
@@ -1045,7 +1131,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide40.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 88,
@@ -1057,7 +1144,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide41.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 89,
@@ -1069,7 +1157,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide42.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 90,
@@ -1081,7 +1170,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide43.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 91,
@@ -1093,7 +1183,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide44.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 92,
@@ -1105,7 +1196,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide45.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 93,
@@ -1117,7 +1209,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide46.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 94,
@@ -1129,7 +1222,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide47.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 95,
@@ -1141,7 +1235,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide48.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 96,
@@ -1153,7 +1248,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide49.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 97,
@@ -1165,7 +1261,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide50.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 98,
@@ -1177,7 +1274,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide51.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 99,
@@ -1189,7 +1287,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide52.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 100,
@@ -1201,7 +1300,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide53.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 101,
@@ -1213,7 +1313,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide54.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 102,
@@ -1225,7 +1326,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide55.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 103,
@@ -1237,7 +1339,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide56.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 104,
@@ -1249,7 +1352,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide57.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 105,
@@ -1261,7 +1365,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide58.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 106,
@@ -1273,7 +1378,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide59.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 107,
@@ -1285,7 +1391,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide60.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 108,
@@ -1297,7 +1404,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide61.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 109,
@@ -1309,7 +1417,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide62.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 110,
@@ -1321,7 +1430,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide63.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 111,
@@ -1333,7 +1443,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide64.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 112,
@@ -1345,7 +1456,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide65.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 113,
@@ -1357,7 +1469,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide66.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 114,
@@ -1369,7 +1482,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide67.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 115,
@@ -1381,7 +1495,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide68.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 116,
@@ -1393,7 +1508,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide69.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 117,
@@ -1405,7 +1521,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide70.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 118,
@@ -1417,7 +1534,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide71.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     },
     {
       "id": 119,
@@ -1429,7 +1547,8 @@ window.catalogData = {
       "image": "מוצרים/סימניות/Slide72.PNG",
       "status": "available",
       "dimensions": {},
-      "images": []
+      "images": [],
+      "theme": "אנימה"
     }
   ],
   "updates": [],

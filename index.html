@@ -617,7 +617,7 @@
         <section id="products" class="section-shell hidden mb-4 md:mb-8 space-y-4 md:space-y-6">
             <div class="text-center py-2 md:py-6 space-y-2 md:space-y-4">
                 <h2 id="catalog-title" class="text-2xl md:text-4xl font-black text-[#733238]">יצירות בעבודת יד</h2>
-                <p id="catalog-desc" class="text-sm md:text-base text-[#513e40] font-medium opacity-90 max-w-xl mx-auto">בחרו קטגוריה ודפדפו במוצרים</p>
+                <p id="catalog-desc" class="text-sm md:text-base text-[#513e40] font-medium opacity-90 max-w-xl mx-auto">בחרו סוג מוצר, נושא ודפדפו במוצרים</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mt-4">
                     <!-- כרטיס 1: ברוכים הבאים -->
@@ -635,9 +635,21 @@
 
             <!-- סרגל חיפוש ופילטרים -->
             <div class="flex flex-col xl:flex-row gap-4 items-center justify-between mt-2">
-                <!-- פילטר קטגוריות -->
-                <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto max-w-full no-scrollbar">
-                    <!-- נוצר דינמית -->
+                <div class="flex flex-col gap-2 w-full xl:w-auto">
+                    <!-- פילטר סוג מוצר -->
+                    <div class="space-y-1">
+                        <p class="text-[11px] font-black text-[#733238] px-1">סוג מוצר</p>
+                        <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto max-w-full no-scrollbar">
+                            <!-- נוצר דינמית -->
+                        </div>
+                    </div>
+                    <!-- פילטר נושא -->
+                    <div class="space-y-1">
+                        <p class="text-[11px] font-black text-[#733238] px-1">נושא</p>
+                        <div id="theme-tabs" class="flex items-center gap-2 overflow-x-auto max-w-full no-scrollbar">
+                            <!-- נוצר דינמית -->
+                        </div>
+                    </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full xl:w-auto">
@@ -673,7 +685,7 @@
                 <img src="S2.png" alt="סלמי מחפש מוצרים" class="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 object-contain mx-auto">
                 <div class="space-y-1">
                     <h3 class="font-bold text-[#733238] text-lg">סלמי לא מצא מוצרים שמתאימים לחיפוש הזה</h3>
-                    <p class="text-sm text-[#836b6d] max-w-sm mx-auto">נסו קטגוריה, חיפוש אחר או הסירו פילטרים.</p>
+                    <p class="text-sm text-[#836b6d] max-w-sm mx-auto">נסו סוג מוצר, נושא, חיפוש אחר או הסירו פילטרים.</p>
                 </div>
                 <button onclick="resetFilters()" class="mt-2 px-6 py-2 bg-[#dfb1ba]/15 hover:bg-[#dfb1ba]/30 text-[#733238] text-sm font-bold rounded-full transition-colors border border-[#dfb1ba]/40 shadow-sm">
                     איפוס סינונים
@@ -893,11 +905,26 @@
                         <label class="block text-sm font-medium text-zinc-400 mb-1.5">מחיר (₪)</label>
                         <input type="text" id="modal-price" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500" placeholder="15">
                     </div>
-                    <!-- קטגוריה -->
+                    <!-- סוג מוצר -->
                     <div>
-                        <label class="block text-sm font-medium text-zinc-400 mb-1.5">קטגוריה</label>
+                        <label class="block text-sm font-medium text-zinc-400 mb-1.5">סוג מוצר</label>
                         <input type="text" id="modal-category" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500" placeholder="לדוגמה: מחזיקים">
                     </div>
+                </div>
+
+                <!-- נושא -->
+                <div>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">נושא</label>
+                    <input list="theme-options" type="text" id="modal-theme" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500" placeholder="לדוגמה: אנימה">
+                    <datalist id="theme-options">
+                        <option value="אנימה"></option>
+                        <option value="פרחים"></option>
+                        <option value="חיות"></option>
+                        <option value="דמויות מקוריות"></option>
+                        <option value="טבע"></option>
+                        <option value="אחר"></option>
+                    </datalist>
+                    <p class="text-[10px] text-zinc-500 mt-1">אופציונלי. אפשר לבחור מהרשימה או לכתוב נושא חדש.</p>
                 </div>
 
                 <!-- פרטי המוצר -->
@@ -1339,6 +1366,7 @@
         };
         
         let activeCategory = "הכל";
+        let activeTheme = "הכל";
         let isEditMode = true; // האם אנחנו במצב עריכה כרגע
         let siteUpdates = [];
         let orders = [];
@@ -1347,6 +1375,7 @@
         let activeUpdateImage = "";
         let mainProductImageRemoved = false;
         const BOOKMARK_PRICE_MIGRATION_KEY = 'ecrafts_bookmark_price_25_migrated';
+        const DEFAULT_THEMES = ["הכל", "אנימה", "פרחים", "חיות", "דמויות מקוריות", "טבע", "אחר"];
         
         // מפה לשמירת ObjectURL זמניים לקבצים שנטענו בסשן הנוכחי לצורך תצוגה מקדימה מיידית
         const sessionImageUrls = {}; 
@@ -1746,7 +1775,7 @@
             if (document.getElementById('header-desc')) document.getElementById('header-desc').innerText = "Digital Art & Creations";
             
             if (document.getElementById('catalog-title')) document.getElementById('catalog-title').innerText = "מוצרים";
-            if (document.getElementById('catalog-desc')) document.getElementById('catalog-desc').innerText = "חפשו לפי שם, קטגוריה או פרטי מוצר";
+            if (document.getElementById('catalog-desc')) document.getElementById('catalog-desc').innerText = "חפשו לפי שם, פרטי מוצר, סוג מוצר או נושא";
             
             // עדכון הפסקה הדינמית בתוך כרטיסיית הברכה למנוע כפילויות
             const welcomeCardText = document.getElementById('welcome-card-text');
@@ -2430,7 +2459,7 @@
             document.getElementById('header-title').innerText = "Ecrafts";
             document.getElementById('header-desc').innerText = "Digital Art & Creations";
             document.getElementById('catalog-title').innerText = "מוצרים";
-            document.getElementById('catalog-desc').innerText = "חפשו לפי שם, קטגוריה או פרטי מוצר";
+            document.getElementById('catalog-desc').innerText = "חפשו לפי שם, פרטי מוצר, סוג מוצר או נושא";
             
             saveCatalogToLocal();
         }
@@ -2444,9 +2473,14 @@
             const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
             let filtered = catalog.products || [];
 
-            // סינון קטגוריה
+            // סינון סוג מוצר
             if (activeCategory !== "הכל") {
                 filtered = filtered.filter(p => p.category === activeCategory);
+            }
+
+            // סינון נושא
+            if (activeTheme !== "הכל") {
+                filtered = filtered.filter(p => (p.theme || '').trim() === activeTheme);
             }
 
             // סינון חיפוש
@@ -2454,7 +2488,8 @@
                 filtered = filtered.filter(p => 
                     (p.name && p.name.toLowerCase().includes(searchQuery)) || 
                     (p.desc && p.desc.toLowerCase().includes(searchQuery)) ||
-                    (p.category && p.category.toLowerCase().includes(searchQuery))
+                    (p.category && p.category.toLowerCase().includes(searchQuery)) ||
+                    (p.theme && p.theme.toLowerCase().includes(searchQuery))
                 );
             }
 
@@ -2554,8 +2589,9 @@
                 grid.appendChild(card);
             });
 
-            // עדכון רשימת קטגוריות
+            // עדכון רשימות פילטרים
             renderCategoryTabs();
+            renderThemeTabs();
             renderFeaturedProducts();
             lucide.createIcons();
         }
@@ -2594,6 +2630,37 @@
             });
         }
 
+        function renderThemeTabs() {
+            const container = document.getElementById('theme-tabs');
+            if (!container) return;
+
+            const themes = new Set(DEFAULT_THEMES);
+            (catalog.products || []).forEach(p => {
+                if (p.theme && p.theme.trim()) {
+                    themes.add(p.theme.trim());
+                }
+            });
+
+            container.innerHTML = '';
+
+            themes.forEach(theme => {
+                const btn = document.createElement('button');
+                const isActive = activeTheme === theme;
+
+                btn.className = isActive
+                    ? 'bg-[#86d7df] text-[#1f565b] px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all shadow-sm'
+                    : 'bg-[#86d7df]/10 hover:bg-[#86d7df]/20 text-[#2b7277] border border-[#86d7df]/30 px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all';
+
+                btn.innerText = theme;
+                btn.onclick = () => {
+                    activeTheme = theme;
+                    renderCatalog();
+                };
+
+                container.appendChild(btn);
+            });
+        }
+
         function filterProducts() {
             renderCatalog();
         }
@@ -2605,6 +2672,7 @@
             if (filterAvail) filterAvail.checked = false;
             
             activeCategory = 'הכל';
+            activeTheme = 'הכל';
             renderCatalog();
         }
 
@@ -2616,6 +2684,7 @@
             document.getElementById('modal-name').value = "";
             document.getElementById('modal-price').value = "15"; // ברירת מחדל
             document.getElementById('modal-category').value = "";
+            document.getElementById('modal-theme').value = "";
             document.getElementById('modal-desc').value = "";
             document.getElementById('modal-image-url').value = "";
             document.getElementById('modal-file-input').value = "";
@@ -2642,6 +2711,7 @@
             document.getElementById('modal-name').value = product.name || "";
             document.getElementById('modal-price').value = product.price || "15";
             document.getElementById('modal-category').value = product.category || "";
+            document.getElementById('modal-theme').value = product.theme || "";
             document.getElementById('modal-desc').value = product.desc || "";
             document.getElementById('modal-status').value = normalizeStatus(product.status);
             const dimensions = product.dimensions || {};
@@ -2828,6 +2898,7 @@
             const name = document.getElementById('modal-name').value.trim();
             const price = document.getElementById('modal-price').value.trim() || "15";
             const category = document.getElementById('modal-category').value.trim() || "כללי";
+            const theme = document.getElementById('modal-theme').value.trim();
             const desc = document.getElementById('modal-desc').value.trim();
             const imageUrlInput = document.getElementById('modal-image-url').value.trim();
             const fileInput = document.getElementById('modal-file-input');
@@ -2869,6 +2940,7 @@
                     catalog.products[index].name = name;
                     catalog.products[index].price = price;
                     catalog.products[index].category = category;
+                    catalog.products[index].theme = theme;
                     catalog.products[index].desc = desc;
                     catalog.products[index].image = finalImage;
                     catalog.products[index].status = status;
@@ -2883,6 +2955,7 @@
                     fileName: finalFileName,
                     price: price,
                     category: category,
+                    theme: theme,
                     desc: desc,
                     image: finalImage,
                     status: status,
@@ -3017,6 +3090,7 @@
                         fileName: file.name,
                         price: "15", // ברירת מחדל
                         category: folderName,
+                        theme: "",
                         desc: "",
                         image: relativePath
                     };
@@ -3163,6 +3237,7 @@
                         fileName: p.fileName,
                         price: p.price,
                         category: p.category,
+                        theme: p.theme || "",
                         desc: p.desc,
                         image: p.image, // נשלח את הנתיב היחסי בקישור!
                         status: normalizeStatus(p.status),
@@ -3326,7 +3401,7 @@
                 subject = `הזמנת יצירה חדשה: ${product.name}`;
                 body = `היי!\n\nאני מעוניין/ת להזמין יצירה חדשה בהשראת המוצר הבא מהקטלוג:\n\n` +
                        `- שם המוצר: ${product.name}\n` +
-                       `- קטגוריה: ${product.category || 'כללי'}\n` +
+                       `- סוג מוצר: ${product.category || 'כללי'}\n` +
                        `- כמות מבוקשת: ${quantity}\n` +
                        `- מחיר יחידה מוערך: ₪${product.price || '15'}\n\n` +
                        `הערה חשובה:\n` +
@@ -3340,7 +3415,7 @@
                 subject = `בקשת יצירה דומה: ${product.name}`;
                 body = `היי!\n\nאני מעוניין/ת לבקש יצירה דומה למוצר השמור הבא מהקטלוג:\n\n` +
                        `- שם המוצר: ${product.name}\n` +
-                       `- קטגוריה: ${product.category || 'כללי'}\n` +
+                       `- סוג מוצר: ${product.category || 'כללי'}\n` +
                        `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
                        `פרטי המזמין:\n` +
                        `- שם הלקוח: ${clientName}\n` +
@@ -3351,7 +3426,7 @@
                 subject = `הזמנה חדשה מהקטלוג: ${product.name}`;
                 body = `היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n\n` +
                        `- שם המוצר: ${product.name}\n` +
-                       `- קטגוריה: ${product.category || 'כללי'}\n` +
+                       `- סוג מוצר: ${product.category || 'כללי'}\n` +
                        `- כמות: ${quantity}\n` +
                        `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
                        `פרטי המזמין:\n` +
@@ -3408,7 +3483,7 @@
                 body: JSON.stringify({
                     "סוג פנייה": requestType,
                     "שם המוצר": product.name,
-                    "קטגוריה": product.category || "כללי",
+                    "סוג מוצר": product.category || "כללי",
                     "מחיר": `₪${product.price || '15'}`,
                     "כמות": quantity,
                     "שם הלקוח": clientName,
@@ -3483,7 +3558,7 @@
                                `היי!\n` +
                                `${introText}\n` +
                                `- שם המוצר: ${product.name}\n` +
-                               `- קטגוריה: ${product.category || 'כללי'}\n` +
+                               `- סוג מוצר: ${product.category || 'כללי'}\n` +
                                `- כמות: ${quantity}\n` +
                                `- מחיר יחידה מוערך: ₪${product.price || '15'}\n\n` +
                                `פרטי המזמין:\n` +
