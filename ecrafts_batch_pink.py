@@ -116,6 +116,11 @@ def parse_args():
     parser.add_argument("--input", type=Path, default=INPUT_DIR)
     parser.add_argument("--output", type=Path, default=OUTPUT_DIR)
     parser.add_argument("--limit", type=int, default=0, help="Edit only the first N images for testing.")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Re-edit all images, including outputs that are already up to date.",
+    )
     return parser.parse_args()
 
 
@@ -146,12 +151,18 @@ def main():
         return 0
 
     successful = 0
+    skipped = 0
     failed = 0
 
     for index, source_path in enumerate(files, start=1):
         relative_path = source_path.relative_to(input_dir)
         output_path = output_dir / relative_path
         print(f"[{index}/{len(files)}] {relative_path}")
+
+        if not args.force and output_path.exists() and output_path.stat().st_mtime >= source_path.stat().st_mtime:
+            print("   ללא שינוי - דילוג")
+            skipped += 1
+            continue
 
         image = read_image(source_path)
         if image is None:
@@ -176,6 +187,7 @@ def main():
     print("==============================")
     print()
     print(f"נערכו בהצלחה: {successful}")
+    print(f"דולגו ללא שינוי: {skipped}")
     print(f"שגיאות: {failed}")
     print()
     print("המקוריות נשארו כאן:")
