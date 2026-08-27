@@ -1823,7 +1823,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "אחר",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
-      "image": "מוצרים/סימניות - ציורים/20260826_225727.jpg",
+      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/20260826_225727.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1832,9 +1832,9 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "מוצרים/סימניות - ציורים/20260826_225742.jpg",
-        "מוצרים/סימניות - ציורים/20260826_225916.jpg",
-        "מוצרים/סימניות - ציורים/20260826_225933.jpg"
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/20260826_225742.jpg",
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/20260826_225916.jpg",
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/20260826_225933.jpg"
       ]
     }
   ],
