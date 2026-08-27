@@ -1937,6 +1937,7 @@
                         return;
                     }
                     migrateCatalogProducts();
+                    repairLocalProductImageUrlsFromJsData();
                     applyBookmarkPriceMigration();
                     saveCatalogToLocal();
                 } catch(e) {
@@ -2090,6 +2091,35 @@
 
             if (uploadedCount) saveCatalogToLocal();
             return uploadedCount;
+        }
+
+        function repairLocalProductImageUrlsFromJsData() {
+            if (!window.catalogData || !Array.isArray(window.catalogData.products) || !Array.isArray(catalog.products)) return false;
+            const jsProductsById = new Map(window.catalogData.products.map(product => [product.id, product]));
+            let changed = false;
+
+            catalog.products.forEach(product => {
+                const jsProduct = jsProductsById.get(product.id);
+                if (!jsProduct) return;
+
+                if (product.image && !/^https?:/i.test(product.image) && jsProduct.image && /^https?:/i.test(jsProduct.image)) {
+                    product.image = jsProduct.image;
+                    changed = true;
+                }
+
+                if (Array.isArray(product.images) && Array.isArray(jsProduct.images)) {
+                    product.images = product.images.map((imagePath, index) => {
+                        const jsImage = jsProduct.images[index];
+                        if (imagePath && !/^https?:/i.test(imagePath) && jsImage && /^https?:/i.test(jsImage)) {
+                            changed = true;
+                            return jsImage;
+                        }
+                        return imagePath;
+                    });
+                }
+            });
+
+            return changed;
         }
 
         function renderSiteSections() {
