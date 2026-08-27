@@ -10,7 +10,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין הנמר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1/main-Slide1.PNG",
+      "image": "מוצרים/מחזיקים/Slide1.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -23,7 +23,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי אבנים של קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/2/main-Slide2.PNG",
+      "image": "מוצרים/מחזיקים/Slide2.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -36,7 +36,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי ג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/3/main-Slide3.PNG",
+      "image": "מוצרים/מחזיקים/Slide3.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -49,7 +49,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי מוס אגט",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/4/main-Slide4.PNG",
+      "image": "מוצרים/מחזיקים/Slide4.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -62,7 +62,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ וורוד",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/5/main-Slide5.PNG",
+      "image": "מוצרים/מחזיקים/Slide5.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -75,7 +75,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/6/main-Slide6.PNG",
+      "image": "מוצרים/מחזיקים/Slide6.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -88,7 +88,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ כחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/7/main-Slide7.PNG",
+      "image": "מוצרים/מחזיקים/Slide7.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -101,7 +101,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי ג'ספר אדום וקוורץ וורוד",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/8/main-Slide8.PNG",
+      "image": "מוצרים/מחזיקים/Slide8.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -114,7 +114,7 @@ window.catalogData = {
       "price": "7.5",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/9/main-Slide9.PNG",
+      "image": "מוצרים/מחזיקים/Slide9.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -127,7 +127,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי ג'ספר אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/10/main-Slide10.PNG",
+      "image": "מוצרים/מחזיקים/Slide10.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -140,7 +140,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ ירוק וכחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/11/main-Slide11.PNG",
+      "image": "מוצרים/מחזיקים/Slide11.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -153,7 +153,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם שבבי עין הנמר אדומה וקוורץ וורד",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/12/main-Slide12.PNG",
+      "image": "מוצרים/מחזיקים/Slide12.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -166,7 +166,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN  מכיל שבבי ג'ספר אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/13/main-Slide13.PNG",
+      "image": "מוצרים/מחזיקים/Slide13.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -179,7 +179,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/14/main-Slide14.PNG",
+      "image": "מוצרים/מחזיקים/Slide14.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -192,7 +192,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN הכמיל שבבי ג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/15/main-Slide15.PNG",
+      "image": "מוצרים/מחזיקים/Slide15.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -205,7 +205,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/16/main-Slide16.PNG",
+      "image": "מוצרים/מחזיקים/Slide16.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -218,7 +218,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין החתול וקוורץ וורד",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/17/main-Slide17.PNG",
+      "image": "מוצרים/מחזיקים/Slide17.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -231,7 +231,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם שבבי קוורץ",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/18/main-Slide18.PNG",
+      "image": "מוצרים/מחזיקים/Slide18.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -244,7 +244,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/19/main-Slide19.PNG",
+      "image": "מוצרים/מחזיקים/Slide19.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -257,7 +257,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/20/main-Slide20.PNG",
+      "image": "מוצרים/מחזיקים/Slide20.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -270,7 +270,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ ירוק ולבן",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/21/main-Slide21.PNG",
+      "image": "מוצרים/מחזיקים/Slide21.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -283,7 +283,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין הנמר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/22/main-Slide22.PNG",
+      "image": "מוצרים/מחזיקים/Slide22.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -296,7 +296,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין הנמר אדומה וקוורץ כחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/23/main-Slide23.PNG",
+      "image": "מוצרים/מחזיקים/Slide23.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -309,7 +309,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי מוס אגט וקוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/24/main-Slide24.PNG",
+      "image": "מוצרים/מחזיקים/Slide24.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -322,7 +322,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי מוס אקט ועין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/25/main-Slide25.PNG",
+      "image": "מוצרים/מחזיקים/Slide25.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -335,7 +335,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ לבן וירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/26/main-Slide26.PNG",
+      "image": "מוצרים/מחזיקים/Slide26.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -348,7 +348,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/27/main-Slide27.PNG",
+      "image": "מוצרים/מחזיקים/Slide27.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -361,7 +361,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/28/main-Slide28.PNG",
+      "image": "מוצרים/מחזיקים/Slide28.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -374,7 +374,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/29/main-Slide29.PNG",
+      "image": "מוצרים/מחזיקים/Slide29.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -387,7 +387,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/30/main-Slide30.PNG",
+      "image": "מוצרים/מחזיקים/Slide30.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -400,7 +400,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/31/main-Slide31.PNG",
+      "image": "מוצרים/מחזיקים/Slide31.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -413,7 +413,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/32/main-Slide32.PNG",
+      "image": "מוצרים/מחזיקים/Slide32.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -426,7 +426,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/33/main-Slide33.PNG",
+      "image": "מוצרים/מחזיקים/Slide33.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -439,7 +439,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/34/main-Slide34.PNG",
+      "image": "מוצרים/מחזיקים/Slide34.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -452,7 +452,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/35/main-Slide35.PNG",
+      "image": "מוצרים/מחזיקים/Slide35.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -465,7 +465,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/36/main-Slide36.PNG",
+      "image": "מוצרים/מחזיקים/Slide36.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -478,7 +478,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/37/main-Slide37.PNG",
+      "image": "מוצרים/מחזיקים/Slide37.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -491,7 +491,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/38/main-Slide38.PNG",
+      "image": "מוצרים/מחזיקים/Slide38.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -504,7 +504,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/39/main-Slide39.PNG",
+      "image": "מוצרים/מחזיקים/Slide39.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -517,7 +517,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/40/main-Slide40.PNG",
+      "image": "מוצרים/מחזיקים/Slide40.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -530,7 +530,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/41/main-Slide41.PNG",
+      "image": "מוצרים/מחזיקים/Slide41.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -543,7 +543,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/42/main-Slide42.PNG",
+      "image": "מוצרים/מחזיקים/Slide42.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -556,7 +556,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/43/main-Slide43.PNG",
+      "image": "מוצרים/מחזיקים/Slide43.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -569,7 +569,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/44/main-Slide44.PNG",
+      "image": "מוצרים/מחזיקים/Slide44.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -582,7 +582,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/45/main-Slide45.PNG",
+      "image": "מוצרים/מחזיקים/Slide45.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -595,7 +595,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/46/main-Slide46.PNG",
+      "image": "מוצרים/מחזיקים/Slide46.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -608,7 +608,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/47/main-Slide47.PNG",
+      "image": "מוצרים/מחזיקים/Slide47.PNG",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -621,7 +621,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/48/main-Slide1.PNG",
+      "image": "מוצרים/סימניות/Slide1.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -639,7 +639,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/49/main-Slide2.PNG",
+      "image": "מוצרים/סימניות/Slide2.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -655,7 +655,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי מוס אגט",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/50/main-Slide3.PNG",
+      "image": "מוצרים/סימניות/Slide3.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -671,7 +671,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי מוס אגט",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/51/main-Slide4.PNG",
+      "image": "מוצרים/סימניות/Slide4.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -687,7 +687,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סמניית UV RESIN המכילה שבבי ג'ספר אדומה וקוורץ אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/52/main-Slide5.PNG",
+      "image": "מוצרים/סימניות/Slide5.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -703,7 +703,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי לאפיס וקוורץ כחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/53/main-Slide6.PNG",
+      "image": "מוצרים/סימניות/Slide6.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -719,7 +719,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/54/main-Slide7.PNG",
+      "image": "מוצרים/סימניות/Slide7.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -735,7 +735,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי ג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/55/main-Slide8.PNG",
+      "image": "מוצרים/סימניות/Slide8.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -751,7 +751,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורד ועין הנמר ירוקה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/56/main-Slide9.PNG",
+      "image": "מוצרים/סימניות/Slide9.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -767,7 +767,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורוד ולבן",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/57/main-Slide10.PNG",
+      "image": "מוצרים/סימניות/Slide10.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -783,7 +783,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכיל שבבי לפיס וקוורץ כחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/58/main-Slide11.PNG",
+      "image": "מוצרים/סימניות/Slide11.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -799,7 +799,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ אדום וחום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/59/main-Slide12.PNG",
+      "image": "מוצרים/סימניות/Slide12.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -815,7 +815,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורוד וחום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/60/main-Slide13.PNG",
+      "image": "מוצרים/סימניות/Slide13.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -831,7 +831,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/61/main-Slide14.PNG",
+      "image": "מוצרים/סימניות/Slide14.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -847,7 +847,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN המכילה שבבי שרף עצים וקוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/62/main-Slide15.PNG",
+      "image": "מוצרים/סימניות/Slide15.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -863,7 +863,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/63/main-Slide16.PNG",
+      "image": "מוצרים/סימניות/Slide16.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -879,7 +879,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי ג'ספר אדום, לאפיס וקוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/64/main-Slide17.PNG",
+      "image": "מוצרים/סימניות/Slide17.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -895,7 +895,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין החתול וקוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/65/main-Slide18.PNG",
+      "image": "מוצרים/סימניות/Slide18.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -911,7 +911,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/66/main-Slide19.PNG",
+      "image": "מוצרים/סימניות/Slide19.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -927,7 +927,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורוד",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/67/main-Slide20.PNG",
+      "image": "מוצרים/סימניות/Slide20.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -943,7 +943,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/68/main-Slide21.PNG",
+      "image": "מוצרים/סימניות/Slide21.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -959,7 +959,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/69/main-Slide22.PNG",
+      "image": "מוצרים/סימניות/Slide22.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -975,7 +975,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין החתול וקוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/70/main-Slide23.PNG",
+      "image": "מוצרים/סימניות/Slide23.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -991,7 +991,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/71/main-Slide24.PNG",
+      "image": "מוצרים/סימניות/Slide24.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1007,7 +1007,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/72/main-Slide25.PNG",
+      "image": "מוצרים/סימניות/Slide25.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1023,7 +1023,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ ירוק וג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/73/main-Slide26.PNG",
+      "image": "מוצרים/סימניות/Slide26.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1039,7 +1039,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה קוורץ לבן",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/74/main-Slide27.PNG",
+      "image": "מוצרים/סימניות/Slide27.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1055,7 +1055,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ לבן",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/75/main-Slide28.PNG",
+      "image": "מוצרים/סימניות/Slide28.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1071,7 +1071,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/76/main-Slide29.PNG",
+      "image": "מוצרים/סימניות/Slide29.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1087,7 +1087,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/77/main-Slide30.PNG",
+      "image": "מוצרים/סימניות/Slide30.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1103,7 +1103,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/78/main-Slide31.PNG",
+      "image": "מוצרים/סימניות/Slide31.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1119,7 +1119,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/79/main-Slide32.PNG",
+      "image": "מוצרים/סימניות/Slide32.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1135,7 +1135,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה וקוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/80/main-Slide33.PNG",
+      "image": "מוצרים/סימניות/Slide33.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1151,7 +1151,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה קוורץ אדום וירוק ופרחים סגולים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/81/main-Slide34.PNG",
+      "image": "מוצרים/סימניות/Slide34.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1167,7 +1167,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ חום, עין החתול ופרחים סגולים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/82/main-Slide35.PNG",
+      "image": "מוצרים/סימניות/Slide35.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1183,7 +1183,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי ג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/83/main-Slide36.PNG",
+      "image": "מוצרים/סימניות/Slide36.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1199,7 +1199,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה  שבבי עין הנמר אדומה וג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/84/main-Slide37.PNG",
+      "image": "מוצרים/סימניות/Slide37.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1215,7 +1215,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/85/main-Slide38.PNG",
+      "image": "מוצרים/סימניות/Slide38.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1231,7 +1231,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/86/main-Slide39.PNG",
+      "image": "מוצרים/סימניות/Slide39.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1247,7 +1247,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/87/main-Slide40.PNG",
+      "image": "מוצרים/סימניות/Slide40.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1263,7 +1263,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה פרחים ושבבי מוס אגט",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/88/main-Slide41.PNG",
+      "image": "מוצרים/סימניות/Slide41.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1279,7 +1279,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/89/main-Slide42.PNG",
+      "image": "מוצרים/סימניות/Slide42.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1295,7 +1295,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/90/main-Slide43.PNG",
+      "image": "מוצרים/סימניות/Slide43.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1311,7 +1311,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ כחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/91/main-Slide44.PNG",
+      "image": "מוצרים/סימניות/Slide44.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1327,7 +1327,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/92/main-Slide45.PNG",
+      "image": "מוצרים/סימניות/Slide45.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1343,7 +1343,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/93/main-Slide46.PNG",
+      "image": "מוצרים/סימניות/Slide46.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1359,7 +1359,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין הנמר חום וירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/94/main-Slide47.PNG",
+      "image": "מוצרים/סימניות/Slide47.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1375,7 +1375,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/95/main-Slide48.PNG",
+      "image": "מוצרים/סימניות/Slide48.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1391,7 +1391,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/96/main-Slide49.PNG",
+      "image": "מוצרים/סימניות/Slide49.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1407,7 +1407,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק, מוס אקט וג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/97/main-Slide50.PNG",
+      "image": "מוצרים/סימניות/Slide50.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1423,7 +1423,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין הנמר ירוקה, עין החתול וקוורץ אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/98/main-Slide51.PNG",
+      "image": "מוצרים/סימניות/Slide51.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1439,7 +1439,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN המכילה שבבי ג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/99/main-Slide52.PNG",
+      "image": "מוצרים/סימניות/Slide52.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1455,7 +1455,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי ג'ספר אדומה ועין הנמר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/100/main-Slide53.PNG",
+      "image": "מוצרים/סימניות/Slide53.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1471,7 +1471,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין הנמר ירוקה וחומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/101/main-Slide54.PNG",
+      "image": "מוצרים/סימניות/Slide54.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1487,7 +1487,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/102/main-Slide55.PNG",
+      "image": "מוצרים/סימניות/Slide55.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1503,7 +1503,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/103/main-Slide56.PNG",
+      "image": "מוצרים/סימניות/Slide56.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1519,7 +1519,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/104/main-Slide57.PNG",
+      "image": "מוצרים/סימניות/Slide57.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1535,7 +1535,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי ג'ספר אדום ועין הנמר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/105/main-Slide58.PNG",
+      "image": "מוצרים/סימניות/Slide58.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1551,7 +1551,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה וקוורץ אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/106/main-Slide59.PNG",
+      "image": "מוצרים/סימניות/Slide59.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1567,7 +1567,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/107/main-Slide60.PNG",
+      "image": "מוצרים/סימניות/Slide60.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1583,7 +1583,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/108/main-Slide61.PNG",
+      "image": "מוצרים/סימניות/Slide61.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1599,7 +1599,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/109/main-Slide62.PNG",
+      "image": "מוצרים/סימניות/Slide62.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1615,7 +1615,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ אדום וחום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/110/main-Slide63.PNG",
+      "image": "מוצרים/סימניות/Slide63.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1631,7 +1631,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/111/main-Slide64.PNG",
+      "image": "מוצרים/סימניות/Slide64.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1647,7 +1647,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי מוס אקט וקוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/112/main-Slide65.PNG",
+      "image": "מוצרים/סימניות/Slide65.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1663,7 +1663,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה ולאפסי",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/113/main-Slide66.PNG",
+      "image": "מוצרים/סימניות/Slide66.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1679,7 +1679,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/114/main-Slide67.PNG",
+      "image": "מוצרים/סימניות/Slide67.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1695,7 +1695,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה פרחים ושבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/115/main-Slide68.PNG",
+      "image": "מוצרים/סימניות/Slide68.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1711,7 +1711,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/116/main-Slide69.PNG",
+      "image": "מוצרים/סימניות/Slide69.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1724,10 +1724,10 @@ window.catalogData = {
       "id": 117,
       "name": "סלמי הסלמנדרה",
       "fileName": "Slide70.PNG",
-      "price": "25",
+      "price": "15",
       "category": "סימניות",
-      "desc": "סמניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/117/main-Slide70.PNG",
+      "desc": "סמניית אקריל",
+      "image": "מוצרים/סימניות/Slide70.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1736,16 +1736,16 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "מותג"
+      "theme": "סלמי"
     },
     {
       "id": 118,
       "name": "סלמי הסלמנדרה",
       "fileName": "Slide71.PNG",
-      "price": "25",
+      "price": "15",
       "category": "סימניות",
-      "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/118/main-Slide71.PNG",
+      "desc": "סימניית אקריל",
+      "image": "מוצרים/סימניות/Slide71.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1754,7 +1754,7 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "מותג"
+      "theme": "סלמי"
     },
     {
       "id": 119,
@@ -1763,7 +1763,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום ולבן",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/119/main-Slide72.PNG",
+      "image": "מוצרים/סימניות/Slide72.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1772,7 +1772,7 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אחר"
+      "theme": "סרטים"
     },
     {
       "id": 1787813716870,
@@ -1782,7 +1782,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "אנימה",
       "desc": "סימניה UV RESIN המכילה שבבי מוס אגט וקוורץ ירוד,ופרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787813716870/main-20260826_225443.jpg",
+      "image": "מוצרים/סימניות/20260826_225443.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1791,7 +1791,7 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787813716870/extra-1-20260826_225551.jpg"
+        "מוצרים/סימניות/20260826_225551.jpg"
       ]
     },
     {
@@ -1802,7 +1802,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "פרחים",
       "desc": "סימניית UV RESIN המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787815039713/main-20260826_235817.jpg",
+      "image": "מוצרים/סימניות - פרחים/20260826_235817.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1811,8 +1811,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787815039713/extra-1-20260826_235821.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787815039713/extra-2-20260826_235832.jpg"
+        "מוצרים/סימניות/20260826_235821.jpg",
+        "מוצרים/סימניות/20260826_235832.jpg"
       ]
     },
     {
@@ -1821,9 +1821,9 @@ window.catalogData = {
       "fileName": "20260826_225727.jpg",
       "price": "25",
       "category": "סימניות",
-      "theme": "אחר",
+      "theme": "סרטים",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/20260826_225727.jpg",
+      "image": "מוצרים/סימניות/20260826_225727.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1832,9 +1832,637 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/20260826_225742.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/20260826_225916.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/20260826_225933.jpg"
+        "מוצרים/סימניות/20260826_225742.jpg",
+        "מוצרים/סימניות/20260826_225916.jpg",
+        "מוצרים/סימניות/20260826_225933.jpg"
+      ]
+    },
+    {
+      "id": 1787822078122,
+      "name": "nier automata 2",
+      "fileName": "20260826_225501.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "אנימה",
+      "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
+      "image": "מוצרים/סימניות/20260826_225501.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_225551.jpg"
+      ]
+    },
+    {
+      "id": 1787822078123,
+      "name": "Cyberpunk",
+      "fileName": "20260826_230048.jpg",
+      "price": "15",
+      "category": "סימניות",
+      "theme": "אנימה",
+      "desc": "סימניית אקריל",
+      "image": "מוצרים/סימניות/20260826_230048.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_230423.jpg"
+      ]
+    },
+    {
+      "id": 1787822078124,
+      "name": "קלסיפר - הטירה הנעה",
+      "fileName": "20260826_230441.jpg",
+      "price": "15",
+      "category": "סימניות",
+      "theme": "אנימה",
+      "desc": "סימניית אקריל",
+      "image": "מוצרים/סימניות/20260826_230441.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_230500.jpg"
+      ]
+    },
+    {
+      "id": 1787822078125,
+      "name": "שרלוט",
+      "fileName": "20260826_232000.jpg",
+      "price": "15",
+      "category": "סימניות",
+      "theme": "אנימה",
+      "desc": "מחזיק אקריל",
+      "image": "מוצרים/סימניות/20260826_232000.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_232007.jpg",
+        "מוצרים/סימניות/20260826_232021.jpg"
+      ]
+    },
+    {
+      "id": 1787822078126,
+      "name": "nier automata",
+      "fileName": "Screenshot_20260827_121151_Gallery.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "אנימה",
+      "desc": "סימניית אקריל",
+      "image": "מוצרים/סימניות/Screenshot_20260827_121151_Gallery.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_231926.jpg",
+        "מוצרים/סימניות/20260826_231942.jpg"
+      ]
+    },
+    {
+      "id": 1787822619329,
+      "name": "פרפר",
+      "fileName": "20260826_232142.jpg",
+      "price": "15",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית אקריל",
+      "image": "מוצרים/סימניות/20260826_232142.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_232157.jpg",
+        "מוצרים/סימניות/20260826_232211.jpg"
+      ]
+    },
+    {
+      "id": 1787822619330,
+      "name": "דורבן",
+      "fileName": "20260826_232231.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV RESIN",
+      "image": "מוצרים/סימניות/20260826_232231.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_232239.jpg",
+        "מוצרים/סימניות/20260826_232321.jpg"
+      ]
+    },
+    {
+      "id": 1787822619331,
+      "name": "מכשפה",
+      "fileName": "20260826_232342.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "דמויות",
+      "desc": "סימנייה UV RESIN זוהר בחושך",
+      "image": "מוצרים/סימניות/20260826_232342.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_232347.jpg",
+        "מוצרים/סימניות/20260826_232706.jpg",
+        "מוצרים/סימניות/20260826_233021.jpg"
+      ]
+    },
+    {
+      "id": 1787822619332,
+      "name": "חילזון",
+      "fileName": "20260826_232957.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV RESIN זוהר בחושך",
+      "image": "מוצרים/סימניות/20260826_232957.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_232818.jpg",
+        "מוצרים/סימניות/20260826_233005.jpg",
+        "מוצרים/סימניות/20260826_233021.jpg"
+      ]
+    },
+    {
+      "id": 1787822619333,
+      "name": "שרלוק",
+      "fileName": "20260826_233204.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "סדרות",
+      "desc": "מחזיק אקריל",
+      "image": "מוצרים/סימניות/20260826_233204.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_233209.jpg",
+        "מוצרים/סימניות/20260826_233228.jpg"
+      ]
+    },
+    {
+      "id": 1787822619334,
+      "name": "צפרדע",
+      "fileName": "20260826_233251.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_233251.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_233255.jpg",
+        "מוצרים/סימניות/20260826_233308.jpg"
+      ]
+    },
+    {
+      "id": 1787822619335,
+      "name": "פיטריות",
+      "fileName": "20260826_233335.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_233335.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_233340.jpg",
+        "מוצרים/סימניות/20260826_233352.jpg"
+      ]
+    },
+    {
+      "id": 1787822619336,
+      "name": "מדוזה",
+      "fileName": "20260826_233404.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_233404.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_233408.jpg",
+        "מוצרים/סימניות/20260826_233428.jpg"
+      ]
+    },
+    {
+      "id": 1787822619337,
+      "name": "פטריות 2",
+      "fileName": "20260826_233451.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_233451.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_233455.jpg",
+        "מוצרים/סימניות/20260826_233507.jpg"
+      ]
+    },
+    {
+      "id": 1787822619338,
+      "name": "רוחות",
+      "fileName": "20260826_233521.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "דמויות",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_233521.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_233524.jpg",
+        "מוצרים/סימניות/20260826_233536.jpg"
+      ]
+    },
+    {
+      "id": 1787822619340,
+      "name": "פרפר",
+      "fileName": "20260826_233635.jpg",
+      "price": "15",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית אקריל",
+      "image": "מוצרים/סימניות/20260826_233635.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_233639.jpg",
+        "מוצרים/סימניות/20260826_233658.jpg"
+      ]
+    },
+    {
+      "id": 1787822619341,
+      "name": "חתול",
+      "fileName": "20260826_233710.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_233710.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_233714.jpg",
+        "מוצרים/סימניות/20260826_233726.jpg"
+      ]
+    },
+    {
+      "id": 1787822619342,
+      "name": "פרפר",
+      "fileName": "20260826_233740.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "",
+      "image": "מוצרים/סימניות/20260826_233740.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_233744.jpg",
+        "מוצרים/סימניות/20260826_233756.jpg"
+      ]
+    },
+    {
+      "id": 1787822619343,
+      "name": "אקסלוט",
+      "fileName": "20260826_233810.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_233810.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_233812.jpg",
+        "מוצרים/סימניות/20260826_233825.jpg"
+      ]
+    },
+    {
+      "id": 1787822619344,
+      "name": "חתול",
+      "fileName": "20260826_234237.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_234237.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234252.jpg",
+        "מוצרים/סימניות/20260826_234308.jpg"
+      ]
+    },
+    {
+      "id": 1787822619345,
+      "name": "רוחות",
+      "fileName": "20260826_234320.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "דמויות",
+      "desc": "סימניית אקריל",
+      "image": "מוצרים/סימניות/20260826_234320.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234327.jpg",
+        "מוצרים/סימניות/20260826_234336.jpg"
+      ]
+    },
+    {
+      "id": 1787822619346,
+      "name": "ציפור",
+      "fileName": "20260826_234428.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_234428.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234402.jpg",
+        "מוצרים/סימניות/20260826_234416.jpg"
+      ]
+    },
+    {
+      "id": 1787822619347,
+      "name": "מדוזה",
+      "fileName": "20260826_234428.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_234428.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234432.jpg",
+        "מוצרים/סימניות/20260826_234440.jpg"
+      ]
+    },
+    {
+      "id": 1787822619348,
+      "name": "דבורה",
+      "fileName": "20260826_234452.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_234452.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234501.jpg"
+      ]
+    },
+    {
+      "id": 1787822619349,
+      "name": "ינשוף",
+      "fileName": "20260826_234512.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_234512.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234514.jpg",
+        "מוצרים/סימניות/20260826_234527.jpg"
+      ]
+    },
+    {
+      "id": 1787822619350,
+      "name": "רוחות",
+      "fileName": "20260826_234537.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "דמויות",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_234537.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234540.jpg",
+        "מוצרים/סימניות/20260826_234552.jpg"
+      ]
+    },
+    {
+      "id": 1787822619351,
+      "name": "דוקטור הו",
+      "fileName": "20260826_234602.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "סדרות",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_234602.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234609.jpg",
+        "מוצרים/סימניות/20260826_234617.jpg"
+      ]
+    },
+    {
+      "id": 1787822619352,
+      "name": "חתול",
+      "fileName": "20260826_234627.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית אקריל",
+      "image": "מוצרים/סימניות/20260826_234627.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234630.jpg",
+        "מוצרים/סימניות/20260826_234638.jpg"
+      ]
+    },
+    {
+      "id": 1787822619353,
+      "name": "חתול",
+      "fileName": "20260826_234655.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_234655.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234702.jpg",
+        "מוצרים/סימניות/20260826_234717.jpg"
+      ]
+    },
+    {
+      "id": 1787822619354,
+      "name": "נחש אננס",
+      "fileName": "20260826_234839.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "דמויות",
+      "desc": "סימניית UV ERSIN",
+      "image": "מוצרים/סימניות/20260826_234839.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_234842.jpg",
+        "מוצרים/סימניות/20260826_234851.jpg"
       ]
     }
   ],
