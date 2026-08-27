@@ -512,6 +512,11 @@
                             <span>בחר תיקיית תמונות</span>
                             <input type="file" id="admin-folder-input" webkitdirectory directory multiple class="hidden">
                         </label>
+                        <label class="flex-grow md:flex-grow-0 flex items-center justify-center gap-2 bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] text-sm font-bold py-2 px-4 rounded-xl border border-[#f2a1a2]/30 cursor-pointer transition-colors">
+                            <i data-lucide="images" class="w-4 h-4"></i>
+                            <span>בחר כמה תמונות</span>
+                            <input type="file" id="admin-multi-product-input" multiple accept="image/png,image/jpeg,image/jpg,image/webp,image/gif,image/heic,image/heif,.heic,.heif" class="hidden">
+                        </label>
                         <button onclick="openAddProductModal()" class="flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium py-2 px-4 rounded-xl border border-zinc-700 transition-colors">
                             <i data-lucide="plus" class="w-4 h-4 text-emerald-500"></i>
                             <span>הוסף מוצר בודד</span>
@@ -543,6 +548,20 @@
                         </button>
                     </div>
                 </details>
+
+                <div id="admin-bulk-actions" class="hidden p-3 rounded-xl bg-[#fff5f5] border border-[#f2a1a2]/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <span id="admin-selected-count" class="text-sm font-bold text-[#733238]">0 מוצרים נבחרו</span>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="clearSelectedProducts()" class="flex items-center justify-center gap-2 bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold py-2 px-4 rounded-xl border border-[#f2a1a2]/40 transition-colors">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                            <span>בטל בחירה</span>
+                        </button>
+                        <button onclick="deleteSelectedProducts()" class="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded-xl shadow-sm transition-colors">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            <span>מחק נבחרים</span>
+                        </button>
+                    </div>
+                </div>
 
                 <!-- מדריך פריסה ל-GitHub Pages (קולפסבילי) -->
                 <details class="group p-4 rounded-xl bg-zinc-900/30 border border-zinc-800 text-xs text-zinc-400">
@@ -1374,6 +1393,7 @@
         let modalExtraImages = [];
         let activeUpdateImage = "";
         let mainProductImageRemoved = false;
+        const selectedProductIds = new Set();
         const BOOKMARK_PRICE_MIGRATION_KEY = 'ecrafts_bookmark_price_25_migrated';
         const DEFAULT_THEMES = ["הכל", "אנימה", "פרחים", "חיות", "דמויות מקוריות", "טבע", "אחר"];
         
@@ -1385,6 +1405,121 @@
         function getBrowserImagePath(path) {
             if (!path) return path;
             return String(path).replace(HEIC_IMAGE_EXTENSION, '.jpg');
+        }
+
+        function getProductImagePath(path, category = '') {
+            let cleanPath = getBrowserImagePath(path);
+            if (!cleanPath) return cleanPath;
+            cleanPath = String(cleanPath).replace(/\\/g, '/').replace(/^\.?\//, '');
+            if (/^(https?:|data:|blob:)/i.test(cleanPath)) return cleanPath;
+            if (cleanPath.startsWith('מוצרים/')) return cleanPath;
+
+            const cleanCategory = String(category || '').trim();
+            if (cleanCategory && cleanPath.startsWith(`${cleanCategory}/`)) {
+                return `מוצרים/${cleanPath}`;
+            }
+            if (cleanCategory && !cleanPath.includes('/')) {
+                return `מוצרים/${cleanCategory}/${cleanPath}`;
+            }
+            return `מוצרים/${cleanPath}`;
+        }
+
+        function getImageFileNameFromPath(path, fallbackFileName = '') {
+            const source = getBrowserImagePath(path || fallbackFileName || '');
+            if (!source) return '';
+            return String(source).replace(/\\/g, '/').split('/').pop();
+        }
+
+        function getKnownProductFolders() {
+            const folders = new Set(["מחזיקים", "סימניות", "סימניות עבות", "מגנים", "סימניות - פרחים", "סימניות - ציורים", "סימניות אחר"]);
+            (catalog.products || []).forEach(product => {
+                if (product.category) folders.add(product.category);
+                [product.image, ...(Array.isArray(product.images) ? product.images : [])].forEach(src => {
+                    const parts = String(src || '').replace(/\\/g, '/').split('/');
+                    if (parts[0] === "מוצרים" && parts[1]) folders.add(parts[1]);
+                });
+            });
+            return [...folders].filter(Boolean);
+        }
+
+        function getProductImageCandidates(product) {
+            const fileName = getImageFileNameFromPath(product.image, product.fileName);
+            if (!fileName) return [];
+            const candidates = [];
+            const addCandidate = src => {
+                const path = getProductImagePath(src, product.category);
+                if (path && !candidates.includes(path)) candidates.push(path);
+            };
+            const sameFileProducts = (catalog.products || []).filter(item => {
+                const itemFileName = getImageFileNameFromPath(item.image, item.fileName);
+                return itemFileName === fileName && item.id !== product.id;
+            });
+
+            addCandidate(product.image || fileName);
+            if (product.category) addCandidate(`מוצרים/${product.category}/${fileName}`);
+            if (sameFileProducts.length === 0) {
+                getKnownProductFolders().forEach(folder => addCandidate(`מוצרים/${folder}/${fileName}`));
+            }
+            return candidates;
+        }
+
+        function isSupportedImageFile(file) {
+            const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'bmp', 'svg', 'heic', 'heif'];
+            const isImgMime = file.type && file.type.startsWith('image/');
+            const extension = file.name.split('.').pop().toLowerCase();
+            return isImgMime || imageExtensions.includes(extension);
+        }
+
+        function getDefaultDimensionsForCategory(category) {
+            if (String(category || '').includes('סימניות')) {
+                return { length: '15', width: '3', thickness: '', diameter: '' };
+            }
+            return { length: '', width: '', thickness: '', diameter: '' };
+        }
+
+        function applyBookmarkDefaultDimensions(product) {
+            if (!product || !String(product.category || '').includes('סימניות')) return;
+            product.dimensions = product.dimensions && typeof product.dimensions === 'object' ? product.dimensions : {};
+            product.dimensions.length = '15';
+            product.dimensions.width = '3';
+        }
+
+        function confirmProductImagePath(img, id) {
+            const fallbackPath = img.dataset.fallbackPath;
+            if (!fallbackPath) return;
+            const product = (catalog.products || []).find(p => p.id === id);
+            if (product) {
+                product.image = fallbackPath;
+                product.fileName = getImageFileNameFromPath(fallbackPath, product.fileName);
+                if (isEditMode) saveCatalogToLocal();
+            }
+            delete img.dataset.fallbackPath;
+        }
+
+        function tryProductImageFallback(img, id) {
+            const product = (catalog.products || []).find(p => p.id === id);
+            if (!product) {
+                img.onerror = null;
+                return;
+            }
+
+            const candidates = getProductImageCandidates(product);
+            const currentSrc = decodeURIComponent(String(img.getAttribute('src') || '')).replace(/\\/g, '/');
+            let index = parseInt(img.dataset.fallbackIndex || '0', 10);
+
+            while (index < candidates.length) {
+                const candidate = candidates[index++];
+                if (!currentSrc.endsWith(candidate)) {
+                    img.dataset.fallbackIndex = String(index);
+                    img.dataset.fallbackPath = candidate;
+                    img.src = candidate;
+                    return;
+                }
+            }
+
+            delete img.dataset.fallbackPath;
+            img.onerror = null;
+            handleBrokenImage(id);
         }
 
         const defaultUpdates = [
@@ -1470,11 +1605,11 @@
 
         function getProductImages(product) {
             const images = [];
-            const mainImage = getBrowserImagePath(product.image || '');
+            const mainImage = getProductImagePath(product.image || '', product.category);
             if (mainImage.trim()) images.push(mainImage.trim());
             const extraImages = Array.isArray(product.images) ? product.images : [];
             extraImages.forEach(src => {
-                const cleanSrc = String(getBrowserImagePath(src || '') || '').trim();
+                const cleanSrc = String(getProductImagePath(src || '', product.category) || '').trim();
                 if (cleanSrc && !images.includes(cleanSrc)) images.push(cleanSrc);
             });
             return images;
@@ -1520,14 +1655,19 @@
             product.name = normalizeResinText(product.name);
             product.category = normalizeResinText(product.category);
             product.desc = normalizeResinText(product.desc);
+            if (product.category === "מוצרים" && product.image) {
+                const parts = String(product.image).replace(/\\/g, '/').split('/');
+                if (parts[0] === "מוצרים" && parts[1]) product.category = parts[1];
+            }
             if (product.price === undefined || product.price === null || String(product.price).trim() === "") {
                 product.price = "15";
             }
             if (!product.dimensions) product.dimensions = {};
+            applyBookmarkDefaultDimensions(product);
             if (!Array.isArray(product.images)) product.images = [];
             product.fileName = getBrowserImagePath(product.fileName || '');
-            product.image = getBrowserImagePath(product.image || '');
-            product.images = product.images.map(src => getBrowserImagePath(src)).filter(Boolean);
+            product.image = getProductImagePath(product.image || '', product.category);
+            product.images = product.images.map(src => getProductImagePath(src, product.category)).filter(Boolean);
             if (product.theme === undefined || product.theme === null || String(product.theme).trim() === "") {
                 product.theme = "אנימה";
             }
@@ -1669,6 +1809,11 @@
             const folderInput = document.getElementById('admin-folder-input');
             if (folderInput) {
                 folderInput.addEventListener('change', handleFolderImport);
+            }
+
+            const multiProductInput = document.getElementById('admin-multi-product-input');
+            if (multiProductInput) {
+                multiProductInput.addEventListener('change', handleMultipleProductFilesImport);
             }
         }
 
@@ -2484,6 +2629,9 @@
             const grid = document.getElementById('product-grid');
             const emptyState = document.getElementById('empty-catalog-state');
             grid.innerHTML = '';
+            if (!isEditMode) selectedProductIds.clear();
+            syncSelectedProductsWithCatalog();
+            updateAdminBulkActions();
 
             const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
             let filtered = catalog.products || [];
@@ -2540,7 +2688,12 @@
                 // יצירת תוכן כפתורי ניהול (אם במצב עריכה)
                 let adminControls = '';
                 if (isEditMode) {
+                    const isSelected = selectedProductIds.has(product.id);
                     adminControls = `
+                        <label onclick="event.stopPropagation()" class="absolute top-2 left-2 z-30 flex items-center gap-1.5 rounded-lg bg-white/95 border border-[#f2a1a2]/40 px-2 py-1 text-[11px] font-bold text-[#733238] shadow-md cursor-pointer">
+                            <input type="checkbox" ${isSelected ? 'checked' : ''} onchange="toggleProductSelection(${product.id}, this.checked)" class="w-4 h-4 accent-[#ee5253]">
+                            <span>בחר</span>
+                        </label>
                         <div class="absolute top-2 right-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity z-20">
                             <button onclick="event.stopPropagation(); editProduct(${product.id})" class="p-2 rounded-lg bg-zinc-900/90 border border-zinc-700 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all shadow-md" title="עריכת מוצר">
                                 <i data-lucide="edit-2" class="w-3.5 h-3.5"></i>
@@ -2567,11 +2720,11 @@
                     
                     <!-- תמונה -->
                     <div class="relative overflow-hidden aspect-square bg-zinc-950 ${isEditMode ? 'cursor-pointer' : 'cursor-zoom-in'}" onclick="event.stopPropagation(); ${isEditMode ? `editProduct(${product.id})` : `openLightboxById(${product.id})`}" tabindex="0" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); ${isEditMode ? `editProduct(${product.id})` : `openLightboxById(${product.id})`}; }">
-                        <img src="${imgUrl}" onerror="handleBrokenImage(${product.id})" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 md:group-hover:scale-105">
+                        <img src="${imgUrl}" onerror="tryProductImageFallback(this, ${product.id})" onload="confirmProductImagePath(this, ${product.id})" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 md:group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60"></div>
                         
                         <!-- סטטוס מוצר -->
-                        <span class="absolute top-2 left-2 text-[10px] py-0.5 px-2 rounded-full font-bold shadow-sm backdrop-blur-sm ${statusMeta.badgeClass}">
+                        <span class="absolute ${isEditMode ? 'top-11 left-2' : 'top-2 left-2'} text-[10px] py-0.5 px-2 rounded-full font-bold shadow-sm backdrop-blur-sm ${statusMeta.badgeClass}">
                             ${statusMeta.label}
                         </span>
 
@@ -2737,7 +2890,7 @@
             modalExtraImages = Array.isArray(product.images) ? [...product.images] : [];
             renderModalExtraImages();
             
-            document.getElementById('modal-image-url').value = getBrowserImagePath(product.image || "");
+            document.getElementById('modal-image-url').value = getProductImagePath(product.image || "", product.category);
             mainProductImageRemoved = false;
             
             let imgUrl = getDisplayImage(product);
@@ -2746,7 +2899,7 @@
             }
 
             if (imgUrl) {
-                showModalImagePreview(imgUrl);
+                showModalProductImagePreview(product, imgUrl);
             } else {
                 document.getElementById('modal-image-preview').classList.add('hidden');
                 document.getElementById('modal-image-placeholder').classList.remove('hidden');
@@ -2755,9 +2908,54 @@
             document.getElementById('product-modal').classList.remove('hidden');
         }
 
+        function syncSelectedProductsWithCatalog() {
+            const existingIds = new Set((catalog.products || []).map(p => p.id));
+            selectedProductIds.forEach(id => {
+                if (!existingIds.has(id)) selectedProductIds.delete(id);
+            });
+        }
+
+        function updateAdminBulkActions() {
+            const actions = document.getElementById('admin-bulk-actions');
+            const countLabel = document.getElementById('admin-selected-count');
+            if (!actions || !countLabel) return;
+            const count = selectedProductIds.size;
+            actions.classList.toggle('hidden', !isEditMode || count === 0);
+            countLabel.innerText = count === 1 ? 'מוצר אחד נבחר' : `${count} מוצרים נבחרו`;
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function toggleProductSelection(id, checked) {
+            if (checked) {
+                selectedProductIds.add(id);
+            } else {
+                selectedProductIds.delete(id);
+            }
+            updateAdminBulkActions();
+        }
+
+        function clearSelectedProducts() {
+            selectedProductIds.clear();
+            renderCatalog();
+        }
+
+        function deleteSelectedProducts() {
+            const count = selectedProductIds.size;
+            if (!count) return;
+            const message = count === 1
+                ? "למחוק את המוצר שנבחר מהקטלוג?"
+                : `למחוק ${count} מוצרים שנבחרו מהקטלוג?`;
+            if (!confirm(message)) return;
+            catalog.products = (catalog.products || []).filter(p => !selectedProductIds.has(p.id));
+            selectedProductIds.clear();
+            saveCatalogToLocal();
+            renderCatalog();
+        }
+
         function deleteProduct(id) {
             if (confirm("האם אתה בטוח שברצונך למחוק מוצר זה מהקטלוג?")) {
                 catalog.products = catalog.products.filter(p => p.id !== id);
+                selectedProductIds.delete(id);
                 saveCatalogToLocal();
                 renderCatalog();
             }
@@ -2776,6 +2974,62 @@
 
             saveCatalogToLocal();
             renderCatalog();
+        }
+
+        function handleMultipleProductFilesImport(event) {
+            const input = event.target;
+            const imageFiles = Array.from(input.files || []).filter(isSupportedImageFile);
+            input.value = "";
+
+            if (!imageFiles.length) {
+                alert("לא נבחרו קבצי תמונה מתאימים.");
+                return;
+            }
+
+            const defaultCategory = activeCategory && activeCategory !== "הכל" ? activeCategory : "סימניות";
+            const categoryAnswer = prompt("לאיזה סוג מוצר לשייך את התמונות?", defaultCategory);
+            if (categoryAnswer === null) return;
+            const category = categoryAnswer.trim() || defaultCategory;
+
+            const defaultTheme = activeTheme && activeTheme !== "הכל" ? activeTheme : "אנימה";
+            const themeAnswer = prompt("איזה נושא לשייך לתמונות? אפשר להשאיר ריק.", defaultTheme);
+            if (themeAnswer === null) return;
+            const theme = themeAnswer.trim();
+
+            imageFiles.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' }));
+
+            let addedCount = 0;
+            const baseId = Date.now();
+            imageFiles.forEach((file, index) => {
+                const objectUrl = URL.createObjectURL(file);
+                const browserFileName = getBrowserImagePath(file.name);
+                sessionImageUrls[file.name] = objectUrl;
+                sessionImageUrls[browserFileName] = objectUrl;
+
+                const existingProduct = (catalog.products || []).find(p => p.fileName === browserFileName && p.category === category);
+                if (existingProduct) return;
+
+                const productName = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
+                const dimensions = getDefaultDimensionsForCategory(category);
+                catalog.products.push({
+                    id: baseId + index,
+                    name: productName,
+                    fileName: browserFileName,
+                    price: String(category).includes('סימניות') ? "25" : "15",
+                    category,
+                    theme,
+                    desc: "",
+                    image: getProductImagePath(browserFileName, category),
+                    status: "available",
+                    dimensions,
+                    images: []
+                });
+                addedCount++;
+            });
+
+            saveCatalogToLocal();
+            renderCatalog();
+            alert(`נוספו ${addedCount} מוצרים חדשים.`);
         }
 
         function closeProductModal() {
@@ -2815,7 +3069,7 @@
                         sessionImageUrls[file.name] = objectUrl;
                         sessionImageUrls[browserFileName] = objectUrl;
                         const category = document.getElementById('modal-category').value.trim() || "כללי";
-                        const imagePath = `מוצרים/${category}/${browserFileName}`;
+                        const imagePath = getProductImagePath(browserFileName, category);
                         if (!modalExtraImages.includes(imagePath)) modalExtraImages.push(imagePath);
                     });
                     extraFileInput.value = "";
@@ -2847,7 +3101,7 @@
 
             container.innerHTML = modalExtraImages.map((src, index) => {
                 const fileName = src.split('/').pop();
-                const previewSrc = sessionImageUrls[fileName] || getBrowserImagePath(src);
+                const previewSrc = sessionImageUrls[fileName] || getProductImagePath(src);
                 return `
                     <div class="relative rounded-xl overflow-hidden border border-[#f2a1a2]/30 bg-white">
                         <img src="${previewSrc}" alt="" class="w-full aspect-square object-cover">
@@ -2886,6 +3140,22 @@
             const img = document.getElementById('modal-image-preview');
             const placeholder = document.getElementById('modal-image-placeholder');
             
+            img.onerror = null;
+            img.onload = null;
+            img.src = src;
+            img.classList.remove('hidden');
+            placeholder.classList.add('hidden');
+        }
+
+        function showModalProductImagePreview(product, src) {
+            const img = document.getElementById('modal-image-preview');
+            const placeholder = document.getElementById('modal-image-placeholder');
+
+            img.dataset.productId = product.id;
+            img.dataset.fallbackIndex = '0';
+            delete img.dataset.fallbackPath;
+            img.onerror = () => tryProductImageFallback(img, product.id);
+            img.onload = () => confirmProductImagePath(img, product.id);
             img.src = src;
             img.classList.remove('hidden');
             placeholder.classList.add('hidden');
@@ -2928,7 +3198,12 @@
                 thickness: document.getElementById('modal-dim-thickness').value.trim(),
                 diameter: document.getElementById('modal-dim-diameter').value.trim()
             };
-            const extraImages = [...modalExtraImages].map(src => String(src || '').trim()).filter(Boolean);
+            const normalizedDimensions = { ...dimensions };
+            if (String(category || '').includes('סימניות')) {
+                normalizedDimensions.length = '15';
+                normalizedDimensions.width = '3';
+            }
+            const extraImages = [...modalExtraImages].map(src => getProductImagePath(String(src || '').trim(), category)).filter(Boolean);
 
             if (!name) {
                 alert("חובה להזין שם מוצר!");
@@ -2942,13 +3217,13 @@
                 const file = fileInput.files[0];
                 const browserFileName = getBrowserImagePath(file.name);
                 // בניית נתיב יחסי אוטומטי מבוסס על קטגוריה ושם הקובץ
-                finalImage = `מוצרים/${category}/${browserFileName}`;
+                finalImage = getProductImagePath(browserFileName, category);
                 finalFileName = browserFileName;
             } else if (idVal) {
                 // שומרים את הערכים הקודמים של התמונה
                 const oldProduct = catalog.products.find(p => p.id === parseInt(idVal));
                 if (oldProduct) {
-                    finalImage = mainProductImageRemoved ? "" : getBrowserImagePath(imageUrlInput || oldProduct.image);
+                    finalImage = mainProductImageRemoved ? "" : getProductImagePath(imageUrlInput || oldProduct.image, oldProduct.category || category);
                     finalFileName = mainProductImageRemoved ? "" : getBrowserImagePath(oldProduct.fileName);
                 }
             }
@@ -2964,7 +3239,7 @@
                     catalog.products[index].desc = desc;
                     catalog.products[index].image = finalImage;
                     catalog.products[index].status = status;
-                    catalog.products[index].dimensions = dimensions;
+                    catalog.products[index].dimensions = normalizedDimensions;
                     catalog.products[index].images = extraImages;
                     if (finalFileName) catalog.products[index].fileName = finalFileName;
                 }
@@ -2979,7 +3254,7 @@
                     desc: desc,
                     image: finalImage,
                     status: status,
-                    dimensions: dimensions,
+                    dimensions: normalizedDimensions,
                     images: extraImages
                 };
                 catalog.products.push(newProduct);
@@ -3032,8 +3307,11 @@
                 const parts = firstFile.webkitRelativePath.split('/');
                 folderName = parts[0] || "כללי";
                 
-                // תיקון נתיבים יחסיים אוטומטי במידה ובחרו ישירות את תת-התיקיות ב-Desktop/Ecrafts
-                if (folderName === "מחזיקים" || folderName === "סימניות") {
+                // אם בחרו את תיקיית "מוצרים" הראשית, הקטגוריה היא תת-התיקייה הראשונה.
+                if (folderName === "מוצרים" && parts[1]) {
+                    folderName = parts[1];
+                } else if (folderName !== "מוצרים") {
+                    // אם בחרו תת-תיקייה ישירות, עדיין נשמור נתיב תחת תיקיית מוצרים.
                     pathPrefix = "מוצרים/";
                 }
             }
@@ -3099,7 +3377,8 @@
                 const existingProduct = catalog.products.find(p => (p.fileName === file.name || p.fileName === browserFileName) && p.category === folderName);
                 
                 // נתיב הקובץ היחסי שיישמר ב-JSON
-                const relativePath = getBrowserImagePath(pathPrefix + (file.webkitRelativePath || file.name));
+                const importPath = file.webkitRelativePath || file.name;
+                const relativePath = getProductImagePath(pathPrefix + importPath, folderName);
 
                 if (existingProduct) {
                     existingProduct.fileName = browserFileName;
@@ -3181,6 +3460,11 @@
             activeLightboxImages = images;
             let imgUrl = getDisplayImage(product, 600);
 
+            img.dataset.productId = product.id;
+            img.dataset.fallbackIndex = '0';
+            delete img.dataset.fallbackPath;
+            img.onerror = () => tryProductImageFallback(img, product.id);
+            img.onload = () => confirmProductImagePath(img, product.id);
             img.src = imgUrl;
             name.innerText = product.name || "";
             desc.innerText = product.desc || "";
@@ -3211,7 +3495,7 @@
             if (images.length > 1) {
                 gallery.innerHTML = images.map((src, index) => `
                     <button type="button" data-lightbox-thumb="${index}" onclick="event.stopPropagation(); setLightboxImage(${index})" class="w-16 h-16 rounded-lg overflow-hidden border ${index === 0 ? 'border-[#ee5253] ring-2 ring-[#ee5253]/25' : 'border-white/70'} bg-white shrink-0 shadow-sm transition-all">
-                        <img src="${getBrowserImagePath(src)}" alt="" class="w-full h-full object-cover">
+                        <img src="${getBrowserImagePath(src)}" onerror="tryProductImageFallback(this, ${product.id})" onload="confirmProductImagePath(this, ${product.id})" alt="" class="w-full h-full object-cover">
                     </button>
                 `).join('');
                 gallery.classList.remove('hidden');

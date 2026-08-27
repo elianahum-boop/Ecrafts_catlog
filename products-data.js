@@ -623,7 +623,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה פרחים",
       "image": "מוצרים/סימניות/Slide1.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -636,7 +639,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה פרחים",
       "image": "מוצרים/סימניות/Slide2.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -649,7 +655,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי מוס אגט",
       "image": "מוצרים/סימניות/Slide3.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -662,7 +671,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי מוס אגט",
       "image": "מוצרים/סימניות/Slide4.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -675,7 +687,10 @@ window.catalogData = {
       "desc": "סמניית UV RESIN המכילה שבבי ג'ספר אדומה וקוורץ אדום",
       "image": "מוצרים/סימניות/Slide5.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -688,7 +703,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי לאפיס וקוורץ כחול",
       "image": "מוצרים/סימניות/Slide6.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -701,7 +719,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide7.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -714,7 +735,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי ג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide8.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -727,7 +751,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורד ועין הנמר ירוקה",
       "image": "מוצרים/סימניות/Slide9.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -740,7 +767,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורוד ולבן",
       "image": "מוצרים/סימניות/Slide10.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -753,7 +783,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכיל שבבי לפיס וקוורץ כחול",
       "image": "מוצרים/סימניות/Slide11.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -766,7 +799,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ אדום וחום",
       "image": "מוצרים/סימניות/Slide12.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -779,7 +815,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורוד וחום",
       "image": "מוצרים/סימניות/Slide13.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -792,7 +831,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום",
       "image": "מוצרים/סימניות/Slide14.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -805,7 +847,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי שרף עצים וקוורץ חום",
       "image": "מוצרים/סימניות/Slide15.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -818,7 +863,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN",
       "image": "מוצרים/סימניות/Slide16.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -831,7 +879,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי ג'ספר אדום, לאפיס וקוורץ חום",
       "image": "מוצרים/סימניות/Slide17.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -844,7 +895,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין החתול וקוורץ חום",
       "image": "מוצרים/סימניות/Slide18.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -857,7 +911,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
       "image": "מוצרים/סימניות/Slide19.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -870,7 +927,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורוד",
       "image": "מוצרים/סימניות/Slide20.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -883,7 +943,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ",
       "image": "מוצרים/סימניות/Slide21.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -896,7 +959,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה פרחים",
       "image": "מוצרים/סימניות/Slide22.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -909,7 +975,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין החתול וקוורץ חום",
       "image": "מוצרים/סימניות/Slide23.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -922,7 +991,10 @@ window.catalogData = {
       "desc": "",
       "image": "מוצרים/סימניות/Slide24.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -935,7 +1007,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום",
       "image": "מוצרים/סימניות/Slide25.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -948,7 +1023,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ ירוק וג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide26.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -961,7 +1039,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה קוורץ לבן",
       "image": "מוצרים/סימניות/Slide27.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -974,7 +1055,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ לבן",
       "image": "מוצרים/סימניות/Slide28.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -987,7 +1071,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN",
       "image": "מוצרים/סימניות/Slide29.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1000,7 +1087,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN",
       "image": "מוצרים/סימניות/Slide30.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1013,7 +1103,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN",
       "image": "מוצרים/סימניות/Slide31.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1026,7 +1119,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין החתול",
       "image": "מוצרים/סימניות/Slide32.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1039,7 +1135,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה וקוורץ ירוק",
       "image": "מוצרים/סימניות/Slide33.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1052,7 +1151,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה קוורץ אדום וירוק ופרחים סגולים",
       "image": "מוצרים/סימניות/Slide34.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1065,7 +1167,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ חום, עין החתול ופרחים סגולים",
       "image": "מוצרים/סימניות/Slide35.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1078,7 +1183,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי ג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide36.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1091,7 +1199,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה  שבבי עין הנמר אדומה וג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide37.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1104,7 +1215,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה פרחים",
       "image": "מוצרים/סימניות/Slide38.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1117,7 +1231,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ ירוק",
       "image": "מוצרים/סימניות/Slide39.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1130,7 +1247,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide40.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1143,7 +1263,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה פרחים ושבבי מוס אגט",
       "image": "מוצרים/סימניות/Slide41.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1156,7 +1279,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide42.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1169,7 +1295,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide43.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1182,7 +1311,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ כחול",
       "image": "מוצרים/סימניות/Slide44.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1195,7 +1327,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
       "image": "מוצרים/סימניות/Slide45.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1208,7 +1343,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי עין החתול",
       "image": "מוצרים/סימניות/Slide46.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1221,7 +1359,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין הנמר חום וירוק",
       "image": "מוצרים/סימניות/Slide47.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1234,7 +1375,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN",
       "image": "מוצרים/סימניות/Slide48.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1247,7 +1391,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN",
       "image": "מוצרים/סימניות/Slide49.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1260,7 +1407,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק, מוס אקט וג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide50.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1273,7 +1423,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין הנמר ירוקה, עין החתול וקוורץ אדום",
       "image": "מוצרים/סימניות/Slide51.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1286,7 +1439,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי ג'ספר אדומה",
       "image": "מוצרים/סימניות/Slide52.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1299,7 +1455,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי ג'ספר אדומה ועין הנמר אדומה",
       "image": "מוצרים/סימניות/Slide53.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1312,7 +1471,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין הנמר ירוקה וחומה",
       "image": "מוצרים/סימניות/Slide54.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1325,7 +1487,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide55.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1338,7 +1503,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN",
       "image": "מוצרים/סימניות/Slide56.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1351,7 +1519,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN",
       "image": "מוצרים/סימניות/Slide57.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1364,7 +1535,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי ג'ספר אדום ועין הנמר אדומה",
       "image": "מוצרים/סימניות/Slide58.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1377,7 +1551,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה וקוורץ אדום",
       "image": "מוצרים/סימניות/Slide59.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1390,7 +1567,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ ירוק",
       "image": "מוצרים/סימניות/Slide60.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1403,7 +1583,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
       "image": "מוצרים/סימניות/Slide61.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1416,7 +1599,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה",
       "image": "מוצרים/סימניות/Slide62.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1429,7 +1615,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ אדום וחום",
       "image": "מוצרים/סימניות/Slide63.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1442,7 +1631,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ אדום",
       "image": "מוצרים/סימניות/Slide64.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1455,7 +1647,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי מוס אקט וקוורץ ירוק",
       "image": "מוצרים/סימניות/Slide65.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1468,7 +1663,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה ולאפסי",
       "image": "מוצרים/סימניות/Slide66.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1481,7 +1679,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה פרחים",
       "image": "מוצרים/סימניות/Slide67.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1494,7 +1695,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה פרחים ושבבי עין החתול",
       "image": "מוצרים/סימניות/Slide68.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1507,7 +1711,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום",
       "image": "מוצרים/סימניות/Slide69.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1520,7 +1727,10 @@ window.catalogData = {
       "desc": "סמניית UV RESIN",
       "image": "מוצרים/סימניות/Slide70.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1533,7 +1743,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN",
       "image": "מוצרים/סימניות/Slide71.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -1546,7 +1759,10 @@ window.catalogData = {
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום ולבן",
       "image": "מוצרים/סימניות/Slide72.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "15",
+        "width": "3"
+      },
       "images": [],
       "theme": "אנימה"
     }
