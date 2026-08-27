@@ -1363,18 +1363,6 @@
             return String(source).replace(/\\/g, '/').split('/').pop();
         }
 
-        function getKnownProductFolders() {
-            const folders = new Set(["מחזיקים", "סימניות", "סימניות עבות", "מגנים", "סימניות - פרחים", "סימניות - ציורים", "סימניות אחר"]);
-            (catalog.products || []).forEach(product => {
-                if (product.category) folders.add(product.category);
-                [product.image, ...(Array.isArray(product.images) ? product.images : [])].forEach(src => {
-                    const parts = String(src || '').replace(/\\/g, '/').split('/');
-                    if (parts[0] === "מוצרים" && parts[1]) folders.add(parts[1]);
-                });
-            });
-            return [...folders].filter(Boolean);
-        }
-
         function getProductImageCandidates(product, sourcePath = '') {
             const fileName = getImageFileNameFromPath(sourcePath, product.fileName || product.image);
             if (!fileName) return [];
@@ -1383,16 +1371,9 @@
                 const path = getProductImagePath(src, product.category);
                 if (path && !candidates.includes(path)) candidates.push(path);
             };
-            const sameFileProducts = (catalog.products || []).filter(item => {
-                const itemFileName = getImageFileNameFromPath(item.image, item.fileName);
-                return itemFileName === fileName && item.id !== product.id;
-            });
 
-            addCandidate(product.image || fileName);
+            addCandidate(sourcePath || product.image || fileName);
             if (product.category) addCandidate(`מוצרים/${product.category}/${fileName}`);
-            if (sameFileProducts.length === 0) {
-                getKnownProductFolders().forEach(folder => addCandidate(`מוצרים/${folder}/${fileName}`));
-            }
             return candidates;
         }
 
@@ -1431,8 +1412,9 @@
 
         function tryProductImageFallback(img, id, sourcePath = '') {
             const product = (catalog.products || []).find(p => p.id === id);
-            if (!product) {
+            if (!product || !img.dataset.allowImageFallback) {
                 img.onerror = null;
+                handleBrokenImage(id, img);
                 return;
             }
 
@@ -1444,7 +1426,7 @@
                 const candidate = candidates[index++];
                 if (!currentSrc.endsWith(candidate)) {
                     img.dataset.fallbackIndex = String(index);
-                    img.dataset.fallbackPath = candidate;
+                    if (img.dataset.mainImage === 'true') img.dataset.fallbackPath = candidate;
                     img.src = candidate;
                     return;
                 }
@@ -1452,7 +1434,7 @@
 
             delete img.dataset.fallbackPath;
             img.onerror = null;
-            handleBrokenImage(id);
+            handleBrokenImage(id, img);
         }
 
         const defaultUpdates = [
@@ -1554,6 +1536,17 @@
             if (browserFileName && sessionImageUrls[browserFileName]) return sessionImageUrls[browserFileName];
             const images = getProductImages(product);
             return images[0] || `https://via.placeholder.com/${size}?text=No+Image`;
+        }
+
+        function getMissingImagePlaceholder() {
+            return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+                <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+                    <rect width="600" height="600" fill="#fdfaf7"/>
+                    <rect x="36" y="36" width="528" height="528" rx="34" fill="#fff8f4" stroke="#f2a1a2" stroke-width="3" stroke-dasharray="12 12"/>
+                    <text x="300" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#733238">התמונה חסרה</text>
+                    <text x="300" y="333" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#988082">צריך להעלות או לתקן את קובץ התמונה</text>
+                </svg>
+            `);
         }
 
         function getProductDimensions(product) {
@@ -2649,7 +2642,7 @@
                     
                     <!-- תמונה -->
                     <div class="relative overflow-hidden aspect-square bg-zinc-950 ${isEditMode ? 'cursor-pointer' : 'cursor-zoom-in'}" onclick="event.stopPropagation(); ${isEditMode ? `editProduct(${product.id})` : `openLightboxById(${product.id})`}" tabindex="0" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); ${isEditMode ? `editProduct(${product.id})` : `openLightboxById(${product.id})`}; }">
-                        <img src="${imgUrl}" onerror="tryProductImageFallback(this, ${product.id})" onload="confirmProductImagePath(this, ${product.id})" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 md:group-hover:scale-105">
+                        <img src="${imgUrl}" data-main-image="true" data-allow-image-fallback="true" data-image-path="${product.image || imgUrl}" onerror="tryProductImageFallback(this, ${product.id}, this.dataset.imagePath)" onload="confirmProductImagePath(this, ${product.id})" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 md:group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60"></div>
                         
                         <!-- סטטוס מוצר -->
@@ -3069,6 +3062,12 @@
             const img = document.getElementById('modal-image-preview');
             const placeholder = document.getElementById('modal-image-placeholder');
             
+            delete img.dataset.productId;
+            delete img.dataset.imagePath;
+            delete img.dataset.mainImage;
+            delete img.dataset.allowImageFallback;
+            delete img.dataset.fallbackPath;
+            img.dataset.fallbackIndex = '0';
             img.onerror = null;
             img.onload = null;
             img.src = src;
@@ -3081,9 +3080,12 @@
             const placeholder = document.getElementById('modal-image-placeholder');
 
             img.dataset.productId = product.id;
+            img.dataset.imagePath = product.image || src;
+            img.dataset.mainImage = 'true';
+            img.dataset.allowImageFallback = 'true';
             img.dataset.fallbackIndex = '0';
             delete img.dataset.fallbackPath;
-            img.onerror = () => tryProductImageFallback(img, product.id);
+            img.onerror = () => tryProductImageFallback(img, product.id, img.dataset.imagePath);
             img.onload = () => confirmProductImagePath(img, product.id);
             img.src = src;
             img.classList.remove('hidden');
@@ -3347,20 +3349,25 @@
         }
 
         // --- טיפול בתמונות שבורות/מחוקות מהענן ---
-        function handleBrokenImage(id) {
+        function handleBrokenImage(id, img = null) {
             const product = catalog.products.find(p => p.id === id);
-            if (!product) return;
-            
-            // מוחקים את המוצר רק אם הקישור שלו שבור לחלוטין (למשל כתובת אינטרנט שגויה)
-            // נמנע ממחיקת קבצים יחסיים מקומיים לפני שהועלו ל-Git Pages
-            if (product.image && (product.image.startsWith('http') || product.image.startsWith('data:'))) {
-                catalog.products = catalog.products.filter(p => p.id !== id);
-                if (isEditMode) {
-                    saveCatalogToLocal();
+            if (!product && !img) return;
+
+            if (img) {
+                img.onerror = null;
+                delete img.dataset.fallbackPath;
+
+                const thumb = img.closest('[data-lightbox-thumb]');
+                if (thumb) {
+                    thumb.classList.add('hidden');
+                    return;
                 }
-                renderCatalog();
-                console.warn(`המוצר "${product.name}" נמחק אוטומטית כי תמונתו לא נמצאה בענן.`);
+
+                img.src = getMissingImagePlaceholder();
+                img.classList.remove('hidden');
             }
+
+            if (product) console.warn(`התמונה של "${product.name}" לא נמצאה. המוצר נשאר בקטלוג כדי שתוכלי לתקן את הנתיב או להעלות את הקובץ.`);
         }
 
         // --- לייטבוקס תמונה מוגדלת ---
@@ -3392,9 +3399,10 @@
             img.dataset.productId = product.id;
             img.dataset.imagePath = product.image || imgUrl;
             img.dataset.mainImage = 'true';
+            img.dataset.allowImageFallback = 'true';
             img.dataset.fallbackIndex = '0';
             delete img.dataset.fallbackPath;
-            img.onerror = () => tryProductImageFallback(img, product.id);
+            img.onerror = () => tryProductImageFallback(img, product.id, img.dataset.imagePath);
             img.onload = () => {
                 if (img.dataset.mainImage === 'true') confirmProductImagePath(img, product.id);
             };
@@ -3428,7 +3436,7 @@
             if (images.length > 1) {
                 gallery.innerHTML = images.map((src, index) => `
                     <button type="button" data-lightbox-thumb="${index}" onclick="event.stopPropagation(); setLightboxImage(${index})" class="w-16 h-16 rounded-lg overflow-hidden border ${index === 0 ? 'border-[#ee5253] ring-2 ring-[#ee5253]/25' : 'border-white/70'} bg-white shrink-0 shadow-sm transition-all">
-                        <img src="${getBrowserImagePath(src)}" data-image-path="${src}" onerror="tryProductImageFallback(this, ${product.id}, this.dataset.imagePath)" alt="" class="w-full h-full object-cover">
+                        <img src="${getBrowserImagePath(src)}" data-image-path="${src}" onerror="handleBrokenImage(${product.id}, this)" alt="" class="w-full h-full object-cover">
                     </button>
                 `).join('');
                 gallery.classList.remove('hidden');
@@ -3474,6 +3482,7 @@
             if (src && image) {
                 image.dataset.imagePath = src;
                 image.dataset.mainImage = 'false';
+                delete image.dataset.allowImageFallback;
                 image.dataset.fallbackIndex = '0';
                 delete image.dataset.fallbackPath;
                 image.onerror = () => tryProductImageFallback(image, image.dataset.productId, src);
