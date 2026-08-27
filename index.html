@@ -92,7 +92,7 @@
             color: #733238 !important; /* Deep warm maroon/red */
         }
         
-        .text-white:not(button *, .bg-gradient-to-r *, .bg-indigo-600 *, .bg-brand-600 *, .bg-emerald-500 *, #loading-modal *, .bg-red-600 *, .bg-teal-600 *, .bg-indigo-600 *, .bg-rose-600 *, #btn-share *) {
+        .text-white:not(button *, .bg-gradient-to-r *, .bg-indigo-600 *, .bg-brand-600 *, .bg-emerald-500 *, #loading-modal *, .bg-red-600 *, .bg-teal-600 *, .bg-indigo-600 *, .bg-rose-600 *) {
             color: #3f2f31 !important;
         }
 
@@ -241,8 +241,7 @@
                 overflow-x: hidden;
             }
             #public-nav,
-            #admin-nav,
-            #btn-share {
+            #admin-nav {
                 display: none !important;
             }
             .hero-layout-mobile {
@@ -369,11 +368,6 @@
             <div class="flex items-center gap-4">
                 <button onclick="toggleMobileNav()" class="lg:hidden w-10 h-10 rounded-xl bg-[#f3dedf] border border-[#f2a1a2]/30 text-[#733238] flex items-center justify-center" title="תפריט">
                     <i data-lucide="menu" class="w-5 h-5"></i>
-                </button>
-                <!-- כפתור העתקת קישור של מנהל -->
-                <button id="btn-share" onclick="openShareModal()" class="hidden lg:flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium py-2 px-4 rounded-xl shadow-lg shadow-emerald-500/10 transition-all transform hover:-translate-y-0.5 active:translate-y-0 duration-200">
-                    <i data-lucide="share-2" class="w-4 h-4"></i>
-                    <span>שיתוף קטלוג</span>
                 </button>
             </div>
 
@@ -1014,67 +1008,7 @@
         </div>
     </div>
 
-    <!-- 2. מודל הגדרות שיתוף וקישור קטגוריות -->
-    <div id="share-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="glass-card w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl flex flex-col">
-            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800">
-                <h3 class="font-bold text-lg text-white">שיתוף הקטלוג שלך</h3>
-                <button onclick="closeShareModal()" class="text-zinc-400 hover:text-zinc-200">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
-            
-            <div class="p-6 space-y-6">
-                <div class="text-center space-y-2">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto">
-                        <i data-lucide="check-circle-2" class="w-6 h-6"></i>
-                    </div>
-                    <h4 class="font-bold text-white">הקישור לקריאה בלבד מוכן!</h4>
-                    <p class="text-xs text-zinc-400">הקישור הבא מוביל לעמדת הלקוח באתר הציבורי. הוא טוען תמיד את נתוני הקטלוג המעודכנים מ-Git.</p>
-                </div>
-
-                <!-- תיבת הקישור להעתקה -->
-                <div class="space-y-1.5">
-                    <label class="block text-xs font-medium text-zinc-400">הקישור לשיתוף:</label>
-                    <div class="flex gap-2">
-                        <input type="text" id="share-link-input" readonly class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-zinc-300 focus:outline-none focus:ring-1 focus:ring-brand-500 text-xs transition-all">
-                        <button onclick="copyShareLink()" class="bg-brand-600 hover:bg-brand-700 text-white font-medium px-4 rounded-xl text-xs flex items-center gap-1 transition-colors">
-                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-                            <span>העתק</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- כרטיסיית סטטיסטיקת קישור -->
-                <div class="grid grid-cols-2 gap-3 py-3 border-y border-zinc-800 text-center">
-                    <div>
-                        <span class="block text-xs text-zinc-500">מספר מוצרים בקטלוג</span>
-                        <span id="share-stat-products" class="text-sm font-bold text-white">0</span>
-                    </div>
-                    <div>
-                        <span class="block text-xs text-zinc-500">סוג קישור</span>
-                        <span id="share-stat-size" class="text-sm font-bold text-white">חי</span>
-                    </div>
-                </div>
-
-                <!-- טיפ לאחסון הקישור בקטגוריה יפה -->
-                <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 flex items-start gap-2.5 text-xs text-zinc-400">
-                    <i data-lucide="info" class="w-4 h-4 text-brand-500 flex-shrink-0 mt-0.5"></i>
-                    <p>
-                        <strong>שימי לב:</strong> אם פתחת בעבר קישור שמכיל <code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200">#catalog=</code>, זה קישור ישן שמכיל צילום של נתונים מאותו רגע. הקישור החדש כאן תמיד יטען את הקטלוג המעודכן מהאתר.
-                    </p>
-                </div>
-            </div>
-
-            <div class="px-6 py-4 border-t border-zinc-800 flex justify-end bg-zinc-900/30">
-                <button onclick="closeShareModal()" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-medium py-2 px-6 rounded-xl text-sm transition-colors">
-                    סגור
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. מודל לייטבוקס לתמונות (צפייה מוגדלת) -->
+    <!-- 2. מודל לייטבוקס לתמונות (צפייה מוגדלת) -->
     <div id="lightbox-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex flex-col justify-between p-4" onclick="closeLightbox()">
         <!-- כותרת הלייטבוקס / כפתור סגירה -->
         <div class="flex items-center justify-end w-full max-w-5xl mx-auto py-2 z-10" onclick="event.stopPropagation()">
@@ -1736,7 +1670,6 @@
                         closeLightbox();
                         closeOrderModal();
                         closeProductModal();
-                        closeShareModal();
                         closeAdminUpdateModal();
                         closeAdminOrderModal();
                     }
@@ -1893,7 +1826,6 @@
         // --- ניהול מצבים (עריכה / צפייה) ---
         function applyModeUI() {
             const adminPanel = document.getElementById('admin-panel');
-            const btnShare = document.getElementById('btn-share');
             const badgeViewMode = document.getElementById('badge-view-mode');
             const publicNav = document.getElementById('public-nav');
             const adminNav = document.getElementById('admin-nav');
@@ -1903,7 +1835,6 @@
             if (isEditMode) {
                 document.body.classList.add('admin-mode');
                 if (adminPanel) adminPanel.classList.remove('hidden');
-                if (btnShare) btnShare.classList.remove('hidden');
                 if (badgeViewMode) badgeViewMode.classList.add('hidden');
                 if (publicNav) publicNav.classList.add('hidden');
                 if (adminNav) adminNav.classList.remove('hidden');
@@ -1920,7 +1851,6 @@
             } else {
                 document.body.classList.remove('admin-mode');
                 if (adminPanel) adminPanel.classList.add('hidden');
-                if (btnShare) btnShare.classList.add('hidden');
                 if (badgeViewMode) badgeViewMode.classList.remove('hidden');
                 if (publicNav) publicNav.classList.remove('hidden');
                 if (adminNav) adminNav.classList.add('hidden');
@@ -3532,65 +3462,6 @@
 
         function closeLightbox() {
             document.getElementById('lightbox-modal').classList.add('hidden');
-        }
-
-        // --- שיתוף קטלוג (יצירת קישור) ---
-        function openShareModal() {
-            const shareData = {
-                title: catalog.title,
-                description: catalog.description,
-                email: catalog.email,
-                products: catalog.products.map(p => {
-                    return {
-                        id: p.id,
-                        name: p.name,
-                        fileName: p.fileName,
-                        price: p.price,
-                        category: p.category,
-                        theme: p.theme || "",
-                        desc: p.desc,
-                        image: p.image, // נשלח את הנתיב היחסי בקישור!
-                        status: normalizeStatus(p.status),
-                        dimensions: p.dimensions || {},
-                        images: Array.isArray(p.images) ? p.images : []
-                    };
-                })
-            };
-
-            const deployedUrl = 'https://elianahum-boop.github.io/Ecrafts_catlog/';
-            const isLocal = window.location.protocol === 'file:' ||
-                            window.location.hostname === 'localhost' ||
-                            window.location.hostname === '127.0.0.1';
-            const currentUrl = `${window.location.origin}${window.location.pathname}`.replace(/index\.html$/i, '');
-            const fullShareUrl = isLocal ? deployedUrl : currentUrl;
-            
-            document.getElementById('share-link-input').value = fullShareUrl;
-
-            document.getElementById('share-stat-products').innerText = shareData.products.length;
-            const sizeTextSpan = document.getElementById('share-stat-size');
-            sizeTextSpan.innerText = "קישור חי";
-            sizeTextSpan.className = "text-sm font-bold text-emerald-400";
-
-            document.getElementById('share-modal').classList.remove('hidden');
-        }
-
-        function copyShareLink() {
-            const input = document.getElementById('share-link-input');
-            input.select();
-            input.setSelectionRange(0, 99999);
-
-            navigator.clipboard.writeText(input.value)
-                .then(() => {
-                    alert("הקישור לקטלוג הועתק ללוח!");
-                })
-                .catch(err => {
-                    console.error("שגיאה בהעתקה", err);
-                    alert("ההעתקה האוטומטית נכשלה, אנא העתק את הקישור ידנית.");
-                });
-        }
-
-        function closeShareModal() {
-            document.getElementById('share-modal').classList.add('hidden');
         }
 
         // --- מודל הזמנה חדש ---
