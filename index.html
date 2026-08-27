@@ -1380,6 +1380,13 @@
         // מפה לשמירת ObjectURL זמניים לקבצים שנטענו בסשן הנוכחי לצורך תצוגה מקדימה מיידית
         const sessionImageUrls = {}; 
 
+        const HEIC_IMAGE_EXTENSION = /\.(heic|heif)$/i;
+
+        function getBrowserImagePath(path) {
+            if (!path) return path;
+            return String(path).replace(HEIC_IMAGE_EXTENSION, '.jpg');
+        }
+
         const defaultUpdates = [
             {
                 id: 1,
@@ -1463,11 +1470,11 @@
 
         function getProductImages(product) {
             const images = [];
-            const mainImage = product.image || '';
+            const mainImage = getBrowserImagePath(product.image || '');
             if (mainImage.trim()) images.push(mainImage.trim());
             const extraImages = Array.isArray(product.images) ? product.images : [];
             extraImages.forEach(src => {
-                const cleanSrc = String(src || '').trim();
+                const cleanSrc = String(getBrowserImagePath(src || '') || '').trim();
                 if (cleanSrc && !images.includes(cleanSrc)) images.push(cleanSrc);
             });
             return images;
@@ -1475,6 +1482,8 @@
 
         function getDisplayImage(product, size = 300) {
             if (sessionImageUrls[product.fileName]) return sessionImageUrls[product.fileName];
+            const browserFileName = getBrowserImagePath(product.fileName || '');
+            if (browserFileName && sessionImageUrls[browserFileName]) return sessionImageUrls[browserFileName];
             const images = getProductImages(product);
             return images[0] || `https://via.placeholder.com/${size}?text=No+Image`;
         }
@@ -1516,6 +1525,9 @@
             }
             if (!product.dimensions) product.dimensions = {};
             if (!Array.isArray(product.images)) product.images = [];
+            product.fileName = getBrowserImagePath(product.fileName || '');
+            product.image = getBrowserImagePath(product.image || '');
+            product.images = product.images.map(src => getBrowserImagePath(src)).filter(Boolean);
             if (product.theme === undefined || product.theme === null || String(product.theme).trim() === "") {
                 product.theme = "אנימה";
             }
@@ -2725,10 +2737,10 @@
             modalExtraImages = Array.isArray(product.images) ? [...product.images] : [];
             renderModalExtraImages();
             
-            document.getElementById('modal-image-url').value = product.image || "";
+            document.getElementById('modal-image-url').value = getBrowserImagePath(product.image || "");
             mainProductImageRemoved = false;
             
-            let imgUrl = product.image;
+            let imgUrl = getDisplayImage(product);
             if (sessionImageUrls[product.fileName]) {
                 imgUrl = sessionImageUrls[product.fileName];
             }
@@ -2786,7 +2798,9 @@
                 if (!file) return;
 
                 const objectUrl = URL.createObjectURL(file);
+                const browserFileName = getBrowserImagePath(file.name);
                 sessionImageUrls[file.name] = objectUrl; // שומרים בסשן
+                sessionImageUrls[browserFileName] = objectUrl;
 
                 showModalImagePreview(objectUrl);
                 document.getElementById('modal-image-url').value = ""; // מנקה ידני
@@ -2797,9 +2811,11 @@
                 extraFileInput.addEventListener('change', (e) => {
                     Array.from(e.target.files || []).forEach(file => {
                         const objectUrl = URL.createObjectURL(file);
+                        const browserFileName = getBrowserImagePath(file.name);
                         sessionImageUrls[file.name] = objectUrl;
+                        sessionImageUrls[browserFileName] = objectUrl;
                         const category = document.getElementById('modal-category').value.trim() || "כללי";
-                        const imagePath = `מוצרים/${category}/${file.name}`;
+                        const imagePath = `מוצרים/${category}/${browserFileName}`;
                         if (!modalExtraImages.includes(imagePath)) modalExtraImages.push(imagePath);
                     });
                     extraFileInput.value = "";
@@ -2831,7 +2847,7 @@
 
             container.innerHTML = modalExtraImages.map((src, index) => {
                 const fileName = src.split('/').pop();
-                const previewSrc = sessionImageUrls[fileName] || src;
+                const previewSrc = sessionImageUrls[fileName] || getBrowserImagePath(src);
                 return `
                     <div class="relative rounded-xl overflow-hidden border border-[#f2a1a2]/30 bg-white">
                         <img src="${previewSrc}" alt="" class="w-full aspect-square object-cover">
@@ -2924,15 +2940,16 @@
 
             if (fileInput.files.length > 0) {
                 const file = fileInput.files[0];
+                const browserFileName = getBrowserImagePath(file.name);
                 // בניית נתיב יחסי אוטומטי מבוסס על קטגוריה ושם הקובץ
-                finalImage = `מוצרים/${category}/${file.name}`;
-                finalFileName = file.name;
+                finalImage = `מוצרים/${category}/${browserFileName}`;
+                finalFileName = browserFileName;
             } else if (idVal) {
                 // שומרים את הערכים הקודמים של התמונה
                 const oldProduct = catalog.products.find(p => p.id === parseInt(idVal));
                 if (oldProduct) {
-                    finalImage = mainProductImageRemoved ? "" : (imageUrlInput || oldProduct.image);
-                    finalFileName = mainProductImageRemoved ? "" : oldProduct.fileName;
+                    finalImage = mainProductImageRemoved ? "" : getBrowserImagePath(imageUrlInput || oldProduct.image);
+                    finalFileName = mainProductImageRemoved ? "" : getBrowserImagePath(oldProduct.fileName);
                 }
             }
 
@@ -3022,7 +3039,7 @@
             }
 
             // 1. הסרת מוצרים מהקטלוג שהיו קשורים לקבצים שכבר לא קיימים בתיקייה הנוכחית
-            const currentFileNames = new Set(imageFiles.map(f => f.name));
+            const currentFileNames = new Set(imageFiles.flatMap(f => [f.name, getBrowserImagePath(f.name)]));
             let deletedCount = 0;
             
             if (catalog.products && catalog.products.length > 0) {
@@ -3071,18 +3088,21 @@
                 }
 
                 const file = imageFiles[index];
+                const browserFileName = getBrowserImagePath(file.name);
                 
                 // שמירת ObjectURL זמני בזיכרון של הסשן הנוכחי לצורך תצוגה מקדימה מהירה
                 const objectUrl = URL.createObjectURL(file);
                 sessionImageUrls[file.name] = objectUrl;
+                sessionImageUrls[browserFileName] = objectUrl;
 
                 // בדיקה האם המוצר כבר קיים לפי שם הקובץ ומזהה הקטגוריה/תיקייה (מניעת כפילויות)
-                const existingProduct = catalog.products.find(p => p.fileName === file.name && p.category === folderName);
+                const existingProduct = catalog.products.find(p => (p.fileName === file.name || p.fileName === browserFileName) && p.category === folderName);
                 
                 // נתיב הקובץ היחסי שיישמר ב-JSON
-                const relativePath = pathPrefix + (file.webkitRelativePath || file.name);
+                const relativePath = getBrowserImagePath(pathPrefix + (file.webkitRelativePath || file.name));
 
                 if (existingProduct) {
+                    existingProduct.fileName = browserFileName;
                     existingProduct.image = relativePath;
                     updatedCount++;
                 } else {
@@ -3090,7 +3110,7 @@
                     const newProduct = {
                         id: baseId + index,
                         name: productName,
-                        fileName: file.name,
+                        fileName: browserFileName,
                         price: "15", // ברירת מחדל
                         category: folderName,
                         theme: "",
@@ -3191,7 +3211,7 @@
             if (images.length > 1) {
                 gallery.innerHTML = images.map((src, index) => `
                     <button type="button" data-lightbox-thumb="${index}" onclick="event.stopPropagation(); setLightboxImage(${index})" class="w-16 h-16 rounded-lg overflow-hidden border ${index === 0 ? 'border-[#ee5253] ring-2 ring-[#ee5253]/25' : 'border-white/70'} bg-white shrink-0 shadow-sm transition-all">
-                        <img src="${src}" alt="" class="w-full h-full object-cover">
+                        <img src="${getBrowserImagePath(src)}" alt="" class="w-full h-full object-cover">
                     </button>
                 `).join('');
                 gallery.classList.remove('hidden');
@@ -3300,7 +3320,7 @@
         function setLightboxImage(index) {
             const src = activeLightboxImages[index];
             if (src) {
-                document.getElementById('lightbox-img').src = src;
+                document.getElementById('lightbox-img').src = getBrowserImagePath(src);
                 document.querySelectorAll('[data-lightbox-thumb]').forEach(btn => {
                     const isActive = btn.dataset.lightboxThumb === String(index);
                     btn.classList.toggle('border-[#ee5253]', isActive);
@@ -3348,6 +3368,7 @@
 
         function getFullImageUrl(imagePath) {
             if (!imagePath) return 'https://via.placeholder.com/300?text=No+Image';
+            imagePath = getBrowserImagePath(imagePath);
             // אם זו כתובת אינטרנט מלאה, נחזיר אותה
             if (imagePath.startsWith('http') || imagePath.startsWith('data:')) {
                 return imagePath;
