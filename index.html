@@ -1329,9 +1329,13 @@
         const selectedProductIds = new Set();
         const BOOKMARK_PRICE_MIGRATION_KEY = 'ecrafts_bookmark_price_25_migrated';
         const DEFAULT_THEMES = ["הכל", "אנימה", "פרחים", "חיות", "דמויות מקוריות", "טבע", "אחר"];
+        const SUPABASE_PROJECT_URL = "https://jtciejevxpemlykmxfvc.supabase.co";
+        const SUPABASE_PUBLIC_KEY = "sb_publishable_y-8_gt1Yx7c36DoFMXy_qg_M3TY1BsD";
+        const SUPABASE_PRODUCT_BUCKET = "product-images";
         
         // מפה לשמירת ObjectURL זמניים לקבצים שנטענו בסשן הנוכחי לצורך תצוגה מקדימה מיידית
         const sessionImageUrls = {}; 
+        const sessionImageFiles = {};
 
         const HEIC_IMAGE_EXTENSION = /\.(heic|heif)$/i;
 
@@ -1355,6 +1359,57 @@
                 return `מוצרים/${cleanCategory}/${cleanPath}`;
             }
             return `מוצרים/${cleanPath}`;
+        }
+
+        function encodeStoragePath(path) {
+            return String(path || '')
+                .split('/')
+                .filter(Boolean)
+                .map(part => encodeURIComponent(part))
+                .join('/');
+        }
+
+        function cleanStorageFileName(fileName) {
+            const clean = String(fileName || '').replace(/[^A-Za-z0-9._-]+/g, '-').replace(/^-+|-+$/g, '');
+            return clean || `image-${Date.now()}.jpg`;
+        }
+
+        function getSupabasePublicUrl(storagePath) {
+            return `${SUPABASE_PROJECT_URL}/storage/v1/object/public/${SUPABASE_PRODUCT_BUCKET}/${encodeStoragePath(storagePath)}`;
+        }
+
+        function rememberSessionImageFile(file, keys = []) {
+            if (!file) return;
+            const browserFileName = getBrowserImagePath(file.name);
+            [file.name, browserFileName, ...keys].filter(Boolean).forEach(key => {
+                sessionImageFiles[key] = file;
+                sessionImageFiles[getBrowserImagePath(key)] = file;
+            });
+        }
+
+        async function uploadProductImageToSupabase(file, productId, role, index = 0) {
+            if (!file) return "";
+            const safeName = cleanStorageFileName(getBrowserImagePath(file.name));
+            const prefix = role === 'main' ? 'main' : `extra-${index}`;
+            const storagePath = `products/${productId}/${prefix}-${Date.now()}-${safeName}`;
+            const uploadUrl = `${SUPABASE_PROJECT_URL}/storage/v1/object/${SUPABASE_PRODUCT_BUCKET}/${encodeStoragePath(storagePath)}`;
+            const response = await fetch(uploadUrl, {
+                method: 'POST',
+                headers: {
+                    apikey: SUPABASE_PUBLIC_KEY,
+                    Authorization: `Bearer ${SUPABASE_PUBLIC_KEY}`,
+                    'cache-control': '31536000',
+                    'content-type': file.type || 'application/octet-stream'
+                },
+                body: file
+            });
+
+            if (!response.ok) {
+                const message = await response.text().catch(() => '');
+                throw new Error(message || `Supabase upload failed (${response.status})`);
+            }
+
+            return getSupabasePublicUrl(storagePath);
         }
 
         function getImageFileNameFromPath(path, fallbackFileName = '') {
@@ -1986,6 +2041,57 @@
             }
         }
 
+        function findSessionImageFileForPath(path, product = null) {
+            const cleanPath = String(path || '');
+            const browserPath = getBrowserImagePath(cleanPath);
+            const fileName = getImageFileNameFromPath(cleanPath);
+            return sessionImageFiles[cleanPath]
+                || sessionImageFiles[browserPath]
+                || sessionImageFiles[fileName]
+                || (product && product.fileName ? sessionImageFiles[product.fileName] : null)
+                || null;
+        }
+
+        async function uploadPendingProductImagesToSupabase() {
+            let uploadedCount = 0;
+            const unresolved = [];
+
+            for (const product of (catalog.products || [])) {
+                if (product.image && !/^https?:/i.test(product.image)) {
+                    const file = findSessionImageFileForPath(product.image, product);
+                    if (file) {
+                        product.image = await uploadProductImageToSupabase(file, product.id, 'main');
+                        product.fileName = getBrowserImagePath(file.name);
+                        uploadedCount++;
+                    } else {
+                        unresolved.push(`${product.name || product.id} - תמונה ראשית`);
+                    }
+                }
+
+                if (Array.isArray(product.images)) {
+                    for (let i = 0; i < product.images.length; i++) {
+                        const imagePath = product.images[i];
+                        if (imagePath && !/^https?:/i.test(imagePath)) {
+                            const file = findSessionImageFileForPath(imagePath, product);
+                            if (file) {
+                                product.images[i] = await uploadProductImageToSupabase(file, product.id, 'extra', i + 1);
+                                uploadedCount++;
+                            } else {
+                                unresolved.push(`${product.name || product.id} - תמונה נוספת ${i + 1}`);
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (unresolved.length) {
+                throw new Error(`נשארו תמונות מקומיות שלא ניתן להעלות כי הקבצים לא נבחרו בסשן הנוכחי:\n${unresolved.slice(0, 12).join('\n')}${unresolved.length > 12 ? '\n...' : ''}`);
+            }
+
+            if (uploadedCount) saveCatalogToLocal();
+            return uploadedCount;
+        }
+
         function renderSiteSections() {
             renderFeaturedProducts();
             renderUpdates();
@@ -2464,7 +2570,15 @@
         }
 
         // ייצוא כל הנתונים לקובץ JS הנטען על ידי Git Pages
-        function exportCatalogData() {
+        async function exportCatalogData() {
+            try {
+                await uploadPendingProductImagesToSupabase();
+            } catch (error) {
+                console.error("שגיאה בהעלאת תמונות לפני יצוא:", error);
+                alert(`לא הצלחתי להעלות את כל התמונות לענן לפני היצוא.\n\n${error.message || error}\n\nהיצוא נעצר כדי שלא יישמר קובץ עם תמונות מקומיות.`);
+                return;
+            }
+
             const exportData = {
                 title: catalog.title,
                 description: catalog.description,
@@ -2484,7 +2598,7 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            alert("קובץ הנתונים המלא (products-data.js) יוצא בהצלחה!\nהקובץ כולל מוצרים, עדכונים והזמנות.\nאנא שמרי אותו בתיקיית Ecrafts\\קטלוג במקום הקובץ הישן.");
+            alert("קובץ הנתונים המלא (products-data.js) יוצא בהצלחה!\nתמונות חדשות שנבחרו בסשן הזה הועלו קודם ל-Supabase, והקובץ כולל מוצרים, עדכונים והזמנות.\nאנא שמרי אותו בתיקיית Ecrafts\\קטלוג במקום הקובץ הישן.");
         }
 
         // שחזור הנתונים לקדמותם מתוך קובץ הנתונים (ביטול שינויים מקומיים)
@@ -2933,6 +3047,8 @@
 
                 const productName = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
                 const dimensions = getDefaultDimensionsForCategory(category);
+                const imagePath = getProductImagePath(browserFileName, category);
+                rememberSessionImageFile(file, [imagePath]);
                 catalog.products.push({
                     id: baseId + index,
                     name: productName,
@@ -2941,7 +3057,7 @@
                     category,
                     theme,
                     desc: "",
-                    image: getProductImagePath(browserFileName, category),
+                    image: imagePath,
                     status: "available",
                     dimensions,
                     images: []
@@ -2977,6 +3093,7 @@
                 const browserFileName = getBrowserImagePath(file.name);
                 sessionImageUrls[file.name] = objectUrl; // שומרים בסשן
                 sessionImageUrls[browserFileName] = objectUrl;
+                rememberSessionImageFile(file);
 
                 showModalImagePreview(objectUrl);
                 document.getElementById('modal-image-url').value = ""; // מנקה ידני
@@ -2992,6 +3109,7 @@
                         sessionImageUrls[browserFileName] = objectUrl;
                         const category = document.getElementById('modal-category').value.trim() || "כללי";
                         const imagePath = getProductImagePath(browserFileName, category);
+                        rememberSessionImageFile(file, [imagePath]);
                         if (!modalExtraImages.includes(imagePath)) modalExtraImages.push(imagePath);
                     });
                     extraFileInput.value = "";
@@ -3113,7 +3231,7 @@
         }
 
         // שמירת מוצר בודד מהמודל
-        function saveProduct() {
+        async function saveProduct() {
             const idVal = document.getElementById('modal-product-id').value;
             const name = document.getElementById('modal-name').value.trim();
             const price = document.getElementById('modal-price').value.trim() || "15";
@@ -3143,25 +3261,48 @@
 
             let finalImage = imageUrlInput || "";
             let finalFileName = "";
+            const productId = idVal ? parseInt(idVal) : Date.now();
 
             if (fileInput.files.length > 0) {
                 const file = fileInput.files[0];
                 const browserFileName = getBrowserImagePath(file.name);
-                // בניית נתיב יחסי אוטומטי מבוסס על קטגוריה ושם הקובץ
-                finalImage = getProductImagePath(browserFileName, category);
                 finalFileName = browserFileName;
+                try {
+                    finalImage = await uploadProductImageToSupabase(file, productId, 'main');
+                } catch (error) {
+                    console.error("שגיאה בהעלאת תמונה ראשית ל-Supabase:", error);
+                    alert("התמונה הראשית לא עלתה לענן.\nצריך לוודא שב-Supabase יש הרשאת העלאה ל-bucket של התמונות.\nהמוצר לא נשמר כדי שלא יווצר קישור מקומי או שבור.");
+                    return;
+                }
             } else if (idVal) {
                 // שומרים את הערכים הקודמים של התמונה
-                const oldProduct = catalog.products.find(p => p.id === parseInt(idVal));
+                const oldProduct = catalog.products.find(p => p.id === productId);
                 if (oldProduct) {
                     finalImage = mainProductImageRemoved ? "" : getProductImagePath(imageUrlInput || oldProduct.image, oldProduct.category || category);
                     finalFileName = mainProductImageRemoved ? "" : getBrowserImagePath(oldProduct.fileName);
                 }
             }
 
+            const uploadedExtraImages = [];
+            for (let i = 0; i < extraImages.length; i++) {
+                const src = extraImages[i];
+                const fileName = getImageFileNameFromPath(src);
+                const extraFile = sessionImageFiles[src] || sessionImageFiles[getBrowserImagePath(src)] || sessionImageFiles[fileName];
+                if (extraFile) {
+                    try {
+                        uploadedExtraImages.push(await uploadProductImageToSupabase(extraFile, productId, 'extra', i + 1));
+                    } catch (error) {
+                        console.error("שגיאה בהעלאת תמונה נוספת ל-Supabase:", error);
+                        alert("אחת התמונות הנוספות לא עלתה לענן.\nהמוצר לא נשמר כדי שלא יווצר קישור מקומי או שבור.");
+                        return;
+                    }
+                } else {
+                    uploadedExtraImages.push(src);
+                }
+            }
+
             if (idVal) {
-                const id = parseInt(idVal);
-                const index = catalog.products.findIndex(p => p.id === id);
+                const index = catalog.products.findIndex(p => p.id === productId);
                 if (index !== -1) {
                     catalog.products[index].name = name;
                     catalog.products[index].price = price;
@@ -3171,12 +3312,12 @@
                     catalog.products[index].image = finalImage;
                     catalog.products[index].status = status;
                     catalog.products[index].dimensions = normalizedDimensions;
-                    catalog.products[index].images = extraImages;
+                    catalog.products[index].images = uploadedExtraImages;
                     if (finalFileName) catalog.products[index].fileName = finalFileName;
                 }
             } else {
                 const newProduct = {
-                    id: Date.now(),
+                    id: productId,
                     name: name,
                     fileName: finalFileName,
                     price: price,
@@ -3186,7 +3327,7 @@
                     image: finalImage,
                     status: status,
                     dimensions: normalizedDimensions,
-                    images: extraImages
+                    images: uploadedExtraImages
                 };
                 catalog.products.push(newProduct);
             }
@@ -3310,6 +3451,7 @@
                 // נתיב הקובץ היחסי שיישמר ב-JSON
                 const importPath = file.webkitRelativePath || file.name;
                 const relativePath = getProductImagePath(pathPrefix + importPath, folderName);
+                rememberSessionImageFile(file, [relativePath]);
 
                 if (existingProduct) {
                     existingProduct.fileName = browserFileName;
