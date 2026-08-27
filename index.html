@@ -515,9 +515,9 @@
                             <i data-lucide="plus" class="w-4 h-4 text-emerald-500"></i>
                             <span>הוסף מוצר בודד</span>
                         </button>
-                        <button onclick="exportCatalogData()" class="flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium py-2 px-4 rounded-xl shadow-lg shadow-brand-500/10 transition-colors" title="שמור את כל השינויים לקובץ products-data.js">
-                            <i data-lucide="download" class="w-4 h-4"></i>
-                            <span>ייצוא קובץ נתונים</span>
+                        <button onclick="saveCatalogDataFile()" class="flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium py-2 px-4 rounded-xl shadow-lg shadow-brand-500/10 transition-colors" title="שמור את כל השינויים לקובץ products-data.js">
+                            <i data-lucide="save" class="w-4 h-4"></i>
+                            <span>שמור נתונים</span>
                         </button>
                         <button onclick="resetToJsData()" class="flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium py-2 px-4 rounded-xl border border-zinc-700 transition-colors" title="שחזר נתונים מקובץ products-data.js ומחק שינויים מקומיים">
                             <i data-lucide="refresh-cw" class="w-4 h-4 text-indigo-400"></i>
@@ -573,7 +573,7 @@
                             <li>קשר את התיקייה המקומית למאגר ה-GitHub שלך באמצעות שורת הפקודה (אנחנו כבר הכנו עבורך את התשתית בתיקייה המקומית).</li>
                             <li><strong>הפעלה אונליין:</strong> ב-GitHub, גש ל-<strong>Settings</strong> -> <strong>Pages</strong>. תחת <strong>Build and deployment</strong>, בחר במקור <strong>Deploy from a branch</strong>, בחר בענף <strong>main</strong> ולחץ <strong>Save</strong>.</li>
                             <li>האתר שלך יהיה זמין מיידית בכתובת נקייה: <code class="bg-zinc-950 px-1 py-0.5 rounded text-brand-500 text-[10px]">https://USERNAME.github.io/Ecrafts/</code></li>
-                            <li><strong>עדכון הקטלוג בעתיד:</strong> בצע שינויים, לחץ על <strong>ייצוא קובץ נתונים</strong> ושמור אותו בתיקייה. לאחר מכן, לחץ לחיצה כפולה על הקובץ <code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200 text-[10px]">עלה_לגיט.bat</code> והקטלוג אונליין יתעדכן מיד!</li>
+                            <li><strong>עדכון הקטלוג בעתיד:</strong> בצע שינויים, לחץ על <strong>שמור נתונים</strong> ובחר את הקובץ <code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200 text-[10px]">products-data.js</code> שבתיקיית האתר. לאחר מכן, לחץ לחיצה כפולה על הקובץ <code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200 text-[10px]">עלה_לגיט.bat</code> והקטלוג אונליין יתעדכן מיד!</li>
                         </ol>
                     </div>
                 </details>
@@ -2599,16 +2599,7 @@
             saveSiteContent();
         }
 
-        // ייצוא כל הנתונים לקובץ JS הנטען על ידי Git Pages
-        async function exportCatalogData() {
-            try {
-                await uploadPendingProductImagesToSupabase();
-            } catch (error) {
-                console.error("שגיאה בהעלאת תמונות לפני יצוא:", error);
-                alert(`לא הצלחתי להעלות את כל התמונות לענן לפני היצוא.\n\n${error.message || error}\n\nהיצוא נעצר כדי שלא יישמר קובץ עם תמונות מקומיות.`);
-                return;
-            }
-
+        function buildCatalogDataJsContent() {
             const exportData = {
                 title: catalog.title,
                 description: catalog.description,
@@ -2617,8 +2608,10 @@
                 updates: siteUpdates,
                 orders: orders
             };
-            const jsContent = `window.catalogData = ${JSON.stringify(exportData, null, 2)};`;
-            
+            return `window.catalogData = ${JSON.stringify(exportData, null, 2)};`;
+        }
+
+        function downloadCatalogDataFile(jsContent) {
             const blob = new Blob([jsContent], { type: 'application/javascript;charset=utf-8' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -2628,7 +2621,46 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            alert("קובץ הנתונים המלא (products-data.js) יוצא בהצלחה!\nתמונות חדשות שנבחרו בסשן הזה הועלו קודם ל-Supabase, והקובץ כולל מוצרים, עדכונים והזמנות.\nאנא שמרי אותו בתיקיית Ecrafts\\קטלוג במקום הקובץ הישן.");
+        }
+
+        // שמירת כל הנתונים לקובץ JS הנטען על ידי Git Pages
+        async function saveCatalogDataFile() {
+            try {
+                await uploadPendingProductImagesToSupabase();
+            } catch (error) {
+                console.error("שגיאה בהעלאת תמונות לפני שמירה:", error);
+                alert(`לא הצלחתי להעלות את כל התמונות לענן לפני השמירה.\n\n${error.message || error}\n\nהשמירה נעצרה כדי שלא יישמר קובץ עם תמונות מקומיות.`);
+                return;
+            }
+
+            const jsContent = buildCatalogDataJsContent();
+
+            if (window.showSaveFilePicker) {
+                try {
+                    const fileHandle = await window.showSaveFilePicker({
+                        suggestedName: 'products-data.js',
+                        types: [{
+                            description: 'JavaScript data file',
+                            accept: { 'application/javascript': ['.js'] }
+                        }]
+                    });
+                    const writable = await fileHandle.createWritable();
+                    await writable.write(jsContent);
+                    await writable.close();
+                    alert("הנתונים נשמרו בהצלחה לקובץ products-data.js.\nתמונות חדשות שנבחרו בסשן הזה הועלו קודם ל-Supabase.");
+                    return;
+                } catch (error) {
+                    if (error && error.name === 'AbortError') return;
+                    console.warn("שמירה ישירה לקובץ נכשלה, עוברים להורדה:", error);
+                }
+            }
+
+            downloadCatalogDataFile(jsContent);
+            alert("הדפדפן לא אפשר שמירה ישירה לקובץ, אז הורדתי את products-data.js כמו קודם.\nתמונות חדשות שנבחרו בסשן הזה הועלו קודם ל-Supabase.");
+        }
+
+        async function exportCatalogData() {
+            return saveCatalogDataFile();
         }
 
         // שחזור הנתונים לקדמותם מתוך קובץ הנתונים (ביטול שינויים מקומיים)
