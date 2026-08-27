@@ -625,7 +625,9 @@ window.catalogData = {
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "3",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1729,10 +1731,12 @@ window.catalogData = {
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "מותג"
     },
     {
       "id": 118,
@@ -1745,10 +1749,12 @@ window.catalogData = {
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "מותג"
     },
     {
       "id": 119,
@@ -1761,10 +1767,117 @@ window.catalogData = {
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אחר"
+    },
+    {
+      "id": 1787813716870,
+      "name": "וויולט אברגרדן",
+      "fileName": "20260826_225443.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "אנימה",
+      "desc": "סימניה UV RESIN המכילה שבבי מוס אגט וקוורץ ירוד,ופרחים",
+      "image": "מוצרים/סימניות/20260826_225443.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "2-3",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/כללי/20260826_225551.jpg"
+      ]
+    },
+    {
+      "id": 1787815039713,
+      "name": "פרח 1",
+      "fileName": "20260826_235817.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "פרחים",
+      "desc": "סימניית UV RESIN המכילה פרחים",
+      "image": "מוצרים/סימניות - פרחים/20260826_235817.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "5",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_235821.jpg",
+        "מוצרים/סימניות/20260826_235832.jpg"
+      ]
+    },
+    {
+      "id": 1787816759186,
+      "name": "תום הלטאה",
+      "fileName": "20260826_225727.jpg",
+      "price": "15",
+      "category": "סימניות",
+      "theme": "אחר",
+      "desc": "",
+      "image": "מוצרים/סימניות - ציורים/20260826_225727.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_225742.jpg",
+        "מוצרים/סימניות/20260826_225916.jpg",
+        "מוצרים/סימניות/20260826_225933.jpg"
+      ]
+    },
+    {
+      "id": 1787817485853,
+      "name": "פרפר",
+      "fileName": "20260826_225727.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "טבע",
+      "desc": "סימניית אקריל",
+      "image": "מוצרים/סימניות/20260826_225727.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_232157.jpg",
+        "מוצרים/סימניות/20260826_232211.jpg"
+      ]
+    },
+    {
+      "id": 1787817485854,
+      "name": "דורבן",
+      "fileName": "20260826_225727.jpg",
+      "price": "25",
+      "category": "סימניות",
+      "theme": "חיות",
+      "desc": "סימניית UV RESIN",
+      "image": "מוצרים/סימניות/20260826_225727.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "מוצרים/סימניות/20260826_232239.jpg",
+        "מוצרים/סימניות/20260826_232321.jpg"
+      ]
     }
   ],
   "updates": [],
