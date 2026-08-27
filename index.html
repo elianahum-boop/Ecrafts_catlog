@@ -1441,8 +1441,8 @@
             return [...folders].filter(Boolean);
         }
 
-        function getProductImageCandidates(product) {
-            const fileName = getImageFileNameFromPath(product.image, product.fileName);
+        function getProductImageCandidates(product, sourcePath = '') {
+            const fileName = getImageFileNameFromPath(sourcePath, product.fileName || product.image);
             if (!fileName) return [];
             const candidates = [];
             const addCandidate = src => {
@@ -1495,14 +1495,14 @@
             delete img.dataset.fallbackPath;
         }
 
-        function tryProductImageFallback(img, id) {
+        function tryProductImageFallback(img, id, sourcePath = '') {
             const product = (catalog.products || []).find(p => p.id === id);
             if (!product) {
                 img.onerror = null;
                 return;
             }
 
-            const candidates = getProductImageCandidates(product);
+            const candidates = getProductImageCandidates(product, sourcePath || img.dataset.imagePath || '');
             const currentSrc = decodeURIComponent(String(img.getAttribute('src') || '')).replace(/\\/g, '/');
             let index = parseInt(img.dataset.fallbackIndex || '0', 10);
 
@@ -3494,7 +3494,7 @@
             if (images.length > 1) {
                 gallery.innerHTML = images.map((src, index) => `
                     <button type="button" data-lightbox-thumb="${index}" onclick="event.stopPropagation(); setLightboxImage(${index})" class="w-16 h-16 rounded-lg overflow-hidden border ${index === 0 ? 'border-[#ee5253] ring-2 ring-[#ee5253]/25' : 'border-white/70'} bg-white shrink-0 shadow-sm transition-all">
-                        <img src="${getBrowserImagePath(src)}" onerror="tryProductImageFallback(this, ${product.id})" onload="confirmProductImagePath(this, ${product.id})" alt="" class="w-full h-full object-cover">
+                        <img src="${getBrowserImagePath(src)}" data-image-path="${src}" onerror="tryProductImageFallback(this, ${product.id}, this.dataset.imagePath)" alt="" class="w-full h-full object-cover">
                     </button>
                 `).join('');
                 gallery.classList.remove('hidden');
