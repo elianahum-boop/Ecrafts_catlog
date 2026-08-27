@@ -878,10 +878,10 @@
                                 <i data-lucide="image" class="w-5 h-5"></i>
                             </div>
                             <div class="text-xs text-zinc-400 font-medium">לחץ כאן לבחירת תמונה</div>
-                            <div class="text-[10px] text-zinc-600">קבצי PNG, JPG או GIF</div>
+                            <div class="text-[10px] text-zinc-600">קבצי PNG, JPG, GIF או HEIC</div>
                         </div>
                     </div>
-                    <input type="file" id="modal-file-input" class="hidden" accept="image/*">
+                    <input type="file" id="modal-file-input" class="hidden" accept="image/*,.heic,.heif,image/heic,image/heif">
                     <button type="button" onclick="removeMainProductImage()" class="mt-2 w-full flex items-center justify-center gap-2 bg-white hover:bg-[#fdfaf7] text-[#733238] font-bold py-2 px-4 rounded-xl text-xs border border-[#f2a1a2]/30 transition-colors">
                         <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
                         <span>הסר תמונה ראשית לפני שמירה</span>
@@ -973,7 +973,7 @@
                 <div>
                     <label class="block text-sm font-medium text-zinc-400 mb-1.5">תמונות נוספות</label>
                     <div class="rounded-xl border border-zinc-800 bg-zinc-950/35 p-3 space-y-3">
-                        <input type="file" id="modal-extra-file-input" class="hidden" accept="image/png,image/jpeg,image/jpg,image/webp" multiple>
+                        <input type="file" id="modal-extra-file-input" class="hidden" accept="image/png,image/jpeg,image/jpg,image/webp,image/heic,image/heif,.heic,.heif" multiple>
                         <button type="button" onclick="document.getElementById('modal-extra-file-input').click()" class="w-full flex items-center justify-center gap-2 bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] font-bold py-2 px-4 rounded-xl text-sm border border-[#f2a1a2]/30 transition-colors">
                             <i data-lucide="images" class="w-4 h-4"></i>
                             <span>בחרי תמונות מהמחשב</span>
@@ -1220,7 +1220,7 @@
                 </label>
                 <div class="rounded-xl border border-zinc-800 bg-zinc-950/35 p-3 space-y-3">
                     <label class="block text-sm font-medium text-zinc-400">תמונה אופציונלית</label>
-                    <input type="file" id="admin-update-image-input" class="hidden" accept="image/png,image/jpeg,image/jpg,image/webp">
+                    <input type="file" id="admin-update-image-input" class="hidden" accept="image/png,image/jpeg,image/jpg,image/webp,image/heic,image/heif,.heic,.heif">
                     <button type="button" onclick="document.getElementById('admin-update-image-input').click()" class="w-full flex items-center justify-center gap-2 bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] font-bold py-2 px-4 rounded-xl text-sm border border-[#f2a1a2]/30 transition-colors">
                         <i data-lucide="image-plus" class="w-4 h-4"></i>
                         <span>בחרי תמונה מהמחשב</span>
@@ -1516,6 +1516,9 @@
             }
             if (!product.dimensions) product.dimensions = {};
             if (!Array.isArray(product.images)) product.images = [];
+            if (product.theme === undefined || product.theme === null || String(product.theme).trim() === "") {
+                product.theme = "אנימה";
+            }
             return product;
         }
 
@@ -2634,7 +2637,7 @@
             const container = document.getElementById('theme-tabs');
             if (!container) return;
 
-            const themes = new Set(DEFAULT_THEMES);
+            const themes = new Set(["הכל"]);
             (catalog.products || []).forEach(p => {
                 if (p.theme && p.theme.trim()) {
                     themes.add(p.theme.trim());
@@ -2987,7 +2990,7 @@
             if (files.length === 0) return;
 
             // סינון קבצים באמצעות mime-type וגם סיומות קבצים ליתר ביטחון
-            const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'bmp', 'svg'];
+            const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'bmp', 'svg', 'heic', 'heif'];
             const imageFiles = Array.from(files).filter(file => {
                 const isImgMime = file.type && file.type.startsWith('image/');
                 const extension = file.name.split('.').pop().toLowerCase();
