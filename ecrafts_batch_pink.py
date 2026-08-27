@@ -4,10 +4,14 @@ import sys
 
 import cv2
 import numpy as np
+from PIL import Image
+from pillow_heif import register_heif_opener
 
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
+
+register_heif_opener()
 
 INPUT_DIR = Path(r"C:\Users\orlyn\Desktop\אני\Ecrafts\קטלוג\מוצרים")
 OUTPUT_DIR = Path(r"C:\Users\orlyn\Desktop\אני\Ecrafts\קטלוג\מוצרים_ערוכים")
@@ -111,6 +115,41 @@ def collect_files(input_dir):
     ]
 
 
+def convert_and_remove_heic_files(input_dir):
+    converted = 0
+    removed_duplicates = 0
+    failed = 0
+
+    heic_files = [
+        path
+        for path in input_dir.rglob("*")
+        if path.is_file() and path.suffix.lower() in {".heic", ".heif"}
+    ]
+
+    for source_path in heic_files:
+        jpg_path = source_path.with_suffix(".jpg")
+
+        try:
+            if jpg_path.exists():
+                source_path.unlink()
+                removed_duplicates += 1
+                continue
+
+            with Image.open(source_path) as image:
+                image.convert("RGB").save(jpg_path, "JPEG", quality=95)
+
+            if jpg_path.exists() and jpg_path.stat().st_size > 0:
+                source_path.unlink()
+                converted += 1
+            else:
+                failed += 1
+        except Exception as error:
+            print(f"לא הצלחתי להמיר {source_path.name}: {error}")
+            failed += 1
+
+    return converted, removed_duplicates, failed
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Ecrafts batch photo editor")
     parser.add_argument("--input", type=Path, default=INPUT_DIR)
@@ -133,6 +172,12 @@ def main():
         print("לא מצאתי את תיקיית המוצרים:")
         print(input_dir)
         return 1
+
+    converted_heic, removed_heic, failed_heic = convert_and_remove_heic_files(input_dir)
+    if converted_heic or removed_heic or failed_heic:
+        print(f"HEIC שהומרו ל־JPG: {converted_heic}")
+        print(f"קובצי HEIC כפולים שנמחקו: {removed_heic}")
+        print(f"שגיאות HEIC: {failed_heic}")
 
     files = collect_files(input_dir)
     if args.limit > 0:
@@ -196,7 +241,7 @@ def main():
     print("התמונות הערוכות נמצאות כאן:")
     print(output_dir)
 
-    return 0 if failed == 0 else 1
+    return 0 if failed == 0 and failed_heic == 0 else 1
 
 
 if __name__ == "__main__":
