@@ -1030,7 +1030,7 @@
                         <i data-lucide="check-circle-2" class="w-6 h-6"></i>
                     </div>
                     <h4 class="font-bold text-white">הקישור לקריאה בלבד מוכן!</h4>
-                    <p class="text-xs text-zinc-400">הקישור הבא מכיל את כל פרטי הקטלוג (שמות, מחירים, תיאורים ונתיבי תמונות). לקוחות שיפתחו אותו יראו את הקטלוג בלבד ללא גישת עריכה.</p>
+                    <p class="text-xs text-zinc-400">הקישור הבא מוביל לעמדת הלקוח באתר הציבורי. הוא טוען תמיד את נתוני הקטלוג המעודכנים מ-Git.</p>
                 </div>
 
                 <!-- תיבת הקישור להעתקה -->
@@ -1052,8 +1052,8 @@
                         <span id="share-stat-products" class="text-sm font-bold text-white">0</span>
                     </div>
                     <div>
-                        <span class="block text-xs text-zinc-500">גודל נתונים מוערך</span>
-                        <span id="share-stat-size" class="text-sm font-bold text-white">0%</span>
+                        <span class="block text-xs text-zinc-500">סוג קישור</span>
+                        <span id="share-stat-size" class="text-sm font-bold text-white">חי</span>
                     </div>
                 </div>
 
@@ -1061,8 +1061,7 @@
                 <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 flex items-start gap-2.5 text-xs text-zinc-400">
                     <i data-lucide="info" class="w-4 h-4 text-brand-500 flex-shrink-0 mt-0.5"></i>
                     <p>
-                        <strong>שים לב:</strong> הקישור מבוסס על כתובת הדף הנוכחי. 
-                        לאחר שתעלה את קובץ ה-<code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200">index.html</code> שלך ל-GitHub Pages, מומלץ ליצור את הקישור מתוך הכתובת החדשה (למשל: <code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200">https://username.github.io/ecrafts/</code>) כדי לקבל קישור אינטרנט אמיתי ללקוחות!
+                        <strong>שימי לב:</strong> אם פתחת בעבר קישור שמכיל <code class="bg-zinc-950 px-1 py-0.5 rounded text-zinc-200">#catalog=</code>, זה קישור ישן שמכיל צילום של נתונים מאותו רגע. הקישור החדש כאן תמיד יטען את הקטלוג המעודכן מהאתר.
                     </p>
                 </div>
             </div>
@@ -3554,26 +3553,19 @@
                 })
             };
 
-            const jsonStr = JSON.stringify(shareData);
-            const compressed = LZString.compressToEncodedURIComponent(jsonStr);
-            
-            const baseUrl = window.location.origin + window.location.pathname;
-            const fullShareUrl = `${baseUrl}#catalog=${compressed}`;
+            const deployedUrl = 'https://elianahum-boop.github.io/Ecrafts_catlog/';
+            const isLocal = window.location.protocol === 'file:' ||
+                            window.location.hostname === 'localhost' ||
+                            window.location.hostname === '127.0.0.1';
+            const currentUrl = `${window.location.origin}${window.location.pathname}`.replace(/index\.html$/i, '');
+            const fullShareUrl = isLocal ? deployedUrl : currentUrl;
             
             document.getElementById('share-link-input').value = fullShareUrl;
 
             document.getElementById('share-stat-products').innerText = shareData.products.length;
-            const sizePercent = Math.min(100, Math.round((fullShareUrl.length / 8000) * 100));
-            document.getElementById('share-stat-size').innerText = `${sizePercent}% מתוך המגבלה`;
-            
             const sizeTextSpan = document.getElementById('share-stat-size');
-            if (sizePercent > 85) {
-                sizeTextSpan.className = "text-sm font-bold text-red-500";
-            } else if (sizePercent > 60) {
-                sizeTextSpan.className = "text-sm font-bold text-amber-400";
-            } else {
-                sizeTextSpan.className = "text-sm font-bold text-emerald-400";
-            }
+            sizeTextSpan.innerText = "קישור חי";
+            sizeTextSpan.className = "text-sm font-bold text-emerald-400";
 
             document.getElementById('share-modal').classList.remove('hidden');
         }
