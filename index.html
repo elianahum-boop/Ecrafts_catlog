@@ -3460,10 +3460,14 @@
             let imgUrl = getDisplayImage(product, 600);
 
             img.dataset.productId = product.id;
+            img.dataset.imagePath = product.image || imgUrl;
+            img.dataset.mainImage = 'true';
             img.dataset.fallbackIndex = '0';
             delete img.dataset.fallbackPath;
             img.onerror = () => tryProductImageFallback(img, product.id);
-            img.onload = () => confirmProductImagePath(img, product.id);
+            img.onload = () => {
+                if (img.dataset.mainImage === 'true') confirmProductImagePath(img, product.id);
+            };
             img.src = imgUrl;
             name.innerText = product.name || "";
             desc.innerText = product.desc || "";
@@ -3595,8 +3599,15 @@
 
         function setLightboxImage(index) {
             const src = activeLightboxImages[index];
-            if (src) {
-                document.getElementById('lightbox-img').src = getBrowserImagePath(src);
+            const image = document.getElementById('lightbox-img');
+            if (src && image) {
+                image.dataset.imagePath = src;
+                image.dataset.mainImage = 'false';
+                image.dataset.fallbackIndex = '0';
+                delete image.dataset.fallbackPath;
+                image.onerror = () => tryProductImageFallback(image, image.dataset.productId, src);
+                image.onload = null;
+                image.src = getBrowserImagePath(src);
                 document.querySelectorAll('[data-lightbox-thumb]').forEach(btn => {
                     const isActive = btn.dataset.lightboxThumb === String(index);
                     btn.classList.toggle('border-[#ee5253]', isActive);
