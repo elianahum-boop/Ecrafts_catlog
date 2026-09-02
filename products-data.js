@@ -1726,7 +1726,7 @@ window.catalogData = {
       "fileName": "Slide70.PNG",
       "price": "15",
       "category": "סימניות אקריל",
-      "desc": "סמניית UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/117/main-Slide70.PNG",
       "status": "available",
       "dimensions": {
@@ -1744,7 +1744,7 @@ window.catalogData = {
       "fileName": "Slide71.PNG",
       "price": "15",
       "category": "סימניות אקריל",
-      "desc": "סימניית UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/118/main-Slide71.PNG",
       "status": "available",
       "dimensions": {
@@ -1946,7 +1946,7 @@ window.catalogData = {
       "price": "15",
       "category": "סימניות אקריל",
       "theme": "טבע",
-      "desc": "סימניית UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619329/main-20260826_232142.jpg",
       "status": "available",
       "dimensions": {
@@ -2032,7 +2032,7 @@ window.catalogData = {
       "price": "15",
       "category": "סימניות אקריל",
       "theme": "סדרות",
-      "desc": "מחזיק UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619333/main-20260826_233204.jpg",
       "status": "available",
       "dimensions": {
@@ -2158,7 +2158,7 @@ window.catalogData = {
       "price": "15",
       "category": "סימניות אקריל",
       "theme": "טבע",
-      "desc": "סימניית UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619340/main-20260826_233635.jpg",
       "status": "available",
       "dimensions": {
@@ -2263,7 +2263,7 @@ window.catalogData = {
       "price": "20",
       "category": "סימניות אקריל",
       "theme": "דמויות",
-      "desc": "סימניית UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619345/main-20260826_234320.jpg",
       "status": "available",
       "dimensions": {
@@ -2388,7 +2388,7 @@ window.catalogData = {
       "price": "15",
       "category": "סימניות אקריל",
       "theme": "סדרות",
-      "desc": "סימניית UV ERSIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619351/main-20260826_234602.jpg",
       "status": "available",
       "dimensions": {
@@ -2409,7 +2409,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות אקריל",
       "theme": "טבע",
-      "desc": "סימניית UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619352/main-20260826_234627.jpg",
       "status": "available",
       "dimensions": {
@@ -2472,6 +2472,15 @@ window.catalogData = {
       "title": "פתיחת האתר!!!",
       "text": "אני שמחה לבשר על פתיחת האתר הרשמי של Ecrafts!!!\nכאן תוכלו לראות את כל המוצרים השונים\nלהזמין\nולראות עדכונים בנוגע לחנות כמו הגעה לקנסים, מוצרים חדשים וכדומה",
       "date": "2026-08-27",
+      "status": "published",
+      "showOnHome": true,
+      "image": ""
+    },
+    {
+      "id": 1788349521902,
+      "title": "מוצרים חדשים בדרך! ✨",
+      "text": "אני עובדת על כמה דברים חדשים לאתר.\nבקרוב יעלו סימניות בעיצובים חדשים, מדבקות ומחזיקים.",
+      "date": "2026-09-02",
       "status": "published",
       "showOnHome": true,
       "image": ""
