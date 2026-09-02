@@ -1634,7 +1634,6 @@
         function migrateProductData(product) {
             product.status = normalizeStatus(product.status);
             product.name = normalizeResinText(product.name);
-            product.category = normalizeResinText(product.category);
             product.desc = normalizeResinText(product.desc);
             if (product.category === "מוצרים" && product.image) {
                 const parts = String(product.image).replace(/\\/g, '/').split('/');
@@ -2116,6 +2115,16 @@
                         }
                         return imagePath;
                     });
+                }
+
+                if (
+                    typeof product.category === 'string' &&
+                    product.category.includes('UV RESIN') &&
+                    typeof jsProduct.category === 'string' &&
+                    /אקריל|ארקיל/.test(jsProduct.category)
+                ) {
+                    product.category = jsProduct.category;
+                    changed = true;
                 }
             });
 
