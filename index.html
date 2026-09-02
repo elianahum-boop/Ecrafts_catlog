@@ -1633,8 +1633,6 @@
 
         function migrateProductData(product) {
             product.status = normalizeStatus(product.status);
-            product.name = normalizeResinText(product.name);
-            product.desc = normalizeResinText(product.desc);
             if (product.category === "מוצרים" && product.image) {
                 const parts = String(product.image).replace(/\\/g, '/').split('/');
                 if (parts[0] === "מוצרים" && parts[1]) product.category = parts[1];
