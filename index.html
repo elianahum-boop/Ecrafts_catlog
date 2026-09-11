@@ -1503,12 +1503,40 @@
             ) || null;
         }
 
+        function repairProductImageFromJsData(product) {
+            const jsProduct = getJsProductForLocalProduct(product);
+            if (!jsProduct) return false;
+
+            let changed = false;
+            if (needsImageRestore(product) && jsProduct.image && /^https?:/i.test(jsProduct.image)) {
+                product.image = jsProduct.image;
+                product.fileName = getImageFileNameFromPath(jsProduct.image, product.fileName);
+                changed = true;
+            }
+
+            if (Array.isArray(jsProduct.images)) {
+                const productImages = Array.isArray(product.images) ? product.images : [];
+                const hasUsableExtraImages = productImages.some(imagePath => /^https?:/i.test(String(imagePath || '')));
+                const hasBrokenExtraImages = productImages.some(imagePath => needsImageRestore({ image: imagePath }));
+                if ((!productImages.length || hasBrokenExtraImages) && !hasUsableExtraImages) {
+                    product.images = jsProduct.images.filter(imagePath => /^https?:/i.test(String(imagePath || '')));
+                    if (product.images.length || productImages.length) changed = true;
+                }
+            }
+
+            return changed;
+        }
+
         async function restoreMissingProductImagesFromSupabase() {
             if (!Array.isArray(catalog.products)) return 0;
             let restoredCount = 0;
 
             for (const product of catalog.products) {
                 if (!needsImageRestore(product)) continue;
+                if (repairProductImageFromJsData(product)) {
+                    restoredCount++;
+                    continue;
+                }
                 const restoredUrl = await restoreProductImagesFromSupabase(product).catch(() => null);
                 if (restoredUrl) restoredCount++;
             }
@@ -1748,9 +1776,9 @@
             if (sessionImageUrls[product.fileName]) return sessionImageUrls[product.fileName];
             const browserFileName = getBrowserImagePath(product.fileName || '');
             if (browserFileName && sessionImageUrls[browserFileName]) return sessionImageUrls[browserFileName];
-            if (needsImageRestore(product)) {
-                const jsProduct = getJsProductForLocalProduct(product);
-                if (jsProduct && jsProduct.image && /^https?:/i.test(jsProduct.image)) return jsProduct.image;
+            if (needsImageRestore(product) && repairProductImageFromJsData(product)) {
+                if (isEditMode) saveCatalogToLocal();
+                return product.image;
             }
             const images = getProductImages(product);
             return images[0] || `https://via.placeholder.com/${size}?text=No+Image`;
@@ -2262,10 +2290,7 @@
                 const jsProduct = getJsProductForLocalProduct(product);
                 if (!jsProduct) return;
 
-                if (needsImageRestore(product) && jsProduct.image && /^https?:/i.test(jsProduct.image)) {
-                    product.image = jsProduct.image;
-                    changed = true;
-                }
+                if (repairProductImageFromJsData(product)) changed = true;
 
                 if (Array.isArray(product.images) && Array.isArray(jsProduct.images)) {
                     product.images = product.images.map((imagePath, index) => {
