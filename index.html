@@ -24,6 +24,8 @@
     
     <!-- LZ-String Compression CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    <!-- HEIC/HEIF conversion for browser-compatible product images -->
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
     <!-- קובץ נתוני המוצרים מבוסס Git -->
     <script src="products-data.js"></script>
 
@@ -1404,8 +1406,17 @@
                 .filter(file => file && file.name && !file.name.endsWith('/'))
                 .map(file => ({
                     name: file.name,
+                    mimeType: file.metadata?.mimetype || file.metadata?.mimeType || '',
                     url: getSupabasePublicUrl(`products/${productId}/${file.name}`)
                 }));
+        }
+
+        function isDisplayableSupabaseImage(file) {
+            const name = String(file?.name || '').toLowerCase();
+            const mimeType = String(file?.mimeType || '').toLowerCase();
+            if (name.endsWith('.heic') || name.endsWith('.heif')) return false;
+            if (mimeType === 'image/heic' || mimeType === 'image/heif') return false;
+            return mimeType.startsWith('image/') || /\.(png|jpe?g|webp|gif|bmp|svg)$/i.test(name);
         }
 
         async function listSupabaseProductFolders() {
@@ -1468,11 +1479,13 @@
                 return null;
             }
 
-            const mainFile = files.find(file => file.name.startsWith('main-')) || files[0];
+            const displayableFiles = files.filter(isDisplayableSupabaseImage);
+            const usableFiles = displayableFiles.length ? displayableFiles : files;
+            const mainFile = usableFiles.find(file => file.name.startsWith('main-')) || usableFiles[0];
             const extraFiles = files.filter(file => file !== mainFile);
             product.image = mainFile.url;
             product.fileName = getImageFileNameFromPath(mainFile.name, product.fileName);
-            product.images = extraFiles.map(file => file.url);
+            product.images = extraFiles.filter(isDisplayableSupabaseImage).map(file => file.url);
             if (isEditMode) saveCatalogToLocal();
             return mainFile.url;
         }
@@ -1554,9 +1567,31 @@
             });
         }
 
+        function isHeicImageFile(file) {
+            if (!file) return false;
+            return HEIC_IMAGE_EXTENSION.test(file.name || '') || /image\/hei(c|f)/i.test(file.type || '');
+        }
+
+        async function prepareImageFileForUpload(file) {
+            if (!isHeicImageFile(file)) return file;
+            if (typeof heic2any !== 'function') {
+                throw new Error('HEIC conversion library is not available');
+            }
+
+            const converted = await heic2any({
+                blob: file,
+                toType: 'image/jpeg',
+                quality: 0.92
+            });
+            const blob = Array.isArray(converted) ? converted[0] : converted;
+            const jpegName = getBrowserImagePath(file.name).replace(/\.(heic|heif)$/i, '.jpg');
+            return new File([blob], jpegName, { type: 'image/jpeg', lastModified: Date.now() });
+        }
+
         async function uploadProductImageToSupabase(file, productId, role, index = 0) {
             if (!file) return "";
-            const safeName = cleanStorageFileName(getBrowserImagePath(file.name));
+            const uploadFile = await prepareImageFileForUpload(file);
+            const safeName = cleanStorageFileName(getBrowserImagePath(uploadFile.name));
             const prefix = role === 'main' ? 'main' : `extra-${index}`;
             const storagePath = `products/${productId}/${prefix}-${Date.now()}-${safeName}`;
             const uploadUrl = `${SUPABASE_PROJECT_URL}/storage/v1/object/${SUPABASE_PRODUCT_BUCKET}/${encodeStoragePath(storagePath)}`;
@@ -1566,9 +1601,9 @@
                     apikey: SUPABASE_PUBLIC_KEY,
                     Authorization: `Bearer ${SUPABASE_PUBLIC_KEY}`,
                     'cache-control': '31536000',
-                    'content-type': file.type || 'application/octet-stream'
+                    'content-type': uploadFile.type || 'application/octet-stream'
                 },
-                body: file
+                body: uploadFile
             });
 
             if (!response.ok) {
