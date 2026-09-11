@@ -1420,6 +1420,29 @@
             return mainFile.url;
         }
 
+        function needsImageRestore(product) {
+            if (!product) return false;
+            const image = String(product.image || '').trim();
+            if (!image) return true;
+            if (/^data:image\/svg\+xml/i.test(image) && image.includes('התמונה%20חסרה')) return true;
+            if (/^https?:\/\/via\.placeholder\.com/i.test(image)) return true;
+            return !/^https?:/i.test(image);
+        }
+
+        async function restoreMissingProductImagesFromSupabase() {
+            if (!Array.isArray(catalog.products)) return 0;
+            let restoredCount = 0;
+
+            for (const product of catalog.products) {
+                if (!needsImageRestore(product)) continue;
+                const restoredUrl = await restoreProductImagesFromSupabase(product).catch(() => null);
+                if (restoredUrl) restoredCount++;
+            }
+
+            if (restoredCount && isEditMode) saveCatalogToLocal();
+            return restoredCount;
+        }
+
         function rememberSessionImageFile(file, keys = []) {
             if (!file) return;
             const browserFileName = getBrowserImagePath(file.name);
@@ -1769,7 +1792,7 @@
         window.addEventListener('DOMContentLoaded', async () => {
             try {
                 await loadProductsDataScript();
-                initApp();
+                await initApp();
 
                 // מאזין למקש Escape לסגירת כלל המודלים והלייטבוקס
                 window.addEventListener('keydown', (e) => {
@@ -1788,7 +1811,7 @@
 
 
 
-        function initApp() {
+        async function initApp() {
             try {
                 // זיהוי סביבה - האם רצים מקומית או בשרת
                 const isLocal = window.location.protocol === 'file:' || 
@@ -1821,6 +1844,7 @@
 
                 // 4. רינדור ה-UI בהתאם למצב
                 loadSiteContent();
+                if (isEditMode) await restoreMissingProductImagesFromSupabase();
                 applyModeUI();
                 renderCatalog();
                 renderSiteSections();
