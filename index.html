@@ -1332,6 +1332,8 @@
         const SUPABASE_PROJECT_URL = "https://jtciejevxpemlykmxfvc.supabase.co";
         const SUPABASE_PUBLIC_KEY = "sb_publishable_y-8_gt1Yx7c36DoFMXy_qg_M3TY1BsD";
         const SUPABASE_PRODUCT_BUCKET = "product-images";
+        let supabaseProductFolderCache = null;
+        const supabaseFileLookupCache = new Map();
         
         // מפה לשמירת ObjectURL זמניים לקבצים שנטענו בסשן הנוכחי לצורך תצוגה מקדימה מיידית
         const sessionImageUrls = {}; 
@@ -1406,10 +1408,65 @@
                 }));
         }
 
+        async function listSupabaseProductFolders() {
+            if (supabaseProductFolderCache) return supabaseProductFolderCache;
+            const response = await fetch(`${SUPABASE_PROJECT_URL}/storage/v1/object/list/${SUPABASE_PRODUCT_BUCKET}`, {
+                method: 'POST',
+                headers: {
+                    apikey: SUPABASE_PUBLIC_KEY,
+                    Authorization: `Bearer ${SUPABASE_PUBLIC_KEY}`,
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    prefix: 'products',
+                    limit: 1000,
+                    offset: 0,
+                    sortBy: { column: 'name', order: 'asc' }
+                })
+            });
+
+            if (!response.ok) return [];
+            const folders = await response.json().catch(() => []);
+            supabaseProductFolderCache = Array.isArray(folders)
+                ? folders.filter(item => item && item.name && !item.id).map(item => item.name)
+                : [];
+            return supabaseProductFolderCache;
+        }
+
+        async function findSupabaseImageByFileName(fileName) {
+            const cleanFileName = getBrowserImagePath(fileName || '');
+            if (!cleanFileName) return null;
+            if (supabaseFileLookupCache.has(cleanFileName)) return supabaseFileLookupCache.get(cleanFileName);
+
+            const folders = await listSupabaseProductFolders();
+            for (const folder of folders) {
+                const files = await listSupabaseProductImages(folder);
+                const mainMatch = files.find(file => file.name.startsWith('main-') && getBrowserImagePath(file.name).endsWith(cleanFileName));
+                const anyMatch = mainMatch || files.find(file => getBrowserImagePath(file.name).endsWith(cleanFileName));
+                if (anyMatch) {
+                    supabaseFileLookupCache.set(cleanFileName, anyMatch.url);
+                    return anyMatch.url;
+                }
+            }
+
+            supabaseFileLookupCache.set(cleanFileName, null);
+            return null;
+        }
+
         async function restoreProductImagesFromSupabase(product) {
             if (!product || !product.id) return null;
             const files = await listSupabaseProductImages(product.id);
-            if (!files.length) return null;
+            if (!files.length) {
+                const byFileName = await findSupabaseImageByFileName(product.fileName || getImageFileNameFromPath(product.image));
+                if (byFileName) {
+                    product.image = byFileName;
+                    product.fileName = getImageFileNameFromPath(byFileName, product.fileName);
+                    if (!Array.isArray(product.images)) product.images = [];
+                    if (isEditMode) saveCatalogToLocal();
+                    return byFileName;
+                }
+                return null;
+            }
 
             const mainFile = files.find(file => file.name.startsWith('main-')) || files[0];
             const extraFiles = files.filter(file => file !== mainFile);
@@ -1424,7 +1481,7 @@
             if (!product) return false;
             const image = String(product.image || '').trim();
             if (!image) return true;
-            if (/^data:image\/svg\+xml/i.test(image) && image.includes('התמונה%20חסרה')) return true;
+            if (/^data:image\/svg\+xml/i.test(image)) return true;
             if (/^https?:\/\/via\.placeholder\.com/i.test(image)) return true;
             return !/^https?:/i.test(image);
         }
@@ -3168,7 +3225,7 @@
             renderCatalog();
         }
 
-        function handleMultipleProductFilesImport(event) {
+        async function handleMultipleProductFilesImport(event) {
             const input = event.target;
             const imageFiles = Array.from(input.files || []).filter(isSupportedImageFile);
             input.value = "";
@@ -3192,21 +3249,39 @@
 
             let addedCount = 0;
             const baseId = Date.now();
-            imageFiles.forEach((file, index) => {
+            const loadingModal = document.getElementById('loading-modal');
+            const loadingProgress = document.getElementById('loading-progress');
+            const loadingBar = document.getElementById('loading-bar');
+            if (loadingModal) loadingModal.classList.remove('hidden');
+
+            for (let index = 0; index < imageFiles.length; index++) {
+                const file = imageFiles[index];
+                const productId = baseId + index;
+                if (loadingProgress) loadingProgress.innerText = `מעלה תמונות לענן (${index + 1} / ${imageFiles.length})`;
+                if (loadingBar) loadingBar.style.width = `${Math.round(((index + 1) / imageFiles.length) * 100)}%`;
+
                 const objectUrl = URL.createObjectURL(file);
                 const browserFileName = getBrowserImagePath(file.name);
                 sessionImageUrls[file.name] = objectUrl;
                 sessionImageUrls[browserFileName] = objectUrl;
 
                 const existingProduct = (catalog.products || []).find(p => p.fileName === browserFileName && p.category === category);
-                if (existingProduct) return;
+                if (existingProduct) continue;
 
                 const productName = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
                 const dimensions = getDefaultDimensionsForCategory(category);
-                const imagePath = getProductImagePath(browserFileName, category);
+                let imagePath = "";
+                try {
+                    imagePath = await uploadProductImageToSupabase(file, productId, 'main');
+                } catch (error) {
+                    console.error("שגיאה בהעלאת מוצר בכמות ל-Supabase:", error);
+                    if (loadingModal) loadingModal.classList.add('hidden');
+                    alert(`התמונה "${file.name}" לא עלתה לענן.\nהמוצרים לא נשמרו עם קישורים מקומיים כדי לא ליצור תמונות חסרות.`);
+                    return;
+                }
                 rememberSessionImageFile(file, [imagePath]);
                 catalog.products.push({
-                    id: baseId + index,
+                    id: productId,
                     name: productName,
                     fileName: browserFileName,
                     price: String(category).includes('סימניות') ? "25" : "15",
@@ -3219,10 +3294,11 @@
                     images: []
                 });
                 addedCount++;
-            });
+            }
 
             saveCatalogToLocal();
             renderCatalog();
+            if (loadingModal) loadingModal.classList.add('hidden');
             alert(`נוספו ${addedCount} מוצרים חדשים.`);
         }
 
@@ -3577,7 +3653,7 @@
             const baseId = Date.now();
 
             // טעינת תמונות אחת-אחת כדי לא לתקוע את הדפדפן
-            function readNextFile(index) {
+            async function readNextFile(index) {
                 if (index >= imageFiles.length) {
                     saveCatalogToLocal();
                     renderCatalog();
@@ -3606,26 +3682,45 @@
                 // בדיקה האם המוצר כבר קיים לפי שם הקובץ ומזהה הקטגוריה/תיקייה (מניעת כפילויות)
                 const existingProduct = catalog.products.find(p => (p.fileName === file.name || p.fileName === browserFileName) && p.category === folderName);
                 
-                // נתיב הקובץ היחסי שיישמר ב-JSON
-                const importPath = file.webkitRelativePath || file.name;
-                const relativePath = getProductImagePath(pathPrefix + importPath, folderName);
-                rememberSessionImageFile(file, [relativePath]);
-
                 if (existingProduct) {
+                    let cloudImage = "";
+                    try {
+                        cloudImage = await uploadProductImageToSupabase(file, existingProduct.id, 'main');
+                    } catch (error) {
+                        console.error("שגיאה בהעלאת תמונה מייבוא תיקייה ל-Supabase:", error);
+                        loadingModal.classList.add('hidden');
+                        alert(`התמונה "${file.name}" לא עלתה לענן.\nהייבוא נעצר כדי לא ליצור תמונות חסרות.`);
+                        return;
+                    }
                     existingProduct.fileName = browserFileName;
-                    existingProduct.image = relativePath;
+                    existingProduct.image = cloudImage;
+                    rememberSessionImageFile(file, [cloudImage]);
                     updatedCount++;
                 } else {
                     const productName = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
+                    const productId = baseId + index;
+                    let cloudImage = "";
+                    try {
+                        cloudImage = await uploadProductImageToSupabase(file, productId, 'main');
+                    } catch (error) {
+                        console.error("שגיאה בהעלאת תמונה מייבוא תיקייה ל-Supabase:", error);
+                        loadingModal.classList.add('hidden');
+                        alert(`התמונה "${file.name}" לא עלתה לענן.\nהייבוא נעצר כדי לא ליצור תמונות חסרות.`);
+                        return;
+                    }
+                    rememberSessionImageFile(file, [cloudImage]);
                     const newProduct = {
-                        id: baseId + index,
+                        id: productId,
                         name: productName,
                         fileName: browserFileName,
-                        price: "15", // ברירת מחדל
+                        price: String(folderName).includes('סימניות') ? "25" : "15",
                         category: folderName,
                         theme: "",
                         desc: "",
-                        image: relativePath
+                        image: cloudImage,
+                        status: "available",
+                        dimensions: getDefaultDimensionsForCategory(folderName),
+                        images: []
                     };
                     catalog.products.push(newProduct);
                     addedCount++;
