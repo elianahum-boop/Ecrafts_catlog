@@ -1486,6 +1486,23 @@
             return !/^https?:/i.test(image);
         }
 
+        function getJsProductForLocalProduct(product) {
+            if (!product || !window.catalogData || !Array.isArray(window.catalogData.products)) return null;
+            const byId = window.catalogData.products.find(jsProduct => String(jsProduct.id) === String(product.id));
+            if (byId) return byId;
+
+            const productName = cleanFilterValue(product.name);
+            const productCategory = cleanFilterValue(product.category);
+            if (!productName || !productCategory) return null;
+
+            return window.catalogData.products.find(jsProduct =>
+                cleanFilterValue(jsProduct.name) === productName &&
+                cleanFilterValue(jsProduct.category) === productCategory &&
+                jsProduct.image &&
+                /^https?:/i.test(jsProduct.image)
+            ) || null;
+        }
+
         async function restoreMissingProductImagesFromSupabase() {
             if (!Array.isArray(catalog.products)) return 0;
             let restoredCount = 0;
@@ -1731,6 +1748,10 @@
             if (sessionImageUrls[product.fileName]) return sessionImageUrls[product.fileName];
             const browserFileName = getBrowserImagePath(product.fileName || '');
             if (browserFileName && sessionImageUrls[browserFileName]) return sessionImageUrls[browserFileName];
+            if (needsImageRestore(product)) {
+                const jsProduct = getJsProductForLocalProduct(product);
+                if (jsProduct && jsProduct.image && /^https?:/i.test(jsProduct.image)) return jsProduct.image;
+            }
             const images = getProductImages(product);
             return images[0] || `https://via.placeholder.com/${size}?text=No+Image`;
         }
@@ -2235,14 +2256,13 @@
 
         function repairLocalProductImageUrlsFromJsData() {
             if (!window.catalogData || !Array.isArray(window.catalogData.products) || !Array.isArray(catalog.products)) return false;
-            const jsProductsById = new Map(window.catalogData.products.map(product => [product.id, product]));
             let changed = false;
 
             catalog.products.forEach(product => {
-                const jsProduct = jsProductsById.get(product.id);
+                const jsProduct = getJsProductForLocalProduct(product);
                 if (!jsProduct) return;
 
-                if (product.image && !/^https?:/i.test(product.image) && jsProduct.image && /^https?:/i.test(jsProduct.image)) {
+                if (needsImageRestore(product) && jsProduct.image && /^https?:/i.test(jsProduct.image)) {
                     product.image = jsProduct.image;
                     changed = true;
                 }
