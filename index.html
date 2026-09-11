@@ -1378,6 +1378,48 @@
             return `${SUPABASE_PROJECT_URL}/storage/v1/object/public/${SUPABASE_PRODUCT_BUCKET}/${encodeStoragePath(storagePath)}`;
         }
 
+        async function listSupabaseProductImages(productId) {
+            const response = await fetch(`${SUPABASE_PROJECT_URL}/storage/v1/object/list/${SUPABASE_PRODUCT_BUCKET}`, {
+                method: 'POST',
+                headers: {
+                    apikey: SUPABASE_PUBLIC_KEY,
+                    Authorization: `Bearer ${SUPABASE_PUBLIC_KEY}`,
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    prefix: `products/${productId}`,
+                    limit: 100,
+                    offset: 0,
+                    sortBy: { column: 'name', order: 'asc' }
+                })
+            });
+
+            if (!response.ok) return [];
+            const files = await response.json().catch(() => []);
+            if (!Array.isArray(files)) return [];
+
+            return files
+                .filter(file => file && file.name && !file.name.endsWith('/'))
+                .map(file => ({
+                    name: file.name,
+                    url: getSupabasePublicUrl(`products/${productId}/${file.name}`)
+                }));
+        }
+
+        async function restoreProductImagesFromSupabase(product) {
+            if (!product || !product.id) return null;
+            const files = await listSupabaseProductImages(product.id);
+            if (!files.length) return null;
+
+            const mainFile = files.find(file => file.name.startsWith('main-')) || files[0];
+            const extraFiles = files.filter(file => file !== mainFile);
+            product.image = mainFile.url;
+            product.fileName = getImageFileNameFromPath(mainFile.name, product.fileName);
+            product.images = extraFiles.map(file => file.url);
+            if (isEditMode) saveCatalogToLocal();
+            return mainFile.url;
+        }
+
         function rememberSessionImageFile(file, keys = []) {
             if (!file) return;
             const browserFileName = getBrowserImagePath(file.name);
@@ -1465,7 +1507,7 @@
             delete img.dataset.fallbackPath;
         }
 
-        function tryProductImageFallback(img, id, sourcePath = '') {
+        async function tryProductImageFallback(img, id, sourcePath = '') {
             const product = (catalog.products || []).find(p => p.id === id);
             if (!product || !img.dataset.allowImageFallback) {
                 img.onerror = null;
@@ -1488,6 +1530,19 @@
             }
 
             delete img.dataset.fallbackPath;
+
+            if (!img.dataset.supabaseRestoreChecked) {
+                img.dataset.supabaseRestoreChecked = 'true';
+                const restoredUrl = await restoreProductImagesFromSupabase(product).catch(() => null);
+                if (restoredUrl) {
+                    img.dataset.fallbackIndex = '0';
+                    img.dataset.imagePath = restoredUrl;
+                    if (img.dataset.mainImage === 'true') img.dataset.fallbackPath = restoredUrl;
+                    img.src = restoredUrl;
+                    return;
+                }
+            }
+
             img.onerror = null;
             handleBrokenImage(id, img);
         }
