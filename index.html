@@ -1528,6 +1528,13 @@
                 .replace(/ארקיל/g, 'UV RESIN');
         }
 
+        function cleanFilterValue(value) {
+            return String(value || '')
+                .replace(/[\u200e\u200f\u202a-\u202e]/g, '')
+                .replace(/\s+/g, ' ')
+                .trim();
+        }
+
         function normalizeStatus(status) {
             if (status === 'sold' || status === 'unavailable' || status === 'out_of_stock') return 'made_to_order';
             if (status === 'made_to_order') return 'made_to_order';
@@ -2738,26 +2745,28 @@
             syncSelectedProductsWithCatalog();
             updateAdminBulkActions();
 
-            const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+            const searchQuery = cleanFilterValue(document.getElementById('search-input').value).toLowerCase();
+            const activeCategoryKey = cleanFilterValue(activeCategory);
+            const activeThemeKey = cleanFilterValue(activeTheme);
             let filtered = catalog.products || [];
 
             // סינון סוג מוצר
-            if (activeCategory !== "הכל") {
-                filtered = filtered.filter(p => p.category === activeCategory);
+            if (activeCategoryKey !== "הכל") {
+                filtered = filtered.filter(p => cleanFilterValue(p.category) === activeCategoryKey);
             }
 
             // סינון נושא
-            if (activeTheme !== "הכל") {
-                filtered = filtered.filter(p => (p.theme || '').trim() === activeTheme);
+            if (activeThemeKey !== "הכל") {
+                filtered = filtered.filter(p => cleanFilterValue(p.theme) === activeThemeKey);
             }
 
             // סינון חיפוש
             if (searchQuery) {
                 filtered = filtered.filter(p => 
-                    (p.name && p.name.toLowerCase().includes(searchQuery)) || 
-                    (p.desc && p.desc.toLowerCase().includes(searchQuery)) ||
-                    (p.category && p.category.toLowerCase().includes(searchQuery)) ||
-                    (p.theme && p.theme.toLowerCase().includes(searchQuery))
+                    cleanFilterValue(p.name).toLowerCase().includes(searchQuery) || 
+                    cleanFilterValue(p.desc).toLowerCase().includes(searchQuery) ||
+                    cleanFilterValue(p.category).toLowerCase().includes(searchQuery) ||
+                    cleanFilterValue(p.theme).toLowerCase().includes(searchQuery)
                 );
             }
 
@@ -2874,20 +2883,19 @@
             const container = document.getElementById('category-tabs');
             if (!container) return;
 
-            const categories = new Set();
-            categories.add("הכל");
+            const categories = new Set(["הכל"]);
             
             (catalog.products || []).forEach(p => {
-                if (p.category && p.category.trim()) {
-                    categories.add(p.category.trim());
-                }
+                const category = cleanFilterValue(p.category);
+                if (category) categories.add(category);
             });
 
             container.innerHTML = '';
+            const activeCategoryKey = cleanFilterValue(activeCategory);
             
             categories.forEach(cat => {
                 const btn = document.createElement('button');
-                const isActive = activeCategory === cat;
+                const isActive = activeCategoryKey === cat;
                 
                 btn.className = isActive 
                     ? 'bg-[#ee5253] text-white px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all shadow-sm'
@@ -2909,16 +2917,16 @@
 
             const themes = new Set(["הכל"]);
             (catalog.products || []).forEach(p => {
-                if (p.theme && p.theme.trim()) {
-                    themes.add(p.theme.trim());
-                }
+                const theme = cleanFilterValue(p.theme);
+                if (theme) themes.add(theme);
             });
 
             container.innerHTML = '';
+            const activeThemeKey = cleanFilterValue(activeTheme);
 
             themes.forEach(theme => {
                 const btn = document.createElement('button');
-                const isActive = activeTheme === theme;
+                const isActive = activeThemeKey === theme;
 
                 btn.className = isActive
                     ? 'bg-[#86d7df] text-[#1f565b] px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all shadow-sm'
@@ -3331,6 +3339,7 @@
             let finalImage = imageUrlInput || "";
             let finalFileName = "";
             const productId = idVal ? parseInt(idVal) : Date.now();
+            const oldProduct = idVal ? catalog.products.find(p => p.id === productId) : null;
 
             if (fileInput.files.length > 0) {
                 const file = fileInput.files[0];
@@ -3345,9 +3354,10 @@
                 }
             } else if (idVal) {
                 // שומרים את הערכים הקודמים של התמונה
-                const oldProduct = catalog.products.find(p => p.id === productId);
                 if (oldProduct) {
-                    finalImage = mainProductImageRemoved ? "" : getProductImagePath(imageUrlInput || oldProduct.image, oldProduct.category || category);
+                    finalImage = mainProductImageRemoved
+                        ? ""
+                        : (imageUrlInput ? getProductImagePath(imageUrlInput, category) : oldProduct.image || "");
                     finalFileName = mainProductImageRemoved ? "" : getBrowserImagePath(oldProduct.fileName);
                 }
             }
