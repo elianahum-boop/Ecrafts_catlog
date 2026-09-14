@@ -6,13 +6,18 @@ window.catalogData = {
     {
       "id": 1,
       "name": "קלסיפר - הטירה הנעה",
-      "fileName": "Slide1.PNG",
+      "fileName": "main-Slide1.PNG",
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין הנמר אדומה",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1/main-Slide1.PNG",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "",
+        "width": "",
+        "thickness": "",
+        "diameter": ""
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -988,14 +993,16 @@ window.catalogData = {
       "id": 71,
       "name": "סימנייה 24",
       "fileName": "Slide24.PNG",
-      "price": "25",
-      "category": "סימניות",
-      "desc": "",
+      "price": "15",
+      "category": "סימניות אקריל",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/71/main-Slide24.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1068,14 +1075,16 @@ window.catalogData = {
       "id": 76,
       "name": "רם - רי זירו",
       "fileName": "Slide29.PNG",
-      "price": "25",
-      "category": "סימניות",
-      "desc": "סימניית UV RESIN",
+      "price": "15",
+      "category": "סימניות אקריל",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/76/main-Slide29.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1084,14 +1093,16 @@ window.catalogData = {
       "id": 77,
       "name": "רם - רי זירו",
       "fileName": "Slide30.PNG",
-      "price": "25",
-      "category": "סימניות",
-      "desc": "סימניית UV RESIN",
+      "price": "10",
+      "category": "סימניות אקריל",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/77/main-Slide30.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1372,14 +1383,16 @@ window.catalogData = {
       "id": 95,
       "name": "סבסטיאן - המשרת השחור",
       "fileName": "Slide48.PNG",
-      "price": "25",
-      "category": "סימניות",
-      "desc": "סימניית UV RESIN",
+      "price": "10",
+      "category": "סימניות אקריל",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/95/main-Slide48.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1388,14 +1401,16 @@ window.catalogData = {
       "id": 96,
       "name": "סבסטיאן - המשרת השחור",
       "fileName": "Slide49.PNG",
-      "price": "25",
-      "category": "סימניות",
-      "desc": "סימניית UV RESIN",
+      "price": "15",
+      "category": "סימניות אקריל",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/96/main-Slide49.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1516,14 +1531,16 @@ window.catalogData = {
       "id": 104,
       "name": "נאזונה - קריאת הלילה",
       "fileName": "Slide57.PNG",
-      "price": "25",
-      "category": "סימניות",
-      "desc": "סימניית UV RESIN",
+      "price": "10",
+      "category": "סימניות אקריל",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/104/main-Slide57.PNG",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1799,7 +1816,7 @@ window.catalogData = {
       "name": "פרח 1",
       "fileName": "20260826_235817.jpg",
       "price": "25",
-      "category": "סימניות",
+      "category": "סימניות פרחים",
       "theme": "פרחים",
       "desc": "סימניית UV RESIN המכילה פרחים",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787815039713/main-20260826_235817.jpg",
@@ -1862,9 +1879,9 @@ window.catalogData = {
       "name": "Cyberpunk",
       "fileName": "20260826_230048.jpg",
       "price": "15",
-      "category": "סימניות",
+      "category": "סימניות אקריל",
       "theme": "אנימה",
-      "desc": "סימניית UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078123/main-20260826_230048.jpg",
       "status": "available",
       "dimensions": {
@@ -1882,9 +1899,9 @@ window.catalogData = {
       "name": "קלסיפר - הטירה הנעה",
       "fileName": "20260826_230441.jpg",
       "price": "15",
-      "category": "סימניות",
+      "category": "סימניות אקריל",
       "theme": "אנימה",
-      "desc": "סימניית UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078124/main-20260826_230441.jpg",
       "status": "available",
       "dimensions": {
@@ -1902,9 +1919,9 @@ window.catalogData = {
       "name": "שרלוט",
       "fileName": "20260826_232000.jpg",
       "price": "15",
-      "category": "סימניות",
+      "category": "סימניות אקריל",
       "theme": "אנימה",
-      "desc": "מחזיק UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078125/main-20260826_232000.jpg",
       "status": "available",
       "dimensions": {
@@ -1922,10 +1939,10 @@ window.catalogData = {
       "id": 1787822078126,
       "name": "nier automata",
       "fileName": "Screenshot_20260827_121151_Gallery.jpg",
-      "price": "25",
-      "category": "סימניות",
+      "price": "15",
+      "category": "סימניות אקריל",
       "theme": "אנימה",
-      "desc": "סימניית UV RESIN",
+      "desc": "סימניות אקריל",
       "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078126/main-Screenshot_20260827_121151_Gallery.jpg",
       "status": "available",
       "dimensions": {
@@ -2406,7 +2423,7 @@ window.catalogData = {
       "id": 1787822619352,
       "name": "חתול",
       "fileName": "20260826_234627.jpg",
-      "price": "25",
+      "price": "15",
       "category": "סימניות אקריל",
       "theme": "טבע",
       "desc": "סימניות אקריל",
@@ -2463,6 +2480,94 @@ window.catalogData = {
       "images": [
         "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619354/extra-1-20260826_234842.jpg",
         "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619354/extra-2-20260826_234851.jpg"
+      ]
+    },
+    {
+      "id": 1789124796196,
+      "name": "דוקטור הו",
+      "fileName": "main-1789130708852-20260911_132456.jpg",
+      "price": "25",
+      "category": "סימניות זוהרות",
+      "theme": "סדרות",
+      "desc": "סימניית UV RESIN זוהרת בחושך",
+      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796196/main-1789130708852-20260911_132456.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796196/extra-1-1789130719383-20260911_131019.jpg",
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796196/extra-2-1789130735701-20260911_132415.jpg",
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796196/extra-3-1789130752222-20260911_133833.jpg"
+      ]
+    },
+    {
+      "id": 1789124796197,
+      "name": "דקסטר",
+      "fileName": "main-1789130781630-20260911_130518.jpg",
+      "price": "25",
+      "category": "סימניות זוהרות",
+      "theme": "סדרות",
+      "desc": "סימניית UV RESIN זוהרת בחושך",
+      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796197/main-1789130781630-20260911_130518.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796197/extra-1-1789130788805-20260911_130733.jpg",
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796197/extra-2-1789130804424-20260911_132157.jpg",
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796197/extra-3-1789130823240-20260911_132305.jpg"
+      ]
+    },
+    {
+      "id": 1789124796198,
+      "name": "תמנון",
+      "fileName": "main-1789130878001-20260911_132615.jpg",
+      "price": "25",
+      "category": "סימניות זוהרות",
+      "theme": "סדרות",
+      "desc": "סימניית UV RESIN זוהרת בחושך",
+      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796198/main-1789130878001-20260911_132615.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796198/extra-1-1789130888458-20260911_131112.jpg",
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796198/extra-2-1789130902593-20260911_132533.jpg",
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796198/extra-3-1789130939565-20260911_133816.jpg"
+      ]
+    },
+    {
+      "id": 1789124796199,
+      "name": "רוקי - פרויקט הייל מרי",
+      "fileName": "main-1789131006315-20260911_130609.jpg",
+      "price": "25",
+      "category": "סימניות זוהרות",
+      "theme": "סדרות",
+      "desc": "סימניית UV RESIN זוהרת בחושך",
+      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796199/main-1789131006315-20260911_130609.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "15",
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796199/extra-1-1789131021112-20260911_131041.jpg",
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796199/extra-2-1789131037994-20260911_131648.jpg",
+        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796199/extra-3-1789131053098-20260911_132255.jpg"
       ]
     }
   ],
