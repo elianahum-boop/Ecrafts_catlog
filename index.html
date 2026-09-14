@@ -513,6 +513,11 @@
                             <span>בחר כמה תמונות</span>
                             <input type="file" id="admin-multi-product-input" multiple accept="image/png,image/jpeg,image/jpg,image/webp,image/gif,image/heic,image/heif,.heic,.heif" class="hidden">
                         </label>
+                        <label class="flex-grow md:flex-grow-0 flex items-center justify-center gap-2 bg-amber-100 hover:bg-amber-200 text-[#733238] text-sm font-bold py-2 px-4 rounded-xl border border-amber-300/70 cursor-pointer transition-colors" title="בחרי שוב תמונות מהמחשב עבור מוצרים שמופיעים עם תמונה חסרה">
+                            <i data-lucide="image-up" class="w-4 h-4"></i>
+                            <span>תקן תמונות חסרות</span>
+                            <input type="file" id="admin-repair-images-input" multiple accept="image/png,image/jpeg,image/jpg,image/webp,image/gif,image/heic,image/heif,.heic,.heif" class="hidden">
+                        </label>
                         <button onclick="openAddProductModal()" class="flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium py-2 px-4 rounded-xl border border-zinc-700 transition-colors">
                             <i data-lucide="plus" class="w-4 h-4 text-emerald-500"></i>
                             <span>הוסף מוצר בודד</span>
@@ -1003,7 +1008,7 @@
                 <button onclick="closeProductModal()" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-medium py-2 px-4 rounded-xl text-sm transition-colors">
                     ביטול
                 </button>
-                <button onclick="saveProduct()" class="bg-brand-600 hover:bg-brand-700 text-white font-medium py-2 px-4 rounded-xl text-sm shadow-lg shadow-brand-600/10 transition-colors">
+                <button id="modal-save-product-btn" type="button" onclick="saveProduct()" class="bg-brand-600 hover:bg-brand-700 text-white font-medium py-2 px-4 rounded-xl text-sm shadow-lg shadow-brand-600/10 transition-colors">
                     שמור מוצר
                 </button>
             </div>
@@ -1416,7 +1421,20 @@
             const mimeType = String(file?.mimeType || '').toLowerCase();
             if (name.endsWith('.heic') || name.endsWith('.heif')) return false;
             if (mimeType === 'image/heic' || mimeType === 'image/heif') return false;
+            if (mimeType && !mimeType.startsWith('image/')) return false;
             return mimeType.startsWith('image/') || /\.(png|jpe?g|webp|gif|bmp|svg)$/i.test(name);
+        }
+
+        async function isBrokenSupabaseImageUrl(url) {
+            const imageUrl = String(url || '').trim();
+            if (!imageUrl.startsWith(`${SUPABASE_PROJECT_URL}/storage/v1/object/public/${SUPABASE_PRODUCT_BUCKET}/`)) return false;
+            try {
+                const response = await fetch(imageUrl, { method: 'HEAD' });
+                const mimeType = String(response.headers.get('content-type') || '').toLowerCase();
+                return !response.ok || (mimeType && !mimeType.startsWith('image/'));
+            } catch (error) {
+                return true;
+            }
         }
 
         async function listSupabaseProductFolders() {
@@ -1572,20 +1590,54 @@
             return HEIC_IMAGE_EXTENSION.test(file.name || '') || /image\/hei(c|f)/i.test(file.type || '');
         }
 
+        async function fileLooksLikeHeic(file) {
+            if (!file) return false;
+            if (isHeicImageFile(file)) return true;
+            const header = new Uint8Array(await file.slice(0, 16).arrayBuffer());
+            const signature = Array.from(header.slice(4, 12)).map(byte => String.fromCharCode(byte)).join('');
+            return signature.startsWith('ftyphei') || signature.startsWith('ftypmif');
+        }
+
+        function withTimeout(promise, ms, message) {
+            let timerId;
+            const timeout = new Promise((_, reject) => {
+                timerId = setTimeout(() => reject(new Error(message)), ms);
+            });
+            return Promise.race([promise, timeout]).finally(() => clearTimeout(timerId));
+        }
+
         async function prepareImageFileForUpload(file) {
-            if (!isHeicImageFile(file)) return file;
+            if (!(await fileLooksLikeHeic(file))) return file;
             if (typeof heic2any !== 'function') {
-                throw new Error('HEIC conversion library is not available');
+                throw new Error("העמוד לא הצליח לטעון את ממיר ה-HEIC. צריך חיבור אינטרנט פעיל ואז לרענן את עמוד המנהל.");
             }
 
-            const converted = await heic2any({
-                blob: file,
-                toType: 'image/jpeg',
-                quality: 0.92
-            });
-            const blob = Array.isArray(converted) ? converted[0] : converted;
-            const jpegName = getBrowserImagePath(file.name).replace(/\.(heic|heif)$/i, '.jpg');
-            return new File([blob], jpegName, { type: 'image/jpeg', lastModified: Date.now() });
+            try {
+                const heicBlob = new Blob([file], { type: 'image/heic' });
+                const converted = await withTimeout(heic2any({
+                    blob: heicBlob,
+                    toType: 'image/jpeg',
+                    quality: 0.92
+                }), 45000, `המרת HEIC של "${file.name}" לוקחת יותר מדי זמן.`);
+                const blob = Array.isArray(converted) ? converted[0] : converted;
+                const jpegName = getBrowserImagePath(file.name).replace(/\.(heic|heif)$/i, '.jpg');
+                return new File([blob], jpegName, { type: 'image/jpeg', lastModified: Date.now() });
+            } catch (error) {
+                console.error("HEIC conversion failed:", error);
+                try {
+                    const converted = await withTimeout(heic2any({
+                        blob: file,
+                        toType: 'image/jpeg',
+                        quality: 0.92
+                    }), 45000, `המרת HEIC של "${file.name}" לוקחת יותר מדי זמן.`);
+                    const blob = Array.isArray(converted) ? converted[0] : converted;
+                    const jpegName = getBrowserImagePath(file.name).replace(/\.(heic|heif)$/i, '.jpg');
+                    return new File([blob], jpegName, { type: 'image/jpeg', lastModified: Date.now() });
+                } catch (fallbackError) {
+                    console.error("HEIC fallback conversion failed:", fallbackError);
+                    throw new Error(`לא הצלחתי להמיר את "${file.name}" לקובץ תמונה שהאתר יודע להציג.`);
+                }
+            }
         }
 
         async function uploadProductImageToSupabase(file, productId, role, index = 0) {
@@ -1595,8 +1647,11 @@
             const prefix = role === 'main' ? 'main' : `extra-${index}`;
             const storagePath = `products/${productId}/${prefix}-${Date.now()}-${safeName}`;
             const uploadUrl = `${SUPABASE_PROJECT_URL}/storage/v1/object/${SUPABASE_PRODUCT_BUCKET}/${encodeStoragePath(storagePath)}`;
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 45000);
             const response = await fetch(uploadUrl, {
                 method: 'POST',
+                signal: controller.signal,
                 headers: {
                     apikey: SUPABASE_PUBLIC_KEY,
                     Authorization: `Bearer ${SUPABASE_PUBLIC_KEY}`,
@@ -1604,7 +1659,7 @@
                     'content-type': uploadFile.type || 'application/octet-stream'
                 },
                 body: uploadFile
-            });
+            }).finally(() => clearTimeout(timeoutId));
 
             if (!response.ok) {
                 const message = await response.text().catch(() => '');
@@ -1618,6 +1673,11 @@
             const source = getBrowserImagePath(path || fallbackFileName || '');
             if (!source) return '';
             return String(source).replace(/\\/g, '/').split('/').pop();
+        }
+
+        function getImageBaseName(path, fallbackFileName = '') {
+            const fileName = getImageFileNameFromPath(path, fallbackFileName);
+            return cleanFilterValue(fileName.replace(/\.[^.]+$/, '')).toLowerCase();
         }
 
         function getProductImageCandidates(product, sourcePath = '') {
@@ -2018,6 +2078,11 @@
             const multiProductInput = document.getElementById('admin-multi-product-input');
             if (multiProductInput) {
                 multiProductInput.addEventListener('change', handleMultipleProductFilesImport);
+            }
+
+            const repairImagesInput = document.getElementById('admin-repair-images-input');
+            if (repairImagesInput) {
+                repairImagesInput.addEventListener('change', handleMissingProductImagesRepair);
             }
         }
 
@@ -3290,6 +3355,80 @@
             }
         }
 
+        async function handleMissingProductImagesRepair(event) {
+            const input = event.target;
+            const files = Array.from(input.files || []).filter(isSupportedImageFile);
+            input.value = "";
+            if (!files.length) return;
+
+            const selectedIds = new Set(selectedProductIds);
+            const candidates = (catalog.products || []).filter(product =>
+                needsImageRestore(product) &&
+                (!selectedIds.size || selectedIds.has(product.id))
+            );
+
+            if (!candidates.length) {
+                alert("לא נמצאו מוצרים עם תמונה חסרה לתיקון.");
+                return;
+            }
+
+            const fileByExactName = new Map();
+            const fileByBaseName = new Map();
+            files.forEach(file => {
+                const browserFileName = getBrowserImagePath(file.name);
+                fileByExactName.set(browserFileName.toLowerCase(), file);
+                fileByBaseName.set(getImageBaseName(browserFileName), file);
+            });
+
+            let fixedCount = 0;
+            const usedFiles = new Set();
+            const loadingModal = document.getElementById('loading-modal');
+            const loadingProgress = document.getElementById('loading-progress');
+            const loadingBar = document.getElementById('loading-bar');
+            if (loadingModal) loadingModal.classList.remove('hidden');
+
+            try {
+                for (let index = 0; index < candidates.length; index++) {
+                    const product = candidates[index];
+                    if (loadingProgress) loadingProgress.innerText = `מתקן תמונות חסרות (${index + 1} / ${candidates.length})`;
+                    if (loadingBar) loadingBar.style.width = `${Math.round(((index + 1) / candidates.length) * 100)}%`;
+
+                    const productFileName = getImageFileNameFromPath(product.image, product.fileName).toLowerCase();
+                    const productBaseName = getImageBaseName(product.image, product.fileName);
+                    let file = fileByExactName.get(productFileName) || fileByBaseName.get(productBaseName);
+
+                    if (!file && candidates.length === files.length) {
+                        file = files[index];
+                    }
+                    if (!file || usedFiles.has(file)) continue;
+
+                    const cloudUrl = await uploadProductImageToSupabase(file, product.id, 'main');
+                    product.image = cloudUrl;
+                    product.fileName = getBrowserImagePath(file.name);
+                    rememberSessionImageFile(file, [cloudUrl]);
+                    usedFiles.add(file);
+                    fixedCount++;
+                }
+            } catch (error) {
+                console.error("שגיאה בתיקון תמונות חסרות:", error);
+                alert("לא הצלחתי להעלות אחת מהתמונות לענן. נסי לבחור שוב את התמונות החסרות.");
+                return;
+            } finally {
+                if (loadingModal) loadingModal.classList.add('hidden');
+            }
+
+            if (fixedCount) {
+                saveCatalogToLocal();
+                renderCatalog();
+                renderSiteSections();
+            }
+
+            const remaining = candidates.length - fixedCount;
+            alert(remaining
+                ? `תוקנו ${fixedCount} תמונות. נשארו ${remaining} מוצרים שלא נמצאה להם התאמה.`
+                : `תוקנו ${fixedCount} תמונות חסרות.`);
+        }
+
         function moveProduct(id, direction) {
             const index = catalog.products.findIndex(p => p.id === id);
             if (index === -1) return;
@@ -3544,6 +3683,29 @@
 
         // שמירת מוצר בודד מהמודל
         async function saveProduct() {
+            const saveButton = document.getElementById('modal-save-product-btn');
+            const originalText = saveButton ? saveButton.innerText : "";
+            if (saveButton) {
+                saveButton.disabled = true;
+                saveButton.innerText = "שומר...";
+                saveButton.classList.add('opacity-70', 'cursor-wait');
+            }
+
+            try {
+                await saveProductInner();
+            } catch (error) {
+                console.error("שגיאה בשמירת מוצר:", error);
+                alert(`${error.message || "השמירה נכשלה."}\nהמוצר לא נשמר.`);
+            } finally {
+                if (saveButton) {
+                    saveButton.disabled = false;
+                    saveButton.innerText = originalText || "שמור מוצר";
+                    saveButton.classList.remove('opacity-70', 'cursor-wait');
+                }
+            }
+        }
+
+        async function saveProductInner() {
             const idVal = document.getElementById('modal-product-id').value;
             const name = document.getElementById('modal-name').value.trim();
             const price = document.getElementById('modal-price').value.trim() || "15";
@@ -3584,7 +3746,7 @@
                     finalImage = await uploadProductImageToSupabase(file, productId, 'main');
                 } catch (error) {
                     console.error("שגיאה בהעלאת תמונה ראשית ל-Supabase:", error);
-                    alert("התמונה הראשית לא עלתה לענן.\nצריך לוודא שב-Supabase יש הרשאת העלאה ל-bucket של התמונות.\nהמוצר לא נשמר כדי שלא יווצר קישור מקומי או שבור.");
+                    alert(`${error.message || "התמונה הראשית לא עלתה לענן."}\nהמוצר לא נשמר כדי שלא יווצר קישור מקומי או שבור.`);
                     return;
                 }
             } else if (idVal) {
@@ -3607,7 +3769,7 @@
                         uploadedExtraImages.push(await uploadProductImageToSupabase(extraFile, productId, 'extra', i + 1));
                     } catch (error) {
                         console.error("שגיאה בהעלאת תמונה נוספת ל-Supabase:", error);
-                        alert("אחת התמונות הנוספות לא עלתה לענן.\nהמוצר לא נשמר כדי שלא יווצר קישור מקומי או שבור.");
+                        alert(`${error.message || "אחת התמונות הנוספות לא עלתה לענן."}\nהמוצר לא נשמר כדי שלא יווצר קישור מקומי או שבור.`);
                         return;
                     }
                 } else {
