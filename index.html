@@ -947,7 +947,18 @@
                     <!-- סוג מוצר -->
                     <div>
                         <label class="block text-sm font-medium text-zinc-400 mb-1.5">סוג מוצר</label>
-                        <input type="text" id="modal-category" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500" placeholder="לדוגמה: מחזיקים">
+                        <input list="category-options" type="text" id="modal-category" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500" placeholder="לדוגמה: מחזיקים">
+                        <datalist id="category-options">
+                            <option value="מחזיקים"></option>
+                            <option value="סימניות"></option>
+                            <option value="סימניות עבות"></option>
+                            <option value="סימניות אקריל"></option>
+                            <option value="סימניות פרחים"></option>
+                            <option value="סימניות זוהרות"></option>
+                            <option value="ACEO / Art Cards"></option>
+                        </datalist>
+                        <div id="category-quick-options" class="flex flex-wrap gap-1.5 mt-2"></div>
+                        <p class="text-[10px] text-zinc-500 mt-1">אפשר לבחור מהרשימה או לכתוב סוג חדש.</p>
                     </div>
                 </div>
 
@@ -959,10 +970,12 @@
                         <option value="אנימה"></option>
                         <option value="פרחים"></option>
                         <option value="חיות"></option>
+                        <option value="סלמי"></option>
                         <option value="דמויות מקוריות"></option>
                         <option value="טבע"></option>
                         <option value="אחר"></option>
                     </datalist>
+                    <div id="theme-quick-options" class="flex flex-wrap gap-1.5 mt-2"></div>
                     <p class="text-[10px] text-zinc-500 mt-1">אופציונלי. אפשר לבחור מהרשימה או לכתוב נושא חדש.</p>
                 </div>
 
@@ -1347,6 +1360,8 @@
         let activeProductType = "הכל";
         let activeTheme = "הכל";
         let advancedFiltersOpen = false;
+        const defaultProductCategories = ["מחזיקים", "סימניות", "סימניות עבות", "סימניות אקריל", "סימניות פרחים", "סימניות זוהרות", "ACEO / Art Cards"];
+        const defaultProductThemes = ["אנימה", "פרחים", "חיות", "סלמי", "דמויות מקוריות", "טבע", "סדרות", "אחר"];
         let isEditMode = true; // האם אנחנו במצב עריכה כרגע
         let siteUpdates = [];
         let orders = [];
@@ -3183,6 +3198,7 @@
             renderCategoryTabs();
             renderSubcategoryTabs();
             renderThemeTabs();
+            renderProductFormOptions();
             updateAdvancedFiltersPanel();
             renderFeaturedProducts();
             lucide.createIcons();
@@ -3194,6 +3210,11 @@
             if (!container) return;
 
             const categories = new Set(["הכל"]);
+
+            defaultProductCategories.forEach(category => {
+                const productType = getProductTypeFromCategory(category);
+                if (productType) categories.add(productType);
+            });
             
             (catalog.products || []).forEach(p => {
                 const productType = getProductTypeFromCategory(p.category);
@@ -3230,6 +3251,68 @@
             return cleanCategory;
         }
 
+        function getAllProductCategories() {
+            const categories = new Set(defaultProductCategories);
+            (catalog.products || []).forEach(p => {
+                const category = cleanFilterValue(p.category);
+                if (category) categories.add(category);
+            });
+            return [...categories];
+        }
+
+        function getAllProductThemes() {
+            const themes = new Set(defaultProductThemes);
+            (catalog.products || []).forEach(p => {
+                const theme = cleanFilterValue(p.theme);
+                if (theme) themes.add(theme);
+            });
+            return [...themes];
+        }
+
+        function renderProductFormOptions() {
+            const renderQuickOptions = (containerId, inputId, values) => {
+                const container = document.getElementById(containerId);
+                const input = document.getElementById(inputId);
+                if (!container || !input) return;
+
+                container.innerHTML = '';
+                values.forEach(value => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'px-2.5 py-1 rounded-full bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-[10px] font-bold text-zinc-300 hover:text-white transition-colors';
+                    btn.innerText = value;
+                    btn.onclick = () => {
+                        input.value = value;
+                    };
+                    container.appendChild(btn);
+                });
+            };
+
+            const categoryOptions = document.getElementById('category-options');
+            const categoryValues = getAllProductCategories();
+            if (categoryOptions) {
+                categoryOptions.innerHTML = '';
+                categoryValues.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category;
+                    categoryOptions.appendChild(option);
+                });
+            }
+            renderQuickOptions('category-quick-options', 'modal-category', categoryValues);
+
+            const themeOptions = document.getElementById('theme-options');
+            const themeValues = getAllProductThemes();
+            if (themeOptions) {
+                themeOptions.innerHTML = '';
+                themeValues.forEach(theme => {
+                    const option = document.createElement('option');
+                    option.value = theme;
+                    themeOptions.appendChild(option);
+                });
+            }
+            renderQuickOptions('theme-quick-options', 'modal-theme', themeValues);
+        }
+
         function renderSubcategoryTabs() {
             const container = document.getElementById('subcategory-tabs');
             const block = document.getElementById('subcategory-filter-block');
@@ -3242,6 +3325,7 @@
                 const category = cleanFilterValue(p.category);
                 if (!category) return;
                 if (activeProductTypeKey !== 'הכל' && getProductTypeFromCategory(category) !== activeProductTypeKey) return;
+                if (category === getProductTypeFromCategory(category)) return;
                 subcategories.add(category);
             });
 
