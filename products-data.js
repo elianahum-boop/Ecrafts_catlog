@@ -10,7 +10,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין הנמר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1/main-Slide1.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063645/arbb29yex5erccmff66w.png",
       "status": "available",
       "dimensions": {
         "length": "",
@@ -28,7 +28,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי אבנים של קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/2/main-Slide2.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063647/p0mxf4qyyhijfsnhtml4.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -41,7 +41,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי ג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/3/main-Slide3.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063649/mb8stxgmgu4bowglqhtf.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -54,7 +54,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי מוס אגט",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/4/main-Slide4.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063650/erzhbuga8xdpxzv7jurk.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -67,7 +67,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ וורוד",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/5/main-Slide5.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063652/nrxwdlz3cnazyc6o7sv8.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -80,7 +80,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/6/main-Slide6.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063653/eb6r2ykjidg52beaqfc3.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -93,7 +93,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ כחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/7/main-Slide7.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063655/owabziopuafqophqixjz.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -106,7 +106,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי ג'ספר אדום וקוורץ וורוד",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/8/main-Slide8.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063656/lix8qnpkd23rwrvxcjwf.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -119,7 +119,7 @@ window.catalogData = {
       "price": "7.5",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/9/main-Slide9.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063657/hiagiffsed2fygehpaa1.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -132,7 +132,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי ג'ספר אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/10/main-Slide10.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063658/ud52jiism872voube1op.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -145,7 +145,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ ירוק וכחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/11/main-Slide11.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063660/lr5oqccvlhjex0arkupv.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -158,7 +158,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם שבבי עין הנמר אדומה וקוורץ וורד",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/12/main-Slide12.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063661/rpre8nmlye2blqisnyu5.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -171,7 +171,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN  מכיל שבבי ג'ספר אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/13/main-Slide13.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063662/ihiyuktvlpcwtyfdjvf8.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -184,7 +184,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/14/main-Slide14.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063666/zbcg4171ppli4ndpapsz.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -197,7 +197,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN הכמיל שבבי ג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/15/main-Slide15.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063668/fz326edzewgpavrtnyui.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -210,7 +210,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/16/main-Slide16.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063670/ofbd0t5npuchvtuzmnyt.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -220,12 +220,17 @@ window.catalogData = {
       "id": 17,
       "name": "יומני העתיד",
       "fileName": "Slide17.PNG",
-      "price": "15",
+      "price": "10",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין החתול וקוורץ וורד",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/17/main-Slide17.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063672/lxjllq47ppiab5l5pnip.png",
       "status": "available",
-      "dimensions": {},
+      "dimensions": {
+        "length": "",
+        "width": "",
+        "thickness": "",
+        "diameter": ""
+      },
       "images": [],
       "theme": "אנימה"
     },
@@ -236,7 +241,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם שבבי קוורץ",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/18/main-Slide18.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063673/pito5u1am6tjvk6w9zmn.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -249,7 +254,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/19/main-Slide19.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063676/lnqlh9l3yatsh73fjdsh.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -262,7 +267,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/20/main-Slide20.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063677/bnsee18pauzmg2ttugg6.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -275,7 +280,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ ירוק ולבן",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/21/main-Slide21.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063679/kdazt5ejrwq046tsecdo.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -288,7 +293,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין הנמר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/22/main-Slide22.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063683/ftdmd9x99bgoajvy1ykz.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -301,7 +306,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי עין הנמר אדומה וקוורץ כחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/23/main-Slide23.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063685/mijwe6x2y7beqwxbap8z.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -314,7 +319,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי מוס אגט וקוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/24/main-Slide24.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063687/m8ywsbqof9issakelox7.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -327,7 +332,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי מוס אקט ועין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/25/main-Slide25.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063690/ku4jzlhnfun8ofedar05.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -340,7 +345,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN המכיל שבבי קוורץ לבן וירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/26/main-Slide26.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063692/b56qzrptd6omha9odw4h.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -353,7 +358,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/27/main-Slide27.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063694/kuyyysafrh0a9b7okwu8.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -366,7 +371,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/28/main-Slide28.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063696/qoycd4bwrusjfhnpr007.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -379,7 +384,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/29/main-Slide29.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063697/y9iyv5jtjlbmbbvy3xfj.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -392,7 +397,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/30/main-Slide30.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063699/ylpbfeahrsl3e6apwpvg.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -405,7 +410,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/31/main-Slide31.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063701/uzge4permwyhvwftmiin.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -418,7 +423,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/32/main-Slide32.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063702/aqhjgn3fzxyv5p0xecvk.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -431,7 +436,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/33/main-Slide33.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063703/omvilwmlifulilklqpbb.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -444,7 +449,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/34/main-Slide34.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063705/pjienpr7fuf8qjpejvgq.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -457,7 +462,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/35/main-Slide35.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063706/e8o6dvopi05odpdymclx.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -470,7 +475,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/36/main-Slide36.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063708/tb9zebcnuee5n42wwezy.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -483,7 +488,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/37/main-Slide37.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063709/kyftkv2wwdynsej5zwy3.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -496,7 +501,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/38/main-Slide38.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063711/iecc1pqxfaf35bpuf4jw.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -509,7 +514,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/39/main-Slide39.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063713/eyh0mfolvwrhm8bixqqr.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -522,7 +527,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/40/main-Slide40.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063714/eooo1k7okmgn5njmsr7q.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -535,7 +540,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/41/main-Slide41.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063716/jsucj5c0vhosc3tw7reo.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -548,7 +553,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/42/main-Slide42.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063718/u45hqecbgt7w3qskprsf.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -561,7 +566,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/43/main-Slide43.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063720/ncfjvjb89i00d5ou0hpy.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -574,7 +579,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/44/main-Slide44.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063721/czbbvjviyxoecrxzrbk5.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -587,7 +592,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/45/main-Slide45.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063723/euvbjvrjzsptpkfznsmi.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -600,7 +605,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/46/main-Slide46.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063725/fohrlhjbv2cqkmufmjnj.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -613,7 +618,7 @@ window.catalogData = {
       "price": "15",
       "category": "מחזיקים",
       "desc": "מחזיק UV RESIN עם קוד ספוטיפי לשיר הפתיחה של הסדרה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/47/main-Slide47.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063726/edmu0fqm4sqonbgk7qo1.png",
       "status": "available",
       "dimensions": {},
       "images": [],
@@ -626,7 +631,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/48/main-Slide1.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063728/g06leto0vyyy9t7vvi3t.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -644,7 +649,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/49/main-Slide2.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063730/x3ac05yionhndyb1tofd.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -660,7 +665,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי מוס אגט",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/50/main-Slide3.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063731/du1hkclj50xyrvggcvut.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -676,11 +681,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי מוס אגט",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/51/main-Slide4.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063733/opl4yzx5xtou2ozkijpg.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -692,7 +699,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סמניית UV RESIN המכילה שבבי ג'ספר אדומה וקוורץ אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/52/main-Slide5.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063735/sji9hzgob1qojrjqdyei.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -708,11 +715,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי לאפיס וקוורץ כחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/53/main-Slide6.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063737/xkwlbn61olxrgprisytp.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -724,7 +733,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/54/main-Slide7.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063738/pzcdkyqugwb8iqgsszt3.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -740,7 +749,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי ג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/55/main-Slide8.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063740/oqz1fzvnpefpqo4eefzb.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -756,7 +765,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורד ועין הנמר ירוקה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/56/main-Slide9.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063741/dzpnwkscv47obbawc1wa.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -772,7 +781,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורוד ולבן",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/57/main-Slide10.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063743/awa06quqxilgnginl0mu.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -788,7 +797,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכיל שבבי לפיס וקוורץ כחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/58/main-Slide11.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063745/uwbaulv1tagivzzsq73g.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -804,11 +813,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ אדום וחום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/59/main-Slide12.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063747/u7jztsthma87l4hbtngr.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -820,7 +831,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורוד וחום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/60/main-Slide13.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063750/mbhl6rkvvlzclt86merx.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -836,7 +847,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/61/main-Slide14.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063752/aqac3f7kxx8r3smva3ah.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -852,11 +863,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN המכילה שבבי שרף עצים וקוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/62/main-Slide15.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063754/spdxmbtlkpqom9jadqgh.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -868,7 +881,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/63/main-Slide16.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063756/lfihw4vt8emp1n54sb5x.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -884,11 +897,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי ג'ספר אדום, לאפיס וקוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/64/main-Slide17.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063759/lpwj1krjdvq2mov7xied.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -900,11 +915,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין החתול וקוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/65/main-Slide18.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063761/rpfwmj0r3iiiti5pbowq.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -916,7 +933,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/66/main-Slide19.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063763/dhbqzl260iialpcz2755.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -932,7 +949,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ וורוד",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/67/main-Slide20.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063765/tvyapwjhirsvjcd19ylw.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -948,7 +965,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/68/main-Slide21.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063767/bxgraul8dsuaxhekfxjt.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -964,7 +981,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/69/main-Slide22.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063769/erk6y2xvhqfdwdfwngmn.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -980,11 +997,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין החתול וקוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/70/main-Slide23.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063771/upkixhkh8qbsswlfp8jj.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -996,7 +1015,7 @@ window.catalogData = {
       "price": "15",
       "category": "סימניות אקריל",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/71/main-Slide24.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063772/jwo9iddtjo1msyftzh0u.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1011,14 +1030,16 @@ window.catalogData = {
       "id": 72,
       "name": "דאזי - כלבי הספרות הנודדים",
       "fileName": "Slide25.PNG",
-      "price": "25",
+      "price": "20",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/72/main-Slide25.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063774/vfuavstsirky0hcvnyxa.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1030,11 +1051,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ ירוק וג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/73/main-Slide26.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063775/yuevi0ymalslmyqkclle.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1046,11 +1069,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה קוורץ לבן",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/74/main-Slide27.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063777/wplw8nj1cbtgshdq19qb.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1062,7 +1087,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ לבן",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/75/main-Slide28.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063778/jrk23sr805mrk42h2spm.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1078,7 +1103,7 @@ window.catalogData = {
       "price": "15",
       "category": "סימניות אקריל",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/76/main-Slide29.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063780/yyffv7ijl7nzc5wlnp4g.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1096,7 +1121,7 @@ window.catalogData = {
       "price": "10",
       "category": "סימניות אקריל",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/77/main-Slide30.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063781/xzikxbedmfgbixhumd0n.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1111,14 +1136,16 @@ window.catalogData = {
       "id": 78,
       "name": "רם - רי זירו",
       "fileName": "Slide31.PNG",
-      "price": "25",
+      "price": "10",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/78/main-Slide31.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063782/reqxeto6omerglgwvfwq.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1130,11 +1157,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/79/main-Slide32.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063784/nqtc7butjt0vmm3h6bvc.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1146,7 +1175,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה וקוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/80/main-Slide33.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063785/e5b9qiddyc1o988sni2i.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1162,7 +1191,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה קוורץ אדום וירוק ופרחים סגולים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/81/main-Slide34.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063786/bbgji4axapd5pfc8guzz.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1178,11 +1207,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ חום, עין החתול ופרחים סגולים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/82/main-Slide35.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063788/tgh1u8va9wrqnfi91vw5.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1194,11 +1225,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי ג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/83/main-Slide36.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063789/augwe2tyvoen64lxu2va.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1210,7 +1243,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה  שבבי עין הנמר אדומה וג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/84/main-Slide37.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063791/waazot40zouaspzp0yov.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1226,11 +1259,13 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/85/main-Slide38.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063793/wa2s5bzgd4829oqsmigo.png",
       "status": "available",
       "dimensions": {
         "length": "15",
-        "width": "3"
+        "width": "3",
+        "thickness": "",
+        "diameter": ""
       },
       "images": [],
       "theme": "אנימה"
@@ -1242,7 +1277,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/86/main-Slide39.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063795/mdxshga9omg6cskoiuxb.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1258,7 +1293,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/87/main-Slide40.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063796/jvj5lludllgfetbs0vcd.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1274,7 +1309,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה פרחים ושבבי מוס אגט",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/88/main-Slide41.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063798/hauqtfykb4diqiw56j1m.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1290,7 +1325,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/89/main-Slide42.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063799/tsatmpwwjwarzd3rzco1.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1306,7 +1341,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/90/main-Slide43.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063801/aoxrzqrp1f9qjcrpd0io.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1322,7 +1357,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ כחול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/91/main-Slide44.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063802/cus0yuw9betfiaskq97x.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1338,7 +1373,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/92/main-Slide45.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063804/whet6ern39jycdf4jdyj.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1354,7 +1389,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/93/main-Slide46.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063805/kzghkf2m8cylfabqtdff.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1370,7 +1405,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין הנמר חום וירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/94/main-Slide47.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063807/ocj1f3jcggywrd1yvo50.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1386,7 +1421,7 @@ window.catalogData = {
       "price": "10",
       "category": "סימניות אקריל",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/95/main-Slide48.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063808/nw78lncuoixileqangvm.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1404,7 +1439,7 @@ window.catalogData = {
       "price": "15",
       "category": "סימניות אקריל",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/96/main-Slide49.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063810/w6vmbxe2ky6qcpgomunk.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1422,7 +1457,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק, מוס אקט וג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/97/main-Slide50.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063811/emszkzthodmfvyfx6irq.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1438,7 +1473,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין הנמר ירוקה, עין החתול וקוורץ אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/98/main-Slide51.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063812/lbxvpjhrhdj8zgi9o4wt.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1454,7 +1489,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN המכילה שבבי ג'ספר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/99/main-Slide52.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063817/flymkbwyphwygtjkrupj.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1470,7 +1505,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי ג'ספר אדומה ועין הנמר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/100/main-Slide53.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063818/j3zxew9qajlhthsu5ixa.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1486,7 +1521,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי עין הנמר ירוקה וחומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/101/main-Slide54.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063820/agkmpwa50yteoenkgbqh.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1502,7 +1537,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/102/main-Slide55.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063822/l24zcklfmesw84409fad.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1518,7 +1553,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/103/main-Slide56.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063826/zo0j14jbwh6jo0ovusha.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1534,7 +1569,7 @@ window.catalogData = {
       "price": "10",
       "category": "סימניות אקריל",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/104/main-Slide57.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063828/gswgcahdngnbp7klvrho.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1552,7 +1587,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי ג'ספר אדום ועין הנמר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/105/main-Slide58.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063830/axb9xuc7vzedamxrp3dm.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1568,7 +1603,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה וקוורץ אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/106/main-Slide59.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063832/p5wxlz1sayrjgb0ptcbc.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1584,7 +1619,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות עבות",
       "desc": "סימניית UV RESIN עבה המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/107/main-Slide60.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063834/r0y8zlgae86jnvmeyqwa.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1600,7 +1635,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי לאפיס",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/108/main-Slide61.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063836/g1txbtrxdsscbhpo2tpu.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1616,7 +1651,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/109/main-Slide62.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063838/osliyxywgrzzb5ek4etc.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1632,7 +1667,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ אדום וחום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/110/main-Slide63.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063840/reto8k5kozx4yszbg9bp.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1648,7 +1683,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ אדום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/111/main-Slide64.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063842/ngdym2lc4xclnkp5dcyi.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1664,7 +1699,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי מוס אקט וקוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/112/main-Slide65.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063844/k79ejothyefyeweaonj5.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1680,7 +1715,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי עין הנמר אדומה ולאפסי",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/113/main-Slide66.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063846/q7zvoqqiifwes2drw10y.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1696,7 +1731,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/114/main-Slide67.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063847/ssotwexj7axhw9krxass.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1712,7 +1747,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה פרחים ושבבי עין החתול",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/115/main-Slide68.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063849/vrrfnmbc7yktfmqnbm9l.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1728,7 +1763,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/116/main-Slide69.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063850/rgm8kkodyh7kr3zaihng.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1744,7 +1779,7 @@ window.catalogData = {
       "price": "15",
       "category": "סימניות אקריל",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/117/main-Slide70.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063852/owtk4k9beysofzjafphj.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1762,7 +1797,7 @@ window.catalogData = {
       "price": "15",
       "category": "סימניות אקריל",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/118/main-Slide71.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063853/c9kwfzqs9gzbwwfufevs.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1780,7 +1815,7 @@ window.catalogData = {
       "price": "25",
       "category": "סימניות",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ חום ולבן",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/119/main-Slide72.PNG",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063854/qgvzbuacod3rvixmq7mn.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1799,7 +1834,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "אנימה",
       "desc": "סימניה UV RESIN המכילה שבבי מוס אגט וקוורץ ירוד,ופרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787813716870/main-20260826_225443.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063855/voxnq9ebjexdgf5suirb.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1808,7 +1843,7 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787813716870/extra-1-20260826_225551.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063856/la7cbzoxjjkyowhyjp2d.jpg"
       ]
     },
     {
@@ -1819,7 +1854,7 @@ window.catalogData = {
       "category": "סימניות פרחים",
       "theme": "פרחים",
       "desc": "סימניית UV RESIN המכילה פרחים",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787815039713/main-20260826_235817.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063167/yylxjf4a7knrvubbw9hf.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1828,8 +1863,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787815039713/extra-1-20260826_235821.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787815039713/extra-2-20260826_235832.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063169/ai18yn78uqsw6prwtbfw.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063170/nmt5njkl5he7rwhx9vcf.jpg"
       ]
     },
     {
@@ -1840,7 +1875,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "סרטים",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/main-20260826_225727.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063857/uijc8sodibkl5jakxc6m.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1849,9 +1884,9 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/extra-1-20260826_225742.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/extra-2-20260826_225916.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787816759186/extra-3-20260826_225933.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063858/huyyfwbqktbvehgqdfvp.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063858/xfjbcynsygo6hjfk8uw4.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063859/wmiq2mpqb9ia1hwuxm34.jpg"
       ]
     },
     {
@@ -1862,7 +1897,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "אנימה",
       "desc": "סימניית UV RESIN המכילה שבבי קוורץ ירוק",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078122/main-20260826_225501.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063860/gicmmm1uspdcotphy2sh.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1871,7 +1906,7 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078122/extra-1-20260826_225551.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063861/twf67vdswxgxdirtj0ut.jpg"
       ]
     },
     {
@@ -1882,7 +1917,7 @@ window.catalogData = {
       "category": "סימניות אקריל",
       "theme": "אנימה",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078123/main-20260826_230048.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063862/zd4xdacbqpp3lcgfwrbf.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1891,7 +1926,7 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078123/extra-1-20260826_230423.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063862/hhnvhxphe5psnjzzz0je.jpg"
       ]
     },
     {
@@ -1902,7 +1937,7 @@ window.catalogData = {
       "category": "סימניות אקריל",
       "theme": "אנימה",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078124/main-20260826_230441.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063863/zhtwbeepslcxonfiidwk.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1911,7 +1946,7 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078124/extra-1-20260826_230500.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063864/jm6x7djui9kvm4hx6c0x.jpg"
       ]
     },
     {
@@ -1922,7 +1957,7 @@ window.catalogData = {
       "category": "סימניות אקריל",
       "theme": "אנימה",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078125/main-20260826_232000.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063865/mesyltvb7hbapjsa1sbq.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1931,8 +1966,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078125/extra-1-20260826_232007.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078125/extra-2-20260826_232021.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063865/nqzrkboy0gkjszc46jhj.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063866/hvv8jqpbsilkwsomxba0.jpg"
       ]
     },
     {
@@ -1943,7 +1978,7 @@ window.catalogData = {
       "category": "סימניות אקריל",
       "theme": "אנימה",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078126/main-Screenshot_20260827_121151_Gallery.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063867/gnvbse3hffc3h4d228pn.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1952,8 +1987,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078126/extra-1-20260826_231926.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822078126/extra-2-20260826_231942.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063868/mmtkvcjhauaghjh0x0j0.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063869/lkfcribcjmwvpakwapsh.jpg"
       ]
     },
     {
@@ -1964,7 +1999,7 @@ window.catalogData = {
       "category": "סימניות אקריל",
       "theme": "טבע",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619329/main-20260826_232142.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063869/qcthzmn2emljp9k27cjk.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1973,8 +2008,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619329/extra-1-20260826_232157.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619329/extra-2-20260826_232211.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063870/szvhaycpetjqljw4uyan.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063871/t8teb8ncwap70pes1fei.jpg"
       ]
     },
     {
@@ -1985,7 +2020,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV RESIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619330/main-20260826_232231.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063872/ug7avs1jkhpic8afrkyr.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -1994,8 +2029,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619330/extra-1-20260826_232239.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619330/extra-2-20260826_232321.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063872/klcijejeplmqqaqx3dro.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063873/ysvntgaihgm0lxi1hufa.jpg"
       ]
     },
     {
@@ -2006,7 +2041,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "דמויות",
       "desc": "סימנייה UV RESIN זוהר בחושך",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619331/main-20260826_232342.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063874/st8judpldelmhioir3rk.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2015,9 +2050,9 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619331/extra-1-20260826_232347.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619331/extra-2-20260826_232706.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619331/extra-3-20260826_233021.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063875/qwwqta2vtbp8x6sbdheb.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063876/chiqsfj80o6xurqdiupc.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063877/oqegunrkp9tmqg3jaort.jpg"
       ]
     },
     {
@@ -2028,7 +2063,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV RESIN זוהר בחושך",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619332/main-20260826_232957.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063877/art7ss2c5dnqetkkdbvz.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2037,9 +2072,9 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619332/extra-1-20260826_232818.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619332/extra-2-20260826_233005.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619332/extra-3-20260826_233021.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063878/wopx68gq55jjimnsbxvd.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063879/rqd5snf1q51xvx7igs5v.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063880/bplwwqxwxhekywssomdm.jpg"
       ]
     },
     {
@@ -2050,7 +2085,7 @@ window.catalogData = {
       "category": "סימניות אקריל",
       "theme": "סדרות",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619333/main-20260826_233204.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063881/nxhkutk3diixla2e1ppb.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2059,8 +2094,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619333/extra-1-20260826_233209.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619333/extra-2-20260826_233228.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063881/k3o7kbw1dxa5iqeynwie.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063882/nbbxqhunjgmyirymdqss.jpg"
       ]
     },
     {
@@ -2071,7 +2106,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619334/main-20260826_233251.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063883/cvpduq2kioqi25cfc9ol.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2080,8 +2115,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619334/extra-1-20260826_233255.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619334/extra-2-20260826_233308.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063884/xt5l3lpmfa55zpcuajbz.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063884/zede6wrt474fnrtmb4v4.jpg"
       ]
     },
     {
@@ -2092,7 +2127,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619335/main-20260826_233335.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063885/zuvulus5b8sjrb33lg6j.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2101,8 +2136,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619335/extra-1-20260826_233340.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619335/extra-2-20260826_233352.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063886/khzqswuzne9sgqp63pv1.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063887/umhsvkf6gplcl0wczyz8.jpg"
       ]
     },
     {
@@ -2113,7 +2148,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619336/main-20260826_233404.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063888/rkboyfuzjqzkdtj7iwaw.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2122,8 +2157,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619336/extra-1-20260826_233408.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619336/extra-2-20260826_233428.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063889/vkvpy9lfsiuit4safxgg.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063890/le7vk3dwnfrxojkje35u.jpg"
       ]
     },
     {
@@ -2134,7 +2169,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619337/main-20260826_233451.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063890/r4k2d2yogmw2pecxujw4.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2143,8 +2178,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619337/extra-1-20260826_233455.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619337/extra-2-20260826_233507.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063891/tenkb8yni7tndznwxpms.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063892/ljkjuepfwempbnx8rhgo.jpg"
       ]
     },
     {
@@ -2155,7 +2190,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "דמויות",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619338/main-20260826_233521.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063893/k2ljqf7nkxkxelscp7pt.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2164,8 +2199,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619338/extra-1-20260826_233524.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619338/extra-2-20260826_233536.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063894/g0dxdcw79r2d7maiebnc.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063895/kuu4q9jnij4uydnhqtz9.jpg"
       ]
     },
     {
@@ -2176,7 +2211,7 @@ window.catalogData = {
       "category": "סימניות אקריל",
       "theme": "טבע",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619340/main-20260826_233635.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063895/xjfazoc2bgimgxdxkiee.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2185,8 +2220,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619340/extra-1-20260826_233639.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619340/extra-2-20260826_233658.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063896/tbyy0oafm5axnsuisd29.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063897/rifzcmjspvxzl81rjtv5.jpg"
       ]
     },
     {
@@ -2197,7 +2232,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619341/main-20260826_233710.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063898/o0j8aptyanrvc0bebr7o.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2206,8 +2241,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619341/extra-1-20260826_233714.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619341/extra-2-20260826_233726.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063898/cllzhl6k2xcdxarlijwf.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063899/dsoblapkh9ytwmmkhldp.jpg"
       ]
     },
     {
@@ -2218,7 +2253,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619342/main-20260826_233740.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063900/l0x04ixfofrxud0zgdbg.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2227,8 +2262,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619342/extra-1-20260826_233744.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619342/extra-2-20260826_233756.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063901/p2wqpb27eo1ht44kce7f.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063901/ajejkao3cgdxlh0vs39u.jpg"
       ]
     },
     {
@@ -2239,7 +2274,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619343/main-20260826_233810.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063902/qfo3tywrhiiom4tlpyme.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2248,8 +2283,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619343/extra-1-20260826_233812.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619343/extra-2-20260826_233825.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063903/hxtmbybtksu0jldyjqht.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063904/cakmvrizljp9zo4ubfus.jpg"
       ]
     },
     {
@@ -2260,7 +2295,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619344/main-20260826_234237.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063905/qoakamqq9pnqisa21kmw.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2269,8 +2304,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619344/extra-1-20260826_234252.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619344/extra-2-20260826_234308.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063906/k06pzahhoyerp7sqcqyz.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063906/edc1erunelrypomqzlqu.jpg"
       ]
     },
     {
@@ -2281,7 +2316,7 @@ window.catalogData = {
       "category": "סימניות אקריל",
       "theme": "דמויות",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619345/main-20260826_234320.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063907/ziriq8o86flsxhsn92y6.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2290,8 +2325,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619345/extra-1-20260826_234327.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619345/extra-2-20260826_234336.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063908/zrxklzfapszh2vj3tths.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063909/imdh903aytwfrcyvav9f.jpg"
       ]
     },
     {
@@ -2302,7 +2337,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619346/main-20260826_234428.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063910/tplp7t2sgtliqmryniua.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2311,8 +2346,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619346/extra-1-20260826_234402.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619346/extra-2-20260826_234416.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063911/t2qcdktj9bovgqx4hw4g.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063912/dycqku7rre5n4r79oldx.jpg"
       ]
     },
     {
@@ -2323,7 +2358,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619347/main-20260826_234428.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063912/pzrlclaj5rav4dbqncuq.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2332,8 +2367,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619347/extra-1-20260826_234432.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619347/extra-2-20260826_234440.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063913/m7srpm9zifm7gyfarfff.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063914/vycz9hk6cze7akyeuaty.jpg"
       ]
     },
     {
@@ -2344,7 +2379,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619348/main-20260826_234452.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063915/c5mzhpg8pnfesfveqe6d.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2353,7 +2388,7 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619348/extra-1-20260826_234501.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063916/j7xa0ah5c25al0hvhpjl.jpg"
       ]
     },
     {
@@ -2364,7 +2399,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619349/main-20260826_234512.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063916/zscxpuy9fqhhwbpvt2p8.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2373,8 +2408,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619349/extra-1-20260826_234514.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619349/extra-2-20260826_234527.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063917/wyxvuwcmgu8jmy8olyuz.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063918/doeydygrrrxdklt4ncbv.jpg"
       ]
     },
     {
@@ -2385,7 +2420,7 @@ window.catalogData = {
       "category": "סימניות עבות",
       "theme": "דמויות",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619350/main-20260826_234537.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063919/ilqwokb9qjhfrzwysykh.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2394,8 +2429,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619350/extra-1-20260826_234540.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619350/extra-2-20260826_234552.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063920/mft0fpajroegleeez8yh.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063921/mhy8v6yik1w8akilxegi.jpg"
       ]
     },
     {
@@ -2406,7 +2441,7 @@ window.catalogData = {
       "category": "סימניות אקריל",
       "theme": "סדרות",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619351/main-20260826_234602.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063922/qcc6aubozqj5hqbztweb.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2415,8 +2450,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619351/extra-1-20260826_234609.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619351/extra-2-20260826_234617.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063922/w7roqr49stwelifjevdg.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063923/unyag3z4xzbge2i73o4f.jpg"
       ]
     },
     {
@@ -2427,7 +2462,7 @@ window.catalogData = {
       "category": "סימניות אקריל",
       "theme": "טבע",
       "desc": "סימניות אקריל",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619352/main-20260826_234627.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063924/dcey86um1j61qrisgu1m.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2436,8 +2471,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619352/extra-1-20260826_234630.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619352/extra-2-20260826_234638.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063924/jkyaejzzjpeemo0q9oto.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063925/qxrahcmmhcztp1crsw2q.jpg"
       ]
     },
     {
@@ -2448,7 +2483,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619353/main-20260826_234655.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063926/otutyuamygikauo3rldd.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2457,8 +2492,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619353/extra-1-20260826_234702.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619353/extra-2-20260826_234717.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063927/xkacgnpohpxcxvnqwojj.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063928/vd7cvvro4ocmpfvhzrla.jpg"
       ]
     },
     {
@@ -2469,7 +2504,7 @@ window.catalogData = {
       "category": "סימניות",
       "theme": "דמויות",
       "desc": "סימניית UV ERSIN",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619354/main-20260826_234839.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063929/uwdu3j4wmvemrbxioql5.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2478,8 +2513,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619354/extra-1-20260826_234842.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1787822619354/extra-2-20260826_234851.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063930/m5qjfwiq8zscccfvaiw2.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063931/axjdnbvbes66hosn9yrr.jpg"
       ]
     },
     {

@@ -1375,6 +1375,8 @@
         const SUPABASE_PROJECT_URL = "https://jtciejevxpemlykmxfvc.supabase.co";
         const SUPABASE_PUBLIC_KEY = "sb_publishable_y-8_gt1Yx7c36DoFMXy_qg_M3TY1BsD";
         const SUPABASE_PRODUCT_BUCKET = "product-images";
+        const CLOUDINARY_CLOUD_NAME = "nidtlynh";
+        const CLOUDINARY_UPLOAD_PRESET = "ecrafts_products";
         let supabaseProductFolderCache = null;
         const supabaseFileLookupCache = new Map();
         
@@ -1553,6 +1555,14 @@
             return !/^https?:/i.test(image);
         }
 
+        function isLegacySupabaseImageUrl(value) {
+            return String(value || '').startsWith(`${SUPABASE_PROJECT_URL}/storage/v1/object/public/${SUPABASE_PRODUCT_BUCKET}/`);
+        }
+
+        function isCloudinaryImageUrl(value) {
+            return String(value || '').startsWith(`https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/`);
+        }
+
         function getJsProductForLocalProduct(product) {
             if (!product || !window.catalogData || !Array.isArray(window.catalogData.products)) return null;
             const byId = window.catalogData.products.find(jsProduct => String(jsProduct.id) === String(product.id));
@@ -1575,9 +1585,11 @@
             if (!jsProduct) return false;
 
             let changed = false;
-            if (needsImageRestore(product) && jsProduct.image && /^https?:/i.test(jsProduct.image)) {
+            const shouldUseJsMainImage = needsImageRestore(product)
+                || (isLegacySupabaseImageUrl(product.image) && isCloudinaryImageUrl(jsProduct.image));
+            if (shouldUseJsMainImage && jsProduct.image && /^https?:/i.test(jsProduct.image)) {
                 product.image = jsProduct.image;
-                product.fileName = getImageFileNameFromPath(jsProduct.image, product.fileName);
+                product.fileName = getBrowserImagePath(jsProduct.fileName || product.fileName || getImageFileNameFromPath(jsProduct.image));
                 changed = true;
             }
 
@@ -1676,33 +1688,31 @@
             }
         }
 
-        async function uploadProductImageToSupabase(file, productId, role, index = 0) {
+        async function uploadProductImageToCloudinary(file, productId, role, index = 0) {
             if (!file) return "";
             const uploadFile = await prepareImageFileForUpload(file);
-            const safeName = cleanStorageFileName(getBrowserImagePath(uploadFile.name));
-            const prefix = role === 'main' ? 'main' : `extra-${index}`;
-            const storagePath = `products/${productId}/${prefix}-${Date.now()}-${safeName}`;
-            const uploadUrl = `${SUPABASE_PROJECT_URL}/storage/v1/object/${SUPABASE_PRODUCT_BUCKET}/${encodeStoragePath(storagePath)}`;
+            const uploadUrl = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`;
+            const formData = new FormData();
+            formData.append('file', uploadFile);
+            formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+            formData.append('context', `product_id=${productId}|role=${role}|position=${index}`);
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 45000);
+            const timeoutId = setTimeout(() => controller.abort(), 90000);
             const response = await fetch(uploadUrl, {
                 method: 'POST',
                 signal: controller.signal,
-                headers: {
-                    apikey: SUPABASE_PUBLIC_KEY,
-                    Authorization: `Bearer ${SUPABASE_PUBLIC_KEY}`,
-                    'cache-control': '31536000',
-                    'content-type': uploadFile.type || 'application/octet-stream'
-                },
-                body: uploadFile
+                body: formData
             }).finally(() => clearTimeout(timeoutId));
 
             if (!response.ok) {
-                const message = await response.text().catch(() => '');
-                throw new Error(message || `Supabase upload failed (${response.status})`);
+                const errorBody = await response.json().catch(() => null);
+                const message = errorBody?.error?.message || '';
+                throw new Error(message || `Cloudinary upload failed (${response.status})`);
             }
 
-            return getSupabasePublicUrl(storagePath);
+            const result = await response.json();
+            if (!result?.secure_url) throw new Error('Cloudinary לא החזיר כתובת תקינה לתמונה.');
+            return result.secure_url;
         }
 
         function getImageFileNameFromPath(path, fallbackFileName = '') {
@@ -2378,7 +2388,7 @@
                 || null;
         }
 
-        async function uploadPendingProductImagesToSupabase() {
+        async function uploadPendingProductImagesToCloudinary() {
             let uploadedCount = 0;
             const unresolved = [];
 
@@ -2386,7 +2396,7 @@
                 if (product.image && !/^https?:/i.test(product.image)) {
                     const file = findSessionImageFileForPath(product.image, product);
                     if (file) {
-                        product.image = await uploadProductImageToSupabase(file, product.id, 'main');
+                        product.image = await uploadProductImageToCloudinary(file, product.id, 'main');
                         product.fileName = getBrowserImagePath(file.name);
                         uploadedCount++;
                     } else {
@@ -2400,7 +2410,7 @@
                         if (imagePath && !/^https?:/i.test(imagePath)) {
                             const file = findSessionImageFileForPath(imagePath, product);
                             if (file) {
-                                product.images[i] = await uploadProductImageToSupabase(file, product.id, 'extra', i + 1);
+                                product.images[i] = await uploadProductImageToCloudinary(file, product.id, 'extra', i + 1);
                                 uploadedCount++;
                             } else {
                                 unresolved.push(`${product.name || product.id} - תמונה נוספת ${i + 1}`);
@@ -2431,7 +2441,14 @@
                 if (Array.isArray(product.images) && Array.isArray(jsProduct.images)) {
                     product.images = product.images.map((imagePath, index) => {
                         const jsImage = jsProduct.images[index];
-                        if (imagePath && !/^https?:/i.test(imagePath) && jsImage && /^https?:/i.test(jsImage)) {
+                        if (
+                            imagePath &&
+                            jsImage &&
+                            (
+                                (!/^https?:/i.test(imagePath) && /^https?:/i.test(jsImage)) ||
+                                (isLegacySupabaseImageUrl(imagePath) && isCloudinaryImageUrl(jsImage))
+                            )
+                        ) {
                             changed = true;
                             return jsImage;
                         }
@@ -2957,7 +2974,7 @@
         // שמירת כל הנתונים לקובץ JS הנטען על ידי Git Pages
         async function saveCatalogDataFile() {
             try {
-                await uploadPendingProductImagesToSupabase();
+                await uploadPendingProductImagesToCloudinary();
             } catch (error) {
                 console.error("שגיאה בהעלאת תמונות לפני שמירה:", error);
                 alert(`לא הצלחתי להעלות את כל התמונות לענן לפני השמירה.\n\n${error.message || error}\n\nהשמירה נעצרה כדי שלא יישמר קובץ עם תמונות מקומיות.`);
@@ -2978,7 +2995,7 @@
                     const writable = await fileHandle.createWritable();
                     await writable.write(jsContent);
                     await writable.close();
-                    alert("הנתונים נשמרו בהצלחה לקובץ products-data.js.\nתמונות חדשות שנבחרו בסשן הזה הועלו קודם ל-Supabase.");
+                    alert("הנתונים נשמרו בהצלחה לקובץ products-data.js.\nתמונות חדשות שנבחרו בסשן הזה הועלו קודם ל-Cloudinary.");
                     return;
                 } catch (error) {
                     if (error && error.name === 'AbortError') return;
@@ -2987,7 +3004,7 @@
             }
 
             downloadCatalogDataFile(jsContent);
-            alert("הדפדפן לא אפשר שמירה ישירה לקובץ, אז הורדתי את products-data.js כמו קודם.\nתמונות חדשות שנבחרו בסשן הזה הועלו קודם ל-Supabase.");
+            alert("הדפדפן לא אפשר שמירה ישירה לקובץ, אז הורדתי את products-data.js כמו קודם.\nתמונות חדשות שנבחרו בסשן הזה הועלו קודם ל-Cloudinary.");
         }
 
         async function exportCatalogData() {
@@ -3586,7 +3603,7 @@
                     }
                     if (!file || usedFiles.has(file)) continue;
 
-                    const cloudUrl = await uploadProductImageToSupabase(file, product.id, 'main');
+                    const cloudUrl = await uploadProductImageToCloudinary(file, product.id, 'main');
                     product.image = cloudUrl;
                     product.fileName = getBrowserImagePath(file.name);
                     rememberSessionImageFile(file, [cloudUrl]);
@@ -3675,7 +3692,7 @@
                 const dimensions = getDefaultDimensionsForCategory(category);
                 let imagePath = "";
                 try {
-                    imagePath = await uploadProductImageToSupabase(file, productId, 'main');
+                    imagePath = await uploadProductImageToCloudinary(file, productId, 'main');
                 } catch (error) {
                     console.error("שגיאה בהעלאת מוצר בכמות ל-Supabase:", error);
                     if (loadingModal) loadingModal.classList.add('hidden');
@@ -3927,9 +3944,9 @@
                 const browserFileName = getBrowserImagePath(file.name);
                 finalFileName = browserFileName;
                 try {
-                    finalImage = await uploadProductImageToSupabase(file, productId, 'main');
+                    finalImage = await uploadProductImageToCloudinary(file, productId, 'main');
                 } catch (error) {
-                    console.error("שגיאה בהעלאת תמונה ראשית ל-Supabase:", error);
+                    console.error("שגיאה בהעלאת תמונה ראשית ל-Cloudinary:", error);
                     alert(`${error.message || "התמונה הראשית לא עלתה לענן."}\nהמוצר לא נשמר כדי שלא יווצר קישור מקומי או שבור.`);
                     return;
                 }
@@ -3950,9 +3967,9 @@
                 const extraFile = sessionImageFiles[src] || sessionImageFiles[getBrowserImagePath(src)] || sessionImageFiles[fileName];
                 if (extraFile) {
                     try {
-                        uploadedExtraImages.push(await uploadProductImageToSupabase(extraFile, productId, 'extra', i + 1));
+                        uploadedExtraImages.push(await uploadProductImageToCloudinary(extraFile, productId, 'extra', i + 1));
                     } catch (error) {
-                        console.error("שגיאה בהעלאת תמונה נוספת ל-Supabase:", error);
+                        console.error("שגיאה בהעלאת תמונה נוספת ל-Cloudinary:", error);
                         alert(`${error.message || "אחת התמונות הנוספות לא עלתה לענן."}\nהמוצר לא נשמר כדי שלא יווצר קישור מקומי או שבור.`);
                         return;
                     }
@@ -4111,9 +4128,9 @@
                 if (existingProduct) {
                     let cloudImage = "";
                     try {
-                        cloudImage = await uploadProductImageToSupabase(file, existingProduct.id, 'main');
+                        cloudImage = await uploadProductImageToCloudinary(file, existingProduct.id, 'main');
                     } catch (error) {
-                        console.error("שגיאה בהעלאת תמונה מייבוא תיקייה ל-Supabase:", error);
+                        console.error("שגיאה בהעלאת תמונה מייבוא תיקייה ל-Cloudinary:", error);
                         loadingModal.classList.add('hidden');
                         alert(`התמונה "${file.name}" לא עלתה לענן.\nהייבוא נעצר כדי לא ליצור תמונות חסרות.`);
                         return;
@@ -4127,9 +4144,9 @@
                     const productId = baseId + index;
                     let cloudImage = "";
                     try {
-                        cloudImage = await uploadProductImageToSupabase(file, productId, 'main');
+                        cloudImage = await uploadProductImageToCloudinary(file, productId, 'main');
                     } catch (error) {
-                        console.error("שגיאה בהעלאת תמונה מייבוא תיקייה ל-Supabase:", error);
+                        console.error("שגיאה בהעלאת תמונה מייבוא תיקייה ל-Cloudinary:", error);
                         loadingModal.classList.add('hidden');
                         alert(`התמונה "${file.name}" לא עלתה לענן.\nהייבוא נעצר כדי לא ליצור תמונות חסרות.`);
                         return;
