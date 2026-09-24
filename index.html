@@ -2493,8 +2493,9 @@
             const container = document.getElementById('featured-products');
             if (!container) return;
 
-            const products = (catalog.products || [])
+            const products = [...(catalog.products || [])]
                 .filter(p => normalizeStatus(p.status) === 'available')
+                .sort((a, b) => Number(b.id || 0) - Number(a.id || 0))
                 .slice(0, 4);
 
             container.innerHTML = products.map(product => {
