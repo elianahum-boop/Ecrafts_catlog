@@ -355,6 +355,7 @@
             <nav id="public-nav" class="hidden lg:flex items-center gap-5">
                 <a class="site-nav-link" href="#home">בית</a>
                 <a class="site-nav-link" href="#products">מוצרים</a>
+                <a class="site-nav-link" href="#worlds">העולם שלי</a>
                 <a class="site-nav-link" href="#updates">עדכונים</a>
                 <a class="site-nav-link" href="#about">על Ecrafts</a>
                 <a class="site-nav-link" href="#info">שאלות ומידע</a>
@@ -362,6 +363,7 @@
             </nav>
             <nav id="admin-nav" class="hidden lg:flex items-center gap-5">
                 <a class="site-nav-link" href="#admin-products">מוצרים</a>
+                <a class="site-nav-link" href="#admin-worlds">העולם שלי</a>
                 <a class="site-nav-link" href="#admin-updates">עדכונים בעמוד</a>
                 <a class="site-nav-link" href="#admin-orders">הזמנות</a>
             </nav>
@@ -376,11 +378,13 @@
             <nav id="mobile-nav" class="hidden basis-full lg:hidden grid grid-cols-2 gap-2 pt-3 border-t border-[#f2a1a2]/25">
                 <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#home" onclick="toggleMobileNav(false)">בית</a>
                 <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#products" onclick="toggleMobileNav(false)">מוצרים</a>
+                <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#worlds" onclick="toggleMobileNav(false)">העולם שלי</a>
                 <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#updates" onclick="toggleMobileNav(false)">עדכונים</a>
                 <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#about" onclick="toggleMobileNav(false)">על Ecrafts</a>
                 <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#info" onclick="toggleMobileNav(false)">שאלות ומידע</a>
                 <a class="public-mobile-link site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#contact" onclick="toggleMobileNav(false)">יצירת קשר</a>
                 <a class="admin-mobile-link hidden site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#admin-products" onclick="toggleMobileNav(false)">מוצרים</a>
+                <a class="admin-mobile-link hidden site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#admin-worlds" onclick="toggleMobileNav(false)">העולם שלי</a>
                 <a class="admin-mobile-link hidden site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#admin-updates" onclick="toggleMobileNav(false)">עדכונים בעמוד</a>
                 <a class="admin-mobile-link hidden site-nav-link bg-white/70 rounded-xl px-3 py-2 text-center" href="#admin-orders" onclick="toggleMobileNav(false)">הזמנות</a>
             </nav>
@@ -458,10 +462,11 @@
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
                         <h2 class="text-xl font-black text-[#733238]">Dashboard Ecrafts</h2>
-                        <p class="text-xs text-[#836b6d] mt-1">ניהול מוצרים, עדכונים והזמנות במקום אחד.</p>
+                        <p class="text-xs text-[#836b6d] mt-1">ניהול מוצרים, העולם שלי, עדכונים והזמנות במקום אחד.</p>
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <a href="#admin-products" class="admin-page-link px-4 py-2 rounded-xl bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">מוצרים</a>
+                        <a href="#admin-worlds" class="admin-page-link px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">העולם שלי</a>
                         <a href="#admin-updates" class="admin-page-link px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">עדכונים בעמוד</a>
                         <a href="#admin-orders" class="admin-page-link px-4 py-2 rounded-xl bg-white hover:bg-[#fdfaf7] text-[#733238] text-sm font-bold border border-[#f2a1a2]/30">הזמנות</a>
                     </div>
@@ -584,6 +589,20 @@
                         </ol>
                     </div>
                 </details>
+            </div>
+
+            <div id="admin-worlds" class="admin-section section-shell glass-card p-6 rounded-2xl space-y-5">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-zinc-800 pb-4">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="wand-sparkles" class="text-brand-500 w-5 h-5"></i>
+                        <h2 class="text-lg font-bold text-white">העולם שלי</h2>
+                    </div>
+                    <button onclick="openAdminWorldModal()" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium py-2 px-4 rounded-xl shadow-sm transition-colors">
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                        <span>הוסף עולם או קבוצה</span>
+                    </button>
+                </div>
+                <div id="admin-worlds-list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
             </div>
 
             <div id="admin-orders" class="admin-section section-shell glass-card p-6 rounded-2xl space-y-5">
@@ -732,6 +751,15 @@
             </div>
         </section>
 
+        <!-- ================= העולם שלי ================= -->
+        <section id="worlds" class="section-shell hidden mt-4 md:mt-8">
+            <div class="mb-7 text-right">
+                <h2 class="text-3xl md:text-4xl font-black text-[#733238]">העולם שלי</h2>
+                <p class="text-sm md:text-base text-[#836b6d] mt-2">היצורים, הקבוצות והרעיונות המקוריים שמאחורי היצירות.</p>
+            </div>
+            <div id="worlds-list" class="space-y-7 md:space-y-10"></div>
+        </section>
+
         <!-- ================= עדכונים ================= -->
         <section id="updates" class="public-section section-shell mt-14 md:mt-20">
             <div class="mb-5">
@@ -841,6 +869,10 @@
                         <span class="font-black text-[#ee5253]">♪</span>
                         <span>TikTok</span>
                     </a>
+                    <a href="https://www.youtube.com/@ecraftsil" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white hover:bg-[#fdfaf7] text-[#733238] font-bold py-2.5 px-4 rounded-xl border border-[#f2a1a2]/35 transition-colors">
+                        <i data-lucide="youtube" class="w-4 h-4 text-[#ee5253]"></i>
+                        <span>YouTube</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -862,6 +894,8 @@
                 <span class="text-[#f2a1a2]/40">|</span>
                 <a href="#products" class="hover:text-[#ee5253]">מוצרים</a>
                 <span class="text-[#f2a1a2]/40">|</span>
+                <a href="#worlds" class="hover:text-[#ee5253]">העולם שלי</a>
+                <span class="text-[#f2a1a2]/40">|</span>
                 <a href="#updates" class="hover:text-[#ee5253]">עדכונים</a>
                 <span class="text-[#f2a1a2]/40">|</span>
                 <a href="#about" class="hover:text-[#ee5253]">על Ecrafts</a>
@@ -880,6 +914,11 @@
                         <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.74-3.94-1.74-.22-.21-.42-.45-.61-.7v5.13c.03 2.87-1.35 5.76-4.04 6.88-2.61 1.09-5.92.74-8.15-1.12-2.3-1.92-3.15-5.32-2.12-8.14 1-2.72 3.97-4.65 6.89-4.39.01 1.5-.01 3 .01 4.5-1.29-.37-2.78-.06-3.71.93-.97 1.03-1.07 2.81-.22 3.92.83 1.1 2.39 1.45 3.65.86.88-.41 1.43-1.3 1.43-2.27.02-3.07.01-6.14.01-9.21z"/>
                     </svg>
                     <span>TikTok</span>
+                </a>
+                <span class="text-[#f2a1a2]/30">|</span>
+                <a href="https://www.youtube.com/@ecraftsil" target="_blank" rel="noopener noreferrer" class="hover:text-[#733238] flex items-center gap-1.5 transition-colors font-semibold" title="YouTube">
+                    <i data-lucide="youtube" class="w-4 h-4"></i>
+                    <span>YouTube</span>
                 </a>
                 <span class="text-[#f2a1a2]/30">|</span>
                 <a href="mailto:ecraftsil@gmail.com" class="hover:text-[#733238] flex items-center gap-1.5 transition-colors font-semibold" title="Email">
@@ -1326,6 +1365,54 @@
         </div>
     </div>
 
+    <!-- 7. מודל ניהול העולם שלי -->
+    <div id="admin-world-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800">
+                <h3 id="admin-world-modal-title" class="font-bold text-lg text-white">עולם חדש</h3>
+                <button onclick="closeAdminWorldModal()" class="text-zinc-400 hover:text-zinc-200" title="סגור">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-4 max-h-[72vh] overflow-y-auto">
+                <input type="hidden" id="admin-world-id">
+                <div>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">שם</label>
+                    <input type="text" id="admin-world-title" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500" placeholder="לדוגמה: הרוחות">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">המלל שיופיע לצד התמונה</label>
+                    <textarea id="admin-world-text" rows="7" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500 resize-y text-sm" placeholder="כתבי על הרעיון, ההשראה והעולם שמאחורי היצורים..."></textarea>
+                </div>
+                <div class="rounded-xl border border-zinc-800 bg-zinc-950/35 p-3 space-y-3">
+                    <label class="block text-sm font-medium text-zinc-400">תמונה</label>
+                    <input type="file" id="admin-world-image-input" class="hidden" accept="image/png,image/jpeg,image/jpg,image/webp,image/gif,image/heic,image/heif,.heic,.heif">
+                    <button type="button" onclick="document.getElementById('admin-world-image-input').click()" class="w-full flex items-center justify-center gap-2 bg-[#f3dedf] hover:bg-[#ecd0d2] text-[#733238] font-bold py-2 px-4 rounded-xl text-sm border border-[#f2a1a2]/30 transition-colors">
+                        <i data-lucide="image-plus" class="w-4 h-4"></i>
+                        <span>בחרי תמונה מהמחשב</span>
+                    </button>
+                    <div id="admin-world-image-preview-wrap" class="hidden relative rounded-xl overflow-hidden border border-[#f2a1a2]/30 bg-white">
+                        <img id="admin-world-image-preview" src="" alt="" class="w-full aspect-video object-contain bg-[#fdfaf7]">
+                        <button type="button" onclick="removeAdminWorldImage()" class="absolute top-2 left-2 bg-white/90 text-[#733238] rounded-full w-8 h-8 flex items-center justify-center border border-[#f2a1a2]/30 shadow-sm" title="הסר תמונה">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                <label class="flex items-center gap-2 text-sm font-bold text-[#733238] bg-[#f3dedf] border border-[#f2a1a2]/30 rounded-xl px-3 py-2 cursor-pointer">
+                    <input type="checkbox" id="admin-world-published" class="w-4 h-4" checked>
+                    <span>הצג בעמוד „העולם שלי”</span>
+                </label>
+            </div>
+            <div class="px-6 py-4 border-t border-zinc-800 flex flex-wrap justify-between gap-2 bg-zinc-900/30">
+                <button id="admin-world-delete-btn" onclick="deleteWorldFromModal()" class="hidden bg-red-950/40 hover:bg-red-900/60 text-red-200 font-medium py-2 px-4 rounded-xl text-sm border border-red-900/30">מחק</button>
+                <div class="flex gap-2 mr-auto">
+                    <button onclick="closeAdminWorldModal()" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-medium py-2 px-4 rounded-xl text-sm transition-colors">ביטול</button>
+                    <button id="admin-world-save-btn" onclick="saveAdminWorld()" class="bg-brand-600 hover:bg-brand-700 text-white font-medium py-2 px-4 rounded-xl text-sm shadow-lg shadow-brand-600/10 transition-colors">שמור</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 4. מודל טעינת תיקייה (אינדיקטור התקדמות) -->
     <div id="loading-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex flex-col items-center justify-center p-4">
         <div class="glass-card p-8 rounded-2xl text-center space-y-6 max-w-sm w-full">
@@ -1365,9 +1452,12 @@
         let isEditMode = true; // האם אנחנו במצב עריכה כרגע
         let siteUpdates = [];
         let orders = [];
+        let worldEntries = [];
         let activeOrderFilter = 'all';
         let modalExtraImages = [];
         let activeUpdateImage = "";
+        let activeWorldImage = "";
+        let activeWorldImageFile = null;
         let mainProductImageRemoved = false;
         const selectedProductIds = new Set();
         const BOOKMARK_PRICE_MIGRATION_KEY = 'ecrafts_bookmark_price_25_migrated';
@@ -1882,6 +1972,7 @@
                         closeProductModal();
                         closeAdminUpdateModal();
                         closeAdminOrderModal();
+                        closeAdminWorldModal();
                     }
                 });
             } catch (err) {
@@ -1985,6 +2076,11 @@
             });
         }
 
+        function setWorldsSectionVisible(isVisible) {
+            const section = document.getElementById('worlds');
+            if (section) section.classList.toggle('hidden', !isVisible);
+        }
+
         function setupSiteNavigation() {
             const publicSections = new Set(['home', 'updates', 'about', 'info', 'contact']);
             document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -1994,35 +2090,41 @@
                         showAdminSection(targetId);
                         return;
                     }
-                    if (targetId === 'products') {
+                    if (targetId === 'products' || targetId === 'worlds') {
                         event.preventDefault();
                         setPublicSectionsVisible(false);
-                        setProductsSectionVisible(true);
-                        history.pushState(null, '', '#products');
-                        document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        setProductsSectionVisible(targetId === 'products');
+                        setWorldsSectionVisible(targetId === 'worlds');
+                        history.pushState(null, '', `#${targetId}`);
+                        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth', block: 'start' });
                     } else if (publicSections.has(targetId)) {
                         setPublicSectionsVisible(true);
                         setProductsSectionVisible(false);
+                        setWorldsSectionVisible(false);
                     }
                 });
             });
 
             const isProductsPage = window.location.hash === '#products';
-            setPublicSectionsVisible(!isProductsPage);
+            const isWorldsPage = window.location.hash === '#worlds';
+            setPublicSectionsVisible(!isProductsPage && !isWorldsPage);
             setProductsSectionVisible(isProductsPage);
+            setWorldsSectionVisible(isWorldsPage);
             window.addEventListener('hashchange', () => {
                 if (isEditMode) {
                     showAdminSection();
                     return;
                 }
                 const isProductsPage = window.location.hash === '#products';
-                setPublicSectionsVisible(!isProductsPage);
+                const isWorldsPage = window.location.hash === '#worlds';
+                setPublicSectionsVisible(!isProductsPage && !isWorldsPage);
                 setProductsSectionVisible(isProductsPage);
+                setWorldsSectionVisible(isWorldsPage);
             });
         }
 
         function getActiveAdminSectionId() {
-            const adminSections = ['admin-products', 'admin-updates', 'admin-orders'];
+            const adminSections = ['admin-products', 'admin-worlds', 'admin-updates', 'admin-orders'];
             return adminSections.includes(window.location.hash.slice(1)) ? window.location.hash.slice(1) : 'admin-products';
         }
 
@@ -2031,6 +2133,7 @@
                 section.classList.toggle('hidden', section.id !== sectionId);
             });
             setProductsSectionVisible(sectionId === 'admin-products');
+            setWorldsSectionVisible(false);
 
             document.querySelectorAll('.admin-page-link, #admin-nav .site-nav-link, .admin-mobile-link').forEach(link => {
                 const isActive = link.getAttribute('href') === `#${sectionId}`;
@@ -2058,6 +2161,7 @@
                 adminMobileLinks.forEach(link => link.classList.remove('hidden'));
                 setPublicSectionsVisible(false);
                 setProductsSectionVisible(false);
+                setWorldsSectionVisible(false);
                 showAdminSection();
                 
                 // עדכון שדות ההגדרות ב-UI
@@ -2072,7 +2176,11 @@
                 if (adminNav) adminNav.classList.add('hidden');
                 publicMobileLinks.forEach(link => link.classList.remove('hidden'));
                 adminMobileLinks.forEach(link => link.classList.add('hidden'));
-                setPublicSectionsVisible(window.location.hash !== '#products');
+                const isProductsPage = window.location.hash === '#products';
+                const isWorldsPage = window.location.hash === '#worlds';
+                setPublicSectionsVisible(!isProductsPage && !isWorldsPage);
+                setProductsSectionVisible(isProductsPage);
+                setWorldsSectionVisible(isWorldsPage);
             }
 
             // כותרות עליונות של העמוד
@@ -2163,6 +2271,9 @@
                 orders = (window.catalogData && Array.isArray(window.catalogData.orders))
                     ? JSON.parse(JSON.stringify(window.catalogData.orders))
                     : [];
+                worldEntries = (window.catalogData && Array.isArray(window.catalogData.worlds))
+                    ? JSON.parse(JSON.stringify(window.catalogData.worlds))
+                    : [];
                 siteUpdates.forEach(update => {
                     if (!update.status) update.status = 'published';
                     if (update.showOnHome === undefined) update.showOnHome = true;
@@ -2199,12 +2310,26 @@
             } catch (e) {
                 orders = [];
             }
+
+            try {
+                const savedWorlds = localStorage.getItem('ecrafts_worlds');
+                if (savedWorlds) {
+                    worldEntries = JSON.parse(savedWorlds);
+                } else if (window.catalogData && Array.isArray(window.catalogData.worlds)) {
+                    worldEntries = JSON.parse(JSON.stringify(window.catalogData.worlds));
+                } else {
+                    worldEntries = [];
+                }
+            } catch (e) {
+                worldEntries = [];
+            }
         }
 
         function saveSiteContent() {
             try {
                 localStorage.setItem('ecrafts_updates', JSON.stringify(siteUpdates));
                 localStorage.setItem('ecrafts_orders', JSON.stringify(orders));
+                localStorage.setItem('ecrafts_worlds', JSON.stringify(worldEntries));
             } catch (e) {
                 console.warn("שגיאה בשמירת נתוני אתר:", e);
             }
@@ -2303,7 +2428,40 @@
         function renderSiteSections() {
             renderFeaturedProducts();
             renderUpdates();
+            renderWorlds();
             lucide.createIcons();
+        }
+
+        function escapeWorldContent(value) {
+            return String(value || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function renderWorlds() {
+            const container = document.getElementById('worlds-list');
+            if (!container) return;
+            const visibleWorlds = worldEntries.filter(entry => entry.published !== false);
+
+            if (!visibleWorlds.length) {
+                container.innerHTML = `<div class="bg-white border border-[#f2a1a2]/30 rounded-xl p-6 text-center text-sm text-[#836b6d]">העולם הזה עוד מתמלא ביצורים וסיפורים.</div>`;
+                return;
+            }
+
+            container.innerHTML = visibleWorlds.map(entry => `
+                <article class="grid grid-cols-1 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-5 md:gap-8 items-center bg-white/85 border border-[#f2a1a2]/30 rounded-2xl p-4 md:p-7 shadow-sm">
+                    <div class="w-full overflow-hidden rounded-xl bg-[#fdfaf7] border border-[#f2a1a2]/20">
+                        <img src="${escapeWorldContent(entry.image)}" alt="${escapeWorldContent(entry.title)}" class="w-full aspect-[4/3] object-contain">
+                    </div>
+                    <div class="space-y-3 text-right">
+                        <h3 class="text-2xl md:text-3xl font-black text-[#733238]">${escapeWorldContent(entry.title)}</h3>
+                        <p class="text-sm md:text-base text-[#513e40] leading-relaxed whitespace-pre-line">${escapeWorldContent(entry.text)}</p>
+                    </div>
+                </article>
+            `).join('');
         }
 
         function renderFeaturedProducts() {
@@ -2374,9 +2532,35 @@
         }
 
         function renderAdminDashboard() {
+            renderAdminWorlds();
             renderAdminUpdates();
             renderAdminOrders();
             lucide.createIcons();
+        }
+
+        function renderAdminWorlds() {
+            const container = document.getElementById('admin-worlds-list');
+            if (!container) return;
+            if (!worldEntries.length) {
+                container.innerHTML = `<div class="md:col-span-2 xl:col-span-3 bg-white border border-[#f2a1a2]/30 rounded-xl p-5 text-center text-sm text-[#836b6d]">עוד לא נוספו עולמות או קבוצות.</div>`;
+                return;
+            }
+
+            container.innerHTML = worldEntries.map(entry => {
+                const entryId = encodeURIComponent(String(entry.id ?? ''));
+                return `
+                    <article onclick="openEditWorldModal(decodeURIComponent('${entryId}'))" class="bg-white border border-[#f2a1a2]/30 rounded-xl overflow-hidden text-right cursor-pointer hover:shadow-md transition-all">
+                        ${entry.image ? `<img src="${escapeWorldContent(entry.image)}" alt="" class="w-full aspect-video object-contain bg-[#fdfaf7]">` : ''}
+                        <div class="p-4 space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <h3 class="text-sm font-black text-[#733238]">${escapeWorldContent(entry.title)}</h3>
+                                <span class="text-[11px] font-bold rounded-full px-2 py-1 bg-[#f3dedf] text-[#733238]">${entry.published !== false ? 'מוצג' : 'מוסתר'}</span>
+                            </div>
+                            <p class="text-xs text-[#513e40] leading-relaxed line-clamp-3">${escapeWorldContent(entry.text)}</p>
+                        </div>
+                    </article>
+                `;
+            }).join('');
         }
 
         function renderAdminUpdates() {
@@ -2407,6 +2591,108 @@
                 </article>
                 `;
             }).join('');
+        }
+
+        function openAdminWorldModal(entry = null) {
+            activeWorldImage = entry?.image || "";
+            activeWorldImageFile = null;
+            document.getElementById('admin-world-modal-title').innerText = entry ? "עריכת עולם" : "עולם חדש";
+            document.getElementById('admin-world-id').value = entry?.id || "";
+            document.getElementById('admin-world-title').value = entry?.title || "";
+            document.getElementById('admin-world-text').value = entry?.text || "";
+            document.getElementById('admin-world-published').checked = entry?.published !== false;
+            document.getElementById('admin-world-image-input').value = "";
+            document.getElementById('admin-world-delete-btn').classList.toggle('hidden', !entry);
+            renderAdminWorldImagePreview();
+            document.getElementById('admin-world-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function openEditWorldModal(id) {
+            const entry = worldEntries.find(item => String(item.id) === String(id));
+            if (entry) openAdminWorldModal(entry);
+        }
+
+        function closeAdminWorldModal() {
+            document.getElementById('admin-world-modal').classList.add('hidden');
+        }
+
+        function renderAdminWorldImagePreview() {
+            const wrap = document.getElementById('admin-world-image-preview-wrap');
+            const img = document.getElementById('admin-world-image-preview');
+            if (activeWorldImage) {
+                img.src = activeWorldImage;
+                wrap.classList.remove('hidden');
+            } else {
+                img.src = "";
+                wrap.classList.add('hidden');
+            }
+        }
+
+        function removeAdminWorldImage() {
+            activeWorldImage = "";
+            activeWorldImageFile = null;
+            document.getElementById('admin-world-image-input').value = "";
+            renderAdminWorldImagePreview();
+        }
+
+        async function saveAdminWorld() {
+            const idVal = document.getElementById('admin-world-id').value;
+            const entryId = idVal || Date.now();
+            const title = document.getElementById('admin-world-title').value.trim();
+            const text = document.getElementById('admin-world-text').value.trim();
+            if (!title) {
+                alert("חובה להזין שם.");
+                return;
+            }
+            if (!activeWorldImage) {
+                alert("חובה לבחור תמונה.");
+                return;
+            }
+
+            const saveButton = document.getElementById('admin-world-save-btn');
+            saveButton.disabled = true;
+            saveButton.innerText = activeWorldImageFile ? "מעלה תמונה..." : "שומר...";
+            try {
+                let image = activeWorldImage;
+                if (activeWorldImageFile) {
+                    image = await uploadProductImageToCloudinary(activeWorldImageFile, `world-${entryId}`, 'world');
+                }
+                const entryData = {
+                    title,
+                    text,
+                    image,
+                    published: document.getElementById('admin-world-published').checked
+                };
+
+                if (idVal) {
+                    const index = worldEntries.findIndex(item => String(item.id) === String(idVal));
+                    if (index !== -1) worldEntries[index] = { ...worldEntries[index], ...entryData };
+                } else {
+                    worldEntries.push({ id: entryId, ...entryData });
+                }
+
+                saveSiteContent();
+                renderSiteSections();
+                renderAdminDashboard();
+                closeAdminWorldModal();
+            } catch (error) {
+                console.error("שגיאה בהעלאת תמונת העולם ל-Cloudinary:", error);
+                alert(`לא הצלחתי להעלות את התמונה לענן.\n${error.message || error}`);
+            } finally {
+                saveButton.disabled = false;
+                saveButton.innerText = "שמור";
+            }
+        }
+
+        function deleteWorldFromModal() {
+            const id = document.getElementById('admin-world-id').value;
+            if (!id || !confirm("למחוק את העולם הזה?")) return;
+            worldEntries = worldEntries.filter(entry => String(entry.id) !== String(id));
+            saveSiteContent();
+            renderSiteSections();
+            renderAdminDashboard();
+            closeAdminWorldModal();
         }
 
         function renderAdminOrders() {
@@ -2783,6 +3069,7 @@
                 description: catalog.description,
                 email: catalog.email,
                 products: catalog.products,
+                worlds: worldEntries,
                 updates: siteUpdates,
                 orders: orders
             };
@@ -2847,6 +3134,7 @@
                 localStorage.removeItem('ecrafts_catalog');
                 localStorage.removeItem('ecrafts_updates');
                 localStorage.removeItem('ecrafts_orders');
+                localStorage.removeItem('ecrafts_worlds');
                 loadCatalogFromLocalOrJs();
                 loadSiteContent();
                 applyModeUI();
@@ -3561,6 +3849,7 @@
             const fileInput = document.getElementById('modal-file-input');
             const extraFileInput = document.getElementById('modal-extra-file-input');
             const updateImageInput = document.getElementById('admin-update-image-input');
+            const worldImageInput = document.getElementById('admin-world-image-input');
             const previewContainer = document.getElementById('modal-image-preview-container');
 
             previewContainer.addEventListener('click', () => {
@@ -3609,6 +3898,16 @@
                         renderAdminUpdateImagePreview();
                     };
                     reader.readAsDataURL(file);
+                });
+            }
+
+            if (worldImageInput) {
+                worldImageInput.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+                    activeWorldImageFile = file;
+                    activeWorldImage = URL.createObjectURL(file);
+                    renderAdminWorldImagePreview();
                 });
             }
         }
