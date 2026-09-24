@@ -973,7 +973,7 @@
 
                 <!-- שם מוצר -->
                 <div>
-                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">שם המוצר</label>
+                    <label class="block text-sm font-medium text-zinc-400 mb-1.5">שם המוצר <span class="text-xs text-zinc-500">(אופציונלי בנושא פרחים)</span></label>
                     <input type="text" id="modal-name" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-500" placeholder="לדוגמה: מחזיק מפתחות Spotify מעוצב">
                 </div>
 
@@ -1789,6 +1789,20 @@
                 .trim();
         }
 
+        function isFlowerProduct(product) {
+            if (!product) return false;
+            return cleanFilterValue(product.theme) === 'פרחים' || cleanFilterValue(product.category).includes('פרחים');
+        }
+
+        function getVisibleProductName(product) {
+            return isFlowerProduct(product) ? '' : cleanFilterValue(product && product.name);
+        }
+
+        function getProductReferenceName(product) {
+            if (isFlowerProduct(product)) return product.category || 'מוצר בנושא פרחים';
+            return cleanFilterValue(product && product.name) || product.category || 'מוצר';
+        }
+
         function normalizeStatus(status) {
             if (status === 'sold' || status === 'unavailable' || status === 'out_of_stock') return 'made_to_order';
             if (status === 'made_to_order') return 'made_to_order';
@@ -2491,7 +2505,7 @@
                             <img src="${imgUrl}" alt="${product.name || ''}" class="w-full h-full object-cover">
                         </div>
                         <div class="p-3 space-y-1">
-                            <h3 class="text-xs font-bold text-[#733238] line-clamp-2">${product.name || ''}</h3>
+                            <h3 class="text-xs font-bold text-[#733238] line-clamp-2">${getProductReferenceName(product)}</h3>
                             <p class="text-sm font-black text-[#ee5253]">₪ ${product.price || '15'}</p>
                         </div>
                     </button>
@@ -2882,7 +2896,7 @@
             const select = document.getElementById('admin-order-product');
             const isManual = selectedId === 'manual';
             select.innerHTML = `<option value="">בחרי מוצר</option><option value="manual" ${isManual ? 'selected' : ''}>כתיבה ידנית</option>` + (catalog.products || []).map(product => `
-                <option value="${product.id}" ${String(product.id) === String(selectedId) ? 'selected' : ''}>${product.category || 'כללי'} - ${product.name || 'מוצר'} - ₪${product.price || '15'}</option>
+                <option value="${product.id}" ${String(product.id) === String(selectedId) ? 'selected' : ''}>${product.category || 'כללי'} - ${getProductReferenceName(product)} - ₪${product.price || '15'}</option>
             `).join('');
         }
 
@@ -2939,7 +2953,7 @@
             }
 
             document.getElementById('admin-order-product-img').src = getDisplayImage(product, 120);
-            document.getElementById('admin-order-product-name').innerText = product.name || "";
+            document.getElementById('admin-order-product-name').innerText = getProductReferenceName(product);
             document.getElementById('admin-order-product-price').innerText = `₪${product.price || '15'}`;
             preview.classList.remove('hidden');
             preview.classList.add('flex');
@@ -2991,7 +3005,7 @@
                 phone,
                 clientContact: [email, phone].filter(Boolean).join(' / '),
                 productId: product ? product.id : "",
-                productName: product ? product.name : manualProductName,
+                productName: product ? getProductReferenceName(product) : manualProductName,
                 quantity: Math.max(1, parseInt(document.getElementById('admin-order-quantity').value || '1', 10)),
                 totalPrice: document.getElementById('admin-order-total').value.trim(),
                 type: document.getElementById('admin-order-type').value,
@@ -3026,13 +3040,13 @@
 
             if (['אושרה', 'בהכנה', 'מוכנה'].includes(orderStatus) && currentStatus === 'available') {
                 nextStatus = 'reserved';
-                message = `ההזמנה אושרה/בהכנה. להעביר את "${product.name}" לסטטוס שמור?`;
+                message = `ההזמנה אושרה/בהכנה. להעביר את "${getProductReferenceName(product)}" לסטטוס שמור?`;
             } else if (orderStatus === 'בוטלה' && currentStatus === 'reserved') {
                 nextStatus = 'available';
-                message = `ההזמנה בוטלה. להחזיר את "${product.name}" לסטטוס זמין?`;
+                message = `ההזמנה בוטלה. להחזיר את "${getProductReferenceName(product)}" לסטטוס זמין?`;
             } else if (orderStatus === 'הושלמה' && currentStatus !== 'made_to_order') {
                 nextStatus = 'made_to_order';
-                message = `ההזמנה הושלמה. להעביר את "${product.name}" לסטטוס בהכנה לפי הזמנה?`;
+                message = `ההזמנה הושלמה. להעביר את "${getProductReferenceName(product)}" לסטטוס בהכנה לפי הזמנה?`;
             }
 
             if (nextStatus && confirm(message)) {
@@ -3257,6 +3271,7 @@
             // רינדור הכרטיסיות
             filtered.forEach((product, index) => {
                 const card = document.createElement('div');
+                const visibleProductName = getVisibleProductName(product);
                 card.className = 'glass-card glow-hover rounded-2xl overflow-hidden flex flex-col group relative transition-all duration-300 transform md:hover:-translate-y-1';
                 card.style.animation = `fadeIn 0.3s ease-out ${index * 0.05}s both`;
                 if (isEditMode) {
@@ -3321,7 +3336,7 @@
                     <!-- פרטים -->
                     <div class="p-3.5 flex-grow flex flex-col justify-between gap-3">
                         <div class="space-y-1">
-                            <h3 class="font-bold text-sm text-zinc-200 line-clamp-1 group-hover:text-white transition-colors" title="${product.name}">${product.name}</h3>
+                            ${visibleProductName ? `<h3 class="font-bold text-sm text-zinc-200 line-clamp-1 group-hover:text-white transition-colors" title="${visibleProductName}">${visibleProductName}</h3>` : ''}
                             <p class="text-xs text-zinc-500 line-clamp-2 leading-relaxed" title="${product.desc || ''}">${product.desc || 'אין תיאור למוצר'}</p>
                         </div>
 
@@ -4079,7 +4094,7 @@
             }
             const extraImages = [...modalExtraImages].map(src => getProductImagePath(String(src || '').trim(), category)).filter(Boolean);
 
-            if (!name) {
+            if (!name && cleanFilterValue(theme) !== 'פרחים' && !cleanFilterValue(category).includes('פרחים')) {
                 alert("חובה להזין שם מוצר!");
                 return;
             }
@@ -4346,7 +4361,9 @@
                 if (img.dataset.mainImage === 'true') confirmProductImagePath(img, product.id);
             };
             img.src = imgUrl;
-            name.innerText = product.name || "";
+            const visibleProductName = getVisibleProductName(product);
+            name.innerText = visibleProductName;
+            name.classList.toggle('hidden', !visibleProductName);
             desc.innerText = product.desc || "";
             productInfo.classList.toggle('hidden', !product.desc);
             status.innerText = statusMeta.label;
@@ -4440,11 +4457,12 @@
         function openOrderModal(productId) {
             const product = catalog.products.find(p => p.id === productId);
             if (!product) return;
+            const referenceName = getProductReferenceName(product);
 
             activeOrderProductId = productId;
             
             // מילוי פרטים
-            document.getElementById('order-product-name').innerText = product.name;
+            document.getElementById('order-product-name').innerText = referenceName;
             document.getElementById('order-product-price').innerText = `₪ ${product.price || '15'}`;
             
             // עדכון כותרות וכפתור לפי סטטוס המוצר
@@ -4513,9 +4531,10 @@
             const isMadeToOrder = statusMeta.key === 'made_to_order';
             const isReserved = statusMeta.key === 'reserved';
             const requestType = statusMeta.requestType;
+            const referenceName = getProductReferenceName(product);
             addOrderRecord({
                 productId: product.id,
-                productName: product.name,
+                productName: referenceName,
                 initialProductStatus: statusMeta.key,
                 type: statusMeta.key === 'available' ? 'מוצר זמין' : 'יצירה מחדש',
                 clientName,
@@ -4528,9 +4547,9 @@
             let body = "";
 
             if (isMadeToOrder) {
-                subject = `הזמנת יצירה חדשה: ${product.name}`;
+                subject = `הזמנת יצירה חדשה: ${referenceName}`;
                 body = `היי!\n\nאני מעוניין/ת להזמין יצירה חדשה בהשראת המוצר הבא מהקטלוג:\n\n` +
-                       `- שם המוצר: ${product.name}\n` +
+                       `- מוצר: ${referenceName}\n` +
                        `- סוג מוצר: ${product.category || 'כללי'}\n` +
                        `- כמות מבוקשת: ${quantity}\n` +
                        `- מחיר יחידה מוערך: ₪${product.price || '15'}\n\n` +
@@ -4542,9 +4561,9 @@
                        `- הערות/בקשות עיצוב: ${notes || 'אין'}\n\n` +
                        `תודה!`;
             } else if (isReserved) {
-                subject = `בקשת יצירה דומה: ${product.name}`;
+                subject = `בקשת יצירה דומה: ${referenceName}`;
                 body = `היי!\n\nאני מעוניין/ת לבקש יצירה דומה למוצר השמור הבא מהקטלוג:\n\n` +
-                       `- שם המוצר: ${product.name}\n` +
+                       `- מוצר: ${referenceName}\n` +
                        `- סוג מוצר: ${product.category || 'כללי'}\n` +
                        `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
                        `פרטי המזמין:\n` +
@@ -4553,9 +4572,9 @@
                        `- שאלות או בירורים נוספים: ${notes || 'אין'}\n\n` +
                        `תודה!`;
             } else {
-                subject = `הזמנה חדשה מהקטלוג: ${product.name}`;
+                subject = `הזמנה חדשה מהקטלוג: ${referenceName}`;
                 body = `היי!\n\nאני מעוניין/ת להזמין את המוצר הבא מהקטלוג:\n\n` +
-                       `- שם המוצר: ${product.name}\n` +
+                       `- מוצר: ${referenceName}\n` +
                        `- סוג מוצר: ${product.category || 'כללי'}\n` +
                        `- כמות: ${quantity}\n` +
                        `- מחיר יחידה: ₪${product.price || '15'}\n\n` +
@@ -4596,10 +4615,10 @@
 
             // שליחת הנתונים ל-FormSubmit דרך AJAX
             const ajaxSubject = isMadeToOrder 
-                ? `הזמנת יצירה חדשה: ${product.name} (מאת ${clientName})`
+                ? `הזמנת יצירה חדשה: ${referenceName} (מאת ${clientName})`
                 : isReserved 
-                    ? `בקשת יצירה דומה: ${product.name} (מאת ${clientName})`
-                    : `הזמנה חדשה מהקטלוג: ${product.name} (מאת ${clientName})`;
+                    ? `בקשת יצירה דומה: ${referenceName} (מאת ${clientName})`
+                    : `הזמנה חדשה מהקטלוג: ${referenceName} (מאת ${clientName})`;
             const ajaxNotes = isMadeToOrder 
                 ? `${notes || 'אין'}\n*(הלקוח מודע לכך שעבודת היד לא תהיה זהה ב-100% למקור)*`
                 : notes || "אין הערות";
@@ -4612,7 +4631,7 @@
                 },
                 body: JSON.stringify({
                     "סוג פנייה": requestType,
-                    "שם המוצר": product.name,
+                    "מוצר": referenceName,
                     "סוג מוצר": product.category || "כללי",
                     "מחיר": `₪${product.price || '15'}`,
                     "כמות": quantity,
@@ -4665,6 +4684,7 @@
         function copyOrderDetails() {
             const product = catalog.products.find(p => p.id === activeOrderProductId);
             if (!product) return;
+            const referenceName = getProductReferenceName(product);
 
             const clientName = document.getElementById('order-client-name').value.trim();
             const clientContact = document.getElementById('order-client-contact').value.trim();
@@ -4687,7 +4707,7 @@
             const textToCopy = `${statusMeta.requestType} עבור: ${targetEmail}\n\n` +
                                `היי!\n` +
                                `${introText}\n` +
-                               `- שם המוצר: ${product.name}\n` +
+                               `- מוצר: ${referenceName}\n` +
                                `- סוג מוצר: ${product.category || 'כללי'}\n` +
                                `- כמות: ${quantity}\n` +
                                `- מחיר יחידה מוערך: ₪${product.price || '15'}\n\n` +
