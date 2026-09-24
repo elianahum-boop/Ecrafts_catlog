@@ -1244,10 +1244,6 @@
                         </select>
                     </div>
                 </div>
-                <label class="flex items-center gap-2 text-sm font-bold text-[#733238] bg-[#f3dedf] border border-[#f2a1a2]/30 rounded-xl px-3 py-2 cursor-pointer">
-                    <input type="checkbox" id="admin-update-home" class="w-4 h-4">
-                    <span>הצג גם בעמוד הבית</span>
-                </label>
                 <div class="rounded-xl border border-zinc-800 bg-zinc-950/35 p-3 space-y-3">
                     <label class="block text-sm font-medium text-zinc-400">תמונה אופציונלית</label>
                     <input type="file" id="admin-update-image-input" class="hidden" accept="image/png,image/jpeg,image/jpg,image/webp,image/heic,image/heif,.heic,.heif">
@@ -2301,7 +2297,6 @@
                     : [];
                 siteUpdates.forEach(update => {
                     if (!update.status) update.status = 'published';
-                    if (update.showOnHome === undefined) update.showOnHome = true;
                 });
                 return;
             }
@@ -2320,7 +2315,6 @@
             }
             siteUpdates.forEach(update => {
                 if (!update.status) update.status = 'published';
-                if (update.showOnHome === undefined) update.showOnHome = true;
             });
 
             try {
@@ -2521,7 +2515,6 @@
         function getSortedUpdates() {
             siteUpdates.forEach(update => {
                 if (!update.status) update.status = 'published';
-                if (update.showOnHome === undefined) update.showOnHome = true;
             });
             return [...siteUpdates].sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
         }
@@ -2553,7 +2546,8 @@
 
         function renderUpdates() {
             const sorted = getSortedUpdates();
-            renderUpdateCards(document.getElementById('home-updates-list'), sorted.filter(update => update.showOnHome !== false).slice(0, 3));
+            const published = sorted.filter(update => (update.status || 'published') === 'published');
+            renderUpdateCards(document.getElementById('home-updates-list'), published.slice(0, 3));
             renderUpdateCards(document.getElementById('updates-list'), sorted);
         }
 
@@ -2612,7 +2606,6 @@
                         </div>
                         <h3 class="text-sm font-black text-[#733238]">${update.title || ''}</h3>
                         <p class="text-xs text-[#513e40] leading-relaxed line-clamp-2">${update.text || ''}</p>
-                        <p class="text-[11px] font-bold text-[#836b6d]">${update.showOnHome !== false ? 'מופיע בעמוד הבית' : 'לא מופיע בעמוד הבית'}</p>
                     </div>
                 </article>
                 `;
@@ -2776,7 +2769,6 @@
             document.getElementById('admin-update-text').value = update?.text || "";
             document.getElementById('admin-update-date').value = update?.date || new Date().toISOString().slice(0, 10);
             document.getElementById('admin-update-status').value = update?.status || "published";
-            document.getElementById('admin-update-home').checked = update?.showOnHome !== false;
             document.getElementById('admin-update-image-input').value = "";
             document.getElementById('admin-update-delete-btn').classList.toggle('hidden', !update);
             renderAdminUpdateImagePreview();
@@ -2824,7 +2816,6 @@
                 text: document.getElementById('admin-update-text').value.trim(),
                 date: document.getElementById('admin-update-date').value || new Date().toISOString().slice(0, 10),
                 status: document.getElementById('admin-update-status').value,
-                showOnHome: document.getElementById('admin-update-home').checked,
                 image: activeUpdateImage
             };
 
