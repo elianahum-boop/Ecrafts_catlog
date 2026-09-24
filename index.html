@@ -441,6 +441,21 @@
             </a>
         </section>
 
+        <!-- ================= עדכונים אחרונים בבית ================= -->
+        <section id="home-updates" class="public-section section-shell mb-10 md:mb-14">
+            <div class="flex items-end justify-between gap-4 mb-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-black text-[#733238]">עדכונים אחרונים</h2>
+                    <p class="text-sm text-[#836b6d] mt-1">חדשות קצרות מהסטודיו והקטלוג.</p>
+                </div>
+                <a href="#updates" class="inline-flex items-center gap-2 text-sm font-bold text-[#ee5253] hover:text-[#733238]">
+                    <span>לכל העדכונים</span>
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                </a>
+            </div>
+            <div id="home-updates-list" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+        </section>
+
         <!-- ================= פאנל ניהול (מוצג רק במצב עריכה) ================= -->
         <section id="admin-panel" class="hidden mb-8 space-y-6 animate-fade-in">
             <div class="glass-card p-4 rounded-2xl">
@@ -759,7 +774,7 @@
             <div class="grid grid-cols-1 md:grid-cols-[220px_minmax(0,1fr)] gap-6 items-center bg-white/85 border border-[#f2a1a2]/30 rounded-2xl p-5 md:p-7 shadow-sm">
                 <img src="logo.jpg" class="w-36 h-36 md:w-44 md:h-44 object-cover rounded-full border-4 border-white shadow-md mx-auto" alt="Ecrafts">
                 <div class="space-y-3 text-right">
-                    <h2 class="text-2xl md:text-3xl font-black text-[#733238]">על Ecrafts</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-[#733238]">קצת על Ecrafts</h2>
                     <p class="text-sm md:text-base text-[#513e40] leading-relaxed">
                         Ecrafts היא חנות ליצירות קטנות בעבודת יד: סימניות, מחזיקי מפתחות ופריטים מאוירים שמשלבים ציור ידני, פרחים, אבנים וחומרים משתנים. כל פריט נוצר בנפרד, ולכן גם כשמזמינים יצירה בהשראת עיצוב קיים, התוצאה נשארת ייחודית.
                     </p>
@@ -2540,6 +2555,8 @@
 
         function renderUpdates() {
             const sorted = getSortedUpdates();
+            const published = sorted.filter(update => (update.status || 'published') === 'published');
+            renderUpdateCards(document.getElementById('home-updates-list'), published.slice(0, 3));
             renderUpdateCards(document.getElementById('updates-list'), sorted);
         }
 
