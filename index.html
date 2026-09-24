@@ -2440,10 +2440,33 @@
             const container = document.getElementById('featured-products');
             if (!container) return;
 
-            const products = [...(catalog.products || [])]
+            const availableProducts = [...(catalog.products || [])]
                 .filter(p => normalizeStatus(p.status) === 'available')
-                .sort((a, b) => Number(b.id || 0) - Number(a.id || 0))
-                .slice(0, 4);
+                .sort((a, b) => Number(b.id || 0) - Number(a.id || 0));
+
+            const categoryText = product => cleanFilterValue(product.category).toLowerCase();
+            const isHolder = product => categoryText(product).includes('מחזיק');
+            const isBookmark = product => categoryText(product).includes('סימני');
+            const isArtCard = product => {
+                const category = categoryText(product);
+                return category.includes('aceo') || category.includes('art cards') || category.includes('קלף') || category.includes('קלפי');
+            };
+
+            const products = [];
+            const addLatestMatching = predicate => {
+                const product = availableProducts.find(item => !products.includes(item) && predicate(item));
+                if (product) products.push(product);
+            };
+
+            addLatestMatching(isHolder);
+            addLatestMatching(isBookmark);
+            addLatestMatching(isArtCard);
+            addLatestMatching(product => !isHolder(product) && !isBookmark(product) && !isArtCard(product));
+
+            for (const product of availableProducts) {
+                if (products.length >= 4) break;
+                if (!products.includes(product)) products.push(product);
+            }
 
             container.innerHTML = products.map(product => {
                 const imgUrl = getDisplayImage(product, 300);
