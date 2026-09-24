@@ -441,21 +441,6 @@
             </a>
         </section>
 
-        <!-- ================= עדכונים אחרונים בבית ================= -->
-        <section id="home-updates" class="public-section section-shell mb-10 md:mb-14">
-            <div class="flex items-end justify-between gap-4 mb-4">
-                <div>
-                    <h2 class="text-2xl md:text-3xl font-black text-[#733238]">עדכונים אחרונים</h2>
-                    <p class="text-sm text-[#836b6d] mt-1">חדשות קצרות מהסטודיו והקטלוג.</p>
-                </div>
-                <a href="#updates" class="inline-flex items-center gap-2 text-sm font-bold text-[#ee5253] hover:text-[#733238]">
-                    <span>לכל העדכונים</span>
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                </a>
-            </div>
-            <div id="home-updates-list" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
-        </section>
-        
         <!-- ================= פאנל ניהול (מוצג רק במצב עריכה) ================= -->
         <section id="admin-panel" class="hidden mb-8 space-y-6 animate-fade-in">
             <div class="glass-card p-4 rounded-2xl">
@@ -2091,9 +2076,10 @@
             productsSection.classList.toggle('hidden', !isVisible);
         }
 
-        function setPublicSectionsVisible(isVisible) {
+        function setPublicSectionsVisible(isVisible, page = 'home') {
             document.querySelectorAll('.public-section').forEach(section => {
-                section.classList.toggle('hidden', !isVisible);
+                const belongsToPage = page === 'updates' ? section.id === 'updates' : section.id !== 'updates';
+                section.classList.toggle('hidden', !isVisible || !belongsToPage);
             });
         }
 
@@ -2119,16 +2105,22 @@
                         history.pushState(null, '', `#${targetId}`);
                         document.getElementById(targetId).scrollIntoView({ behavior: 'smooth', block: 'start' });
                     } else if (publicSections.has(targetId)) {
-                        setPublicSectionsVisible(true);
+                        if (targetId === 'updates') {
+                            event.preventDefault();
+                            history.pushState(null, '', '#updates');
+                        }
+                        setPublicSectionsVisible(true, targetId === 'updates' ? 'updates' : 'home');
                         setProductsSectionVisible(false);
                         setWorldsSectionVisible(false);
+                        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
 
             const isProductsPage = window.location.hash === '#products';
             const isWorldsPage = window.location.hash === '#worlds';
-            setPublicSectionsVisible(!isProductsPage && !isWorldsPage);
+            const isUpdatesPage = window.location.hash === '#updates';
+            setPublicSectionsVisible(!isProductsPage && !isWorldsPage, isUpdatesPage ? 'updates' : 'home');
             setProductsSectionVisible(isProductsPage);
             setWorldsSectionVisible(isWorldsPage);
             window.addEventListener('hashchange', () => {
@@ -2138,7 +2130,8 @@
                 }
                 const isProductsPage = window.location.hash === '#products';
                 const isWorldsPage = window.location.hash === '#worlds';
-                setPublicSectionsVisible(!isProductsPage && !isWorldsPage);
+                const isUpdatesPage = window.location.hash === '#updates';
+                setPublicSectionsVisible(!isProductsPage && !isWorldsPage, isUpdatesPage ? 'updates' : 'home');
                 setProductsSectionVisible(isProductsPage);
                 setWorldsSectionVisible(isWorldsPage);
             });
@@ -2199,7 +2192,8 @@
                 adminMobileLinks.forEach(link => link.classList.add('hidden'));
                 const isProductsPage = window.location.hash === '#products';
                 const isWorldsPage = window.location.hash === '#worlds';
-                setPublicSectionsVisible(!isProductsPage && !isWorldsPage);
+                const isUpdatesPage = window.location.hash === '#updates';
+                setPublicSectionsVisible(!isProductsPage && !isWorldsPage, isUpdatesPage ? 'updates' : 'home');
                 setProductsSectionVisible(isProductsPage);
                 setWorldsSectionVisible(isWorldsPage);
             }
@@ -2546,8 +2540,6 @@
 
         function renderUpdates() {
             const sorted = getSortedUpdates();
-            const published = sorted.filter(update => (update.status || 'published') === 'published');
-            renderUpdateCards(document.getElementById('home-updates-list'), published.slice(0, 3));
             renderUpdateCards(document.getElementById('updates-list'), sorted);
         }
 
