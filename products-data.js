@@ -2525,7 +2525,7 @@ window.catalogData = {
       "category": "סימניות זוהרות",
       "theme": "סדרות",
       "desc": "סימניית UV RESIN זוהרת בחושך",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796196/main-1789130708852-20260911_132456.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790270189/glbr0ooyjc6zkpmqlelh.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2534,9 +2534,9 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796196/extra-1-1789130719383-20260911_131019.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796196/extra-2-1789130735701-20260911_132415.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796196/extra-3-1789130752222-20260911_133833.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270192/ge8jrkkjivpnhsjqmdvw.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270194/a9tgcv8dgl2fs3obavbs.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270195/nrfc5gyelp3ol16ivpas.jpg"
       ]
     },
     {
@@ -2547,7 +2547,7 @@ window.catalogData = {
       "category": "סימניות זוהרות",
       "theme": "סדרות",
       "desc": "סימניית UV RESIN זוהרת בחושך",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796197/main-1789130781630-20260911_130518.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790270196/kctlqigy5mi8jh8uxl9i.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2556,9 +2556,9 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796197/extra-1-1789130788805-20260911_130733.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796197/extra-2-1789130804424-20260911_132157.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796197/extra-3-1789130823240-20260911_132305.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270198/clswvqhxdvk7xpiyqkqf.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270200/mt4jguwqes3s2155v73u.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270202/wup8cmxgh5jf4ifgqsnu.jpg"
       ]
     },
     {
@@ -2569,7 +2569,7 @@ window.catalogData = {
       "category": "סימניות זוהרות",
       "theme": "סדרות",
       "desc": "סימניית UV RESIN זוהרת בחושך",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796198/main-1789130878001-20260911_132615.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790270204/xwo2pkqv9hrf4c6dmexf.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2578,9 +2578,9 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796198/extra-1-1789130888458-20260911_131112.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796198/extra-2-1789130902593-20260911_132533.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796198/extra-3-1789130939565-20260911_133816.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270206/wcqztlrv0vyyboxowyqh.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270209/dws8zrc7nwqzawlhdl4c.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270211/czw4m5rrpf7cifo0j9l5.jpg"
       ]
     },
     {
@@ -2591,7 +2591,7 @@ window.catalogData = {
       "category": "סימניות זוהרות",
       "theme": "סדרות",
       "desc": "סימניית UV RESIN זוהרת בחושך",
-      "image": "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796199/main-1789131006315-20260911_130609.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790270363/vdvq0n8lpuhwqfl4pa3v.jpg",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2600,9 +2600,9 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796199/extra-1-1789131021112-20260911_131041.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796199/extra-2-1789131037994-20260911_131648.jpg",
-        "https://jtciejevxpemlykmxfvc.supabase.co/storage/v1/object/public/product-images/products/1789124796199/extra-3-1789131053098-20260911_132255.jpg"
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270212/uzyhipvszzpqr24ttpo5.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270365/mzzch4zr9mcm2cu77yht.jpg",
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790270367/bonww6ah3qnosfqkf60k.jpg"
       ]
     }
   ],

@@ -1372,13 +1372,8 @@
         const selectedProductIds = new Set();
         const BOOKMARK_PRICE_MIGRATION_KEY = 'ecrafts_bookmark_price_25_migrated';
         const DEFAULT_THEMES = ["הכל", "אנימה", "פרחים", "חיות", "דמויות מקוריות", "טבע", "אחר"];
-        const SUPABASE_PROJECT_URL = "https://jtciejevxpemlykmxfvc.supabase.co";
-        const SUPABASE_PUBLIC_KEY = "sb_publishable_y-8_gt1Yx7c36DoFMXy_qg_M3TY1BsD";
-        const SUPABASE_PRODUCT_BUCKET = "product-images";
         const CLOUDINARY_CLOUD_NAME = "nidtlynh";
         const CLOUDINARY_UPLOAD_PRESET = "ecrafts_products";
-        let supabaseProductFolderCache = null;
-        const supabaseFileLookupCache = new Map();
         
         // מפה לשמירת ObjectURL זמניים לקבצים שנטענו בסשן הנוכחי לצורך תצוגה מקדימה מיידית
         const sessionImageUrls = {}; 
@@ -1408,144 +1403,6 @@
             return `מוצרים/${cleanPath}`;
         }
 
-        function encodeStoragePath(path) {
-            return String(path || '')
-                .split('/')
-                .filter(Boolean)
-                .map(part => encodeURIComponent(part))
-                .join('/');
-        }
-
-        function cleanStorageFileName(fileName) {
-            const clean = String(fileName || '').replace(/[^A-Za-z0-9._-]+/g, '-').replace(/^-+|-+$/g, '');
-            return clean || `image-${Date.now()}.jpg`;
-        }
-
-        function getSupabasePublicUrl(storagePath) {
-            return `${SUPABASE_PROJECT_URL}/storage/v1/object/public/${SUPABASE_PRODUCT_BUCKET}/${encodeStoragePath(storagePath)}`;
-        }
-
-        async function listSupabaseProductImages(productId) {
-            const response = await fetch(`${SUPABASE_PROJECT_URL}/storage/v1/object/list/${SUPABASE_PRODUCT_BUCKET}`, {
-                method: 'POST',
-                headers: {
-                    apikey: SUPABASE_PUBLIC_KEY,
-                    Authorization: `Bearer ${SUPABASE_PUBLIC_KEY}`,
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    prefix: `products/${productId}`,
-                    limit: 100,
-                    offset: 0,
-                    sortBy: { column: 'name', order: 'asc' }
-                })
-            });
-
-            if (!response.ok) return [];
-            const files = await response.json().catch(() => []);
-            if (!Array.isArray(files)) return [];
-
-            return files
-                .filter(file => file && file.name && !file.name.endsWith('/'))
-                .map(file => ({
-                    name: file.name,
-                    mimeType: file.metadata?.mimetype || file.metadata?.mimeType || '',
-                    url: getSupabasePublicUrl(`products/${productId}/${file.name}`)
-                }));
-        }
-
-        function isDisplayableSupabaseImage(file) {
-            const name = String(file?.name || '').toLowerCase();
-            const mimeType = String(file?.mimeType || '').toLowerCase();
-            if (name.endsWith('.heic') || name.endsWith('.heif')) return false;
-            if (mimeType === 'image/heic' || mimeType === 'image/heif') return false;
-            if (mimeType && !mimeType.startsWith('image/')) return false;
-            return mimeType.startsWith('image/') || /\.(png|jpe?g|webp|gif|bmp|svg)$/i.test(name);
-        }
-
-        async function isBrokenSupabaseImageUrl(url) {
-            const imageUrl = String(url || '').trim();
-            if (!imageUrl.startsWith(`${SUPABASE_PROJECT_URL}/storage/v1/object/public/${SUPABASE_PRODUCT_BUCKET}/`)) return false;
-            try {
-                const response = await fetch(imageUrl, { method: 'HEAD' });
-                const mimeType = String(response.headers.get('content-type') || '').toLowerCase();
-                return !response.ok || (mimeType && !mimeType.startsWith('image/'));
-            } catch (error) {
-                return true;
-            }
-        }
-
-        async function listSupabaseProductFolders() {
-            if (supabaseProductFolderCache) return supabaseProductFolderCache;
-            const response = await fetch(`${SUPABASE_PROJECT_URL}/storage/v1/object/list/${SUPABASE_PRODUCT_BUCKET}`, {
-                method: 'POST',
-                headers: {
-                    apikey: SUPABASE_PUBLIC_KEY,
-                    Authorization: `Bearer ${SUPABASE_PUBLIC_KEY}`,
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    prefix: 'products',
-                    limit: 1000,
-                    offset: 0,
-                    sortBy: { column: 'name', order: 'asc' }
-                })
-            });
-
-            if (!response.ok) return [];
-            const folders = await response.json().catch(() => []);
-            supabaseProductFolderCache = Array.isArray(folders)
-                ? folders.filter(item => item && item.name && !item.id).map(item => item.name)
-                : [];
-            return supabaseProductFolderCache;
-        }
-
-        async function findSupabaseImageByFileName(fileName) {
-            const cleanFileName = getBrowserImagePath(fileName || '');
-            if (!cleanFileName) return null;
-            if (supabaseFileLookupCache.has(cleanFileName)) return supabaseFileLookupCache.get(cleanFileName);
-
-            const folders = await listSupabaseProductFolders();
-            for (const folder of folders) {
-                const files = await listSupabaseProductImages(folder);
-                const mainMatch = files.find(file => file.name.startsWith('main-') && getBrowserImagePath(file.name).endsWith(cleanFileName));
-                const anyMatch = mainMatch || files.find(file => getBrowserImagePath(file.name).endsWith(cleanFileName));
-                if (anyMatch) {
-                    supabaseFileLookupCache.set(cleanFileName, anyMatch.url);
-                    return anyMatch.url;
-                }
-            }
-
-            supabaseFileLookupCache.set(cleanFileName, null);
-            return null;
-        }
-
-        async function restoreProductImagesFromSupabase(product) {
-            if (!product || !product.id) return null;
-            const files = await listSupabaseProductImages(product.id);
-            if (!files.length) {
-                const byFileName = await findSupabaseImageByFileName(product.fileName || getImageFileNameFromPath(product.image));
-                if (byFileName) {
-                    product.image = byFileName;
-                    product.fileName = getImageFileNameFromPath(byFileName, product.fileName);
-                    if (!Array.isArray(product.images)) product.images = [];
-                    if (isEditMode) saveCatalogToLocal();
-                    return byFileName;
-                }
-                return null;
-            }
-
-            const displayableFiles = files.filter(isDisplayableSupabaseImage);
-            const usableFiles = displayableFiles.length ? displayableFiles : files;
-            const mainFile = usableFiles.find(file => file.name.startsWith('main-')) || usableFiles[0];
-            const extraFiles = files.filter(file => file !== mainFile);
-            product.image = mainFile.url;
-            product.fileName = getImageFileNameFromPath(mainFile.name, product.fileName);
-            product.images = extraFiles.filter(isDisplayableSupabaseImage).map(file => file.url);
-            if (isEditMode) saveCatalogToLocal();
-            return mainFile.url;
-        }
-
         function needsImageRestore(product) {
             if (!product) return false;
             const image = String(product.image || '').trim();
@@ -1553,14 +1410,6 @@
             if (/^data:image\/svg\+xml/i.test(image)) return true;
             if (/^https?:\/\/via\.placeholder\.com/i.test(image)) return true;
             return !/^https?:/i.test(image);
-        }
-
-        function isLegacySupabaseImageUrl(value) {
-            return String(value || '').startsWith(`${SUPABASE_PROJECT_URL}/storage/v1/object/public/${SUPABASE_PRODUCT_BUCKET}/`);
-        }
-
-        function isCloudinaryImageUrl(value) {
-            return String(value || '').startsWith(`https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/`);
         }
 
         function getJsProductForLocalProduct(product) {
@@ -1585,8 +1434,7 @@
             if (!jsProduct) return false;
 
             let changed = false;
-            const shouldUseJsMainImage = needsImageRestore(product)
-                || (isLegacySupabaseImageUrl(product.image) && isCloudinaryImageUrl(jsProduct.image));
+            const shouldUseJsMainImage = needsImageRestore(product);
             if (shouldUseJsMainImage && jsProduct.image && /^https?:/i.test(jsProduct.image)) {
                 product.image = jsProduct.image;
                 product.fileName = getBrowserImagePath(jsProduct.fileName || product.fileName || getImageFileNameFromPath(jsProduct.image));
@@ -1606,7 +1454,7 @@
             return changed;
         }
 
-        async function restoreMissingProductImagesFromSupabase() {
+        function restoreMissingProductImagesFromJsData() {
             if (!Array.isArray(catalog.products)) return 0;
             let restoredCount = 0;
 
@@ -1614,10 +1462,7 @@
                 if (!needsImageRestore(product)) continue;
                 if (repairProductImageFromJsData(product)) {
                     restoredCount++;
-                    continue;
                 }
-                const restoredUrl = await restoreProductImagesFromSupabase(product).catch(() => null);
-                if (restoredUrl) restoredCount++;
             }
 
             if (restoredCount && isEditMode) saveCatalogToLocal();
@@ -1796,18 +1641,6 @@
             }
 
             delete img.dataset.fallbackPath;
-
-            if (!img.dataset.supabaseRestoreChecked) {
-                img.dataset.supabaseRestoreChecked = 'true';
-                const restoredUrl = await restoreProductImagesFromSupabase(product).catch(() => null);
-                if (restoredUrl) {
-                    img.dataset.fallbackIndex = '0';
-                    img.dataset.imagePath = restoredUrl;
-                    if (img.dataset.mainImage === 'true') img.dataset.fallbackPath = restoredUrl;
-                    img.src = restoredUrl;
-                    return;
-                }
-            }
 
             img.onerror = null;
             handleBrokenImage(id, img);
@@ -2091,7 +1924,7 @@
 
                 // 4. רינדור ה-UI בהתאם למצב
                 loadSiteContent();
-                if (isEditMode) await restoreMissingProductImagesFromSupabase();
+                if (isEditMode) restoreMissingProductImagesFromJsData();
                 applyModeUI();
                 renderCatalog();
                 renderSiteSections();
@@ -2444,10 +2277,7 @@
                         if (
                             imagePath &&
                             jsImage &&
-                            (
-                                (!/^https?:/i.test(imagePath) && /^https?:/i.test(jsImage)) ||
-                                (isLegacySupabaseImageUrl(imagePath) && isCloudinaryImageUrl(jsImage))
-                            )
+                            !/^https?:/i.test(imagePath) && /^https?:/i.test(jsImage)
                         ) {
                             changed = true;
                             return jsImage;
@@ -3694,7 +3524,7 @@
                 try {
                     imagePath = await uploadProductImageToCloudinary(file, productId, 'main');
                 } catch (error) {
-                    console.error("שגיאה בהעלאת מוצר בכמות ל-Supabase:", error);
+                    console.error("שגיאה בהעלאת מוצר בכמות ל-Cloudinary:", error);
                     if (loadingModal) loadingModal.classList.add('hidden');
                     alert(`התמונה "${file.name}" לא עלתה לענן.\nהמוצרים לא נשמרו עם קישורים מקומיים כדי לא ליצור תמונות חסרות.`);
                     return;
