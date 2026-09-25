@@ -2332,12 +2332,12 @@ window.catalogData = {
     {
       "id": 1787822619346,
       "name": "ציפור",
-      "fileName": "20260826_234428.jpg",
+      "fileName": "Screenshot 2026-09-25 123845.png",
       "price": "25",
       "category": "סימניות",
       "theme": "טבע",
       "desc": "סימניית UV ERSIN",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063910/tplp7t2sgtliqmryniua.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790329154/jvwk3llz3hry8r2mjqhi.png",
       "status": "available",
       "dimensions": {
         "length": "15",
@@ -2346,7 +2346,6 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [
-        "https://res.cloudinary.com/nidtlynh/image/upload/v1790063911/t2qcdktj9bovgqx4hw4g.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063912/dycqku7rre5n4r79oldx.jpg"
       ]
     },
@@ -2611,7 +2610,7 @@ window.catalogData = {
       "fileName": "אדום חזה.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "קלף מודפס",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274562/gwhzx6vba6t7vewj2tsy.png",
       "status": "available",
@@ -2647,7 +2646,7 @@ window.catalogData = {
       "fileName": "דרור.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274563/eij0tccnsdabvxlzeoui.png",
       "status": "available",
@@ -2719,7 +2718,7 @@ window.catalogData = {
       "fileName": "הרמין לבן 1.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274568/ff9xurazruc8jjrsqdgb.png",
       "status": "available",
@@ -2737,7 +2736,7 @@ window.catalogData = {
       "fileName": "הרמין לבן 2.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274570/apm8tuxzmhd7gj56wo1u.png",
       "status": "available",
@@ -2755,7 +2754,7 @@ window.catalogData = {
       "fileName": "ניר אוטומטה.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "אנימה",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274570/jgu4gyd39ccycsww957h.png",
       "status": "available",
@@ -2791,7 +2790,7 @@ window.catalogData = {
       "fileName": "סולה כחולת רגל.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274572/wgt4ugropzqi6rytnlib.png",
       "status": "available",
@@ -2809,7 +2808,7 @@ window.catalogData = {
       "fileName": "עורב בקן וורדים.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274573/r7bw0albexkngdxujvyj.png",
       "status": "available",
@@ -2827,7 +2826,7 @@ window.catalogData = {
       "fileName": "פיפאן.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274573/aqsbjk2tk7ufu8jq6gzq.png",
       "status": "available",
@@ -2845,7 +2844,7 @@ window.catalogData = {
       "fileName": "צופית.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274574/sil3garpgghldy998ja1.png",
       "status": "available",
@@ -2863,7 +2862,7 @@ window.catalogData = {
       "fileName": "צפרדע.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274576/jwzqxwyplg0zb0was5ze.png",
       "status": "available",
@@ -2881,7 +2880,7 @@ window.catalogData = {
       "fileName": "שבתאי 1.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274576/yu0ut0dmrlxqklysj2nz.png",
       "status": "available",
@@ -2899,7 +2898,7 @@ window.catalogData = {
       "fileName": "שבתאי 2.PNG",
       "price": "10",
       "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
+      "theme": "טבע",
       "desc": "",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274577/tcldpvelgjqzgbsosjz5.png",
       "status": "available",
@@ -2910,6 +2909,460 @@ window.catalogData = {
         "diameter": ""
       },
       "images": []
+    },
+    {
+      "id": 1790327052333,
+      "name": "נערת הפנינה",
+      "fileName": "ytjxy9x40oddexd19phy.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "דמויות מקוריות",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327057/ytjxy9x40oddexd19phy.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790327684/zxaeynnd7gycahpgwlk1.jpg"
+      ]
+    },
+    {
+      "id": 1790327052335,
+      "name": "צפרדע",
+      "fileName": "gww14tmc5l5busfd2lyi.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "טבע",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327070/gww14tmc5l5busfd2lyi.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790327731/zle2yzkjkq4opvvgyyov.jpg"
+      ]
+    },
+    {
+      "id": 1790327052336,
+      "name": "עורב בקן וורדים",
+      "fileName": "tko4zbvafcxk2etz5zjt.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "טבע",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327074/tko4zbvafcxk2etz5zjt.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": []
+    },
+    {
+      "id": 1790327052337,
+      "name": "ניר אוטומטה",
+      "fileName": "kzvaxlrfkkusfsemklzk.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "אנימה",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327078/kzvaxlrfkkusfsemklzk.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790327990/pm3o1ynkphpv92izmgfr.jpg"
+      ]
+    },
+    {
+      "id": 1790327052338,
+      "name": "המונוה ליזה",
+      "fileName": "bvakkq6du9hwnhgi4dcl.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "דמויות מקוריות",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327081/bvakkq6du9hwnhgi4dcl.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328078/lsagc645dynswf8abfg9.jpg"
+      ]
+    },
+    {
+      "id": 1790327052339,
+      "name": "הצעקה",
+      "fileName": "j2ko1abebgimrwiaghgu.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "דמויות מקוריות",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327084/j2ko1abebgimrwiaghgu.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328132/uypmzd12bmvlwzaykmg1.jpg"
+      ]
+    },
+    {
+      "id": 1790327052340,
+      "name": "קילופמון",
+      "fileName": "ux9yjk2rz9ghslfdtcet.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "אנימה",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327088/ux9yjk2rz9ghslfdtcet.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328272/e2rxk0uvtwuo9wkgtjyj.jpg"
+      ]
+    },
+    {
+      "id": 1790327052341,
+      "name": "פרירן",
+      "fileName": "cyqiuv1ci5y8cdpjwrwv.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "אנימה",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327092/cyqiuv1ci5y8cdpjwrwv.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328298/a4awzfuyryjs2iaxxpx7.jpg"
+      ]
+    },
+    {
+      "id": 1790327052342,
+      "name": "דאזי",
+      "fileName": "ylwmit1snpg2acmmz95v.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "אנימה",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327096/ylwmit1snpg2acmmz95v.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328327/k9e0j4dbe3dpjjugmdlh.jpg"
+      ]
+    },
+    {
+      "id": 1790327052343,
+      "name": "האזבין הוטל - ווקס",
+      "fileName": "au4kx3265plwntriyur9.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "אנימה",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327100/au4kx3265plwntriyur9.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328377/rlgvu5nruvp0opj6n2hg.jpg"
+      ]
+    },
+    {
+      "id": 1790327052344,
+      "name": "המשרת השחור - סייל",
+      "fileName": "uhnadjohzwgycgzwbhhg.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "אנימה",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327104/uhnadjohzwgycgzwbhhg.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328422/vkaby2t2aseycjmqyddr.jpg"
+      ]
+    },
+    {
+      "id": 1790327052345,
+      "name": "האזבין הוטל - אלסטור",
+      "fileName": "aafznxzopkjjsysad603.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "אנימה",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327108/aafznxzopkjjsysad603.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": []
+    },
+    {
+      "id": 1790327052346,
+      "name": "האזבין הוטל - ווקס",
+      "fileName": "u4xhhtt2edaiaegmbmvo.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "אנימה",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327112/u4xhhtt2edaiaegmbmvo.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328600/ovum13dvhsln0c7giel3.jpg"
+      ]
+    },
+    {
+      "id": 1790327052347,
+      "name": "יומני הרוקחת - מאומאו",
+      "fileName": "tznha1zlsewm4sti0chw.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "אנימה",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327116/tznha1zlsewm4sti0chw.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328628/tqhwjwlqovy0nsq2rprg.jpg"
+      ]
+    },
+    {
+      "id": 1790327052348,
+      "name": "האיכרים",
+      "fileName": "fi2qozdzr8zunkczvtir.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "דמויות מקוריות",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327120/fi2qozdzr8zunkczvtir.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328658/oyslpc5yo8e6sdwavgtk.jpg"
+      ]
+    },
+    {
+      "id": 1790327052349,
+      "name": "סנקי",
+      "fileName": "qw4kqymxiwgicygeawye.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "טבע",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327125/qw4kqymxiwgicygeawye.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328696/ozpvonlgnblnxxwyljej.jpg"
+      ]
+    },
+    {
+      "id": 1790327052350,
+      "name": "סלמי",
+      "fileName": "cabl5bvuslanq5wzh0gv.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "סלמי",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327134/cabl5bvuslanq5wzh0gv.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "",
+        "width": "",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": []
+    },
+    {
+      "id": 1790327052351,
+      "name": "סלמי",
+      "fileName": "qsq4xcjm3fvsqbqhbmih.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "סלמי",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327142/qsq4xcjm3fvsqbqhbmih.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328756/g4oqrx62ip98y4zqv2dy.jpg"
+      ]
+    },
+    {
+      "id": 1790327052352,
+      "name": "צופית",
+      "fileName": "ucbbeeazaphdvdtbtwnt.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "טבע",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327148/ucbbeeazaphdvdtbtwnt.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328784/gnp6l8xiaa66ofv2p2gl.jpg"
+      ]
+    },
+    {
+      "id": 1790327052353,
+      "name": "פאפין",
+      "fileName": "xquwclbmmgxmbmsdd2ts.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "טבע",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327155/xquwclbmmgxmbmsdd2ts.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328810/qcus5iahoce00hevkvk2.jpg"
+      ]
+    },
+    {
+      "id": 1790327052354,
+      "name": "סולה כחולת רגל",
+      "fileName": "fdvbctiumndaakyjad9l.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "טבע",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327162/fdvbctiumndaakyjad9l.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328838/vkanzws1ucergmzky8d5.jpg"
+      ]
+    },
+    {
+      "id": 1790327052355,
+      "name": "דרור",
+      "fileName": "dqclohz1sl9yyg5otaql.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "טבע",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327167/dqclohz1sl9yyg5otaql.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328858/fx18cgodlkrfsfazqcub.jpg"
+      ]
+    },
+    {
+      "id": 1790327052356,
+      "name": "אדום חזה",
+      "fileName": "mkzomq2kfb1zqu9jckps.jpg",
+      "price": "15",
+      "category": "מגנטים",
+      "theme": "טבע",
+      "desc": "",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327172/mkzomq2kfb1zqu9jckps.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "5",
+        "width": "5",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": [
+        "https://res.cloudinary.com/nidtlynh/image/upload/v1790328883/vfnuax6olhtvspd0anya.jpg"
+      ]
     }
   ],
   "worlds": [

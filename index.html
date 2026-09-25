@@ -955,7 +955,6 @@
                     <datalist id="theme-options">
                         <option value="אנימה"></option>
                         <option value="פרחים"></option>
-                        <option value="חיות"></option>
                         <option value="סלמי"></option>
                         <option value="דמויות מקוריות"></option>
                         <option value="טבע"></option>
@@ -1404,7 +1403,7 @@
         let mainProductImageRemoved = false;
         const selectedProductIds = new Set();
         const BOOKMARK_PRICE_MIGRATION_KEY = 'ecrafts_bookmark_price_25_migrated';
-        const DEFAULT_THEMES = ["הכל", "אנימה", "פרחים", "חיות", "דמויות מקוריות", "טבע", "אחר"];
+        const DEFAULT_THEMES = ["הכל", "אנימה", "פרחים", "דמויות מקוריות", "טבע", "אחר"];
         const CLOUDINARY_CLOUD_NAME = "nidtlynh";
         const CLOUDINARY_UPLOAD_PRESET = "ecrafts_products";
         
@@ -1869,6 +1868,9 @@
             product.fileName = getBrowserImagePath(product.fileName || '');
             product.image = getProductImagePath(product.image || '', product.category);
             product.images = product.images.map(src => getProductImagePath(src, product.category)).filter(Boolean);
+            if (cleanFilterValue(product.theme) === "חיות") {
+                product.theme = "טבע";
+            }
             if (product.theme === undefined || product.theme === null || String(product.theme).trim() === "") {
                 product.theme = "אנימה";
             }
