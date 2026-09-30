@@ -2607,12 +2607,12 @@ window.catalogData = {
     {
       "id": 1790274559575,
       "name": "אדום חזה",
-      "fileName": "אדום חזה.PNG",
+      "fileName": "tsskqw3l1u4l136nrdmq.jpg",
       "price": "10",
       "category": "ACEO / Art Cards",
       "theme": "טבע",
-      "desc": "קלף מודפס",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274562/gwhzx6vba6t7vewj2tsy.png",
+      "desc": "קלף מצוייר",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790766684/tsskqw3l1u4l136nrdmq.jpg",
       "status": "available",
       "dimensions": {
         "length": "8.8",
@@ -2715,12 +2715,12 @@ window.catalogData = {
     {
       "id": 1790274559581,
       "name": "הרמין לבן 1",
-      "fileName": "הרמין לבן 1.PNG",
+      "fileName": "l1ikgwwsq6evfkhxptow.jpg",
       "price": "10",
       "category": "ACEO / Art Cards",
       "theme": "טבע",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274568/ff9xurazruc8jjrsqdgb.png",
+      "desc": "קלף מצוייר",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790766653/l1ikgwwsq6evfkhxptow.jpg",
       "status": "available",
       "dimensions": {
         "length": "8.8",
@@ -3267,12 +3267,12 @@ window.catalogData = {
     {
       "id": 1790327052352,
       "name": "צופית",
-      "fileName": "ucbbeeazaphdvdtbtwnt.jpg",
+      "fileName": "zjxe5mjm9vxucru9mv3p.jpg",
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
       "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327148/ucbbeeazaphdvdtbtwnt.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790767474/zjxe5mjm9vxucru9mv3p.jpg",
       "status": "available",
       "dimensions": {
         "length": "5",
@@ -3287,12 +3287,12 @@ window.catalogData = {
     {
       "id": 1790327052353,
       "name": "פאפין",
-      "fileName": "xquwclbmmgxmbmsdd2ts.jpg",
+      "fileName": "jwre0pyqpsutezfvhqla.jpg",
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
       "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327155/xquwclbmmgxmbmsdd2ts.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790767488/jwre0pyqpsutezfvhqla.jpg",
       "status": "available",
       "dimensions": {
         "length": "5",
@@ -3307,12 +3307,12 @@ window.catalogData = {
     {
       "id": 1790327052354,
       "name": "סולה כחולת רגל",
-      "fileName": "fdvbctiumndaakyjad9l.jpg",
+      "fileName": "je3pkip7fsp5axi7om4i.jpg",
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
       "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327162/fdvbctiumndaakyjad9l.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790767504/je3pkip7fsp5axi7om4i.jpg",
       "status": "available",
       "dimensions": {
         "length": "5",
@@ -3327,12 +3327,12 @@ window.catalogData = {
     {
       "id": 1790327052355,
       "name": "דרור",
-      "fileName": "dqclohz1sl9yyg5otaql.jpg",
+      "fileName": "os9crgvs2d6dzjmpmwgr.jpg",
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
       "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327167/dqclohz1sl9yyg5otaql.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790767453/os9crgvs2d6dzjmpmwgr.jpg",
       "status": "available",
       "dimensions": {
         "length": "5",
@@ -3347,12 +3347,12 @@ window.catalogData = {
     {
       "id": 1790327052356,
       "name": "אדום חזה",
-      "fileName": "mkzomq2kfb1zqu9jckps.jpg",
+      "fileName": "mes8xfm8mxfg7lshkxba.jpg",
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
       "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327172/mkzomq2kfb1zqu9jckps.jpg",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790767464/mes8xfm8mxfg7lshkxba.jpg",
       "status": "available",
       "dimensions": {
         "length": "5",
@@ -3363,6 +3363,24 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328883/vfnuax6olhtvspd0anya.jpg"
       ]
+    },
+    {
+      "id": 1790766766722,
+      "name": "כריש מתכת",
+      "fileName": "jpfyoxhg8ghynokhjfpp.jpg",
+      "price": "10",
+      "category": "ACEO / Art Cards",
+      "theme": "טבע",
+      "desc": "קלף מצוייר",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790766800/jpfyoxhg8ghynokhjfpp.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "8.8",
+        "width": "6.3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": []
     }
   ],
   "worlds": [
