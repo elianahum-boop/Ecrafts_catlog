@@ -2039,7 +2039,7 @@ window.catalogData = {
       "fileName": "20260826_232342.jpg",
       "price": "25",
       "category": "סימניות",
-      "theme": "דמויות",
+      "theme": "דמויות מקוריות",
       "desc": "סימנייה UV RESIN זוהר בחושך",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063874/st8judpldelmhioir3rk.jpg",
       "status": "available",
@@ -2188,7 +2188,7 @@ window.catalogData = {
       "fileName": "20260826_233521.jpg",
       "price": "25",
       "category": "סימניות",
-      "theme": "דמויות",
+      "theme": "דמויות מקוריות",
       "desc": "סימניית UV ERSIN",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063893/k2ljqf7nkxkxelscp7pt.jpg",
       "status": "available",
@@ -2314,7 +2314,7 @@ window.catalogData = {
       "fileName": "20260826_234320.jpg",
       "price": "20",
       "category": "סימניות אקריל",
-      "theme": "דמויות",
+      "theme": "דמויות מקוריות",
       "desc": "סימניות אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063907/ziriq8o86flsxhsn92y6.jpg",
       "status": "available",
@@ -2417,7 +2417,7 @@ window.catalogData = {
       "fileName": "20260826_234537.jpg",
       "price": "20",
       "category": "סימניות עבות",
-      "theme": "דמויות",
+      "theme": "דמויות מקוריות",
       "desc": "סימניית UV ERSIN",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063919/ilqwokb9qjhfrzwysykh.jpg",
       "status": "available",
@@ -2501,7 +2501,7 @@ window.catalogData = {
       "fileName": "20260826_234839.jpg",
       "price": "15",
       "category": "סימניות",
-      "theme": "דמויות",
+      "theme": "טבע",
       "desc": "סימניית UV ERSIN",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790063929/uwdu3j4wmvemrbxioql5.jpg",
       "status": "available",
@@ -2641,104 +2641,14 @@ window.catalogData = {
       "images": []
     },
     {
-      "id": 1790274559577,
-      "name": "דרור",
-      "fileName": "דרור.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "טבע",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274563/eij0tccnsdabvxlzeoui.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559578,
-      "name": "האיכרים",
-      "fileName": "האיכרים.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274565/xbegscizkugbhkt925yj.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559579,
-      "name": "המונה ליזה",
-      "fileName": "המונה ליזה.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274566/od37uxq23htpkys4ssos.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559580,
-      "name": "הצעקה",
-      "fileName": "הצעקה.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274567/ocrmyenmseidyhiytsug.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
       "id": 1790274559581,
-      "name": "הרמין לבן 1",
+      "name": "הרמין לבן",
       "fileName": "l1ikgwwsq6evfkhxptow.jpg",
       "price": "10",
       "category": "ACEO / Art Cards",
       "theme": "טבע",
       "desc": "קלף מצוייר",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790766653/l1ikgwwsq6evfkhxptow.jpg",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559582,
-      "name": "הרמין לבן 2",
-      "fileName": "הרמין לבן 2.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "טבע",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274570/apm8tuxzmhd7gj56wo1u.png",
       "status": "available",
       "dimensions": {
         "length": "8.8",
@@ -2767,157 +2677,13 @@ window.catalogData = {
       "images": []
     },
     {
-      "id": 1790274559584,
-      "name": "נערת הפנינה",
-      "fileName": "נערת הפנינה.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "דמויות מקוריות",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274571/ssqnebehkbygfb7h2z7r.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559585,
-      "name": "סולה כחולת רגל",
-      "fileName": "סולה כחולת רגל.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "טבע",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274572/wgt4ugropzqi6rytnlib.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559586,
-      "name": "עורב בקן וורדים",
-      "fileName": "עורב בקן וורדים.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "טבע",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274573/r7bw0albexkngdxujvyj.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559587,
-      "name": "פיפאן",
-      "fileName": "פיפאן.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "טבע",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274573/aqsbjk2tk7ufu8jq6gzq.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559588,
-      "name": "צופית",
-      "fileName": "צופית.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "טבע",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274574/sil3garpgghldy998ja1.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559589,
-      "name": "צפרדע",
-      "fileName": "צפרדע.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "טבע",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274576/jwzqxwyplg0zb0was5ze.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559590,
-      "name": "שבתאי 1",
-      "fileName": "שבתאי 1.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "טבע",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274576/yu0ut0dmrlxqklysj2nz.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
-      "id": 1790274559591,
-      "name": "שבתאי 2",
-      "fileName": "שבתאי 2.PNG",
-      "price": "10",
-      "category": "ACEO / Art Cards",
-      "theme": "טבע",
-      "desc": "",
-      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790274577/tcldpvelgjqzgbsosjz5.png",
-      "status": "available",
-      "dimensions": {
-        "length": "8.8",
-        "width": "6.3",
-        "thickness": "",
-        "diameter": ""
-      },
-      "images": []
-    },
-    {
       "id": 1790327052333,
       "name": "נערת הפנינה",
       "fileName": "ytjxy9x40oddexd19phy.jpg",
       "price": "15",
       "category": "מגנטים",
       "theme": "דמויות מקוריות",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327057/ytjxy9x40oddexd19phy.jpg",
       "status": "available",
       "dimensions": {
@@ -2937,7 +2703,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327070/gww14tmc5l5busfd2lyi.jpg",
       "status": "available",
       "dimensions": {
@@ -2957,7 +2723,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327074/tko4zbvafcxk2etz5zjt.jpg",
       "status": "available",
       "dimensions": {
@@ -2975,7 +2741,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "אנימה",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327078/kzvaxlrfkkusfsemklzk.jpg",
       "status": "available",
       "dimensions": {
@@ -2995,7 +2761,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "דמויות מקוריות",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327081/bvakkq6du9hwnhgi4dcl.jpg",
       "status": "available",
       "dimensions": {
@@ -3015,7 +2781,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "דמויות מקוריות",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327084/j2ko1abebgimrwiaghgu.jpg",
       "status": "available",
       "dimensions": {
@@ -3035,7 +2801,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "אנימה",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327088/ux9yjk2rz9ghslfdtcet.jpg",
       "status": "available",
       "dimensions": {
@@ -3055,7 +2821,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "אנימה",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327092/cyqiuv1ci5y8cdpjwrwv.jpg",
       "status": "available",
       "dimensions": {
@@ -3075,7 +2841,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "אנימה",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327096/ylwmit1snpg2acmmz95v.jpg",
       "status": "available",
       "dimensions": {
@@ -3095,7 +2861,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "אנימה",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327100/au4kx3265plwntriyur9.jpg",
       "status": "available",
       "dimensions": {
@@ -3115,7 +2881,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "אנימה",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327104/uhnadjohzwgycgzwbhhg.jpg",
       "status": "available",
       "dimensions": {
@@ -3135,7 +2901,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "אנימה",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327108/aafznxzopkjjsysad603.jpg",
       "status": "available",
       "dimensions": {
@@ -3153,7 +2919,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "אנימה",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327112/u4xhhtt2edaiaegmbmvo.jpg",
       "status": "available",
       "dimensions": {
@@ -3173,7 +2939,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "אנימה",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327116/tznha1zlsewm4sti0chw.jpg",
       "status": "available",
       "dimensions": {
@@ -3193,7 +2959,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "דמויות מקוריות",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327120/fi2qozdzr8zunkczvtir.jpg",
       "status": "available",
       "dimensions": {
@@ -3213,7 +2979,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327125/qw4kqymxiwgicygeawye.jpg",
       "status": "available",
       "dimensions": {
@@ -3233,7 +2999,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "סלמי",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327134/cabl5bvuslanq5wzh0gv.jpg",
       "status": "available",
       "dimensions": {
@@ -3251,7 +3017,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "סלמי",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790327142/qsq4xcjm3fvsqbqhbmih.jpg",
       "status": "available",
       "dimensions": {
@@ -3271,7 +3037,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790767474/zjxe5mjm9vxucru9mv3p.jpg",
       "status": "available",
       "dimensions": {
@@ -3291,7 +3057,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790767488/jwre0pyqpsutezfvhqla.jpg",
       "status": "available",
       "dimensions": {
@@ -3311,7 +3077,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790767504/je3pkip7fsp5axi7om4i.jpg",
       "status": "available",
       "dimensions": {
@@ -3331,7 +3097,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790767453/os9crgvs2d6dzjmpmwgr.jpg",
       "status": "available",
       "dimensions": {
@@ -3351,7 +3117,7 @@ window.catalogData = {
       "price": "15",
       "category": "מגנטים",
       "theme": "טבע",
-      "desc": "",
+      "desc": "מגנט אקריל",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790767464/mes8xfm8mxfg7lshkxba.jpg",
       "status": "available",
       "dimensions": {
@@ -3373,6 +3139,42 @@ window.catalogData = {
       "theme": "טבע",
       "desc": "קלף מצוייר",
       "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1790766800/jpfyoxhg8ghynokhjfpp.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "8.8",
+        "width": "6.3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": []
+    },
+    {
+      "id": 1791048350479,
+      "name": "חמוס - דוואר",
+      "fileName": "lod6svyhtm9mj0guvhpk.jpg",
+      "price": "10",
+      "category": "ACEO / Art Cards",
+      "theme": "טבע",
+      "desc": "קלף מצוייר",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1791048357/lod6svyhtm9mj0guvhpk.jpg",
+      "status": "available",
+      "dimensions": {
+        "length": "8.8",
+        "width": "6.3",
+        "thickness": "",
+        "diameter": ""
+      },
+      "images": []
+    },
+    {
+      "id": 1791048425462,
+      "name": "חמוס - סקייטבורד",
+      "fileName": "yfqbz0kbibwybvcchbox.jpg",
+      "price": "10",
+      "category": "ACEO / Art Cards",
+      "theme": "טבע",
+      "desc": "קלף מצוייר",
+      "image": "https://res.cloudinary.com/nidtlynh/image/upload/v1791048430/yfqbz0kbibwybvcchbox.jpg",
       "status": "available",
       "dimensions": {
         "length": "8.8",
