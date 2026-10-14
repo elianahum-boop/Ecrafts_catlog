@@ -1,6 +1,6 @@
 window.catalogData = {
   "title": "Ecrafts - קטלוג מוצרים",
-  "description": "מחזיקי מפתחות, סימניות ועוד פריטים בעבודת יד",
+  "description": "ב-Ecrafts תמצאו יצירות בעבודת יד לצד מוצרים המבוססים על איורים מקוריים שלי ✨",
   "email": "ecraftsil@gmail.com",
   "products": [
     {
@@ -19,7 +19,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 2,
@@ -32,7 +33,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 3,
@@ -45,7 +47,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 4,
@@ -58,7 +61,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 5,
@@ -71,7 +75,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 6,
@@ -84,7 +89,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 7,
@@ -97,7 +103,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 8,
@@ -110,7 +117,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 9,
@@ -123,7 +131,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 10,
@@ -136,7 +145,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 11,
@@ -149,7 +159,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 12,
@@ -162,7 +173,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 13,
@@ -175,7 +187,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 14,
@@ -188,7 +201,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 15,
@@ -201,7 +215,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 16,
@@ -214,7 +229,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 17,
@@ -232,7 +248,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 18,
@@ -245,7 +262,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 19,
@@ -258,7 +276,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 20,
@@ -271,7 +290,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 21,
@@ -284,7 +304,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 22,
@@ -297,7 +318,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 23,
@@ -310,7 +332,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 24,
@@ -323,7 +346,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 25,
@@ -336,7 +360,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 26,
@@ -349,7 +374,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 27,
@@ -362,7 +388,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 28,
@@ -375,7 +402,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 29,
@@ -388,7 +416,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 30,
@@ -401,7 +430,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 31,
@@ -414,7 +444,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 32,
@@ -427,7 +458,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 33,
@@ -440,7 +472,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 34,
@@ -453,7 +486,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 35,
@@ -466,7 +500,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 36,
@@ -479,7 +514,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 37,
@@ -492,7 +528,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 38,
@@ -505,7 +542,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 39,
@@ -518,7 +556,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 40,
@@ -531,7 +570,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 41,
@@ -544,7 +584,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 42,
@@ -557,7 +598,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 43,
@@ -570,7 +612,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 44,
@@ -583,7 +626,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 45,
@@ -596,7 +640,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 46,
@@ -609,7 +654,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 47,
@@ -622,7 +668,8 @@ window.catalogData = {
       "status": "available",
       "dimensions": {},
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 48,
@@ -640,7 +687,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 49,
@@ -656,7 +704,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 50,
@@ -672,7 +721,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 51,
@@ -690,7 +740,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 52,
@@ -706,7 +757,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 53,
@@ -724,7 +776,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 54,
@@ -740,7 +793,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 55,
@@ -756,7 +810,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 56,
@@ -772,7 +827,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 57,
@@ -788,7 +844,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 58,
@@ -804,7 +861,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 59,
@@ -822,7 +880,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 60,
@@ -838,7 +897,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 61,
@@ -854,7 +914,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 62,
@@ -872,7 +933,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 63,
@@ -888,7 +950,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 64,
@@ -906,7 +969,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 65,
@@ -924,7 +988,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 66,
@@ -940,7 +1005,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 67,
@@ -956,7 +1022,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 68,
@@ -972,7 +1039,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 69,
@@ -988,7 +1056,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 70,
@@ -1006,7 +1075,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 71,
@@ -1024,7 +1094,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 72,
@@ -1042,7 +1113,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 73,
@@ -1060,7 +1132,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 74,
@@ -1078,7 +1151,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 75,
@@ -1094,7 +1168,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 76,
@@ -1112,7 +1187,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 77,
@@ -1130,7 +1206,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 78,
@@ -1148,7 +1225,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 79,
@@ -1166,7 +1244,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 80,
@@ -1182,7 +1261,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 81,
@@ -1198,7 +1278,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 82,
@@ -1216,7 +1297,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 83,
@@ -1234,7 +1316,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 84,
@@ -1250,7 +1333,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 85,
@@ -1268,7 +1352,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 86,
@@ -1284,7 +1369,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 87,
@@ -1300,7 +1386,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 88,
@@ -1316,7 +1403,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 89,
@@ -1332,7 +1420,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 90,
@@ -1348,7 +1437,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 91,
@@ -1364,7 +1454,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 92,
@@ -1380,7 +1471,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 93,
@@ -1396,7 +1488,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 94,
@@ -1412,7 +1505,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 95,
@@ -1430,7 +1524,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 96,
@@ -1448,7 +1543,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 97,
@@ -1464,7 +1560,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 98,
@@ -1480,7 +1577,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 99,
@@ -1496,7 +1594,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 100,
@@ -1512,7 +1611,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 101,
@@ -1528,7 +1628,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 102,
@@ -1544,7 +1645,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 103,
@@ -1560,7 +1662,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 104,
@@ -1578,7 +1681,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 105,
@@ -1594,7 +1698,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 106,
@@ -1610,7 +1715,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 107,
@@ -1626,7 +1732,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 108,
@@ -1642,7 +1749,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 109,
@@ -1658,7 +1766,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 110,
@@ -1674,7 +1783,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 111,
@@ -1690,7 +1800,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 112,
@@ -1706,7 +1817,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 113,
@@ -1722,7 +1834,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 114,
@@ -1738,7 +1851,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 115,
@@ -1754,7 +1868,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 116,
@@ -1770,7 +1885,8 @@ window.catalogData = {
         "width": "3"
       },
       "images": [],
-      "theme": "אנימה"
+      "theme": "אנימה",
+      "creationType": "handmade"
     },
     {
       "id": 117,
@@ -1788,7 +1904,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "סלמי"
+      "theme": "סלמי",
+      "creationType": "handmade"
     },
     {
       "id": 118,
@@ -1806,7 +1923,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "סלמי"
+      "theme": "סלמי",
+      "creationType": "handmade"
     },
     {
       "id": 119,
@@ -1824,7 +1942,8 @@ window.catalogData = {
         "diameter": ""
       },
       "images": [],
-      "theme": "סרטים"
+      "theme": "סרטים",
+      "creationType": "handmade"
     },
     {
       "id": 1787813716870,
@@ -1844,7 +1963,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063856/la7cbzoxjjkyowhyjp2d.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787815039713,
@@ -1865,7 +1985,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063169/ai18yn78uqsw6prwtbfw.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063170/nmt5njkl5he7rwhx9vcf.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787816759186,
@@ -1887,7 +2008,8 @@ window.catalogData = {
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063858/huyyfwbqktbvehgqdfvp.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063858/xfjbcynsygo6hjfk8uw4.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063859/wmiq2mpqb9ia1hwuxm34.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822078122,
@@ -1907,7 +2029,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063861/twf67vdswxgxdirtj0ut.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822078123,
@@ -1927,7 +2050,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063862/hhnvhxphe5psnjzzz0je.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822078124,
@@ -1947,7 +2071,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063864/jm6x7djui9kvm4hx6c0x.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822078125,
@@ -1968,7 +2093,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063865/nqzrkboy0gkjszc46jhj.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063866/hvv8jqpbsilkwsomxba0.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822078126,
@@ -1989,7 +2115,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063868/mmtkvcjhauaghjh0x0j0.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063869/lkfcribcjmwvpakwapsh.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619329,
@@ -2010,7 +2137,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063870/szvhaycpetjqljw4uyan.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063871/t8teb8ncwap70pes1fei.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619330,
@@ -2031,7 +2159,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063872/klcijejeplmqqaqx3dro.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063873/ysvntgaihgm0lxi1hufa.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619331,
@@ -2053,7 +2182,8 @@ window.catalogData = {
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063875/qwwqta2vtbp8x6sbdheb.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063876/chiqsfj80o6xurqdiupc.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063877/oqegunrkp9tmqg3jaort.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619332,
@@ -2075,7 +2205,8 @@ window.catalogData = {
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063878/wopx68gq55jjimnsbxvd.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063879/rqd5snf1q51xvx7igs5v.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063880/bplwwqxwxhekywssomdm.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619333,
@@ -2096,7 +2227,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063881/k3o7kbw1dxa5iqeynwie.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063882/nbbxqhunjgmyirymdqss.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619334,
@@ -2117,7 +2249,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063884/xt5l3lpmfa55zpcuajbz.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063884/zede6wrt474fnrtmb4v4.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619335,
@@ -2138,7 +2271,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063886/khzqswuzne9sgqp63pv1.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063887/umhsvkf6gplcl0wczyz8.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619336,
@@ -2159,7 +2293,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063889/vkvpy9lfsiuit4safxgg.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063890/le7vk3dwnfrxojkje35u.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619337,
@@ -2180,7 +2315,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063891/tenkb8yni7tndznwxpms.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063892/ljkjuepfwempbnx8rhgo.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619338,
@@ -2201,7 +2337,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063894/g0dxdcw79r2d7maiebnc.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063895/kuu4q9jnij4uydnhqtz9.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619340,
@@ -2222,7 +2359,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063896/tbyy0oafm5axnsuisd29.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063897/rifzcmjspvxzl81rjtv5.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619341,
@@ -2243,7 +2381,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063898/cllzhl6k2xcdxarlijwf.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063899/dsoblapkh9ytwmmkhldp.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619342,
@@ -2264,7 +2403,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063901/p2wqpb27eo1ht44kce7f.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063901/ajejkao3cgdxlh0vs39u.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619343,
@@ -2285,7 +2425,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063903/hxtmbybtksu0jldyjqht.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063904/cakmvrizljp9zo4ubfus.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619344,
@@ -2306,7 +2447,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063906/k06pzahhoyerp7sqcqyz.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063906/edc1erunelrypomqzlqu.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619345,
@@ -2327,7 +2469,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063908/zrxklzfapszh2vj3tths.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063909/imdh903aytwfrcyvav9f.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619346,
@@ -2347,7 +2490,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063912/dycqku7rre5n4r79oldx.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619347,
@@ -2368,7 +2512,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063913/m7srpm9zifm7gyfarfff.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063914/vycz9hk6cze7akyeuaty.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619348,
@@ -2388,7 +2533,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063916/j7xa0ah5c25al0hvhpjl.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619349,
@@ -2409,7 +2555,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063917/wyxvuwcmgu8jmy8olyuz.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063918/doeydygrrrxdklt4ncbv.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619350,
@@ -2430,7 +2577,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063920/mft0fpajroegleeez8yh.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063921/mhy8v6yik1w8akilxegi.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619351,
@@ -2451,7 +2599,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063922/w7roqr49stwelifjevdg.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063923/unyag3z4xzbge2i73o4f.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619352,
@@ -2472,7 +2621,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063924/jkyaejzzjpeemo0q9oto.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063925/qxrahcmmhcztp1crsw2q.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619353,
@@ -2493,7 +2643,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063927/xkacgnpohpxcxvnqwojj.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063928/vd7cvvro4ocmpfvhzrla.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1787822619354,
@@ -2514,7 +2665,8 @@ window.catalogData = {
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063930/m5qjfwiq8zscccfvaiw2.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790063931/axjdnbvbes66hosn9yrr.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1789124796196,
@@ -2536,7 +2688,8 @@ window.catalogData = {
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270192/ge8jrkkjivpnhsjqmdvw.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270194/a9tgcv8dgl2fs3obavbs.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270195/nrfc5gyelp3ol16ivpas.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1789124796197,
@@ -2558,7 +2711,8 @@ window.catalogData = {
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270198/clswvqhxdvk7xpiyqkqf.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270200/mt4jguwqes3s2155v73u.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270202/wup8cmxgh5jf4ifgqsnu.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1789124796198,
@@ -2580,7 +2734,8 @@ window.catalogData = {
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270206/wcqztlrv0vyyboxowyqh.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270209/dws8zrc7nwqzawlhdl4c.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270211/czw4m5rrpf7cifo0j9l5.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1789124796199,
@@ -2602,7 +2757,8 @@ window.catalogData = {
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270212/uzyhipvszzpqr24ttpo5.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270365/mzzch4zr9mcm2cu77yht.jpg",
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790270367/bonww6ah3qnosfqkf60k.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790274559575,
@@ -2620,7 +2776,8 @@ window.catalogData = {
         "thickness": "",
         "diameter": ""
       },
-      "images": []
+      "images": [],
+      "creationType": "handmade"
     },
     {
       "id": 1790274559576,
@@ -2638,7 +2795,8 @@ window.catalogData = {
         "thickness": "",
         "diameter": ""
       },
-      "images": []
+      "images": [],
+      "creationType": "handmade"
     },
     {
       "id": 1790274559581,
@@ -2656,7 +2814,8 @@ window.catalogData = {
         "thickness": "",
         "diameter": ""
       },
-      "images": []
+      "images": [],
+      "creationType": "handmade"
     },
     {
       "id": 1790274559583,
@@ -2674,7 +2833,8 @@ window.catalogData = {
         "thickness": "",
         "diameter": ""
       },
-      "images": []
+      "images": [],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052333,
@@ -2694,7 +2854,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790327684/zxaeynnd7gycahpgwlk1.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052335,
@@ -2714,7 +2875,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790327731/zle2yzkjkq4opvvgyyov.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052336,
@@ -2732,7 +2894,8 @@ window.catalogData = {
         "thickness": "",
         "diameter": ""
       },
-      "images": []
+      "images": [],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052337,
@@ -2752,7 +2915,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790327990/pm3o1ynkphpv92izmgfr.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052338,
@@ -2772,7 +2936,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328078/lsagc645dynswf8abfg9.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052339,
@@ -2792,7 +2957,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328132/uypmzd12bmvlwzaykmg1.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052340,
@@ -2812,7 +2978,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328272/e2rxk0uvtwuo9wkgtjyj.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052341,
@@ -2832,7 +2999,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328298/a4awzfuyryjs2iaxxpx7.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052342,
@@ -2852,7 +3020,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328327/k9e0j4dbe3dpjjugmdlh.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052343,
@@ -2872,7 +3041,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328377/rlgvu5nruvp0opj6n2hg.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052344,
@@ -2892,7 +3062,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328422/vkaby2t2aseycjmqyddr.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052345,
@@ -2910,7 +3081,8 @@ window.catalogData = {
         "thickness": "",
         "diameter": ""
       },
-      "images": []
+      "images": [],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052346,
@@ -2930,7 +3102,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328600/ovum13dvhsln0c7giel3.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052347,
@@ -2950,7 +3123,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328628/tqhwjwlqovy0nsq2rprg.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052348,
@@ -2970,7 +3144,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328658/oyslpc5yo8e6sdwavgtk.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052349,
@@ -2990,7 +3165,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328696/ozpvonlgnblnxxwyljej.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052350,
@@ -3008,7 +3184,8 @@ window.catalogData = {
         "thickness": "",
         "diameter": ""
       },
-      "images": []
+      "images": [],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052351,
@@ -3028,7 +3205,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328756/g4oqrx62ip98y4zqv2dy.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052352,
@@ -3048,7 +3226,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328784/gnp6l8xiaa66ofv2p2gl.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052353,
@@ -3068,7 +3247,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328810/qcus5iahoce00hevkvk2.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052354,
@@ -3088,7 +3268,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328838/vkanzws1ucergmzky8d5.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052355,
@@ -3108,7 +3289,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328858/fx18cgodlkrfsfazqcub.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790327052356,
@@ -3128,7 +3310,8 @@ window.catalogData = {
       },
       "images": [
         "https://res.cloudinary.com/nidtlynh/image/upload/v1790328883/vfnuax6olhtvspd0anya.jpg"
-      ]
+      ],
+      "creationType": "handmade"
     },
     {
       "id": 1790766766722,
@@ -3146,7 +3329,8 @@ window.catalogData = {
         "thickness": "",
         "diameter": ""
       },
-      "images": []
+      "images": [],
+      "creationType": "handmade"
     },
     {
       "id": 1791048350479,
@@ -3164,7 +3348,8 @@ window.catalogData = {
         "thickness": "",
         "diameter": ""
       },
-      "images": []
+      "images": [],
+      "creationType": "handmade"
     },
     {
       "id": 1791048425462,
@@ -3182,7 +3367,8 @@ window.catalogData = {
         "thickness": "",
         "diameter": ""
       },
-      "images": []
+      "images": [],
+      "creationType": "handmade"
     }
   ],
   "worlds": [
